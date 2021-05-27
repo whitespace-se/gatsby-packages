@@ -1,0 +1,18 @@
+{
+  "name": "@whitespace/gatsby-plugin-page-wrapper",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "Whitespace Dev <code@whitespace.se>",
+  "license": "MIT",
+  "devDependencies": {
+    "gatsby": "^3.6.0",
+    "react": "^17.0.2"
+  },
+  "peerDependencies": {
+    "gatsby": "^3.6.0",
+    "react": "^17.0.2"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2"
+  }
+}
