@@ -26,218 +26,217 @@ function formatGraphQL(code) {
   });
 }
 
-export default ({ contentType, query }) => async ({
-  actions,
-  graphql,
-  reporter,
-}) => {
-  // const contentTypeEnum = snakeCase(
-  //   contentTypeName[2] || contentTypeName[0],
-  // ).toUpperCase();
-  const allContentNodes = [];
-  // const allContentNodesByYear = {};
-  // const allContentNodesByMonth = {};
-  // let archivePageContext;
+export default ({ contentType, query }) =>
+  async ({ actions, graphql, reporter }) => {
+    // const contentTypeEnum = snakeCase(
+    //   contentTypeName[2] || contentTypeName[0],
+    // ).toUpperCase();
+    const allContentNodes = [];
+    // const allContentNodesByYear = {};
+    // const allContentNodesByMonth = {};
+    // let archivePageContext;
 
-  let pageNumber = 0;
-  let pageCount = 0;
-  const itemsPerPage = Number(process.env.WORDPRESS_PAGES_PER_FETCH) || 10;
-  const commonVariables = {
-    contentTypes: [contentType.enum],
-    nameIn:
-      (process.env.WORDPRESS_SPECIFIC_POSTS &&
-        process.env.WORDPRESS_SPECIFIC_POSTS.split(",")) ||
-      [],
-  };
-  const { createPage } = actions;
+    let pageNumber = 0;
+    let pageCount = 0;
+    const itemsPerPage = Number(process.env.WORDPRESS_PAGES_PER_FETCH) || 10;
+    const commonVariables = {
+      contentTypes: [contentType.enum],
+      nameIn:
+        (process.env.WORDPRESS_SPECIFIC_POSTS &&
+          process.env.WORDPRESS_SPECIFIC_POSTS.split(",")) ||
+        [],
+    };
+    const { createPage } = actions;
 
-  reporter.info(`${itemsPerPage} items per page`);
+    reporter.info(`${itemsPerPage} items per page`);
 
-  const fetchPages = async (variables) =>
-    await graphql(query, { ...commonVariables, ...variables })
-      .then(({ errors, data }) => {
-        if (errors) {
-          throw new Error(errors[0].message);
-        }
-        reporter.info(`fetch page ${pageNumber + 1} of ${contentType.name}...`);
+    const fetchPages = async (variables) =>
+      await graphql(query, { ...commonVariables, ...variables })
+        .then(({ errors, data }) => {
+          if (errors) {
+            throw new Error(errors[0].message);
+          }
+          reporter.info(
+            `fetch page ${pageNumber + 1} of ${contentType.name}...`,
+          );
 
-        const {
-          wp: {
-            contentNodes: {
-              nodes,
-              pageInfo: { hasNextPage, endCursor },
-              // contentTypeInfo,
+          const {
+            wp: {
+              contentNodes: {
+                nodes,
+                pageInfo: { hasNextPage, endCursor },
+                // contentTypeInfo,
+              },
             },
-          },
-        } = data;
+          } = data;
 
-        // if (contentTypeInfo.hasArchive && pageNumber === 0) {
-        //   archivePageContext = {
-        //     contentTypeInfo,
-        //   };
-        // }
-
-        nodes.forEach((node) => {
-          allContentNodes.push(node);
-          // if (contentTypeInfo.hasArchive) {
-          //   const years = [
-          //     ...new Set(
-          //       node.archiveDates.map((archiveDate) =>
-          //         formatDate(new Date(archiveDate), "yyyy"),
-          //       ),
-          //     ),
-          //   ];
-          //   years.forEach((year) => {
-          //     allContentNodesByYear[year] = allContentNodesByYear[year] || [];
-          //     allContentNodesByYear[year].push(node);
-          //   });
-          //   const months = [
-          //     ...new Set(
-          //       node.archiveDates.map((archiveDate) =>
-          //         formatDate(new Date(archiveDate), "yyyy/MM"),
-          //       ),
-          //     ),
-          //   ];
-          //   months.forEach((month) => {
-          //     allContentNodesByMonth[month] = allContentNodesByMonth[month] || [];
-          //     allContentNodesByMonth[month].push(node);
-          //   });
+          // if (contentTypeInfo.hasArchive && pageNumber === 0) {
+          //   archivePageContext = {
+          //     contentTypeInfo,
+          //   };
           // }
-        });
 
-        if (hasNextPage) {
-          pageNumber++;
-          return fetchPages({ first: itemsPerPage, after: endCursor });
-        }
-      })
-      .catch((error) => {
-        let formattedQuery = formatGraphQL(query);
-        reporter.error(
-          `Query error when creating pages: ${error}
+          nodes.forEach((node) => {
+            allContentNodes.push(node);
+            // if (contentTypeInfo.hasArchive) {
+            //   const years = [
+            //     ...new Set(
+            //       node.archiveDates.map((archiveDate) =>
+            //         formatDate(new Date(archiveDate), "yyyy"),
+            //       ),
+            //     ),
+            //   ];
+            //   years.forEach((year) => {
+            //     allContentNodesByYear[year] = allContentNodesByYear[year] || [];
+            //     allContentNodesByYear[year].push(node);
+            //   });
+            //   const months = [
+            //     ...new Set(
+            //       node.archiveDates.map((archiveDate) =>
+            //         formatDate(new Date(archiveDate), "yyyy/MM"),
+            //       ),
+            //     ),
+            //   ];
+            //   months.forEach((month) => {
+            //     allContentNodesByMonth[month] = allContentNodesByMonth[month] || [];
+            //     allContentNodesByMonth[month].push(node);
+            //   });
+            // }
+          });
+
+          if (hasNextPage) {
+            pageNumber++;
+            return fetchPages({ first: itemsPerPage, after: endCursor });
+          }
+        })
+        .catch((error) => {
+          let formattedQuery = formatGraphQL(query);
+          reporter.error(
+            `Query error when creating pages: ${error}
 
 Query:
 ${formattedQuery}
 
 Variables:
 ${JSON.stringify({ ...commonVariables, ...variables }, null, 2)}`,
-        );
+          );
+        });
+
+    /**
+     * Kick off our `fetchPages` method which will get us all
+     * the pages we need to create individual pages.
+     */
+    await fetchPages({ first: itemsPerPage, after: null });
+
+    allContentNodes.map((contentNode) => {
+      let path = contentNode.uri;
+      let component = SingleTemplate;
+
+      createPage({
+        path,
+        component,
+        context: {
+          contentNode,
+        },
       });
+      pageCount++;
 
-  /**
-   * Kick off our `fetchPages` method which will get us all
-   * the pages we need to create individual pages.
-   */
-  await fetchPages({ first: itemsPerPage, after: null });
-
-  allContentNodes.map((contentNode) => {
-    let path = contentNode.uri;
-    let component = SingleTemplate;
-
-    createPage({
-      path,
-      component,
-      context: {
-        contentNode,
-      },
+      reporter.info(
+        `page created for ${contentType.labels.singularName}: ${path}`,
+      );
     });
-    pageCount++;
 
-    reporter.info(
-      `page created for ${contentType.labels.singularName}: ${path}`,
-    );
-  });
+    // if (archivePageContext) {
+    //   let path = getMainArchivePagePathFromPageContext(archivePageContext);
+    //   let component = MainArchivePageTemplate;
+    //   let years = Object.entries(allContentNodesByYear).map(([year, posts]) => ({
+    //     year,
+    //     postCount: posts.length,
+    //     url: getYearArchivePagePathFromPageContext({
+    //       year,
+    //       ...archivePageContext,
+    //     }),
+    //     months: Object.entries(allContentNodesByMonth)
+    //       .filter(([month]) => month.startsWith(year))
+    //       .map(([month, posts]) => ({
+    //         month,
+    //         postCount: posts.length,
+    //         url: getMonthArchivePagePathFromPageContext({
+    //           month,
+    //           ...archivePageContext,
+    //         }),
+    //       })),
+    //   }));
 
-  // if (archivePageContext) {
-  //   let path = getMainArchivePagePathFromPageContext(archivePageContext);
-  //   let component = MainArchivePageTemplate;
-  //   let years = Object.entries(allContentNodesByYear).map(([year, posts]) => ({
-  //     year,
-  //     postCount: posts.length,
-  //     url: getYearArchivePagePathFromPageContext({
-  //       year,
-  //       ...archivePageContext,
-  //     }),
-  //     months: Object.entries(allContentNodesByMonth)
-  //       .filter(([month]) => month.startsWith(year))
-  //       .map(([month, posts]) => ({
-  //         month,
-  //         postCount: posts.length,
-  //         url: getMonthArchivePagePathFromPageContext({
-  //           month,
-  //           ...archivePageContext,
-  //         }),
-  //       })),
-  //   }));
+    //   createPage({
+    //     path,
+    //     component,
+    //     context: {
+    //       ...archivePageContext,
+    //       years,
+    //       postCount: allContentNodes.length,
+    //     },
+    //   });
+    //   pageCount++;
 
-  //   createPage({
-  //     path,
-  //     component,
-  //     context: {
-  //       ...archivePageContext,
-  //       years,
-  //       postCount: allContentNodes.length,
-  //     },
-  //   });
-  //   pageCount++;
+    //   reporter.info(`main archive page created for ${contentTypeName[1]}: ${path}`);
+    // }
 
-  //   reporter.info(`main archive page created for ${contentTypeName[1]}: ${path}`);
-  // }
+    // Object.entries(allContentNodesByYear).map(([year, posts]) => {
+    //   let path = getYearArchivePagePathFromPageContext({
+    //     year,
+    //     ...archivePageContext,
+    //   });
+    //   let component = YearArchivePageTemplate;
+    //   let months = Object.entries(allContentNodesByMonth).map(([month, posts]) => ({
+    //     month,
+    //     postCount: posts.length,
+    //     url: getMonthArchivePagePathFromPageContext({
+    //       month,
+    //       ...archivePageContext,
+    //     }),
+    //   }));
 
-  // Object.entries(allContentNodesByYear).map(([year, posts]) => {
-  //   let path = getYearArchivePagePathFromPageContext({
-  //     year,
-  //     ...archivePageContext,
-  //   });
-  //   let component = YearArchivePageTemplate;
-  //   let months = Object.entries(allContentNodesByMonth).map(([month, posts]) => ({
-  //     month,
-  //     postCount: posts.length,
-  //     url: getMonthArchivePagePathFromPageContext({
-  //       month,
-  //       ...archivePageContext,
-  //     }),
-  //   }));
+    //   createPage({
+    //     path,
+    //     component,
+    //     context: {
+    //       ...archivePageContext,
+    //       year,
+    //       months,
+    //       postCount: posts.length,
+    //     },
+    //   });
+    //   pageCount++;
 
-  //   createPage({
-  //     path,
-  //     component,
-  //     context: {
-  //       ...archivePageContext,
-  //       year,
-  //       months,
-  //       postCount: posts.length,
-  //     },
-  //   });
-  //   pageCount++;
+    //   reporter.info(
+    //     `year archive page created for ${contentTypeName[1]} ${year}: ${path}`,
+    //   );
+    // });
 
-  //   reporter.info(
-  //     `year archive page created for ${contentTypeName[1]} ${year}: ${path}`,
-  //   );
-  // });
+    // Object.entries(allContentNodesByMonth).map(([month, posts]) => {
+    //   let path = getMonthArchivePagePathFromPageContext({
+    //     month,
+    //     ...archivePageContext,
+    //   });
+    //   let component = MonthArchivePageTemplate;
 
-  // Object.entries(allContentNodesByMonth).map(([month, posts]) => {
-  //   let path = getMonthArchivePagePathFromPageContext({
-  //     month,
-  //     ...archivePageContext,
-  //   });
-  //   let component = MonthArchivePageTemplate;
+    //   createPage({
+    //     path,
+    //     component,
+    //     context: {
+    //       ...archivePageContext,
+    //       month,
+    //       posts: posts.map((post) => omit(post, ["modularityModules"])),
+    //       contentTypeEnum,
+    //     },
+    //   });
+    //   pageCount++;
 
-  //   createPage({
-  //     path,
-  //     component,
-  //     context: {
-  //       ...archivePageContext,
-  //       month,
-  //       posts: posts.map((post) => omit(post, ["modularityModules"])),
-  //       contentTypeEnum,
-  //     },
-  //   });
-  //   pageCount++;
+    //   reporter.info(
+    //     `month archive page created for ${contentTypeName[1]} ${month}: ${path}`,
+    //   );
+    // });
 
-  //   reporter.info(
-  //     `month archive page created for ${contentTypeName[1]} ${month}: ${path}`,
-  //   );
-  // });
-
-  reporter.info(`# -----> PAGES TOTAL: ${pageCount}`);
-};
+    reporter.info(`# -----> PAGES TOTAL: ${pageCount}`);
+  };
