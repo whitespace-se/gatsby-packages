@@ -120,6 +120,7 @@ ${formattedQuery}
 Variables:
 ${JSON.stringify({ ...commonVariables, ...variables }, null, 2)}`,
           );
+          throw error;
         });
 
     /**
