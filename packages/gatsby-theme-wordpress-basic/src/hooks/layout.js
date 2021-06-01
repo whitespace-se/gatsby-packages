@@ -1,6 +1,6 @@
-import usePages from "./pages";
-
 import { getPage } from "../utils/pageTree";
+
+import usePages from "./pages";
 
 export function useIsFullWidthPage(id, postType) {
   const isFrontPage = useIsFrontPage(id);

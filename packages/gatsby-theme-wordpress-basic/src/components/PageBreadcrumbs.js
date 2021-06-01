@@ -23,9 +23,8 @@ export default function PageBreadcrumbs({
     items.push(...customItems);
   } else {
     const pageContext = usePageContext();
-    const {
-      contentNode: { contentType: { node: contentType } = {} } = {},
-    } = pageContext;
+    const { contentNode: { contentType: { node: contentType } = {} } = {} } =
+      pageContext;
     const pageContentTypeName = contentType?.name;
     switch (pageContentTypeName) {
       case "page":

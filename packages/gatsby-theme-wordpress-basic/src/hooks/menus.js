@@ -8,14 +8,8 @@ function defaultTransform(data, { pages }) {
   return data.wp.menus.nodes.map((menu) => ({
     ...menu,
     items: menu.menuItems.nodes.map((menuItem) => {
-      let {
-        connectedObject,
-        label,
-        description,
-        url,
-        target,
-        ...rest
-      } = menuItem;
+      let { connectedObject, label, description, url, target, ...rest } =
+        menuItem;
       let { contentType: { node: { name: type = "custom" } = {} } = {}, id } =
         connectedObject || {};
       let content = type === "page" ? getPage(pages, id) : {};
