@@ -27,7 +27,7 @@
     "esm": "^3.2.25",
     "gatsby-image": "^3.6.0",
     "gatsby-plugin-emotion": "^6.6.0",
-    "gatsby-plugin-fragments": "^1.1.1",
+    "gatsby-plugin-fragments": "^1.1.2",
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-postcss": "^4.6.0",
     "gatsby-plugin-react-helmet": "^4.6.0",

@@ -6251,12 +6251,12 @@ gatsby-plugin-emotion@^6.6.0:
     "@babel/runtime" "^7.11.2"
     "@emotion/babel-preset-css-prop" "^11.2.0"
 
-gatsby-plugin-fragments@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-fragments/-/gatsby-plugin-fragments-1.1.1.tgz#95bbb4f595613b915b3cef8e99e7e8aaff701601"
-  integrity sha512-gUzRejv5oiTedlXdDJiRwD45Ev0kDiGC4pLzEzs9rKuvmfBcnPE9oOU1HkzvzOvEvdsAD6PVHlMgTeJVaRjcvA==
+gatsby-plugin-fragments@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-fragments/-/gatsby-plugin-fragments-1.1.2.tgz#8c0bda6d84fba6f2917f72c6be9daf85c5d6b92f"
+  integrity sha512-ld54NYTq+GZVJETW169rw3QAcllNYZ4Y/9B5tf/Mmwfe2HWjzU+BaqW55VP9yfKbfRhoaLL4vyHvAxbUvhBdOw==
   dependencies:
-    gatsby-util-fragments-extractor "1.1.2"
+    gatsby-util-fragments-extractor "^1.1.3"
 
 gatsby-plugin-meta-redirect@^1.1.1:
   version "1.1.1"
@@ -6481,10 +6481,10 @@ gatsby-transformer-sharp@^3.6.0:
     semver "^7.3.4"
     sharp "^0.28.0"
 
-gatsby-util-fragments-extractor@1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/gatsby-util-fragments-extractor/-/gatsby-util-fragments-extractor-1.1.2.tgz#ebb1eec046d8687da140900244d24afb73a5a274"
-  integrity sha512-ilX2Ju3heK+uIHSNljTgQNaCVqBh/GLfE/Lgj2909nluWi5RLsnnhDK09ZdmAPTcPCyASP1DtvMo0G87FZtN5g==
+gatsby-util-fragments-extractor@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/gatsby-util-fragments-extractor/-/gatsby-util-fragments-extractor-1.1.3.tgz#0392716a217ca8850817d1c9c2b2035f6e8f8b5a"
+  integrity sha512-gjCmFQKY5EjbA+M6ROba/FVDdDtX+pImW9BI8d4pFrTszXmGpT0kcRawHplRRmkiEJGzH4/hJz31UsPyK+nq4g==
   dependencies:
     glob "^7.1.6"
     graphql-tag "^2.11.0"

@@ -1,6 +1,7 @@
 import { gql } from "apollo-boost";
 import React from "react";
 
+import { PageContextProvider } from "../../hooks";
 import { useWPGraphQLQuery, withWPGraphQL } from "../../hooks/wpGraphQL";
 
 import WPPreviewErrorScreen from "./WPPreviewErrorScreen";
@@ -41,7 +42,13 @@ const WPPreview = withWPGraphQL(function WPPreview({ id, wpnonce, user }) {
 
   const { contentNode } = data;
 
-  return <WPPreviewTemplate pageContext={{ contentNode, isPreview: true }} />;
+  const pageContext = { contentNode, isPreview: true };
+
+  return (
+    <PageContextProvider value={pageContext}>
+      <WPPreviewTemplate pageContext={pageContext} />
+    </PageContextProvider>
+  );
 });
 
 export default WPPreview;
