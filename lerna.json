@@ -2,7 +2,7 @@
   "command": {
     "publish": {
       "conventionalCommits": true,
-      "ignoreChanges": ["examples/*"],
+      "ignoreChanges": ["CHANGELOG.md"],
       "message": "chore(release): publish packages"
     }
   },
