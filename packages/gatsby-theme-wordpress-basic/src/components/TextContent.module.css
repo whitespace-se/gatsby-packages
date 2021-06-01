@@ -1,0 +1,31 @@
+.component > * {
+  margin-bottom: var(--flow, 1.5rem);
+}
+
+.component h1 {
+  --flow: 0.5rem;
+}
+
+.component > h2,
+.component > h3,
+.component > h4,
+.component > h5,
+.component > h6 {
+  --flow: 0.5rem;
+}
+
+.component > h2 + p,
+.component > h3 + p,
+.component > h4 + p,
+.component > h5 + p,
+.component > h6 + p {
+  margin-top: 0;
+}
+
+.component iframe[src*="youtube"] {
+  width: 100%;
+}
+
+.component p {
+  line-height: 1.5;
+}

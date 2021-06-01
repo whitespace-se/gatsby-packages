@@ -1,0 +1,17 @@
+.component {
+  --layout-width: 58%;
+  max-width: var(--layout-width);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+.component-width-full {
+  --layout-width: 100%;
+}
+
+.component-width-narrow {
+  --layout-width: 70ch;
+}

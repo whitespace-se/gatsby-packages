@@ -1,0 +1,9 @@
+# Node
+node_modules
+
+# Yarn
+package-lock.json
+yarn-error.log*
+
+# Publish only
+pkg/README.md
