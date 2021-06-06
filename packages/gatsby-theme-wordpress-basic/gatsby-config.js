@@ -12,6 +12,7 @@ module.exports = ({
       // We put this first so that all other `wrapPageElement` implementations will run after
       { resolve: `@whitespace/gatsby-plugin-page-wrapper` },
 
+      // Enabled GraphQL fragments in Gatsby Node API
       {
         resolve: `gatsby-plugin-fragments`,
         options: {
@@ -19,6 +20,7 @@ module.exports = ({
         },
       },
 
+      // Translation
       {
         resolve: `gatsby-source-filesystem`,
         options: {
@@ -26,18 +28,19 @@ module.exports = ({
           name: `locale`,
         },
       },
-
       { resolve: "@whitespace/gatsby-plugin-i18next", options: i18next },
 
+      // CSS
       `gatsby-plugin-emotion`,
-
       {
         resolve: `gatsby-plugin-postcss`,
         options: postCss,
       },
 
+      // HTML meta data
       `gatsby-plugin-react-helmet`,
 
+      // Images
       {
         resolve: `gatsby-source-filesystem`,
         options: {
@@ -45,11 +48,10 @@ module.exports = ({
           path: path.resolve(basePath, `./src/images`),
         },
       },
-
       `gatsby-transformer-sharp`,
-
       `gatsby-plugin-sharp`,
 
+      // Wordpress integration
       {
         resolve: "gatsby-source-graphql",
         options: {
@@ -59,7 +61,6 @@ module.exports = ({
           refetchInterval: wp.refetchInterval,
         },
       },
-
       `gatsby-plugin-meta-redirect`,
     ],
   };
