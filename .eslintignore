@@ -1,0 +1,8 @@
+# From /example/gatsby-site-i18n/.eslintignore
+/examples/gatsby-site-i18n/.cache
+/examples/gatsby-site-i18n/public
+
+# From /example/gatsby-starter-wordpress-basic/.eslintignore
+/examples/gatsby-starter-wordpress-basic/.cache
+/examples/gatsby-starter-wordpress-basic/public
+/examples/gatsby-starter-wordpress-basic/shared/wp-fragment-types.json
