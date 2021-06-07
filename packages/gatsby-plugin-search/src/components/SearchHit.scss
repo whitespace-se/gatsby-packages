@@ -1,0 +1,142 @@
+:root {
+  --search-hit-default-size: 1rem;
+  --search-hit-title-size: 1.125rem;
+  --search-hit-title-weight: 400;
+  --search-hit-meta-size: 0.8125rem;
+  --search-hit-contact-size: 0.875rem;
+
+  --search-hit-surface: #282a30;
+  --search-hit-surface-light: #525c63;
+  --search-hit-bg-color: #ffffff;
+  --search-hit-link-color: var(--search-hit-surface);
+  --search-accent: #e3ebf1;
+  --search-active: #0070c9;
+
+  --search-hit-content-width: calc(
+    100% - (var(--search-hit-image-width) + var(--spacing) * 1.5)
+  );
+  --search-hit-image-width: 9.6875rem;
+  --search-hit-breakpoint: 768px;
+  --search-hit-row-asset-width: 2.25rem;
+  --search-hit-row-content-width: calc(
+    100% - (var(--search-hit-row-asset-width) + var(--spacing) * 0.5)
+  );
+
+  --search-icon-color: #404450;
+  --spacing: 1rem;
+}
+
+$search-hit-breakpoint: 768px !default;
+
+.search-hit {
+  list-style: none;
+  background-color: var(--search-hit-bg-color);
+  color: var(--search-hit-surface);
+  font-size: var(--search-hit-default-size);
+  padding: var(--spacing) 0;
+  border-bottom: 1px solid var(--search-accent);
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: $search-hit-breakpoint) {
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+
+.search-hit__content {
+  max-width: var(--search-hit-content-width);
+  flex-basis: var(--search-hit-content-width);
+
+  & a {
+    color: var(--search-hit-link-color);
+  }
+
+  @media screen and (max-width: $search-hit-breakpoint) {
+    --search-hit-content-width: 100%;
+  }
+}
+
+.search-hit__image {
+  max-width: var(--search-hit-image-width);
+  flex-basis: var(--search-hit-image-width);
+
+  @media screen and (max-width: $search-hit-breakpoint) {
+    order: -1;
+    --search-hit-image-width: 100%;
+  }
+}
+
+.search-hit__title,
+.search-hit__title a {
+  font-size: var(--search-hit-title-size);
+  font-weight: var(--search-hit-title-weight);
+  margin-bottom: calc(var(--spacing) / 2);
+}
+
+.search-hit__excerpt {
+  margin-top: 0;
+  margin-bottom: var(--spacing);
+}
+
+.search-hit__breadcrumbs a {
+  font-size: var(--search-hit-meta-size);
+  text-decoration: none;
+
+  &:not(:last-child):after {
+    content: " / ";
+    color: var(--search-icon-color);
+  }
+}
+
+// CONTACT CARD
+.search-hit--contact .search-hit__title {
+  margin: 0;
+}
+
+.search-hit__row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  max-width: var(--search-hit-content-width);
+  font-style: normal;
+  margin-bottom: calc(var(--spacing) * 0.25);
+
+  & * p,
+  > p {
+    margin: 0;
+  }
+}
+
+.search-hit__row-asset {
+  flex-basis: var(--search-hit-row-asset-width);
+  max-width: var(--search-hit-row-asset-width);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &--image {
+    height: var(--search-hit-row-asset-width);
+    border-radius: 50%;
+  }
+}
+
+.search-hit__row-content {
+  flex-basis: var(--search-hit-row-content-width);
+  max-width: var(--search-hit-row-content-width);
+  margin-left: calc(var(--spacing) * 0.5);
+}
+
+.search-hit__position,
+.search-hit__address {
+  font-size: var(--search-hit-meta-size);
+}
+
+.search-hit__contact-info {
+  font-size: var(--search-hit-contact-size);
+
+  &--email {
+    --search-hit-link-color: var(--search-active);
+  }
+}

@@ -1,0 +1,5 @@
+---
+title: "Contact"
+---
+
+Lorem ipsum

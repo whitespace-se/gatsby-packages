@@ -1,0 +1,53 @@
+{
+  "name": "@whitespace/gatsby-plugin-search",
+  "version": "0.7.0-alpha.3",
+  "description": "Adds search to your Gatsby site",
+  "license": "MIT",
+  "files": [
+    "src/**/*",
+    "README.md",
+    "*.js"
+  ],
+  "scripts": {
+    "storybook": "NODE_ENV=production start-storybook -p 6006",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@jfrk/react-heading-levels": "^1.0.0",
+    "@whitespace/gatsby-hooks": "^0.4.5",
+    "classnames": "^2.2.6",
+    "formik": "^2.2.6",
+    "immer": "^9.0.1",
+    "lodash-es": "^4.17.21",
+    "minisearch": "^3.0.2",
+    "react-select": "^4.3.0",
+    "yup": "^0.32.9"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.32.3 || ^3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-i18next": "^11.8.12"
+  },
+  "devDependencies": {
+    "@emotion/react": "^11.1.5",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/builder-webpack5": "^6.2.0-alpha.30",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/react": "^6.1.21",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.0",
+    "esbuild": "^0.11.2",
+    "esbuild-jest": "^0.5.0",
+    "eslint-plugin-jest": "^24.3.2",
+    "gatsby": "^3",
+    "gatsby-image": "^3.1.0",
+    "jest": "^26.6.3",
+    "node-sass": "^5.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-i18next": "^11.8.12",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0"
+  }
+}

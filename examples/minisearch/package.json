@@ -1,0 +1,33 @@
+{
+  "name": "@whitespace/gatsby-plugin-search-minisearch-example",
+  "version": "0.0.0",
+  "private": true,
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "NODE_OPTIONS='-r esm' gatsby develop --port 8010",
+    "start": "NODE_OPTIONS='-r esm' gatsby develop --port 8010",
+    "build": "NODE_OPTIONS='-r esm' gatsby build",
+    "serve": "NODE_OPTIONS='-r esm' gatsby serve --port 8010",
+    "clean": "NODE_OPTIONS='-r esm' gatsby clean"
+  },
+  "dependencies": {
+    "@whitespace/gatsby-plugin-search": "0.7.0-alpha.3",
+    "formik": "^2.2.6",
+    "gatsby": "^3.1.2",
+    "gatsby-plugin-postcss": "^4.2.0",
+    "gatsby-plugin-sass": "^4.1.0",
+    "gatsby-source-filesystem": "^3.1.0",
+    "gatsby-transformer-remark": "^3.1.0",
+    "gatsby-transformer-yaml": "^3.1.0",
+    "postcss-preset-env": "^6.7.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-select": "^4.3.0",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "esm": "^3.2.25"
+  }
+}
