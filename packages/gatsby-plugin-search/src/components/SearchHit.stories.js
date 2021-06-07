@@ -50,8 +50,7 @@ Content.args = {
     height: "1000",
     alt: "Min bild",
   },
-  uri:
-    "/nyhetsarkiv/2014/november/riksarkivets-sida-for-oppna-datamangder-har-fått-ett-ansiktslyft",
+  uri: "/nyhetsarkiv/2014/november/riksarkivets-sida-for-oppna-datamangder-har-fått-ett-ansiktslyft",
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet velit in quam commodo sagittis at eget ex.",
   path: [
