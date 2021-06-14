@@ -7,19 +7,17 @@ import * as defaultStyles from "./HeaderFlyOutMenu.module.css";
 
 HeaderFlyOutMenu.propTypes = {
   styles: PropTypes.objectOf(PropTypes.string),
-  className: PropTypes.string
-}
+  className: PropTypes.string,
+};
 
-export default function HeaderFlyOutMenu({ styles = defaultStyles, className, ...restProps }) {
-
+export default function HeaderFlyOutMenu({
+  styles = defaultStyles,
+  className,
+  ...restProps
+}) {
   return (
     <div className={clsx(styles.component, className)} {...restProps}>
       <Icon name="menu" />
     </div>
-  )
-
+  );
 }
-
-
-
-

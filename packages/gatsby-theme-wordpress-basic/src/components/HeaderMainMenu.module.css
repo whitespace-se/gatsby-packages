@@ -2,7 +2,6 @@
   background-color: var(--header-main-menu-background, transparent);
   color: var(--header-main-menu-color, #000000);
   grid-area: main-menu;
-
 }
 
 .list {
