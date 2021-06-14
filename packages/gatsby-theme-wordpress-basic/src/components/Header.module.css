@@ -1,0 +1,4 @@
+.component {
+  background: var(--header-background, #333);
+  color: var(--header-color, white);
+}
