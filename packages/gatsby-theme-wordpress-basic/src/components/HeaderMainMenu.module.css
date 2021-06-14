@@ -1,0 +1,15 @@
+.component {
+  background-color: var(--header-main-menu-background, transparent);
+  color: var(--header-main-menu-color, #000000);
+  grid-area: main-menu;
+
+}
+
+.list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
+  justify-content: center;
+}

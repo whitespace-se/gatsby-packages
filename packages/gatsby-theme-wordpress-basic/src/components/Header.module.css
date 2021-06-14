@@ -1,4 +1,9 @@
 .component {
-  background: var(--header-background, #333);
-  color: var(--header-color, white);
+  background: var(--header-background, rgb(243, 243, 243));
+  color: var(--header-color, black);
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-areas: "logo . flyout" "main-menu main-menu main-menu";
+  padding: 1rem;
+  gap: 2rem;
 }
