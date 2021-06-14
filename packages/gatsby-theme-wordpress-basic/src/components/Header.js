@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 
 import * as defaultStyles from "./Header.module.css";
 import HeaderFlyOutMenu from "./HeaderFlyOutMenu";
+import HeaderLogo from "./HeaderLogo";
 import HeaderMainMenu from "./HeaderMainMenu";
 
 Header.propTypes = {
@@ -20,7 +21,7 @@ export default function Header({
   const { t } = useTranslation();
   return (
     <header className={clsx(styles.component, className)} {...restProps}>
-      <div>Logo</div>
+      <HeaderLogo linkTo="/" />
       <HeaderFlyOutMenu />
       <HeaderMainMenu aria-label={t("mainMenu")} />
     </header>
