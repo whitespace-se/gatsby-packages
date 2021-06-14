@@ -1,3 +1,35 @@
 .component {
   grid-area: flyout;
 }
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  z-index: 2;
+  padding: 1rem;
+  background: var(--header-fly-out-menu-background, white);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #0004;
+  z-index: 1;
+}
+
+.toggle {
+  appearance: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: inherit;
+  padding: 0;
+  box-shadow: none;
+  border-radius: 0;
+}

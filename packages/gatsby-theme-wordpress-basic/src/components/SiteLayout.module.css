@@ -1,0 +1,8 @@
+.main {
+  display: grid;
+  gap: 1rem;
+}
+
+.breadcrumbs {
+  margin: 1rem;
+}
