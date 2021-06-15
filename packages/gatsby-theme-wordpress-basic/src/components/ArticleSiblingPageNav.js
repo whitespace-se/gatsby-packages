@@ -1,17 +1,24 @@
+import clsx from "clsx";
+import PropTypes from "prop-types";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
+
 import { usePageContext, usePageSiblings } from "../hooks";
 
+import * as defaultStyles from "./ArticleSiblingPageNav.module.css";
 import BoxNavigation from "./BoxNavigation";
 
-// import * as defaultStyles from "./ArticleSiblingPageNav.module.css";
 
-ArticleSiblingPageNav.propTypes = {};
+ArticleSiblingPageNav.propTypes = {
+  styles: PropTypes.objectOf(PropTypes.string),
+  className: PropTypes.string
+};
+
 
 export default function ArticleSiblingPageNav({
-  // styles = defaultStyles,
-  styles = {},
+  styles = defaultStyles,
+  className,
   ...restProps
 }) {
   const { t } = useTranslation();
@@ -23,7 +30,7 @@ export default function ArticleSiblingPageNav({
 
   return (
     <BoxNavigation
-      className={styles.siblingPages}
+      className={clsx(styles.component, className)}
       title={t("relatedPages")}
       items={pageSiblings}
       {...restProps}

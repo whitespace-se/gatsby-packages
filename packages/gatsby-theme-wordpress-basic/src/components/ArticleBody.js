@@ -1,18 +1,23 @@
 import clsx from "clsx";
+import PropTypes from "prop-types";
 import React from "react";
+
 
 import { useHTMLProcessor, usePageContext } from "../hooks";
 
+import * as defaultStyles from "./ArticleBody.module.css";
 import TextContent from "./TextContent";
 import WPBlocks from "./WPBlocks";
 
-// import * as defaultStyles from "./ArticleBody.module.css";
 
-ArticleBody.propTypes = {};
+ArticleBody.propTypes = {
+  styles: PropTypes.objectOf(PropTypes.string),
+  className: PropTypes.string
+};
 
 export default function ArticleBody({
-  // styles = defaultStyles,
-  styles = {},
+  styles = defaultStyles,
+  className,
   ...restProps
 }) {
   let {
@@ -23,7 +28,7 @@ export default function ArticleBody({
   let { preamble, content } = processPageContent(contentHTML, { contentMedia });
 
   return (
-    <TextContent {...restProps}>
+    <TextContent className={clsx(styles.component, className)} {...restProps}>
       {blocksJSON ? (
         <>
           <WPBlocks

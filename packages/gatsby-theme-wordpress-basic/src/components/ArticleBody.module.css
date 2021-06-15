@@ -1,0 +1,11 @@
+
+
+.preamble {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.875;
+}
+
+.preamble p:first-child {
+  margin-top: 0;
+}

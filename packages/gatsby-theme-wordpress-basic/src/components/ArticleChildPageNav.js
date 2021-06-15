@@ -1,16 +1,21 @@
+import clsx from "clsx";
+import PropTypes from "prop-types";
 import React from "react";
 
 import { usePageChildren, usePageContext } from "../hooks";
 
+import * as defaultStyles from "./ArticleChildPageNav.module.css";
 import BoxNavigation from "./BoxNavigation";
 
-// import * as defaultStyles from "./ArticleChildPageNav.module.css";
 
-ArticleChildPageNav.propTypes = {};
+ArticleChildPageNav.propTypes = {
+  styles: PropTypes.objectOf(PropTypes.string),
+  className: PropTypes.string
+};
 
 export default function ArticleChildPageNav({
-  // styles = defaultStyles,
-  styles = {},
+  styles = defaultStyles,
+  className,
   ...restProps
 }) {
   let {
@@ -21,7 +26,7 @@ export default function ArticleChildPageNav({
 
   return (
     <BoxNavigation
-      className={styles.childPages}
+      className={clsx(styles.component, className)}
       items={pageChildren}
       {...restProps}
     />

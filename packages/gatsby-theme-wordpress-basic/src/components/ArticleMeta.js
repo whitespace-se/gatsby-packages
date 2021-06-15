@@ -1,19 +1,18 @@
+import PropTypes from "prop-types";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { usePageContext } from "../hooks";
 
+import * as defaultStyles from "./ArticleMeta.module.css";
 import Time from "./Time";
 
-// import * as defaultStyles from "./ArticleMeta.module.css";
+ArticleMeta.propTypes = {
+  styles: PropTypes.objectOf(PropTypes.string),
+  className: PropTypes.string,
+};
 
-ArticleMeta.propTypes = {};
-
-export default function ArticleMeta({
-  // styles = defaultStyles,
-  styles = {},
-  // ...restProps
-}) {
+export default function ArticleMeta({ styles = defaultStyles }) {
   const { t } = useTranslation();
   let {
     contentNode: { dateGmt, modifiedGmt, author },
@@ -21,9 +20,8 @@ export default function ArticleMeta({
 
   return (
     <>
-      <div className={styles.metaTime}>
-        {t("publishedAt")}
-        {`: `}
+      <div className={styles.row}>
+        <span className={styles.label}>{t("publishedAt")}: </span>
         <Time
           date={dateGmt}
           format={{
@@ -33,9 +31,8 @@ export default function ArticleMeta({
           }}
         />
       </div>
-      <div className={styles.metaTime}>
-        {t("updatedAt")}
-        {`: `}
+      <div className={styles.row}>
+        <span className={styles.label}>{t("updatedAt")}: </span>
         <Time
           date={modifiedGmt}
           format={{
@@ -46,9 +43,8 @@ export default function ArticleMeta({
         />
       </div>
       {!!author?.node?.name && (
-        <div className={styles.metaTime}>
-          {t("author")}
-          {`: `}
+        <div className={styles.row}>
+          <span className={styles.label}>{t("author")}: </span>
           {author.node.name}
         </div>
       )}

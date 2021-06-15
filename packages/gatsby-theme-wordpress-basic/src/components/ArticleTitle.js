@@ -6,13 +6,16 @@ import React from "react";
 import { utilities } from "../foundation";
 import { usePageContext } from "../hooks";
 
-// import * as defaultStyles from "./ArticleTitle.module.css";
+import * as defaultStyles from "./ArticleTitle.module.css";
 
-ArticleTitle.propTypes = {};
+ArticleTitle.propTypes = {
+  styles: PropTypes.objectOf(PropTypes.string),
+  className: PropTypes.string
+};
 
 export default function ArticleTitle({
-  // styles = defaultStyles,
-  // styles = {},
+  styles = defaultStyles,
+  className,
   ...restProps
 }) {
   let {
@@ -20,7 +23,7 @@ export default function ArticleTitle({
   } = usePageContext();
 
   return (
-    <H className={clsx(isFrontPage && utilities.visuallyHidden)} {...restProps}>
+    <H className={clsx(styles.component, className, isFrontPage && utilities.visuallyHidden)} {...restProps}>
       {title}
     </H>
   );

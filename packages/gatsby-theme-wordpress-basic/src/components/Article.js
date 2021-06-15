@@ -41,7 +41,7 @@ function Article({
       className={clsx(layout.component, layout.componentWidthFull, className)}
       {...restProps}
     >
-      <ArticleFeaturedImage styles={styles} />
+      <ArticleFeaturedImage/>
       <div
         className={clsx(
           layout.component,
@@ -52,11 +52,11 @@ function Article({
       >
         <ArticleTitle />
         <Section>
-          <ArticleChildPageNav />
-          {contentTypeName === "post" && <ArticlePublishDate />}
+          <ArticleChildPageNav className={styles.childPages} />
+          {contentTypeName === "post" && <ArticlePublishDate className={styles.publishedDate} />}
           <ArticleBody />
           {!isFrontPage && (
-            <footer className={styles.meta}>
+            <footer className={styles.footer}>
               <ArticleMeta />
               <ArticleTagList taxonomy="tags" />
             </footer>

@@ -4,14 +4,17 @@ import React from "react";
 
 import { usePageContext } from "../hooks";
 
-// import * as defaultStyles from "./ArticleFeaturedImage.module.css";
+import * as defaultStyles from "./ArticleFeaturedImage.module.css";
 import Image from "./Image";
 
-ArticleFeaturedImage.propTypes = {};
+ArticleFeaturedImage.propTypes = {
+  styles: PropTypes.objectOf(PropTypes.string),
+  className: PropTypes.string
+};
 
 export default function ArticleFeaturedImage({
-  // styles = defaultStyles,
-  styles = {},
+  styles = defaultStyles,
+  className,
   ...restProps
 }) {
   let {
@@ -30,7 +33,7 @@ export default function ArticleFeaturedImage({
   }
   return (
     <Image
-      className={clsx(styles.featuredImage)}
+      className={clsx(styles.component, className)}
       {...featuredImage}
       {...restProps}
     />
