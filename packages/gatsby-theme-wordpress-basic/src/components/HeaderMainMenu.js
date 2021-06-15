@@ -31,28 +31,28 @@ export default function HeaderMainMenu({
   const { width: navWidth } = useComponentSize(navRef);
   const { width: listWidth } = useComponentSize(listRef);
   return (
-      <nav
-        ref={navRef}
-        className={clsx(
-          styles.component,
-          className,
-          navWidth < listWidth && styles.hidden,
-        )}
-        {...restProps}
-      >
-        {
-          <ul ref={listRef} className={styles.list}>
-            {items.map((item, index) => {
-              return (
-                <li key={index} className={styles.item}>
-                  <Link className={styles.link} to={item.url}>
-                    {item.label}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        }
-      </nav>
+    <nav
+      ref={navRef}
+      className={clsx(
+        styles.component,
+        className,
+        navWidth < listWidth && styles.hidden,
+      )}
+      {...restProps}
+    >
+      {
+        <ul ref={listRef} className={styles.list}>
+          {items.map((item, index) => {
+            return (
+              <li key={index} className={styles.item}>
+                <Link className={styles.link} to={item.url}>
+                  {item.label}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      }
+    </nav>
   );
 }
