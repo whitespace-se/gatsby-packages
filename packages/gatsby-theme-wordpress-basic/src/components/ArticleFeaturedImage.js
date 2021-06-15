@@ -9,7 +9,7 @@ import Image from "./Image";
 
 ArticleFeaturedImage.propTypes = {
   styles: PropTypes.objectOf(PropTypes.string),
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default function ArticleFeaturedImage({
