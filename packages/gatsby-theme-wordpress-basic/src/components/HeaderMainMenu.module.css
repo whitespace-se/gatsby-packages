@@ -1,7 +1,11 @@
 .component {
+  grid-area: main-menu;
   background-color: var(--header-main-menu-background, transparent);
   color: var(--header-main-menu-color, #000000);
-  grid-area: main-menu;
+  display: grid;
+  justify-content: center;
+  white-space: nowrap;
+  min-width: 0;
 }
 
 .list {
@@ -11,4 +15,9 @@
   margin: 0;
   gap: 1rem;
   justify-content: center;
+}
+
+.hidden {
+  height: 0;
+  overflow: hidden;
 }

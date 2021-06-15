@@ -1,8 +1,9 @@
 import { Link } from "@whitespace/components";
+import { useComponentSize } from "@whitespace/gatsby-hooks";
 import clsx from "clsx";
 import { snakeCase } from "lodash";
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useRef } from "react";
 
 import { useMenu } from "../hooks/menus";
 
@@ -25,21 +26,33 @@ export default function HeaderMainMenu({
   if (!items?.length) {
     return null;
   }
+  const navRef = useRef();
+  const listRef = useRef();
+  const { width: navWidth } = useComponentSize(navRef);
+  const { width: listWidth } = useComponentSize(listRef);
   return (
-    <nav className={clsx(styles.component, className)} {...restProps}>
-      {
-        <ul className={styles.list}>
-          {items.map((item, index) => {
-            return (
-              <li key={index} className={styles.item}>
-                <Link className={styles.link} to={item.url}>
-                  {item.label}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      }
-    </nav>
+      <nav
+        ref={navRef}
+        className={clsx(
+          styles.component,
+          className,
+          navWidth < listWidth && styles.hidden,
+        )}
+        {...restProps}
+      >
+        {
+          <ul ref={listRef} className={styles.list}>
+            {items.map((item, index) => {
+              return (
+                <li key={index} className={styles.item}>
+                  <Link className={styles.link} to={item.url}>
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        }
+      </nav>
   );
 }
