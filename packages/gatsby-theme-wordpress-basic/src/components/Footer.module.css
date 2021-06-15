@@ -1,0 +1,7 @@
+.component {
+  background: var(--header-background, rgb(243, 243, 243));
+  color: var(--header-color, black);
+  display: grid;
+  padding: 1rem;
+  gap: 2rem;
+}
