@@ -2,7 +2,6 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
 
-
 import { usePageContext } from "../hooks";
 
 import * as defaultStyles from "./ArticleTagList.module.css";
@@ -10,7 +9,7 @@ import * as defaultStyles from "./ArticleTagList.module.css";
 ArticleTagList.propTypes = {
   styles: PropTypes.objectOf(PropTypes.string),
   taxonomy: PropTypes.string,
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default function ArticleTagList({
