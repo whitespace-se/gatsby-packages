@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.6.0...@whitespace/gatsby-theme-wordpress-basic@0.7.0) (2021-06-15)
+
+### Features
+
+- hide header main menu on small screens
+  ([c20b57b](https://github.com/whitespace-se/gatsby-packages/commit/c20b57b9348fc45cb74c7d70de7366c4932c4fd9))
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
 # [0.6.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.5.5...@whitespace/gatsby-theme-wordpress-basic@0.6.0) (2021-06-15)
 
 ### Features

@@ -7,10 +7,9 @@ import { usePageChildren, usePageContext } from "../hooks";
 import * as defaultStyles from "./ArticleChildPageNav.module.css";
 import BoxNavigation from "./BoxNavigation";
 
-
 ArticleChildPageNav.propTypes = {
   styles: PropTypes.objectOf(PropTypes.string),
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default function ArticleChildPageNav({

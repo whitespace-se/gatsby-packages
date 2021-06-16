@@ -3,18 +3,15 @@ import PropTypes from "prop-types";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-
 import { usePageContext, usePageSiblings } from "../hooks";
 
 import * as defaultStyles from "./ArticleSiblingPageNav.module.css";
 import BoxNavigation from "./BoxNavigation";
 
-
 ArticleSiblingPageNav.propTypes = {
   styles: PropTypes.objectOf(PropTypes.string),
-  className: PropTypes.string
+  className: PropTypes.string,
 };
-
 
 export default function ArticleSiblingPageNav({
   styles = defaultStyles,

@@ -3,18 +3,15 @@ import PropTypes from "prop-types";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-
 import { usePageContext } from "../hooks";
 
 import * as defaultStyles from "./ArticlePublishDate.module.css";
 import Time from "./Time";
 
-
 ArticlePublishDate.propTypes = {
   styles: PropTypes.objectOf(PropTypes.string),
-  className: PropTypes.string
+  className: PropTypes.string,
 };
-
 
 export default function ArticlePublishDate({
   styles = defaultStyles,

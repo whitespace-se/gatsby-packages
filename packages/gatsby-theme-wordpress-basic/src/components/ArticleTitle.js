@@ -10,7 +10,7 @@ import * as defaultStyles from "./ArticleTitle.module.css";
 
 ArticleTitle.propTypes = {
   styles: PropTypes.objectOf(PropTypes.string),
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default function ArticleTitle({
@@ -23,7 +23,14 @@ export default function ArticleTitle({
   } = usePageContext();
 
   return (
-    <H className={clsx(styles.component, className, isFrontPage && utilities.visuallyHidden)} {...restProps}>
+    <H
+      className={clsx(
+        styles.component,
+        className,
+        isFrontPage && utilities.visuallyHidden,
+      )}
+      {...restProps}
+    >
       {title}
     </H>
   );
