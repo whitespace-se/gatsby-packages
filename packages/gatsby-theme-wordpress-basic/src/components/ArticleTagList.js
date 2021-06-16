@@ -9,7 +9,7 @@ import * as defaultStyles from "./ArticleTagList.module.css";
 
 ArticleTagList.propTypes = {
   styles: PropTypes.objectOf(PropTypes.string),
-  taxonomy: PropTypes.arrayOf(PropTypes.shape({name: PropTypes.string})),
+  taxonomy: PropTypes.string,
   className: PropTypes.string
 };
 
