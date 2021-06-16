@@ -1,5 +1,21 @@
 # Change Log
 
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# [0.8.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.7.1...@whitespace/gatsby-theme-wordpress-basic@0.8.0) (2021-06-16)
+
+
+### Features
+
+* add image max width from wp ([f2d57d5](https://github.com/whitespace-se/gatsby-packages/commit/f2d57d57224148d01ea48912e35596c3d9076ce3))
+
+
+
+
+
+# Change Log
+
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
