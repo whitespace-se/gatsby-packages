@@ -2,7 +2,7 @@ export * from "./boxNavigation";
 
 export * from "./html-processor";
 
-export * from "./layout";
+export { default as useIsFullWidthPage } from "./useIsFullWidthPage";
 
 export { default as useMenus } from "./menus";
 export * from "./menus";
