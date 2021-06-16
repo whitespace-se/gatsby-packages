@@ -1,7 +1,6 @@
 import { usePageContext } from "./page-context";
 
 export default function useIsFullWidthPage() {
-
   let {
     contentNode: {
       isFrontPage,
@@ -11,9 +10,7 @@ export default function useIsFullWidthPage() {
     },
   } = usePageContext();
 
-
   const articleLayouts = ["page", "post"];
 
-
-  return (isFrontPage || !articleLayouts.includes(contentTypeName));
+  return isFrontPage || !articleLayouts.includes(contentTypeName);
 }
