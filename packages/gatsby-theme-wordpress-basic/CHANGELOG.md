@@ -1,18 +1,14 @@
 # Change Log
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 ## [0.7.1](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.7.0...@whitespace/gatsby-theme-wordpress-basic@0.7.1) (2021-06-16)
 
-
 ### Bug Fixes
 
-* correct proptype for taxonomy in article ([39b8330](https://github.com/whitespace-se/gatsby-packages/commit/39b8330816f2bcd3dd1c32083167b4eb71e43ed9))
-
-
-
-
+- correct proptype for taxonomy in article
+  ([39b8330](https://github.com/whitespace-se/gatsby-packages/commit/39b8330816f2bcd3dd1c32083167b4eb71e43ed9))
 
 # Change Log
 
