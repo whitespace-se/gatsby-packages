@@ -1,3 +1,7 @@
+.component {
+  max-width: var(--image-max-width, none);
+}
+
 figure.component {
   margin: 0;
 }

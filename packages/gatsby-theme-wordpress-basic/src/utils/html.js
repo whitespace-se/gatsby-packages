@@ -42,7 +42,12 @@ export default function createHTMLProcessor({ rehypeParse: parse }) {
   }
 
   function createStringifier({ contentMedia = [] } = {}) {
-    function WPImage({ attachment: attachmentId, ...restProps }) {
+    function WPImage({
+      attachment: attachmentId,
+      width: imgWidth,
+      height: imgHeight,
+      ...restProps
+    }) {
       let attachment = contentMedia.find(
         (attachment) => attachment.databaseId === Number(attachmentId),
       );
@@ -57,8 +62,9 @@ export default function createHTMLProcessor({ rehypeParse: parse }) {
           width={width}
           height={height}
           base64={base64}
-          aspectRatio={aspectRatio}
+          aspectRatio={imgWidth / imgHeight || aspectRatio}
           alt={alt}
+          maxWidth={imgWidth}
           {...restProps}
         />
       );

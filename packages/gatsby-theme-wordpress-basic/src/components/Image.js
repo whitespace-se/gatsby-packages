@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import { Link } from "@whitespace/components";
 import { useComponentSize } from "@whitespace/gatsby-hooks";
 import clsx from "clsx";
@@ -27,6 +28,7 @@ export default function Image({
   imgProps: { className: imgClassName, ...imgRestProps } = {},
   linkProps: { className: linkClassName, ...linkRestProps } = {},
   className,
+  maxWidth,
   ...restProps
 }) {
   let ref = useRef(null);
@@ -42,6 +44,7 @@ export default function Image({
 
   return (
     <WrapperComponent
+      css={css({ "--image-max-width": maxWidth && `${maxWidth}px` })}
       className={clsx(styles.component, className)}
       ref={ref}
       {...restProps}
