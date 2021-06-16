@@ -6,6 +6,8 @@
   margin-right: auto;
   margin-bottom: 3rem;
   margin-top: 3rem;
+  padding-left: var(--layout-padding, 0.5rem);
+  padding-right: var(--layout-padding, 0.5rem);
 }
 
 .component-width-full {
