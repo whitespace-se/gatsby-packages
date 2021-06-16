@@ -1,18 +1,14 @@
 # Change Log
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 ## [0.8.2](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.8.1...@whitespace/gatsby-theme-wordpress-basic@0.8.2) (2021-06-16)
 
-
 ### Bug Fixes
 
-* Add padding to full width page layout ([8297ea1](https://github.com/whitespace-se/gatsby-packages/commit/8297ea115e4364cb592518c900504ecd13cf04c3))
-
-
-
-
+- Add padding to full width page layout
+  ([8297ea1](https://github.com/whitespace-se/gatsby-packages/commit/8297ea115e4364cb592518c900504ecd13cf04c3))
 
 # Change Log
 
