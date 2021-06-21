@@ -1,6 +1,10 @@
 {
   "command": {
     "publish": {
+      "changelogPreset": {
+        "name": "conventionalcommits",
+        "issueUrlFormat": "{{host}}/{{owner}}/{{repository}}/issues/{{id}}"
+      },
       "conventionalCommits": true,
       "ignoreChanges": ["CHANGELOG.md"],
       "message": "chore(release): publish packages"
