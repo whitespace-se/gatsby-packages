@@ -6,10 +6,10 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "NODE_OPTIONS='-r esm' gatsby develop --port 8010",
-    "start": "NODE_OPTIONS='-r esm' gatsby develop --port 8010",
+    "develop": "NODE_OPTIONS='-r esm' gatsby develop --port 8101 --open",
+    "start": "NODE_OPTIONS='-r esm' gatsby develop --port 8101 --open",
     "build": "NODE_OPTIONS='-r esm' gatsby build",
-    "serve": "NODE_OPTIONS='-r esm' gatsby serve --port 8010",
+    "serve": "NODE_OPTIONS='-r esm' gatsby serve --port 8101 --open",
     "clean": "NODE_OPTIONS='-r esm' gatsby clean"
   },
   "dependencies": {
