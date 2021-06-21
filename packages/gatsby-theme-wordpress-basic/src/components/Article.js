@@ -26,7 +26,6 @@ function Article({
 }) {
   let {
     contentNode: {
-      id,
       isFrontPage,
       contentType: {
         node: { name: contentTypeName },
@@ -34,7 +33,8 @@ function Article({
     },
     // isPreview,
   } = usePageContext();
-  let isFullWidthPage = useIsFullWidthPage(id, contentTypeName);
+
+  let isFullWidthPage = useIsFullWidthPage();
 
   return (
     <article

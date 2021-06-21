@@ -1,18 +1,35 @@
 # Change Log
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [0.8.2](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.8.1...@whitespace/gatsby-theme-wordpress-basic@0.8.2) (2021-06-16)
+
+### Bug Fixes
+
+- Add padding to full width page layout
+  ([8297ea1](https://github.com/whitespace-se/gatsby-packages/commit/8297ea115e4364cb592518c900504ecd13cf04c3))
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [0.8.1](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.8.0...@whitespace/gatsby-theme-wordpress-basic@0.8.1) (2021-06-16)
+
+**Note:** Version bump only for package @whitespace/gatsby-theme-wordpress-basic
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 # [0.8.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.7.1...@whitespace/gatsby-theme-wordpress-basic@0.8.0) (2021-06-16)
 
-
 ### Features
 
-* add image max width from wp ([f2d57d5](https://github.com/whitespace-se/gatsby-packages/commit/f2d57d57224148d01ea48912e35596c3d9076ce3))
-
-
-
-
+- add image max width from wp
+  ([f2d57d5](https://github.com/whitespace-se/gatsby-packages/commit/f2d57d57224148d01ea48912e35596c3d9076ce3))
 
 # Change Log
 
