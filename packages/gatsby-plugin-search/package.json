@@ -1,6 +1,6 @@
 {
   "name": "@whitespace/gatsby-plugin-search",
-  "version": "0.7.0-alpha.4",
+  "version": "0.7.0-alpha.5",
   "description": "Adds search to your Gatsby site",
   "license": "MIT",
   "files": [
@@ -27,10 +27,10 @@
     "react-i18next": "^11.8.12"
   },
   "devDependencies": {
-    "@whitespace/components": "^0.10.0",
     "@storybook/addon-essentials": "^6.1.21",
     "@storybook/builder-webpack5": "^6.2.0-alpha.30",
     "@storybook/react": "^6.1.21",
+    "@whitespace/components": "^0.10.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.0",
     "esbuild": "^0.11.2",
