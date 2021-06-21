@@ -1,5 +1,5 @@
-import { isEqual, flattenDeep, isEmpty, negate } from "lodash-es";
-import React, { useMemo, useState } from "react";
+import { flattenDeep, isEmpty, negate } from "lodash-es";
+import React, { useMemo } from "react";
 
 import { useSearchParams } from "../../hooks";
 import useAsync from "../../hooks/useAsync";
@@ -28,7 +28,7 @@ function normalizeDocuments(documents) {
 }
 
 export default function MinisearchSearchBackendProvider({
-  settings: { miniSearch = {} } = {},
+  settings: { miniSearch = {}, attributesForFaceting = [] } = {},
   children,
 }) {
   const { Provider } = context;
@@ -55,6 +55,7 @@ export default function MinisearchSearchBackendProvider({
     fields: ["label", "text"],
     storeFields,
     // extractField: (document, fieldName) => get(document, fieldName),
+    attributesForFaceting,
     ...miniSearch,
   });
 

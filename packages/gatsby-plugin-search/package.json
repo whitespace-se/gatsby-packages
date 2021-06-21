@@ -20,23 +20,23 @@
     "minisearch": "^3.0.2"
   },
   "peerDependencies": {
+    "@whitespace/components": "^0.10.0",
     "gatsby": "^2.32.3 || ^3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-i18next": "^11.8.12"
   },
   "devDependencies": {
+    "@whitespace/components": "^0.10.0",
     "@storybook/addon-essentials": "^6.1.21",
     "@storybook/builder-webpack5": "^6.2.0-alpha.30",
     "@storybook/react": "^6.1.21",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.0",
     "esbuild": "^0.11.2",
-    "esbuild-jest": "^0.5.0",
     "eslint-plugin-jest": "^24.3.2",
     "gatsby": "^3",
     "gatsby-image": "^3.1.0",
-    "jest": "^26.6.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "style-loader": "^2.0.0"

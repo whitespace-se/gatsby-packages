@@ -1,0 +1,23 @@
+.form {
+  display: grid;
+  gap: var(--gap);
+  margin-top: var(--spacing);
+  margin-bottom: var(--spacing);
+  position: relative;
+
+  @media screen and (min-width: 768px) {
+    --gap: calc(var(--spacing) * 1.5);
+  }
+}
+
+.toggleButtonGroupWrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.toggleButtonGroupLabel {
+  font-size: 0.875rem;
+}
+.toggleButtonGroupLabel:after {
+  content: ":";
+}

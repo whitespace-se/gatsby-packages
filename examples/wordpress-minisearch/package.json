@@ -1,0 +1,36 @@
+{
+  "name": "@whitespace/gatsby-wordpress-minisearch-example",
+  "private": true,
+  "description": "Gatsby example site that uses Wordpress and Minisearch",
+  "version": "0.0.0",
+  "author": "Whitespace <code@whitespace.se>",
+  "license": "0BSD",
+  "scripts": {
+    "build": "yarn wp-generate-schema-fragments && NODE_OPTIONS='-r esm' gatsby build",
+    "clean": "NODE_OPTIONS='-r esm' gatsby clean",
+    "dev": "yarn wp-generate-schema-fragments && NODE_OPTIONS='-r esm' gatsby develop --port 8201 --open",
+    "format": "run-s format:*",
+    "format:eslint": "npx eslint --fix '**/*.js' || true",
+    "format:prettier": "prettier --write \"**/*.{js,jsx,json,md,scss,css,yml,html}\"",
+    "refresh": "curl -X POST http://localhost:8201/__refresh",
+    "serve": "NODE_OPTIONS='-r esm' gatsby serve --port 8201 --open",
+    "start": "yarn dev",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "wp-generate-schema-fragments": "NODE_OPTIONS='-r esm' node scripts/wp-generate-schema-fragments"
+  },
+  "dependencies": {
+    "@whitespace/gatsby-plugin-search": "^0.7.0-alpha.3",
+    "@whitespace/gatsby-theme-wordpress-basic": "^0.5.4",
+    "gatsby": "^3.4.2",
+    "gatsby-plugin-remove-serviceworker": "^1.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.26.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-react": "^7.23.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.3.0"
+  }
+}

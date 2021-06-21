@@ -4,5 +4,9 @@ import useSearchParams from "./useSearchParams";
 export default function useSearch() {
   let searchParamsContextValue = useSearchParams();
   let searchBackendContextValue = useSearchBackend();
-  return { ...searchParamsContextValue, ...searchBackendContextValue };
+  return {
+    features: [],
+    ...searchParamsContextValue,
+    ...searchBackendContextValue,
+  };
 }

@@ -1,7 +1,6 @@
 root: true
 plugins:
   - import
-  - jest
   - react
 extends:
   - eslint:recommended
@@ -28,7 +27,3 @@ rules:
         caseInsensitive: true
       newlines-between: always
   react/self-closing-comp: error
-overrides:
-  - files: "*.test.js"
-    extends:
-      - plugin:jest/recommended

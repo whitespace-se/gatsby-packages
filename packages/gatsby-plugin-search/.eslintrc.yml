@@ -1,6 +1,0 @@
-plugins:
-  - jest
-overrides:
-  - files: "*.test.js"
-    extends:
-      - plugin:jest/recommended

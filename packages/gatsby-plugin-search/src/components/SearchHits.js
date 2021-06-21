@@ -1,7 +1,12 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 import SearchHit from "./SearchHit";
 import * as styles from "./SearchHits.module.css";
+
+SearchHits.propTypes = {
+  hits: PropTypes.array.isRequired,
+};
 
 export default function SearchHits({ hits }) {
   return (

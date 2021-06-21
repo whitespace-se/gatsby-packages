@@ -1,0 +1,112 @@
+:root {
+  --spacing: 1rem;
+  --search-form-background: var(--form-search-background);
+  --search-form-surface: var(--form-search-surface);
+  --search-form-border: #dfe1e4;
+  --search-form-padding-default: var(--spacing);
+  --search-form-focus-border: 3px solid var(--color-active);
+  --search-form-submit-background-color: transparent;
+  --search-form-submit-hover-background-color: var(--color-divider);
+  --search-form-submit-color: var(--sidebar-icon);
+  --search-form-cancel-position-right: calc(var(--spacing) * 2.5);
+}
+
+.visuallyHidden {
+  width: 1px;
+  height: 1px;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  background: var(--search-form-background);
+  border-radius: 0.25rem;
+  border: 1px solid var(--search-form-border);
+  color: var(--search-form-surface);
+  padding-top: var(--search-form-padding-default);
+  padding-left: var(--search-form-padding-default);
+  padding-bottom: var(--search-form-padding-default);
+  padding-right: var(--search-form-padding-default);
+  font-family: inherit;
+  font-size: 100%;
+}
+
+.input:placeholder {
+  color: inherit;
+}
+
+.input::-webkit-search-cancel-button {
+  /* appearance: none;
+  position: relative;
+  background: url(../../static/icons/close-circle--filled.svg) no-repeat 50% 50%;
+  background-size: contain;
+  right: var(--search-form-cancel-position-right);
+  -webkit-appearance: none;
+  height: var(--spacing);
+  width: var(--spacing); */
+}
+
+.submit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  border: none;
+  background: none;
+  padding: calc(var(--spacing) * 0.125);
+}
+
+.submit div {
+  background: var(--search-form-submit-background-color);
+  color: var(--search-form-submit-color);
+  border: none;
+  border-radius: calc(var(--spacing) * 0.25);
+  padding: var(--spacing);
+  display: flex;
+  align-items: center;
+}
+
+.submit:focus {
+  padding: 0;
+}
+.submit:focus div {
+  border: var(--search-form-focus-border);
+  border-radius: calc(var(--spacing) * 0.25);
+}
+
+.submit:hover {
+  cursor: pointer;
+}
+
+.submit:hover div {
+  background: var(--search-form-submit-hover-background-color);
+}
+
+.formSidebar {
+  --spacing: 1rem;
+  --search-form-background: rgb(227, 230, 235, 0.5);
+  --search-form-surface: var(--form-search-surface);
+  --search-form-border: none;
+  --search-form-padding-default: calc(var(--spacing) * 0.5);
+  --search-form-focus-border: 3px solid var(--color-active);
+  --search-form-cancel-position-right: calc(var(--spacing) * 0.25);
+
+  padding: var(--spacing) 0;
+  position: relative;
+}
+
+.formSidebar .icon {
+  position: absolute;
+  left: calc(var(--spacing) * 0.75);
+  top: 50%;
+  transform: translate(0, -50%);
+  color: var(--sidebar-icon);
+}
+
+.formSidebar .input {
+  padding-left: calc(var(--spacing) * 2);
+}
