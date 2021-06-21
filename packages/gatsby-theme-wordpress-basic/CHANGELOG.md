@@ -1,15 +1,11 @@
 # Change Log
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 ### [0.8.3](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.8.2...@whitespace/gatsby-theme-wordpress-basic@0.8.3) (2021-06-21)
 
 **Note:** Version bump only for package @whitespace/gatsby-theme-wordpress-basic
-
-
-
-
 
 # Change Log
 
