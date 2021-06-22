@@ -1,5 +1,31 @@
 # Change Log
 
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [0.7.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.7.0-alpha.7...@whitespace/gatsby-plugin-search@0.7.0) (2021-06-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update all packages
+
+### Miscellaneous Chores
+
+* **deps:** update all packages ([d0efc38](https://github.com/whitespace-se/gatsby-packages/commit/d0efc3882d169b0ad9d0342ae9f94ea51e39e019))
+
+
+
+## [0.7.0-alpha.7](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.7.0-alpha.6...@whitespace/gatsby-plugin-search@0.7.0-alpha.7) (2021-06-22)
+
+**Note:** Version bump only for package @whitespace/gatsby-plugin-search
+
+
+
+
+
+# Change Log
+
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
