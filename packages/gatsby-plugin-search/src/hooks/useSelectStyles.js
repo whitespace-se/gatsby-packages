@@ -14,7 +14,8 @@ export default function useSelectStyles() {
             : "var(--select-field-color, #2A2E3B)",
         padding: "0.5rem 1rem",
         "&:hover": {
-          backgroundColor: "var(--select-field-hover-background-color, #000000)",
+          backgroundColor:
+            "var(--select-field-hover-background-color, #000000)",
           color: "var(--select-field-hover-color, #ffffff)",
         },
       };
@@ -75,7 +76,8 @@ export default function useSelectStyles() {
         ...provided,
         color: "var(--select-field-color)",
         "&:hover": {
-          backgroundColor: "var(--select-field-active-background-color, #000000)",
+          backgroundColor:
+            "var(--select-field-active-background-color, #000000)",
           color: "var(--select-field-active-color, #ffffff)",
           cursor: "pointer",
         },

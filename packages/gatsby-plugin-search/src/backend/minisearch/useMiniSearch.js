@@ -21,14 +21,13 @@ export default function useMiniSearch({
     facetValues[attribute] = uniq(documents.map(getAttribute(attribute)));
   });
 
-
   const validateDate = (value, item, key) => {
     let date = new Date(item);
     let formattedDate =
       key === "year" ? date.getFullYear() : date.getMonth() + 1;
 
     return value == formattedDate;
-  }
+  };
 
   const search = async (request) => {
     const {
@@ -44,7 +43,8 @@ export default function useMiniSearch({
       Object.entries(filterParams)
         .filter(
           ([, value]) =>
-            value !== "" &&  !(
+            value !== "" &&
+            !(
               Array.isArray(value) &&
               (value.length === 0 || value.includes("") || value.includes("0"))
             ),

@@ -23,9 +23,8 @@ export default function useDateValues(posts, type, condition) {
     if (Object.values(dateValues).indexOf(formattedDate) !== -1) return;
 
     if (format === "year") {
-      dateValues.year[
-        formattedDate.getFullYear()
-      ] = formattedDate.getFullYear();
+      dateValues.year[formattedDate.getFullYear()] =
+        formattedDate.getFullYear();
     } else {
       dateValues.month[`${formattedDate.getMonth() + 1}`] = t(
         `month${formattedDate.getMonth() + 1}Label`,
@@ -35,8 +34,8 @@ export default function useDateValues(posts, type, condition) {
 
   posts?.forEach(({ date }) => {
     if (Array.isArray(date)) {
-
-      date.filter((item) => {
+      date
+        .filter((item) => {
           return condition?.year
             ? condition?.year == new Date(item).getFullYear()
             : item;

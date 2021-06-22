@@ -2,8 +2,8 @@ import { useStaticQuery, graphql } from "gatsby";
 
 const useTaxonomies = () => {
   return useStaticQuery(graphql`
-  query FilterTaxonomies {
-    wp {
+    query FilterTaxonomies {
+      wp {
         tags {
           nodes {
             name

@@ -142,9 +142,9 @@ export default function SearchForm(props) {
                   options={month}
                 />
               )}
-          {(values.tags?.length > 0||
+            {(values.tags?.length > 0 ||
               values.year?.length > 0 ||
-              values.month?.length > 0)  && (
+              values.month?.length > 0) && (
               <button
                 className={styles.clearFilter}
                 onClick={() => {
@@ -183,12 +183,11 @@ export default function SearchForm(props) {
                 />
               </div>
             )}
-            {hits?.length > 0 &&
-              <div
-                className={styles.searchHitsLabel}
-              >{t(`searchHits`)}: <span>{hits.length}</span></div>
-
-            }
+            {hits?.length > 0 && (
+              <div className={styles.searchHitsLabel}>
+                {t(`searchHits`)}: <span>{hits.length}</span>
+              </div>
+            )}
           </div>
         </Form>
       )}

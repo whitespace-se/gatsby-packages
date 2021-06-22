@@ -9,10 +9,7 @@ SearchHits.propTypes = {
   hits: PropTypes.array.isRequired,
 };
 
-export default function SearchHits({
-  styles = defaultStyles,
-  hits
-}) {
+export default function SearchHits({ styles = defaultStyles, hits }) {
   return (
     <ul className={styles.wrapper}>
       {hits.map((hit, index) => (

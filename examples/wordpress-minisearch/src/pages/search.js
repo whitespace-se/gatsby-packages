@@ -28,28 +28,22 @@ const SearchPage = () => {
               .of(yup.string())
               .ensure()
               .when("contentType", (contentType, schema) =>
-                ["post"].includes(contentType)
-                  ? schema
-                  : schema.strip(),
-            ),
+                ["post"].includes(contentType) ? schema : schema.strip(),
+              ),
             year: yup
-            .array()
-            .of(yup.string())
-            .ensure()
-            .when("contentType", (contentType, schema) =>
-              ["post"].includes(contentType)
-                ? schema
-                : schema.strip(),
-            ),
-          month: yup
-            .array()
-            .of(yup.string())
-            .ensure()
-            .when("contentType", (contentType, schema) =>
-              ["post"].includes(contentType)
-                ? schema
-                : schema.strip(),
-            ),
+              .array()
+              .of(yup.string())
+              .ensure()
+              .when("contentType", (contentType, schema) =>
+                ["post"].includes(contentType) ? schema : schema.strip(),
+              ),
+            month: yup
+              .array()
+              .of(yup.string())
+              .ensure()
+              .when("contentType", (contentType, schema) =>
+                ["post"].includes(contentType) ? schema : schema.strip(),
+              ),
             sort: yup
               .string()
               .default("")

@@ -12,7 +12,8 @@
   }
 }
 
-.filterContainer, .sortContainer  {
+.filterContainer,
+.sortContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -28,7 +29,10 @@
 }
 
 .clearFilter {
-  background-color: var(--search-form-clear-filter-background-color, "transparent");
+  background-color: var(
+    --search-form-clear-filter-background-color,
+    "transparent"
+  );
   color: var(--search-form-clear-filter-color, "inherit");
   padding: var(--search-form-clear-filter-padding, 0);
   border: none;
@@ -52,8 +56,6 @@
     /* align-items: start; */
   }
 }
-
-
 
 .toggleButtonGroupWrapper {
   display: flex;
