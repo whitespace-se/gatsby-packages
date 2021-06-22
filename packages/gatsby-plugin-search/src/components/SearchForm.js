@@ -5,11 +5,12 @@ import { mapValues } from "lodash";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { useSearch, useSearchSettings } from "../hooks";
+import useFilterValues from "../backend/minisearch/useFilterValues";
+import { useSearch, useSearchSettings, useDateValues } from "../hooks";
 
 import * as styles from "./SearchForm.module.css";
 import SearchFormQueryField from "./SearchFormQueryField";
-// import SelectField from "./SelectField";
+import SelectField from "./SelectField";
 import ToggleButtonGroup from "./ToggleButtonGroup";
 
 function useFacetOptions(facets, showCounts) {
@@ -33,7 +34,7 @@ function useFacetOptions(facets, showCounts) {
 }
 
 export default function SearchForm(props) {
-  const { params, forcedParams, setParams, schema, facets, features } =
+  const { params, forcedParams, setParams, schema, facets, features, hits } =
     useSearch();
   const { t } = useTranslation();
   const {
@@ -50,6 +51,10 @@ export default function SearchForm(props) {
     features.includes("facetCounts"),
   );
 
+  const tags = useFilterValues("tags");
+  const year = useDateValues(hits, "year");
+  const month = useDateValues(hits, "month", params);
+
   return (
     <Formik
       initialValues={params}
@@ -60,11 +65,7 @@ export default function SearchForm(props) {
       }}
       {...props}
     >
-      {({
-        // setFieldValue,
-        submitForm,
-        values,
-      }) => (
+      {({ setFieldValue, submitForm, values }) => (
         <Form className={styles.form}>
           <SearchFormQueryField
             name="query"
@@ -95,45 +96,100 @@ export default function SearchForm(props) {
               </>
             )}
 
-          {/* {"tags" in values && (
-            <SelectField
-              name="tags"
-              isMulti={true}
-              value={values.tags}
-              onChange={(value) => {
-                setFieldValue("tags", value);
-                setTimeout(submitForm, 0);
-              }}
-              options={{
-                foo: "Foo",
-                bar: "Bar",
-                baz: "Baz",
-              }}
-            />
-          )} */}
-
-          {"sort" in values && (
-            <div className={styles.toggleButtonGroupWrapper}>
-              <div
-                id={generateID("sort-label")}
-                className={styles.toggleButtonGroupLabel}
-              >
-                {t(`sortOn`)}
-              </div>
-              <ToggleButtonGroup
-                aria-labelledby={generateID("sort-label")}
-                options={{
-                  "": t("relevance"),
-                  "publishDate:desc": t(`publishDate`),
-                }}
-                name="sort"
-                itemAppearance="link"
-                onMouseUp={() => {
+          <div className={styles.filterContainer}>
+            {"tags" in values && (
+              <SelectField
+                name="tags"
+                isMulti={true}
+                value={values.tags}
+                onChange={(value) => {
+                  setFieldValue("tags", value);
                   setTimeout(submitForm, 0);
                 }}
+                options={tags}
               />
-            </div>
-          )}
+            )}
+
+            {"year" in values && (
+              <SelectField
+                name="year"
+                isMulti={false}
+                placeholder={t("yearLabel")}
+                isSearchable={false}
+                value={values.year}
+                onChange={(value) => {
+                  setFieldValue("year", value);
+                  setFieldValue("month", 0);
+                  setTimeout(submitForm, 0);
+                }}
+                options={year}
+              />
+            )}
+
+            {"month" in values &&
+              values.year.length > 0 &&
+              !values.year.includes("0") && (
+                <SelectField
+                  name="month"
+                  isMulti={false}
+                  placeholder={t("monthLabel")}
+                  isSearchable={false}
+                  value={values.month}
+                  onChange={(value) => {
+                    setFieldValue("month", value);
+                    setTimeout(submitForm, 0);
+                  }}
+                  options={month}
+                />
+              )}
+          {(values.tags?.length > 0||
+              values.year?.length > 0 ||
+              values.month?.length > 0)  && (
+              <button
+                className={styles.clearFilter}
+                onClick={() => {
+                  if (values.contentType == "post") {
+                    setFieldValue("tags", []);
+                    setFieldValue("year", []);
+                    setFieldValue("month", []);
+                    setTimeout(submitForm, 0);
+                  }
+                }}
+              >
+                {t("clearFilterLabel")}
+              </button>
+            )}
+          </div>
+          <div className={styles.sortContainer}>
+            {"sort" in values && (
+              <div className={styles.toggleButtonGroupWrapper}>
+                <div
+                  id={generateID("sort-label")}
+                  className={styles.toggleButtonGroupLabel}
+                >
+                  {t(`sortOn`)}
+                </div>
+                <ToggleButtonGroup
+                  aria-labelledby={generateID("sort-label")}
+                  options={{
+                    "": t("relevance"),
+                    "publishDate:desc": t(`publishDate`),
+                  }}
+                  name="sort"
+                  itemAppearance="link"
+                  onMouseUp={() => {
+                    setTimeout(submitForm, 0);
+                  }}
+                />
+              </div>
+            )}
+            {hits?.length > 0 &&
+              <div
+                className={styles.searchHitsLabel}
+              >{t(`searchHits`)}: <span>{hits.length}</span></div>
+
+            }
+          </div>
         </Form>
       )}
     </Formik>

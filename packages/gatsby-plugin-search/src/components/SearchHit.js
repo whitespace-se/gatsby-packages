@@ -1,42 +1,59 @@
-import { H } from "@jfrk/react-heading-levels";
-import { Link } from "gatsby";
-import Img from "gatsby-image";
+import clsx from "clsx";
+import PropTypes from "prop-types";
 import React from "react";
 
-import * as styles from "./SearchHit.module.css";
+import * as defaultStyles from "./SearchHit.module.css";
 
-export default function SearchHit({ label, text, url, path, image }) {
+import {
+  SearchTeaser,
+  SearchTeaserContent,
+  SearchTeaserMedia,
+  SearchTeaserTitle,
+  SearchTeaserMeta,
+} from "./";
+
+SearchHit.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  image: PropTypes.objectOf([PropTypes.string, PropTypes.number]),
+  label: PropTypes.string,
+  styles: PropTypes.objectOf(PropTypes.string),
+  text: PropTypes.string,
+  url: PropTypes.string,
+  showImage: PropTypes.bool,
+  showExcerpt: PropTypes.bool,
+};
+
+export default function SearchHit({
+  className,
+  styles = defaultStyles,
+  label: title,
+  showImage = true,
+  showExcerpt = true,
+  text: excerpt,
+  url,
+  image,
+  ...restProps
+}) {
+
   return (
-    <li className={styles.wrapper}>
-      <div className="search-hit__content">
-        <H className={styles.label}>
-          {url ? <Link to={url}>{label}</Link> : label}
-        </H>
-        <p
-          className="search-hit__excerpt"
-          dangerouslySetInnerHTML={{ __html: text }}
-        />
-        {path && (
-          <div className="search-hit__breadcrumbs">
-            {path.map(({ url, label }, index) => (
-              <Link
-                key={index}
-                to={url}
-                dangerouslySetInnerHTML={{ __html: label }}
-              />
-            ))}
-          </div>
+    <SearchTeaser as="li" className={clsx(className, styles.teaser)}>
+      <SearchTeaserContent>
+        <SearchTeaserTitle link={{ url }} styles={styles}>
+          {title}
+        </SearchTeaserTitle>
+        {showExcerpt && excerpt && (
+          <p className={clsx(styles.excerpt)}>{excerpt}</p>
         )}
-      </div>
-      {image && (
-        <Img
-          fluid={{
+      </SearchTeaserContent>
+      {showImage && image && (
+        <SearchTeaserMedia
+          image={{
             ...image,
             aspectRatio: 155 / 80,
           }}
-          className="search-hit__image"
         />
       )}
-    </li>
+    </SearchTeaser>
   );
 }

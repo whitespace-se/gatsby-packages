@@ -21,6 +21,15 @@ export default function useMiniSearch({
     facetValues[attribute] = uniq(documents.map(getAttribute(attribute)));
   });
 
+
+  const validateDate = (value, item, key) => {
+    let date = new Date(item);
+    let formattedDate =
+      key === "year" ? date.getFullYear() : date.getMonth() + 1;
+
+    return value == formattedDate;
+  }
+
   const search = async (request) => {
     const {
       query,
@@ -35,9 +44,33 @@ export default function useMiniSearch({
       Object.entries(filterParams)
         .filter(
           ([, value]) =>
-            value !== "" && !(Array.isArray(value) && value.length === 0),
+            value !== "" &&  !(
+              Array.isArray(value) &&
+              (value.length === 0 || value.includes("") || value.includes("0"))
+            ),
         )
-        .every(([key, value]) => value == null || hit[key] === value);
+        .every(([key, value]) => {
+          switch (key) {
+            case "tags":
+              return hit[key]?.some(({ slug }) => value.includes(slug));
+            case "year":
+              return Array.isArray(hit["date"])
+                ? hit["date"].some((item) => validateDate(value[0], item, key))
+                : validateDate(value[0], hit["date"], key);
+            case "month":
+              return Array.isArray(hit["date"])
+                ? hit["date"]
+                    .filter((item) => {
+                      return (
+                        new Date(item).getFullYear() == filterParams.year[0]
+                      );
+                    })
+                    .some((item) => validateDate(value[0], item, key))
+                : validateDate(value[0], hit["date"], key);
+            default:
+              return value == null || hit[key] === value;
+          }
+        });
 
     const facets = {};
     attributesForFaceting.forEach((attribute) => {
