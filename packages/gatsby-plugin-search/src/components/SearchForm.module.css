@@ -37,13 +37,15 @@
   padding: var(--search-form-clear-filter-padding, 0);
   border: none;
   appearance: none;
-  text-decoration: var(--search-form-clear-filter-text-decoration, "underline");
+  text-decoration: var(--search-form-clear-filter-text-decoration, underline);
   font-weight: var(--search-form-clear-filter-font-weight 400);
   font-size: var(--search-form-clear-filter-font-size, 0.875rem);
 }
 
 .clearFilter:hover {
   cursor: pointer;
+  text-decoration: var(--search-form-clear-filter-hover-text-decoration, none);
+
 }
 
 @media screen and (max-width: 608px) {
@@ -72,8 +74,10 @@
 
 .searchHitsLabel {
   font-size: var(--search-form-label-font-size, 0.875rem);
+  color: var(--search-form-hits-label-color, #000000);
+
 }
 
 .searchHitsLabel span {
-  color: var(--search-form-hits-label-color, gray);
+  color: var(--search-form-hits-label-span-color, gray);
 }
