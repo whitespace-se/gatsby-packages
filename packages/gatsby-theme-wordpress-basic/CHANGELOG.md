@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.9.0...@whitespace/gatsby-theme-wordpress-basic@0.10.0) (2021-06-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update all packages
+
+### Features
+
+* add css vars for box nav links ([e682bea](https://github.com/whitespace-se/gatsby-packages/commit/e682bea717ef3b1657d43a362c05111ddc2c62f5))
+
+
+### Miscellaneous Chores
+
+* **deps:** update all packages ([d0efc38](https://github.com/whitespace-se/gatsby-packages/commit/d0efc3882d169b0ad9d0342ae9f94ea51e39e019))
+
+
+
 ## [0.9.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.8.3...@whitespace/gatsby-theme-wordpress-basic@0.9.0) (2021-06-22)
 
 
