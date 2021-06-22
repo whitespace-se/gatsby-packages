@@ -33,7 +33,10 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  right: var(--search-form-cancel-position-right, calc(var(--search-form-spacing, 1rem) * 2.5));
+  right: var(
+    --search-form-cancel-position-right,
+    calc(var(--search-form-spacing, 1rem) * 2.5)
+  );
   -webkit-appearance: none;
   height: var(--search-form-spacing, 1rem);
   width: var(--search-form-spacing, 1rem);
@@ -72,5 +75,5 @@
 }
 
 .submit:hover div {
-  background: var(--search-form-submit-hover-background-color,  #000000);
+  background: var(--search-form-submit-hover-background-color, #000000);
 }
