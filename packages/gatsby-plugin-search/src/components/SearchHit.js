@@ -35,7 +35,6 @@ export default function SearchHit({
   image,
   ...restProps
 }) {
-
   return (
     <SearchTeaser as="li" className={clsx(className, styles.teaser)}>
       <SearchTeaserContent>

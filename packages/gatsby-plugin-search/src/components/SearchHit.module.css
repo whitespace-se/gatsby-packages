@@ -19,13 +19,12 @@
   border-bottom: none;
 }
 
-
-.title, .titleLink {
+.title,
+.titleLink {
   font-size: var(--search-hit-title-size, 1.125rem);
   font-weight: var(--search-hit-title-weight, 400);
   margin-bottom: calc(var(--search-hit-spacing, 1rem) / 2);
 }
-
 
 .excerpt {
   display: -webkit-box;

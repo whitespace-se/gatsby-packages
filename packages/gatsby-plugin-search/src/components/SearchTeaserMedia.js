@@ -22,7 +22,7 @@ export default function SearchTeaserMedia({
   if (!image) {
     return null;
   } else {
-    delete image.databaseId
+    delete image.databaseId;
   }
   return (
     <Image

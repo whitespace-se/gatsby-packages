@@ -1,10 +1,10 @@
 import { useStaticQuery, graphql } from "gatsby";
 
 const useTaxonomies = () => {
-//   return useStaticQuery(graphql`
-//     query FilterTaxonomies {
-//     }
-//  `)
+  //   return useStaticQuery(graphql`
+  //     query FilterTaxonomies {
+  //     }
+  //  `)
 };
 
 export default function useFilterValues($taxonomy) {
