@@ -101,6 +101,7 @@ export default function SearchForm(props) {
               <SelectField
                 name="tags"
                 isMulti={true}
+                placeholder={t("tagsLabel")}
                 value={values.tags}
                 onChange={(value) => {
                   setFieldValue("tags", value);
