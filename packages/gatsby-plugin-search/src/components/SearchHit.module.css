@@ -1,5 +1,35 @@
-.wrapper {
+.teaser {
+  list-style: none;
+  background-color: var(--search-hit-background-color, #ffffff);
+  color: var(--search-hit-surface, #282a30);
+  font-size: var(--search-hit-default-size, 1rem);
+  border-bottom: 1px solid var(--search-hit-border-color, #dfe1e4);
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--search-hit-spacing, 1rem);
+  padding-bottom: var(--search-hit-spacing, 1rem);
+
+  @media screen and (min-width: 768px) {
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+.teaser:last-child {
+  border-bottom: none;
 }
 
-.label {
+
+.title, .titleLink {
+  font-size: var(--search-hit-title-size, 1.125rem);
+  font-weight: var(--search-hit-title-weight, 400);
+  margin-bottom: calc(var(--search-hit-spacing, 1rem) / 2);
+}
+
+
+.excerpt {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

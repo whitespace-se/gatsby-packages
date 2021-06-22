@@ -1,14 +1,15 @@
 :root {
-  --spacing: 1rem;
-  --search-form-background: var(--form-search-background);
-  --search-form-surface: var(--form-search-surface);
+  --search-form-background: #ffffff;
+  --search-form-surface: #000000;
   --search-form-border: #dfe1e4;
-  --search-form-padding-default: var(--spacing);
-  --search-form-focus-border: 3px solid var(--color-active);
+  --search-form-spacing: 1rem;
+  --search-form-padding-default: 1rem;
+  --search-form-focus-border: 3px solid #000000;
   --search-form-submit-background-color: transparent;
-  --search-form-submit-hover-background-color: var(--color-divider);
-  --search-form-submit-color: var(--sidebar-icon);
-  --search-form-cancel-position-right: calc(var(--spacing) * 2.5);
+  --search-form-submit-hover-background-color: #000000;
+  --search-form-submit-color: #ffffff;
+  --search-form-icon-color: #000000;
+  --search-form-cancel-position-right: calc(var(--search-form-spacing) * 2.5);
 }
 
 .visuallyHidden {
@@ -23,7 +24,7 @@
 .input {
   display: block;
   width: 100%;
-  background: var(--search-form-background);
+  background-color: var(--search-form-background);
   border-radius: 0.25rem;
   border: 1px solid var(--search-form-border);
   color: var(--search-form-surface);
@@ -46,8 +47,8 @@
   background-size: contain;
   right: var(--search-form-cancel-position-right);
   -webkit-appearance: none;
-  height: var(--spacing);
-  width: var(--spacing); */
+  height: var(--search-form-spacing);
+  width: var(--search-form-spacing); */
 }
 
 .submit {
@@ -57,15 +58,15 @@
   height: 100%;
   border: none;
   background: none;
-  padding: calc(var(--spacing) * 0.125);
+  padding: calc(var(--search-form-spacing) * 0.125);
 }
 
 .submit div {
   background: var(--search-form-submit-background-color);
   color: var(--search-form-submit-color);
   border: none;
-  border-radius: calc(var(--spacing) * 0.25);
-  padding: var(--spacing);
+  border-radius: calc(var(--search-form-spacing) * 0.25);
+  padding: var(--search-form-spacing);
   display: flex;
   align-items: center;
 }
@@ -75,7 +76,7 @@
 }
 .submit:focus div {
   border: var(--search-form-focus-border);
-  border-radius: calc(var(--spacing) * 0.25);
+  border-radius: calc(var(--search-form-spacing) * 0.25);
 }
 
 .submit:hover {
@@ -87,26 +88,26 @@
 }
 
 .formSidebar {
-  --spacing: 1rem;
+  --search-form-spacing: 1rem;
   --search-form-background: rgb(227, 230, 235, 0.5);
-  --search-form-surface: var(--form-search-surface);
+  --search-form-surface: #000000;
   --search-form-border: none;
-  --search-form-padding-default: calc(var(--spacing) * 0.5);
-  --search-form-focus-border: 3px solid var(--color-active);
-  --search-form-cancel-position-right: calc(var(--spacing) * 0.25);
+  --search-form-padding-default: calc(var(--search-form-spacing) * 0.5);
+  --search-form-focus-border: 3px solid #000000;
+  --search-form-cancel-position-right: calc(var(--search-form-spacing) * 0.25);
 
-  padding: var(--spacing) 0;
+  padding: var(--search-form-spacing) 0;
   position: relative;
 }
 
 .formSidebar .icon {
   position: absolute;
-  left: calc(var(--spacing) * 0.75);
+  left: calc(var(--search-form-spacing) * 0.75);
   top: 50%;
   transform: translate(0, -50%);
   color: var(--sidebar-icon);
 }
 
 .formSidebar .input {
-  padding-left: calc(var(--spacing) * 2);
+  padding-left: calc(var(--search-form-spacing) * 2);
 }

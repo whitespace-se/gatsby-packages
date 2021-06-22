@@ -2,4 +2,12 @@
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+  align-items: center;
+
+
+  --link-color: var(--toggle-button-group-label-color, #000000);
+  --link-current-color: var(--toggle-button-group-label-active-color, #000000);
+  --link-current-font-weight: var(--toggle-button-group-label-font-weight, 600);
 }
+
+

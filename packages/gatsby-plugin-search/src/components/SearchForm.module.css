@@ -1,23 +1,77 @@
 .form {
+  --search-form-spacing: 1rem;
+
   display: grid;
-  gap: var(--gap);
-  margin-top: var(--spacing);
-  margin-bottom: var(--spacing);
+  gap: var(--search-form-spacing);
+  margin-top: var(--search-form-spacing);
+  margin-bottom: var(--search-form-spacing);
   position: relative;
 
   @media screen and (min-width: 768px) {
-    --gap: calc(var(--spacing) * 1.5);
+    --search-form-spacing: 1.25rem;
   }
 }
+
+.filterContainer, .sortContainer  {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--search-form-spacing);
+}
+
+.filterContainer > div {
+  min-width: 30%;
+}
+
+.sortContainer {
+  justify-content: space-between;
+}
+
+.clearFilter {
+  background-color: var(--search-form-clear-filter-background-color, "transparent");
+  color: var(--search-form-clear-filter-color, "inherit");
+  padding: var(--search-form-clear-filter-padding, 0);
+  border: none;
+  appearance: none;
+  text-decoration: var(--search-form-clear-filter-text-decoration, "underline");
+  font-weight: var(--search-form-clear-filter-font-weight 400);
+  font-size: var(--search-form-clear-filter-font-size, 0.875rem);
+}
+
+.clearFilter:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 608px) {
+  .clearFilter {
+    text-align: left;
+  }
+
+  .filterContainer {
+    flex-direction: column;
+    /* align-items: start; */
+  }
+}
+
+
 
 .toggleButtonGroupWrapper {
   display: flex;
   gap: 0.5rem;
+  align-items: center;
 }
 
 .toggleButtonGroupLabel {
-  font-size: 0.875rem;
+  font-size: var(--search-form-label-font-size, 0.875rem);
 }
 .toggleButtonGroupLabel:after {
   content: ":";
+}
+
+.searchHitsLabel {
+  font-size: var(--search-form-label-font-size, 0.875rem);
+}
+
+.searchHitsLabel span {
+  color: var(--search-form-hits-label-color, gray);
 }

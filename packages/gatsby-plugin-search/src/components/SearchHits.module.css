@@ -1,4 +1,10 @@
 .wrapper {
   list-style: none;
   padding-left: 0;
+  list-style: none;
+  margin: 0;
+  display: grid;
+  align-content: start;
+
+  --focus-outset: calc((var(--search-hit-gap, 2rem) - var(--search-hit-rule-width, 1px)) / 2);
 }
