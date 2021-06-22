@@ -1,5 +1,19 @@
 # Change Log
 
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [0.9.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.8.3...@whitespace/gatsby-theme-wordpress-basic@0.9.0) (2021-06-22)
+
+
+### Features
+
+* add css vars for article preamble ([437c4b0](https://github.com/whitespace-se/gatsby-packages/commit/437c4b00b13d784ae694305239596681416695e9))
+
+
+
+# Change Log
+
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
