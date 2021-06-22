@@ -61,6 +61,21 @@
   padding-bottom: 0.25rem;
   padding-left: 0.5rem;
 
+  --button-color: var(--box-navigation-link-color, #000c);
+  --button-background: var(--box-navigation-link-background, #e0f2fe);
+
+  --button-hover-color: var(--box-navigation-link-hover-color, #000c);
+  --button-hover-background: var(
+    --box-navigation-link-hover-background,
+    #bae6fd
+  );
+
+  --button-current-color: var(--box-navigation-link-current-color, #fff);
+  --button-current-background: var(
+    --box-navigation-link-current-background,
+    #0284c7
+  );
+
   @media (min-width: 48rem) {
     font-size: 1rem;
     padding-top: 0.5rem;
