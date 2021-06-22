@@ -1,17 +1,3 @@
-:root {
-  --search-form-background: #ffffff;
-  --search-form-surface: #000000;
-  --search-form-border: #dfe1e4;
-  --search-form-spacing: 1rem;
-  --search-form-padding-default: 1rem;
-  --search-form-focus-border: 3px solid #000000;
-  --search-form-submit-background-color: transparent;
-  --search-form-submit-hover-background-color: #000000;
-  --search-form-submit-color: #ffffff;
-  --search-form-icon-color: #000000;
-  --search-form-cancel-position-right: calc(var(--search-form-spacing) * 2.5);
-}
-
 .visuallyHidden {
   width: 1px;
   height: 1px;
@@ -24,14 +10,14 @@
 .input {
   display: block;
   width: 100%;
-  background-color: var(--search-form-background);
+  background-color: var(--search-form-background, #ffffff);
   border-radius: 0.25rem;
-  border: 1px solid var(--search-form-border);
-  color: var(--search-form-surface);
-  padding-top: var(--search-form-padding-default);
-  padding-left: var(--search-form-padding-default);
-  padding-bottom: var(--search-form-padding-default);
-  padding-right: var(--search-form-padding-default);
+  border: 1px solid var(--search-form-border, #dfe1e4);
+  color: var(--search-form-surface, #000000);
+  padding-top: var(--search-form-padding-default, 1rem);
+  padding-left: var(--search-form-padding-default, 1rem);
+  padding-bottom: var(--search-form-padding-default, 1rem);
+  padding-right: var(--search-form-padding-default, 1rem);
   font-family: inherit;
   font-size: 100%;
 }
@@ -41,14 +27,16 @@
 }
 
 .input::-webkit-search-cancel-button {
-  /* appearance: none;
+  appearance: none;
   position: relative;
-  background: url(../../static/icons/close-circle--filled.svg) no-repeat 50% 50%;
+  background: var(--search-form-cancel-background);
   background-size: contain;
-  right: var(--search-form-cancel-position-right);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  right: var(--search-form-cancel-position-right, calc(var(--search-form-spacing, 1rem) * 2.5));
   -webkit-appearance: none;
-  height: var(--search-form-spacing);
-  width: var(--search-form-spacing); */
+  height: var(--search-form-spacing, 1rem);
+  width: var(--search-form-spacing, 1rem);
 }
 
 .submit {
@@ -58,15 +46,15 @@
   height: 100%;
   border: none;
   background: none;
-  padding: calc(var(--search-form-spacing) * 0.125);
+  padding: calc(var(--search-form-spacing, 1rem) * 0.125);
 }
 
 .submit div {
-  background: var(--search-form-submit-background-color);
-  color: var(--search-form-submit-color);
+  background: var(--search-form-submit-background-color, transparent);
+  color: var(--search-form-submit-color, #ffffff);
   border: none;
-  border-radius: calc(var(--search-form-spacing) * 0.25);
-  padding: var(--search-form-spacing);
+  border-radius: calc(var(--search-form-spacing, 1rem) * 0.25);
+  padding: var(--search-form-spacing, 1rem);
   display: flex;
   align-items: center;
 }
@@ -75,8 +63,8 @@
   padding: 0;
 }
 .submit:focus div {
-  border: var(--search-form-focus-border);
-  border-radius: calc(var(--search-form-spacing) * 0.25);
+  border: var(--search-form-focus-border, 3px solid #000000);
+  border-radius: calc(var(--search-form-spacing, 1rem) * 0.25);
 }
 
 .submit:hover {
@@ -84,5 +72,5 @@
 }
 
 .submit:hover div {
-  background: var(--search-form-submit-hover-background-color);
+  background: var(--search-form-submit-hover-background-color,  #000000);
 }
