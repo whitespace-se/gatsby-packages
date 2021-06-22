@@ -7,7 +7,7 @@ function htmlToText(html) {
 function defaultContentNodeFields(source) {
   return {
     id: source.id,
-    url: source.url,
+    url: source.uri,
     contentType: source.contentType.node.name,
     label: source.title,
     date: source.dateGmt,
