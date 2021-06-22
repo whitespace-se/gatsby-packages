@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.7.0...@whitespace/gatsby-plugin-search@0.8.0) (2021-06-22)
+
+
+### Features
+
+* add classname props to search form ([3192b43](https://github.com/whitespace-se/gatsby-packages/commit/3192b43250ac0198ef89e0510bacb1e3faffa971))
+
+
+### Bug Fixes
+
+* adapt styling to new method of adding variables ([53fc38d](https://github.com/whitespace-se/gatsby-packages/commit/53fc38dabe80a9020b5b2889b89614fa964b8869))
+* add more precise variables ([ff1346f](https://github.com/whitespace-se/gatsby-packages/commit/ff1346fb21aad3bf14cc7958c97bb09fda7360ac))
+* add placeholder for tags filter ([a59ec85](https://github.com/whitespace-se/gatsby-packages/commit/a59ec85283ee6e919475de3b182e15aa3de0fbb7))
+* update search settings translatable strings ([87eb01e](https://github.com/whitespace-se/gatsby-packages/commit/87eb01eadfc3b2ab88b3da56ae4213b098512f26))
+
+
+
 ## [0.7.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.7.0-alpha.7...@whitespace/gatsby-plugin-search@0.7.0) (2021-06-22)
 
 
