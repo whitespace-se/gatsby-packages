@@ -45,7 +45,6 @@
 .clearFilter:hover {
   cursor: pointer;
   text-decoration: var(--search-form-clear-filter-hover-text-decoration, none);
-
 }
 
 @media screen and (max-width: 608px) {
@@ -75,7 +74,6 @@
 .searchHitsLabel {
   font-size: var(--search-form-label-font-size, 0.875rem);
   color: var(--search-form-hits-label-color, #000000);
-
 }
 
 .searchHitsLabel span {
