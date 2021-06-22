@@ -87,27 +87,3 @@
   background: var(--search-form-submit-hover-background-color);
 }
 
-.formSidebar {
-  --search-form-spacing: 1rem;
-  --search-form-background: rgb(227, 230, 235, 0.5);
-  --search-form-surface: #000000;
-  --search-form-border: none;
-  --search-form-padding-default: calc(var(--search-form-spacing) * 0.5);
-  --search-form-focus-border: 3px solid #000000;
-  --search-form-cancel-position-right: calc(var(--search-form-spacing) * 0.25);
-
-  padding: var(--search-form-spacing) 0;
-  position: relative;
-}
-
-.formSidebar .icon {
-  position: absolute;
-  left: calc(var(--search-form-spacing) * 0.75);
-  top: 50%;
-  transform: translate(0, -50%);
-  color: var(--sidebar-icon);
-}
-
-.formSidebar .input {
-  padding-left: calc(var(--search-form-spacing) * 2);
-}
