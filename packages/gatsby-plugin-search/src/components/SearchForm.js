@@ -1,5 +1,6 @@
 import { useID } from "@whitespace/components";
 import { visuallyHidden } from "@whitespace/components/dist/utils/styles.module.css";
+import clsx from "clsx";
 import { Formik, Form } from "formik";
 import { mapValues } from "lodash";
 import React, { useMemo } from "react";
@@ -33,7 +34,7 @@ function useFacetOptions(facets, showCounts) {
   );
 }
 
-export default function SearchForm(props) {
+export default function SearchForm({className, ...props}) {
   const { params, forcedParams, setParams, schema, facets, features, hits } =
     useSearch();
   const { t } = useTranslation();
@@ -66,7 +67,7 @@ export default function SearchForm(props) {
       {...props}
     >
       {({ setFieldValue, submitForm, values }) => (
-        <Form className={styles.form}>
+        <Form className={clsx(styles.form, className)}>
           <SearchFormQueryField
             name="query"
             value={values.query}
