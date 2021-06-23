@@ -1,8 +1,8 @@
 .form {
   display: grid;
   gap: var(--search-form-spacing, 1rem);
-  margin-top: var(--search-form-spacing);
-  margin-bottom: var(--search-form-spacing);
+  margin-top: var(--search-form-spacing, 1rem);
+  margin-bottom: var(--search-form-spacing, 1rem);
   position: relative;
 }
 
@@ -11,11 +11,16 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: var(--search-form-spacing);
+  gap: var(--search-form-spacing, 1rem);
 }
 
 .filterContainer > div:not(.filterMulti) {
   min-width: 20%;
+}
+
+
+.filterMulti {
+  min-width: 40%;
 }
 
 .sortContainer {
