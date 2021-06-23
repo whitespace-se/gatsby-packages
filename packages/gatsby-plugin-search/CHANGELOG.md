@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.8.1](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.8.0...@whitespace/gatsby-plugin-search@0.8.1) (2021-06-23)
+
+
+### Bug Fixes
+
+* add new variable to view search hits total ([46f63d6](https://github.com/whitespace-se/gatsby-packages/commit/46f63d695fb9dd76e1d88402ea72671508c0b1b6))
+* better styling for multi filter ([a3c740f](https://github.com/whitespace-se/gatsby-packages/commit/a3c740f7a7f2820d2642facb77f793238eeda81a))
+* remove predetermined spacing variables ([ec75720](https://github.com/whitespace-se/gatsby-packages/commit/ec75720cd3ef7c0a3f2ecc46a0158129794fc7b6))
+* replace border bottom on hits with border-top ([31be7ff](https://github.com/whitespace-se/gatsby-packages/commit/31be7ffd02f6e3ef6cdfa8c5fb7faa5d43db1e9a))
+
+
+
 ## [0.8.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.7.0...@whitespace/gatsby-plugin-search@0.8.0) (2021-06-22)
 
 
