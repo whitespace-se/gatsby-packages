@@ -34,7 +34,7 @@ function useFacetOptions(facets, showCounts) {
   );
 }
 
-export default function SearchForm({ className, ...props }) {
+export default function SearchForm({ className, showHitsTotal = true, ...props }) {
   const { params, forcedParams, setParams, schema, facets, features, hits } =
     useSearch();
   const { t } = useTranslation();
@@ -186,7 +186,7 @@ export default function SearchForm({ className, ...props }) {
                 />
               </div>
             )}
-            {hits?.length > 0 && (
+            {showHitsTotal && hits?.length > 0 && (
               <div className={styles.searchHitsLabel}>
                 {t(`searchHits`)}: <span>{hits.length}</span>
               </div>
