@@ -100,6 +100,7 @@ export default function SearchForm({ className, ...props }) {
           <div className={styles.filterContainer}>
             {"tags" in values && (
               <SelectField
+                className={styles.filterMulti}
                 name="tags"
                 isMulti={true}
                 placeholder={t("tagsLabel")}

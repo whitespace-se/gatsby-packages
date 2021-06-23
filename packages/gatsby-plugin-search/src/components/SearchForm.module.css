@@ -14,8 +14,8 @@
   gap: var(--search-form-spacing);
 }
 
-.filterContainer > div {
-  min-width: 30%;
+.filterContainer > div:not(.filterMulti) {
+  min-width: 20%;
 }
 
 .sortContainer {
