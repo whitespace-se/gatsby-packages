@@ -1,15 +1,9 @@
 .form {
-  --search-form-spacing: 1rem;
-
   display: grid;
-  gap: var(--search-form-spacing);
+  gap: var(--search-form-spacing, 1rem);
   margin-top: var(--search-form-spacing);
   margin-bottom: var(--search-form-spacing);
   position: relative;
-
-  @media screen and (min-width: 768px) {
-    --search-form-spacing: 1.25rem;
-  }
 }
 
 .filterContainer,
