@@ -1,6 +1,6 @@
 {
   "name": "@whitespace/gatsby-theme-wordpress-basic",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "Whitespace’s basic Gatsby theme for Wordpress",
   "license": "MIT",
   "files": [
@@ -18,8 +18,8 @@
     "@jfrk/react-id": "^1.0.0",
     "@whitespace/components": "^0.11.0",
     "@whitespace/gatsby-hooks": "^0.4.5",
-    "@whitespace/gatsby-plugin-i18next": "^0.2.0",
-    "@whitespace/gatsby-plugin-page-wrapper": "^0.2.0",
+    "@whitespace/gatsby-plugin-i18next": "^0.2.1",
+    "@whitespace/gatsby-plugin-page-wrapper": "^0.2.1",
     "apollo-boost": "^0.4.9",
     "apollo-cache-inmemory": "^1.6.6",
     "clsx": "^1.1.1",

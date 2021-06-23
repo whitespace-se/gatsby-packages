@@ -34,7 +34,7 @@ function useFacetOptions(facets, showCounts) {
   );
 }
 
-export default function SearchForm({className, ...props}) {
+export default function SearchForm({ className, ...props }) {
   const { params, forcedParams, setParams, schema, facets, features, hits } =
     useSearch();
   const { t } = useTranslation();
