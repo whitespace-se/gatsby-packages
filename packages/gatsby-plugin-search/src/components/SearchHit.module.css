@@ -3,7 +3,7 @@
   background-color: var(--search-hit-background-color, #ffffff);
   color: var(--search-hit-surface, #282a30);
   font-size: var(--search-hit-default-size, 1rem);
-  border-bottom: 1px solid var(--search-hit-border-color, #dfe1e4);
+  border-top: 1px solid var(--search-hit-border-color, #dfe1e4);
   display: flex;
   flex-direction: column;
   padding-top: var(--search-hit-spacing, 1rem);
@@ -14,9 +14,6 @@
     justify-content: space-between;
     flex-direction: row;
   }
-}
-.teaser:last-child {
-  border-bottom: none;
 }
 
 .title,
