@@ -17,7 +17,7 @@
     "@jfrk/react-heading-levels": "^1.0.0",
     "@jfrk/react-id": "^1.0.0",
     "@whitespace/components": "^0.11.0",
-    "@whitespace/gatsby-hooks": "^0.4.5",
+    "@whitespace/gatsby-hooks": "^0.5.0",
     "@whitespace/gatsby-plugin-i18next": "^0.2.3",
     "@whitespace/gatsby-plugin-page-wrapper": "^0.2.3",
     "apollo-boost": "^0.4.9",
@@ -50,7 +50,7 @@
     "react-spinners": "^0.11.0",
     "rehype-dom-parse": "^3.0.0",
     "rehype-parse": "^7.0.1",
-    "rehype-react": "^6.2.0",
+    "rehype-react": "^6.2.1",
     "sass": "^1.35.1",
     "tagged-template-noop": "^2.1.1",
     "toml": "^3.0.0",
@@ -59,7 +59,7 @@
     "use-ssr": "^1.0.24"
   },
   "peerDependencies": {
-    "gatsby": "^3.8.0",
+    "gatsby": "^3.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
@@ -68,8 +68,8 @@
     "eslint": "^7.29.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-react": "^7.24.0",
-    "gatsby": "^3.8.0",
-    "prettier": "^2.3.1",
+    "gatsby": "^3.8.1",
+    "prettier": "^2.3.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }

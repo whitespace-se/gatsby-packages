@@ -15,7 +15,7 @@
   "dependencies": {
     "@whitespace/gatsby-plugin-search": "0.8.2",
     "formik": "^2.2.9",
-    "gatsby": "^3.8.0",
+    "gatsby": "^3.8.1",
     "gatsby-plugin-postcss": "^4.8.0",
     "gatsby-plugin-sass": "^4.8.0",
     "gatsby-source-filesystem": "^3.8.0",
