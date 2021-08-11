@@ -40,7 +40,7 @@ export default function useSearchDocuments() {
           source.childContactsYaml.title,
           source.childContactsYaml.city,
           source.childContactsYaml.phone,
-          source.childContactsYaml.email
+          source.childContactsYaml.email,
         ],
         contentType: "contact",
         name: source.childContactsYaml.name,

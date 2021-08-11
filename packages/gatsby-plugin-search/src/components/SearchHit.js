@@ -57,8 +57,6 @@ export function SearchHit({
   );
 }
 
-
-
 SearchHitContact.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
@@ -84,7 +82,15 @@ export function SearchHitContact({
   ...restProps
 }) {
   return (
-    <SearchTeaser as="address" className={clsx(className, styles.teaser, styles.teaserContact, showImage && image && styles.teaserContactWImage)}>
+    <SearchTeaser
+      as="address"
+      className={clsx(
+        className,
+        styles.teaser,
+        styles.teaserContact,
+        showImage && image && styles.teaserContactWImage,
+      )}
+    >
       {showImage && image && (
         <SearchTeaserMedia
           styles={styles}
