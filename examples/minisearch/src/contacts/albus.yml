@@ -1,4 +1,6 @@
-fullName: "Albus Dumbledor"
-position: "Headmaster"
+name: "Albus Dumbledor"
+title: "Headmaster"
 phone: "+46(0)70 123 45 67"
 mail: "albus.dumbledor@example.com"
+city: "Diagon Alley"
+thumbnail: "https://www.fillmurray.com/640/360"

@@ -5163,6 +5163,21 @@
   optionalDependencies:
     gatsby "^3.3.0"
 
+"@whitespace/gatsby-hooks@^0.4.5":
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-hooks/-/gatsby-hooks-0.4.5.tgz#00173f3219c4652158b67dd83ec2aa700a7f1b7b"
+  integrity sha512-0968BJlLGnnESlSJppLD2Y9VoK+mHpnV4EhwRgS6xuYCbLneiSMhpICGChtzTflPZbSCJk7hpmhxN6tl/d04NQ==
+  dependencies:
+    axios "^0.21.1"
+    classnames "^2.2.6"
+    immer "^9.0.1"
+    lodash "^4.17.21"
+    path-to-regexp "^6.2.0"
+    prop-types "^15.7.2"
+    query-string "^7.0.0"
+    use-persisted-state "^0.3.3"
+    use-ssr "^1.0.24"
+
 "@whitespace/gatsby-hooks@^0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@whitespace/gatsby-hooks/-/gatsby-hooks-0.5.0.tgz#8ddd93b049b2af8260aa84e711e08dd9504829a2"
@@ -5177,6 +5192,18 @@
     query-string "^7.0.0"
     use-persisted-state "^0.3.3"
     use-ssr "^1.0.24"
+
+"@whitespace/gatsby-plugin-search@0.8.2":
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-search/-/gatsby-plugin-search-0.8.2.tgz#90b9a0b92252372a41ea5fd002f8b5206b59fb13"
+  integrity sha512-r5xuvhLVXpphxTAbD0qPRFEcJJ9xzIVmmtRY304OnSR6vpr3UfVVmcQ8yl5hc3+qxzcav1DF8oa5DMndGJ/SmQ==
+  dependencies:
+    "@jfrk/react-heading-levels" "^1.0.0"
+    "@whitespace/gatsby-hooks" "^0.4.5"
+    immer "^9.0.3"
+    lodash-es "^4.17.21"
+    minisearch "^3.0.2"
+    react-select "^4.3.1"
 
 "@wry/context@^0.4.0":
   version "0.4.4"
@@ -15235,7 +15262,7 @@ minipass@^3.0.0, minipass@^3.1.1:
   dependencies:
     yallist "^4.0.0"
 
-minisearch@^3.0.4:
+minisearch@^3.0.2, minisearch@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/minisearch/-/minisearch-3.0.4.tgz#a676ca6c6c38230e26ef32eb6ff0c8067b4780eb"
   integrity sha512-Pppssxzghr+hQ9HVNMUqNiIWaBrXXhwEZTeCUOK7GIWtZEHM+hTBlypaqP/uXnSrye9y4CNv6Ex9e7pH+wATxA==
