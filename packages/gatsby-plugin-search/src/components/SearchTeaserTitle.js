@@ -4,7 +4,7 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
 
-import { useComponentContext } from "../contexts/componentContext";
+import { useComponentContext } from "@whitespace/gatsby-plugin-search/src/contexts/componentContext";
 
 SearchTeaserTitle.propTypes = {
   children: PropTypes.node,
@@ -22,11 +22,15 @@ export default function SearchTeaserTitle({
 }) {
   let { styles: defaultStyles = {} } = useComponentContext("teaser");
   styles = styles ?? defaultStyles;
-  return (
+  return link?.url ? (
     <H className={clsx(styles.title, className)} {...restProps}>
       <CoverLink className={styles.titleLink} {...link}>
         {children}
       </CoverLink>
+    </H>
+  ) : (
+    <H className={clsx(styles.title, className)} {...restProps}>
+      {children}
     </H>
   );
 }
