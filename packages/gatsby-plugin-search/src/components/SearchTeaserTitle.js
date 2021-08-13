@@ -21,15 +21,11 @@ export default function SearchTeaserTitle({
 }) {
   let { styles: defaultStyles = {} } = useComponentContext("teaser");
   styles = styles ?? defaultStyles;
-  return link?.url ? (
+  return(
     <H className={clsx(styles.title, className)} {...restProps}>
       <CoverLink className={styles.titleLink} {...link}>
         {children}
       </CoverLink>
     </H>
-  ) : (
-    <H className={clsx(styles.title, className)} {...restProps}>
-      {children}
-    </H>
-  );
+  )
 }
