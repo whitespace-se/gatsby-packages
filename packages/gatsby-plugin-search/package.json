@@ -15,31 +15,31 @@
   "dependencies": {
     "@jfrk/react-heading-levels": "^1.0.0",
     "@whitespace/gatsby-hooks": "^0.5.0",
-    "immer": "^9.0.3",
+    "immer": "^9.0.5",
     "lodash-es": "^4.17.21",
     "minisearch": "^3.0.4",
     "react-select": "^4.3.1"
   },
   "peerDependencies": {
-    "@whitespace/components": "^0.11.0",
+    "@whitespace/components": "^0.11.1",
     "gatsby": "^3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-i18next": "^11.11.0"
+    "react-i18next": "^11.11.4"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^6.3.1",
-    "@storybook/builder-webpack5": "^6.3.1",
-    "@storybook/react": "^6.3.1",
-    "@whitespace/components": "^0.11.0",
+    "@storybook/addon-essentials": "^6.3.7",
+    "@storybook/builder-webpack5": "^6.3.7",
+    "@storybook/react": "^6.3.7",
+    "@whitespace/components": "^0.11.1",
     "babel-loader": "^8.2.2",
-    "css-loader": "^5.2.6",
-    "esbuild": "^0.12.12",
-    "eslint-plugin-jest": "^24.3.6",
+    "css-loader": "^6.2.0",
+    "esbuild": "^0.12.20",
+    "eslint-plugin-jest": "^24.4.0",
     "gatsby": "^3",
-    "gatsby-image": "^3.8.0",
+    "gatsby-image": "^3.11.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "style-loader": "^3.0.0"
+    "style-loader": "^3.2.1"
   }
 }
