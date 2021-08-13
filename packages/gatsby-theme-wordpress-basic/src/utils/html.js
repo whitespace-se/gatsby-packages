@@ -4,8 +4,8 @@ import memoize from "lodash/memoize";
 import React from "react";
 import rehype2react from "rehype-react";
 import { unified } from "unified";
-import visit from "unist-util-visit";
-import visitWithParents from "unist-util-visit-parents";
+import { visit } from "unist-util-visit";
+import { visitParents } from "unist-util-visit-parents";
 
 import { Image } from "../components";
 
@@ -201,12 +201,12 @@ export default function createHTMLProcessor({ rehypeParse: parse }) {
 
     let preambleTree = null,
       contentTree = tree;
-    visitWithParents(
+    visitParents(
       tree,
       { type: "comment", value: "more" },
       (node, ancestors) => {
         [preambleTree, contentTree] = splitTree()([...ancestors, node]);
-        return visitWithParents.EXIT;
+        return visitParents.EXIT;
       },
     );
 
