@@ -21,7 +21,7 @@
     "react-select": "^4.3.1"
   },
   "peerDependencies": {
-    "@whitespace/components": "^0.11.0",
+    "@whitespace/components": "^0.11.1",
     "gatsby": "^3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -31,7 +31,7 @@
     "@storybook/addon-essentials": "^6.3.1",
     "@storybook/builder-webpack5": "^6.3.1",
     "@storybook/react": "^6.3.1",
-    "@whitespace/components": "^0.11.0",
+    "@whitespace/components": "^0.11.1",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.6",
     "esbuild": "^0.12.12",
