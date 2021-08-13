@@ -12,7 +12,6 @@ import {
   SearchTeaserMeta,
 } from "./";
 
-
 SearchHitContact.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
