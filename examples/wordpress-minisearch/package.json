@@ -19,8 +19,8 @@
     "wp-generate-schema-fragments": "NODE_OPTIONS='-r esm' node scripts/wp-generate-schema-fragments"
   },
   "dependencies": {
-    "@whitespace/gatsby-plugin-search": "^0.8.3",
-    "@whitespace/gatsby-theme-wordpress-basic": "^0.10.4",
+    "@whitespace/gatsby-plugin-search": "^0.8.4",
+    "@whitespace/gatsby-theme-wordpress-basic": "^0.10.5",
     "gatsby": "^3.11.1",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "react": "^17.0.2",
