@@ -1,9 +1,9 @@
 import { Link } from "@whitespace/components";
-import hastToString from "hast-util-to-string";
+import { toString } from "hast-util-to-string";
 import memoize from "lodash/memoize";
 import React from "react";
 import rehype2react from "rehype-react";
-import unified from "unified";
+import { unified } from "unified";
 import visit from "unist-util-visit";
 import visitWithParents from "unist-util-visit-parents";
 
@@ -248,7 +248,7 @@ export default function createHTMLProcessor({ rehypeParse: parse }) {
     const tree = unified().use(parse, { fragment: true }).parse(string);
 
     if (allowedElements.length === 0) {
-      return hastToString(tree);
+      return toString(tree);
     }
 
     tree.children = tree.children.flatMap(convertToText);
