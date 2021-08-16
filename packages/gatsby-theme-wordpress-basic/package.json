@@ -55,6 +55,9 @@
     "tagged-template-noop": "^2.1.1",
     "toml": "^3.0.0",
     "traverse": "^0.6.6",
+    "unified": "^10.1.0",
+    "unist-util-visit": "^4.0.0",
+    "unist-util-visit-parents": "^5.0.0",
     "url-polyfill": "^1.1.12",
     "use-ssr": "^1.0.24"
   },
