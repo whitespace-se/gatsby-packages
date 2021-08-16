@@ -1,4 +1,4 @@
-import { SearchHit } from "./SearchHit";
+import SearchHit from "./SearchHit";
 
 const Template = SearchHit;
 
@@ -14,23 +14,6 @@ function srcSet(ratio, url) {
     })
     .join(",\n");
 }
-
-export const Contact = Template.bind({});
-Contact.args = {
-  type: "Contact",
-  name: "Lina Marklund",
-  position: "Sektionschef",
-  department: {
-    name: "Avdelning/Enhet/Sektion",
-    city: "Trelleborg",
-  },
-  email: "lina.marklund@riksarkivet.se",
-  telephone: "010-4768084",
-  address: "Arkivgatan 9",
-  postal: "411 34",
-  city: "Göteborg",
-  image: {},
-};
 
 export const Content = Template.bind({});
 Content.args = {

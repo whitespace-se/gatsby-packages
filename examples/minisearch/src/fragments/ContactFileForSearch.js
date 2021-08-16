@@ -6,10 +6,12 @@ export const query = graphql`
     relativePath
     modifiedTime
     childContactsYaml {
-      fullName
-      position
+      name
+      title
+      city
       phone
       mail
+      thumbnail
     }
   }
 `;

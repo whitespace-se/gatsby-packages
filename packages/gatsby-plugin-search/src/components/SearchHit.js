@@ -9,13 +9,14 @@ import {
   SearchTeaserContent,
   SearchTeaserMedia,
   SearchTeaserTitle,
-  SearchTeaserMeta,
 } from "./";
 
 SearchHit.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  image: PropTypes.objectOf([PropTypes.string, PropTypes.number]),
+  image: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  ),
   label: PropTypes.string,
   styles: PropTypes.objectOf(PropTypes.string),
   text: PropTypes.string,

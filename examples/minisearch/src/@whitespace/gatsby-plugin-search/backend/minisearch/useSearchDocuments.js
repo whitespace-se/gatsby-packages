@@ -34,9 +34,24 @@ export default function useSearchDocuments() {
     data.contacts.nodes.map((source) => {
       return {
         id: source.id,
-        label: source.childContactsYaml.fullName,
-        text: [source.childContactsYaml.fullName],
+        label: source.childContactsYaml.name,
+        text: [
+          source.childContactsYaml.name,
+          source.childContactsYaml.title,
+          source.childContactsYaml.city,
+          source.childContactsYaml.phone,
+          source.childContactsYaml.email,
+        ],
         contentType: "contact",
+        name: source.childContactsYaml.name,
+        title: source.childContactsYaml.title,
+        city: source.childContactsYaml.city,
+        phone: source.childContactsYaml.phone,
+        email: source.childContactsYaml.mail,
+        image: source.childContactsYaml.thumbnail && {
+          src: source.childContactsYaml.thumbnail,
+          alt: source.childContactsYaml.name,
+        },
       };
     }),
   ];

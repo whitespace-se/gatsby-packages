@@ -1,10 +1,9 @@
 import { H } from "@jfrk/react-heading-levels";
 import { CoverLink } from "@whitespace/components";
+import { useComponentContext } from "@whitespace/gatsby-plugin-search/src/contexts/componentContext";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
-
-import { useComponentContext } from "../contexts/componentContext";
 
 SearchTeaserTitle.propTypes = {
   children: PropTypes.node,
