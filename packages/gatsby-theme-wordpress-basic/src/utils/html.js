@@ -1,11 +1,11 @@
 import { Link } from "@whitespace/components";
-import hastToString from "hast-util-to-string";
+import { toString } from "hast-util-to-string";
 import memoize from "lodash/memoize";
 import React from "react";
 import rehype2react from "rehype-react";
-import unified from "unified";
-import visit from "unist-util-visit";
-import visitWithParents from "unist-util-visit-parents";
+import { unified } from "unified";
+import { visit } from "unist-util-visit";
+import { visitParents } from "unist-util-visit-parents";
 
 import { Image } from "../components";
 
@@ -201,12 +201,12 @@ export default function createHTMLProcessor({ rehypeParse: parse }) {
 
     let preambleTree = null,
       contentTree = tree;
-    visitWithParents(
+    visitParents(
       tree,
       { type: "comment", value: "more" },
       (node, ancestors) => {
         [preambleTree, contentTree] = splitTree()([...ancestors, node]);
-        return visitWithParents.EXIT;
+        return visitParents.EXIT;
       },
     );
 
@@ -248,7 +248,7 @@ export default function createHTMLProcessor({ rehypeParse: parse }) {
     const tree = unified().use(parse, { fragment: true }).parse(string);
 
     if (allowedElements.length === 0) {
-      return hastToString(tree);
+      return toString(tree);
     }
 
     tree.children = tree.children.flatMap(convertToText);

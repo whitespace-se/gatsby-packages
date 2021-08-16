@@ -10,7 +10,7 @@ figure.component {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: var(--image-caption-font-size, 0.75rem);
+  font-size: var(--image-caption-font-size, 0.75rem);
   margin-top: var(--image-caption-margin-top, 0.25rem);
   gap: var(--image-caption-gap, 1rem);
   color: var(--image-caption-color, #333);
@@ -19,7 +19,7 @@ figure.component {
 @media (min-width: 40rem) {
   .caption {
     flex-direction: row;
-    gap: var(--image-caption-font-size-lg, 0.875rem);
+    font-size: var(--image-caption-font-size-lg, 0.875rem);
   }
 }
 
