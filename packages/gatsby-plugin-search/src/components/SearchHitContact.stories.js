@@ -18,9 +18,9 @@ function srcSet(ratio, url) {
 export const Contact = Template.bind({});
 Contact.args = {
   type: "Contact",
-  name: "Lina Marklund",
+  name: "John Doe",
   title: "Sektionschef",
-  email: "lina.marklund@riksarkivet.se",
+  email: "John.doe@riksarkivet.se",
   phone: "010-8909213",
   city: "Göteborg",
   image: {},
