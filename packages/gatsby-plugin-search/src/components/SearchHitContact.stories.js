@@ -21,7 +21,7 @@ Contact.args = {
   name: "Lina Marklund",
   title: "Sektionschef",
   email: "lina.marklund@riksarkivet.se",
-  phone: "010-4768084",
+  phone: "010-8909213",
   city: "Göteborg",
   image: {},
 };
