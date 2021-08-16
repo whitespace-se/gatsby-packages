@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.10.5...@whitespace/gatsby-theme-wordpress-basic@0.11.0) (2021-08-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* image caption font size typo
+
+### Bug Fixes
+
+* error after updates ([83c98f4](https://github.com/whitespace-se/gatsby-packages/commit/83c98f4ba50b4ba908fa74eea8c81edf50ff9b81))
+* image caption font size typo ([43fcf83](https://github.com/whitespace-se/gatsby-packages/commit/43fcf8380396abd454f26c13bd6120844f94287f))
+
+
+
 ### [0.10.5](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.10.4...@whitespace/gatsby-theme-wordpress-basic@0.10.5) (2021-08-13)
 
 

@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.8.4...@whitespace/gatsby-plugin-search@0.9.0) (2021-08-16)
+
+
+### Features
+
+* update style and display of contact information ([3a68aec](https://github.com/whitespace-se/gatsby-packages/commit/3a68aec19dadab487ff74f01e1ea5e8cd1fb7ba5))
+
+
+### Bug Fixes
+
+* remove added "fix" for titles without links ([0688e4e](https://github.com/whitespace-se/gatsby-packages/commit/0688e4ecd1d6bc12d15dd088fb7316a0d8fec794))
+* separate search hit contact and search hit ([2d43f11](https://github.com/whitespace-se/gatsby-packages/commit/2d43f11f1fe3494a66aded947e6d472f605d8cf9))
+* **deps:** allow override of Link props in CoverLink ([a5c0237](https://github.com/whitespace-se/gatsby-packages/commit/a5c0237847cd9453edbc3a14fde713c0f998ede4))
+* add support for titles without links ([ef5a65f](https://github.com/whitespace-se/gatsby-packages/commit/ef5a65f2778ae9c5f48ff43eb719572ca3737b56))
+
+
+
 ### [0.8.4](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.8.3...@whitespace/gatsby-plugin-search@0.8.4) (2021-08-13)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-search
