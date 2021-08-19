@@ -35,7 +35,7 @@ export default function MinisearchSearchBackendProvider({
   let documents = normalizeDocuments(useSearchDocuments());
 
   let {
-    params: { sort = "score:desc", page, hitsPerPage = "20", ...otherParams },
+    params: { sort = "score:desc", page, hitsPerPage = 20, ...otherParams },
   } = useSearchParams();
 
   let [sortBy, sortOrder = "asc"] = sort.split(":");
@@ -44,7 +44,7 @@ export default function MinisearchSearchBackendProvider({
     ...otherParams,
     sortBy,
     sortOrder,
-    from: page * hitsPerPage,
+    from: ((page || 1) - 1) * hitsPerPage,
     size: hitsPerPage,
   };
 
@@ -70,6 +70,9 @@ export default function MinisearchSearchBackendProvider({
       isPending,
       error,
       isError: !!error,
+      page,
+      hitsPerPage,
+      totalPages: result && Math.ceil(result.totalHits / hitsPerPage),
     }),
     [JSON.stringify(result), isPending, error],
   );
