@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.12.1](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.12.0...@whitespace/gatsby-theme-wordpress-basic@0.12.1) (2021-08-20)
+
+
+### Bug Fixes
+
+* error on missing featured image on archive page ([1f86864](https://github.com/whitespace-se/gatsby-packages/commit/1f8686457009596290e312ace26ad81f705e8fac))
+
+
+
 ## [0.12.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.11.0...@whitespace/gatsby-theme-wordpress-basic@0.12.0) (2021-08-20)
 
 
