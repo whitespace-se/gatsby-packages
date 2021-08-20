@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.9.0...@whitespace/gatsby-plugin-search@0.10.0) (2021-08-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* implement archive pages
+
+### Features
+
+* implement archive pages ([e5240c7](https://github.com/whitespace-se/gatsby-packages/commit/e5240c73aa75db91cccba76ef8dee6c39f2c9b5b))
+
+
+
 ## [0.9.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.8.4...@whitespace/gatsby-plugin-search@0.9.0) (2021-08-16)
 
 

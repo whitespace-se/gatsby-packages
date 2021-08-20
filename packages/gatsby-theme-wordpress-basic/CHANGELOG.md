@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.11.0...@whitespace/gatsby-theme-wordpress-basic@0.12.0) (2021-08-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* implement archive pages
+
+### Features
+
+* implement archive pages ([e5240c7](https://github.com/whitespace-se/gatsby-packages/commit/e5240c73aa75db91cccba76ef8dee6c39f2c9b5b))
+
+
+### Bug Fixes
+
+* **deps:** add missing deps ([eb0dce3](https://github.com/whitespace-se/gatsby-packages/commit/eb0dce3054d1c10d1b2240a9175a148536d368d7))
+
+
+
 ## [0.11.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.10.5...@whitespace/gatsby-theme-wordpress-basic@0.11.0) (2021-08-16)
 
 
