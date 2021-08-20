@@ -2,6 +2,7 @@ import { Pagination } from "@whitespace/components";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import useSearch from "../hooks/useSearch";
 
@@ -17,6 +18,7 @@ export default function SearchPagination({
   styles = defaultStyles,
   ...restProps
 }) {
+  const { t } = useTranslation();
   const { page, totalPages, toURL } = useSearch();
   return (
     <Pagination
@@ -25,6 +27,7 @@ export default function SearchPagination({
       buttonUrl={(page) => toURL({ page: page + 1 })}
       page={(page || 1) - 1}
       totalPages={totalPages}
+      t={t}
     />
   );
 }
