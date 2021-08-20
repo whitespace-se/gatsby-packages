@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.10.1](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.10.0...@whitespace/gatsby-plugin-search@0.10.1) (2021-08-20)
+
+
+### Bug Fixes
+
+* allow translation of pagination button labels ([47b44e5](https://github.com/whitespace-se/gatsby-packages/commit/47b44e59776edc9c1289665fe31a4be65c07b0e1))
+
+
+
 ## [0.10.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.9.0...@whitespace/gatsby-plugin-search@0.10.0) (2021-08-20)
 
 
