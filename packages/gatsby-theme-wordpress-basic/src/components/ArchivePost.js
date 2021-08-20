@@ -17,9 +17,7 @@ function normalizeCategories(categories) {
 
 export default function ArchivePost({ post, date }) {
   const { processContent } = useHTMLProcessor();
-  const {
-    featuredImage: { node: image },
-  } = post;
+  const image = post.featuredImage?.node;
   let categories = post.categories && normalizeCategories(post.categories);
   return (
     <li className="c-archive__result">
