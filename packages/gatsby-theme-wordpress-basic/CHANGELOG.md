@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.12.2](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.12.1...@whitespace/gatsby-theme-wordpress-basic@0.12.2) (2021-08-20)
+
+
+### Bug Fixes
+
+* accept `uri` in search document source ([9730daf](https://github.com/whitespace-se/gatsby-packages/commit/9730daf81bc70811c589694181cc1f8e5d1733c4))
+
+
+
 ### [0.12.1](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.12.0...@whitespace/gatsby-theme-wordpress-basic@0.12.1) (2021-08-20)
 
 
