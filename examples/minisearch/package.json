@@ -13,7 +13,7 @@
     "clean": "NODE_OPTIONS='-r esm' gatsby clean"
   },
   "dependencies": {
-    "@whitespace/gatsby-plugin-search": "0.10.0",
+    "@whitespace/gatsby-plugin-search": "0.10.1",
     "formik": "^2.2.9",
     "gatsby": "^3.12.0",
     "gatsby-plugin-postcss": "^4.12.0",
