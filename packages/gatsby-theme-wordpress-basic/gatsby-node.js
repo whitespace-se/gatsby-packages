@@ -36,7 +36,11 @@ export async function createPages(params, pluginOptions) {
               labels {
                 singularName
                 name
+                menuName
+                archives
               }
+              hasArchive
+              uri
             }
           }
         }

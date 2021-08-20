@@ -8,6 +8,10 @@ search:
       any: All content
       page: Pages
       post: Posts
+    year:
+      any: Any year
+    month:
+      any: Any month
 managedBy: Sidansvarig
 sortOn: Sort by
 month1Label: January

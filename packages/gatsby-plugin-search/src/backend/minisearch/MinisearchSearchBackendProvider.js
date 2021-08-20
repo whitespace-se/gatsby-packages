@@ -15,6 +15,8 @@ function extractKeys(objects) {
 
 const isNotEmpty = negate(isEmpty);
 
+const features = ["facetCounts", "facets", "pagination", "query"];
+
 function normalizeDocuments(documents) {
   return flattenDeep(documents)
     .filter(isNotEmpty)
@@ -73,8 +75,9 @@ export default function MinisearchSearchBackendProvider({
       page,
       hitsPerPage,
       totalPages: result && Math.ceil(result.totalHits / hitsPerPage),
+      features,
     }),
-    [JSON.stringify(result), isPending, error],
+    [JSON.stringify(result), page, hitsPerPage, isPending, error],
   );
 
   return (

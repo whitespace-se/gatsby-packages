@@ -1,14 +1,31 @@
 import parseDate from "date-fns/parse";
 import capitalize from "lodash/capitalize";
+import kebabCase from "lodash/kebabCase";
+
+export function makeUri(...candidates) {
+  return candidates
+    .map((candidate) =>
+      candidate
+        ? ("/" + candidate).replace(/\/([^/]*)/g, (match, str) =>
+            str.length > 0 ? "/" + kebabCase(str) : "",
+          )
+        : "",
+    )
+    .find((candidate) => candidate.length > 0);
+}
 
 export function getMainArchivePagePathFromPageContext({
-  postTypeInfo: { uri },
+  contentType: {
+    uri,
+    labels: { menuName },
+  },
 }) {
+  uri = makeUri(uri, menuName);
   return uri;
 }
 
 export function getMainArchivePageLabelFromPageContext({
-  postTypeInfo: {
+  contentType: {
     labels: { menuName },
   },
 }) {
@@ -16,7 +33,7 @@ export function getMainArchivePageLabelFromPageContext({
 }
 
 export function getMainArchivePageTitleFromPageContext({
-  postTypeInfo: {
+  contentType: {
     labels: { archives },
   },
 }) {
@@ -25,7 +42,7 @@ export function getMainArchivePageTitleFromPageContext({
 
 export function getYearArchivePageTitleFromPageContext({
   year,
-  postTypeInfo: {
+  contentType: {
     labels: { archives },
   },
 }) {
@@ -42,8 +59,12 @@ export function getYearArchivePageLabelFromPageContext({ year, month }) {
 export function getYearArchivePagePathFromPageContext({
   year,
   month,
-  postTypeInfo: { uri },
+  contentType: {
+    uri,
+    labels: { menuName },
+  },
 }) {
+  uri = makeUri(uri, menuName);
   if (year == null && month != null) {
     year = month.substring(0, 4);
   }
@@ -52,7 +73,7 @@ export function getYearArchivePagePathFromPageContext({
 
 export function getMonthArchivePageTitleFromPageContext({
   month,
-  postTypeInfo: {
+  contentType: {
     labels: { archives },
   },
 }) {
@@ -74,11 +95,21 @@ export function getMonthArchivePageLabelFromPageContext({ month }) {
 
 export function getMonthArchivePagePathFromPageContext({
   month,
-  postTypeInfo: { uri },
+  contentType: {
+    uri,
+    labels: { menuName },
+  },
 }) {
+  uri = makeUri(uri, menuName);
   return `${uri}/${month}`;
 }
 
-export function getArchiveURLPatternFromPageContext({ postTypeInfo: { uri } }) {
+export function getArchiveURLPatternFromPageContext({
+  contentType: {
+    uri,
+    labels: { menuName },
+  },
+}) {
+  uri = makeUri(uri, menuName);
   return `${uri}/:year(\\d+)?/:month(\\d+)?`;
 }

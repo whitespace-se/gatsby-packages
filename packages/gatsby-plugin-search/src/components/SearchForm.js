@@ -1,36 +1,42 @@
 import { useID } from "@whitespace/components";
 import { visuallyHidden } from "@whitespace/components/dist/utils/styles.module.css";
 import clsx from "clsx";
+import formatDate from "date-fns/format";
+import parseDate from "date-fns/parse";
 import { Formik, Form } from "formik";
 import { mapValues } from "lodash";
+import { sortBy } from "lodash-es";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import useFilterValues from "../backend/minisearch/useFilterValues";
-import { useSearch, useSearchSettings, useDateValues } from "../hooks";
+import { useSearch, useSearchSettings } from "../hooks";
 
 import * as styles from "./SearchForm.module.css";
 import SearchFormQueryField from "./SearchFormQueryField";
 import SelectField from "./SelectField";
 import ToggleButtonGroup from "./ToggleButtonGroup";
 
-function useFacetOptions(facets, showCounts) {
-  const { t } = useTranslation();
+function useFacetOptions(
+  counts,
+  { showCounts, label = (value) => value, anyLabel = () => "Any" },
+) {
   return useMemo(
     () =>
-      mapValues(facets || {}, (counts, facet) => ({
-        "": showCounts
-          ? `${t(`search.facetLabels.${facet}.any`)} (${Object.values(
-              counts,
-            ).reduce((sum, count) => sum + count, 0)})`
-          : t(`search.facetLabels.${facet}.any`),
-        ...mapValues(counts, (count, value) =>
-          showCounts
-            ? `${t(`search.facetLabels.${facet}.${value}`)} (${count})`
-            : t(`search.facetLabels.${facet}.${value}`),
-        ),
-      })),
-    [JSON.stringify(facets)],
+      counts
+        ? {
+            "": showCounts
+              ? `${anyLabel()} (${Object.values(counts).reduce(
+                  (sum, count) => sum + count,
+                  0,
+                )})`
+              : anyLabel(),
+            ...mapValues(counts, (count, value) =>
+              showCounts ? `${label(value)} (${count})` : label(value),
+            ),
+          }
+        : null,
+    [JSON.stringify(counts)],
   );
 }
 
@@ -39,8 +45,16 @@ export default function SearchForm({
   showHitsTotal = true,
   ...props
 }) {
-  const { params, forcedParams, setParams, schema, facets, features, hits } =
-    useSearch();
+  const {
+    params,
+    forcedParams,
+    urlParams,
+    setParams,
+    schema,
+    facets,
+    features,
+    hits,
+  } = useSearch();
   const { t } = useTranslation();
   const {
     emptySearchResultMessage,
@@ -51,14 +65,13 @@ export default function SearchForm({
 
   const generateID = useID();
 
-  const facetOptions = useFacetOptions(
-    facets,
-    features.includes("facetCounts"),
-  );
+  const contentTypeOptions = useFacetOptions(facets && facets.contentType, {
+    showCounts: features.includes("facetCounts"),
+    label: (value) => t(`search.facetLabels.contentType.${value}`),
+    anyLabel: () => t(`search.facetLabels.contentType.any`),
+  });
 
   const tags = useFilterValues("tags");
-  const year = useDateValues(hits, "year");
-  const month = useDateValues(hits, "month", params);
 
   return (
     <Formik
@@ -66,23 +79,25 @@ export default function SearchForm({
       enableReinitialize={true}
       validationSchema={schema}
       onSubmit={async (values) => {
-        setParams(values);
+        setParams({ ...values, page: null });
       }}
       {...props}
     >
-      {({ setFieldValue, submitForm, values }) => (
+      {({ setFieldValue, setValues, submitForm, values }) => (
         <Form className={clsx(styles.form, className)}>
-          <SearchFormQueryField
-            name="query"
-            value={values.query}
-            label={searchLabelText}
-            placeholder={searchPlaceholderText}
-            submitLabel={searchButtonText}
-          />
+          {"query" in values && (
+            <SearchFormQueryField
+              name="query"
+              value={values.query}
+              label={searchLabelText}
+              placeholder={searchPlaceholderText}
+              submitLabel={searchButtonText}
+            />
+          )}
 
           {"contentType" in values &&
             !(forcedParams && "contentType" in forcedParams) &&
-            !!facetOptions?.contentType && (
+            !!contentTypeOptions && (
               <>
                 <div
                   id={generateID("content-type-label")}
@@ -92,7 +107,7 @@ export default function SearchForm({
                 </div>
                 <ToggleButtonGroup
                   aria-labelledby={generateID("content-type-label")}
-                  options={facetOptions.contentType}
+                  options={contentTypeOptions}
                   name="contentType"
                   onMouseUp={() => {
                     setTimeout(submitForm, 0);
@@ -117,7 +132,7 @@ export default function SearchForm({
               />
             )}
 
-            {"year" in values && (
+            {"year" in values && !!(facets && facets.year) && (
               <SelectField
                 name="year"
                 isMulti={false}
@@ -126,41 +141,58 @@ export default function SearchForm({
                 value={values.year}
                 onChange={(value) => {
                   setFieldValue("year", value);
-                  setFieldValue("month", 0);
+                  setFieldValue("month", value ? "" : undefined);
                   setTimeout(submitForm, 0);
                 }}
-                options={year}
+                options={[
+                  { value: "", label: t(`search.facetLabels.year.any`) },
+                  ...Object.entries(facets.year)
+                    .filter(([, count]) => count > 0)
+                    .map(([value]) => ({
+                      label: value,
+                      value,
+                    })),
+                ]}
               />
             )}
 
-            {"month" in values &&
-              values.year.length > 0 &&
-              !values.year.includes("0") && (
-                <SelectField
-                  name="month"
-                  isMulti={false}
-                  placeholder={t("monthLabel")}
-                  isSearchable={false}
-                  value={values.month}
-                  onChange={(value) => {
-                    setFieldValue("month", value);
-                    setTimeout(submitForm, 0);
-                  }}
-                  options={month}
-                />
-              )}
-            {(values.tags?.length > 0 ||
-              values.year?.length > 0 ||
-              values.month?.length > 0) && (
+            {"month" in values && !!(facets && facets.month) && (
+              <SelectField
+                name="month"
+                isMulti={false}
+                placeholder={t("monthLabel")}
+                isSearchable={false}
+                value={values.month}
+                onChange={(value) => {
+                  setFieldValue("month", value);
+                  setTimeout(submitForm, 0);
+                }}
+                options={[
+                  { value: "", label: t(`search.facetLabels.month.any`) },
+                  ...sortBy(
+                    Object.entries(facets.month)
+                      .filter(
+                        ([value, count]) =>
+                          count > 0 && value.startsWith(values.year),
+                      )
+                      .map(([value]) => ({
+                        label: formatDate(
+                          parseDate(value, "yyyy-MM", new Date()),
+                          "MMMM",
+                        ),
+                        value: value,
+                      })),
+                    "value",
+                  ),
+                ]}
+              />
+            )}
+            {Object.values(urlParams).length > 0 && (
               <button
                 className={styles.clearFilter}
                 onClick={() => {
-                  if (values.contentType == "post") {
-                    setFieldValue("tags", []);
-                    setFieldValue("year", []);
-                    setFieldValue("month", []);
-                    setTimeout(submitForm, 0);
-                  }
+                  setValues({});
+                  setTimeout(submitForm, 0);
                 }}
               >
                 {t("clearFilterLabel")}

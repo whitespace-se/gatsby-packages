@@ -1,21 +1,23 @@
-// import formatDate from "date-fns/format";
-// import omit from "lodash/omit";
-// import snakeCase from "lodash/snakeCase";
-
+import formatDate from "date-fns/format";
+import omit from "lodash/omit";
 import prettierGraphQLParser from "prettier/parser-graphql";
 import { format } from "prettier/standalone";
 
-// import { getMainArchivePagePathFromPageContext, getYearArchivePagePathFromPageContext, getMonthArchivePagePathFromPageContext } from "./contentType";
+import {
+  getMainArchivePagePathFromPageContext,
+  getYearArchivePagePathFromPageContext,
+  getMonthArchivePagePathFromPageContext,
+} from "./contentType";
 
-// const MainArchivePageTemplate = require.resolve(
-//   "../src/templates/MainArchivePageTemplate",
-// );
-// const YearArchivePageTemplate = require.resolve(
-//   "../src/templates/YearArchivePageTemplate",
-// );
-// const MonthArchivePageTemplate = require.resolve(
-//   "../src/templates/MonthArchivePageTemplate",
-// );
+const MainArchivePageTemplate = require.resolve(
+  "./templates/MainArchiveTemplate",
+);
+const YearArchivePageTemplate = require.resolve(
+  "./templates/YearArchiveTemplate",
+);
+const MonthArchivePageTemplate = require.resolve(
+  "./templates/MonthArchiveTemplate",
+);
 
 const SingleTemplate = require.resolve("./templates/SingleTemplate");
 
@@ -28,13 +30,10 @@ function formatGraphQL(code) {
 
 export default ({ contentType, query }) =>
   async ({ actions, graphql, reporter }) => {
-    // const contentTypeEnum = snakeCase(
-    //   contentTypeName[2] || contentTypeName[0],
-    // ).toUpperCase();
     const allContentNodes = [];
-    // const allContentNodesByYear = {};
-    // const allContentNodesByMonth = {};
-    // let archivePageContext;
+    const allContentNodesByYear = {};
+    const allContentNodesByMonth = {};
+    let archivePageContext;
 
     let pageNumber = 0;
     let pageCount = 0;
@@ -65,43 +64,43 @@ export default ({ contentType, query }) =>
               contentNodes: {
                 nodes,
                 pageInfo: { hasNextPage, endCursor },
-                // contentTypeInfo,
               },
             },
           } = data;
 
-          // if (contentTypeInfo.hasArchive && pageNumber === 0) {
-          //   archivePageContext = {
-          //     contentTypeInfo,
-          //   };
-          // }
+          if (contentType.hasArchive && pageNumber === 0) {
+            archivePageContext = {
+              contentType,
+            };
+          }
 
           nodes.forEach((node) => {
             allContentNodes.push(node);
-            // if (contentTypeInfo.hasArchive) {
-            //   const years = [
-            //     ...new Set(
-            //       node.archiveDates.map((archiveDate) =>
-            //         formatDate(new Date(archiveDate), "yyyy"),
-            //       ),
-            //     ),
-            //   ];
-            //   years.forEach((year) => {
-            //     allContentNodesByYear[year] = allContentNodesByYear[year] || [];
-            //     allContentNodesByYear[year].push(node);
-            //   });
-            //   const months = [
-            //     ...new Set(
-            //       node.archiveDates.map((archiveDate) =>
-            //         formatDate(new Date(archiveDate), "yyyy/MM"),
-            //       ),
-            //     ),
-            //   ];
-            //   months.forEach((month) => {
-            //     allContentNodesByMonth[month] = allContentNodesByMonth[month] || [];
-            //     allContentNodesByMonth[month].push(node);
-            //   });
-            // }
+            if (contentType.hasArchive) {
+              const years = [
+                ...new Set(
+                  node.archiveDates.map((archiveDate) =>
+                    formatDate(new Date(archiveDate), "yyyy"),
+                  ),
+                ),
+              ];
+              years.forEach((year) => {
+                allContentNodesByYear[year] = allContentNodesByYear[year] || [];
+                allContentNodesByYear[year].push(node);
+              });
+              const months = [
+                ...new Set(
+                  node.archiveDates.map((archiveDate) =>
+                    formatDate(new Date(archiveDate), "yyyy/MM"),
+                  ),
+                ),
+              ];
+              months.forEach((month) => {
+                allContentNodesByMonth[month] =
+                  allContentNodesByMonth[month] || [];
+                allContentNodesByMonth[month].push(node);
+              });
+            }
           });
 
           if (hasNextPage) {
@@ -147,97 +146,102 @@ ${JSON.stringify({ ...commonVariables, ...variables }, null, 2)}`,
       );
     });
 
-    // if (archivePageContext) {
-    //   let path = getMainArchivePagePathFromPageContext(archivePageContext);
-    //   let component = MainArchivePageTemplate;
-    //   let years = Object.entries(allContentNodesByYear).map(([year, posts]) => ({
-    //     year,
-    //     postCount: posts.length,
-    //     url: getYearArchivePagePathFromPageContext({
-    //       year,
-    //       ...archivePageContext,
-    //     }),
-    //     months: Object.entries(allContentNodesByMonth)
-    //       .filter(([month]) => month.startsWith(year))
-    //       .map(([month, posts]) => ({
-    //         month,
-    //         postCount: posts.length,
-    //         url: getMonthArchivePagePathFromPageContext({
-    //           month,
-    //           ...archivePageContext,
-    //         }),
-    //       })),
-    //   }));
+    if (archivePageContext) {
+      let path = getMainArchivePagePathFromPageContext(archivePageContext);
+      let component = MainArchivePageTemplate;
+      let years = Object.entries(allContentNodesByYear).map(
+        ([year, posts]) => ({
+          year,
+          postCount: posts.length,
+          url: getYearArchivePagePathFromPageContext({
+            year,
+            ...archivePageContext,
+          }),
+          months: Object.entries(allContentNodesByMonth)
+            .filter(([month]) => month.startsWith(year))
+            .map(([month, posts]) => ({
+              month,
+              postCount: posts.length,
+              url: getMonthArchivePagePathFromPageContext({
+                month,
+                ...archivePageContext,
+              }),
+            })),
+        }),
+      );
 
-    //   createPage({
-    //     path,
-    //     component,
-    //     context: {
-    //       ...archivePageContext,
-    //       years,
-    //       postCount: allContentNodes.length,
-    //     },
-    //   });
-    //   pageCount++;
+      createPage({
+        path,
+        component,
+        context: {
+          ...archivePageContext,
+          years,
+          postCount: allContentNodes.length,
+        },
+      });
+      pageCount++;
 
-    //   reporter.info(`main archive page created for ${contentTypeName[1]}: ${path}`);
-    // }
+      reporter.info(
+        `main archive page created for ${contentType.labels.singularName}: ${path}`,
+      );
+    }
 
-    // Object.entries(allContentNodesByYear).map(([year, posts]) => {
-    //   let path = getYearArchivePagePathFromPageContext({
-    //     year,
-    //     ...archivePageContext,
-    //   });
-    //   let component = YearArchivePageTemplate;
-    //   let months = Object.entries(allContentNodesByMonth).map(([month, posts]) => ({
-    //     month,
-    //     postCount: posts.length,
-    //     url: getMonthArchivePagePathFromPageContext({
-    //       month,
-    //       ...archivePageContext,
-    //     }),
-    //   }));
+    Object.entries(allContentNodesByYear).map(([year, posts]) => {
+      let path = getYearArchivePagePathFromPageContext({
+        year,
+        ...archivePageContext,
+      });
+      let component = YearArchivePageTemplate;
+      let months = Object.entries(allContentNodesByMonth).map(
+        ([month, posts]) => ({
+          month,
+          postCount: posts.length,
+          url: getMonthArchivePagePathFromPageContext({
+            month,
+            ...archivePageContext,
+          }),
+        }),
+      );
 
-    //   createPage({
-    //     path,
-    //     component,
-    //     context: {
-    //       ...archivePageContext,
-    //       year,
-    //       months,
-    //       postCount: posts.length,
-    //     },
-    //   });
-    //   pageCount++;
+      createPage({
+        path,
+        component,
+        context: {
+          ...archivePageContext,
+          year,
+          months,
+          postCount: posts.length,
+        },
+      });
+      pageCount++;
 
-    //   reporter.info(
-    //     `year archive page created for ${contentTypeName[1]} ${year}: ${path}`,
-    //   );
-    // });
+      reporter.info(
+        `year archive page created for ${contentType.labels.singularName} ${year}: ${path}`,
+      );
+    });
 
-    // Object.entries(allContentNodesByMonth).map(([month, posts]) => {
-    //   let path = getMonthArchivePagePathFromPageContext({
-    //     month,
-    //     ...archivePageContext,
-    //   });
-    //   let component = MonthArchivePageTemplate;
+    Object.entries(allContentNodesByMonth).map(([month, posts]) => {
+      let path = getMonthArchivePagePathFromPageContext({
+        month,
+        ...archivePageContext,
+      });
+      let component = MonthArchivePageTemplate;
 
-    //   createPage({
-    //     path,
-    //     component,
-    //     context: {
-    //       ...archivePageContext,
-    //       month,
-    //       posts: posts.map((post) => omit(post, ["modularityModules"])),
-    //       contentTypeEnum,
-    //     },
-    //   });
-    //   pageCount++;
+      createPage({
+        path,
+        component,
+        context: {
+          ...archivePageContext,
+          month,
+          posts: posts.map((post) => omit(post, ["modularityModules"])),
+        },
+      });
+      pageCount++;
 
-    //   reporter.info(
-    //     `month archive page created for ${contentTypeName[1]} ${month}: ${path}`,
-    //   );
-    // });
+      reporter.info(
+        `month archive page created for ${contentType.labels.singularName} ${month}: ${path}`,
+      );
+    });
 
     reporter.info(`# -----> PAGES TOTAL: ${pageCount}`);
   };

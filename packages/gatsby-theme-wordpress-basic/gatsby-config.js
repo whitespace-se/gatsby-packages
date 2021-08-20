@@ -62,6 +62,9 @@ module.exports = ({
         },
       },
       `gatsby-plugin-meta-redirect`,
+
+      // Search
+      `@whitespace/gatsby-plugin-search`,
     ],
   };
 };

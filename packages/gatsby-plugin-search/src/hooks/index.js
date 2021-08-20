@@ -1,4 +1,3 @@
-export { default as useDateValues } from "./useDateValues";
 export { default as useSearch } from "./useSearch";
 export { default as useSearchBackend } from "./useSearchBackend";
 export { default as useSearchFilter } from "./useSearchFilter";

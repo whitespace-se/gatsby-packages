@@ -9,8 +9,5 @@ export const query = graphql`
         }
       }
     }
-    template {
-      templateName
-    }
   }
 `;
