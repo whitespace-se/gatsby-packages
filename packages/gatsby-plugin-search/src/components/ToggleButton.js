@@ -1,6 +1,7 @@
 import { useID, Button, Link } from "@whitespace/components";
 import cx from "classnames";
 import { Field, useField } from "formik";
+import PropTypes from "prop-types";
 import React from "react";
 
 import * as styles from "./ToggleButton.module.css";
@@ -23,6 +24,15 @@ function inArray(array, value, isEmpty = (value) => value === "") {
   }
   return value.every((v) => array.includes(v));
 }
+
+ToggleButton.propTypes = {
+  name: PropTypes.any,
+  id: PropTypes.string,
+  type: PropTypes.string,
+  label: PropTypes.node,
+  value: PropTypes.any,
+  appearance: PropTypes.string,
+};
 
 export default function ToggleButton({
   name,

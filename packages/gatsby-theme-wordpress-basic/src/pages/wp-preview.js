@@ -1,9 +1,16 @@
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 import qs from "query-string";
 import React, { Suspense } from "react";
 import useSSR from "use-ssr";
 
 import { WPPreviewLoadingScreen, LazyWPPreview } from "../components";
+
+PreviewPage.propTypes = {
+  location: PropTypes.shape({
+    search: PropTypes.string,
+  }),
+};
 
 const PreviewIndicator = styled.span`
   position: fixed;

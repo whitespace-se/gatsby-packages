@@ -2,9 +2,16 @@ import { useID, Icon } from "@whitespace/components";
 import { visuallyHidden } from "@whitespace/components/dist/utils/styles.module.css";
 import cx from "classnames";
 import { Field } from "formik";
+import PropTypes from "prop-types";
 import React from "react";
 
 import * as styles from "./SearchFormQueryField.module.css";
+
+SearchFormQueryField.propTypes = {
+  id: PropTypes.string,
+  label: PropTypes.node,
+  submitLabel: PropTypes.node,
+};
 
 export default function SearchFormQueryField({
   id,

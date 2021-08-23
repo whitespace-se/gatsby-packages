@@ -13,27 +13,27 @@ import {
 } from "./";
 
 SearchHitContact.propTypes = {
-  children: PropTypes.node,
+  city: PropTypes.node,
   className: PropTypes.string,
+  email: PropTypes.string,
   image: PropTypes.objectOf(PropTypes.string),
   name: PropTypes.string,
-  title: PropTypes.string,
-  styles: PropTypes.objectOf(PropTypes.string),
   phone: PropTypes.string,
-  email: PropTypes.string,
   showImage: PropTypes.bool,
+  styles: PropTypes.objectOf(PropTypes.string),
+  title: PropTypes.string,
 };
 
 export default function SearchHitContact({
-  className,
-  styles = defaultStyles,
-  name,
-  title,
   city,
-  phone,
+  className,
   email,
-  showImage = true,
   image,
+  name,
+  phone,
+  showImage = true,
+  styles = defaultStyles,
+  title,
   ...restProps
 }) {
   return (
@@ -44,6 +44,7 @@ export default function SearchHitContact({
         styles.teaser,
         showImage && image && styles.teaserWImage,
       )}
+      {...restProps}
     >
       {showImage && image && (
         <SearchTeaserMedia

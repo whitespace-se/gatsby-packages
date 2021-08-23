@@ -6,11 +6,17 @@ import {
   URLTransformerProvider,
 } from "@whitespace/components";
 import { StoreProvider } from "@whitespace/gatsby-hooks";
+import PropTypes from "prop-types";
 import React, { createContext } from "react";
 
 import { SiteLayout } from "../components";
 import { PageContextProvider } from "../hooks";
 import theme from "../theme";
+
+PageElementWrapper.propTypes = {
+  children: PropTypes.node,
+  pageContext: PropTypes.any,
+};
 
 export const pageWrapperContext = createContext();
 

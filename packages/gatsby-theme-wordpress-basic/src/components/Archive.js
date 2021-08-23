@@ -45,7 +45,7 @@ export default function Archive({
               <URLSearchParamsProvider
                 urlPattern={getArchiveURLPatternFromPageContext(pageContext)}
                 forcedParams={{ contentType: "post" }}
-                encodeParam={(value, param, params) => {
+                encodeParam={(value, param) => {
                   switch (param) {
                     case "month":
                       return value.substring(5, 7);

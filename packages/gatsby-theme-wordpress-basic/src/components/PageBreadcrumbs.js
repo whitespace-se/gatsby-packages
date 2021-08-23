@@ -6,14 +6,21 @@ import {
   getAncestors,
   getPage,
 } from "@whitespace/gatsby-theme-wordpress-basic/src/utils/pageTree";
+import PropTypes from "prop-types";
 import React from "react";
 
 import { useContentTypes } from "../hooks";
 
+PageBreadcrumbs.propTypes = {
+  hideCurrent: PropTypes.bool,
+  hideRoot: PropTypes.bool,
+  items: PropTypes.arrayOf(PropTypes.object),
+};
+
 export default function PageBreadcrumbs({
-  items: customItems,
-  hideRoot,
   hideCurrent,
+  hideRoot,
+  items: customItems,
   ...restProps
 }) {
   const allPages = usePages();

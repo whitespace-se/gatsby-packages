@@ -1,4 +1,11 @@
+import PropTypes from "prop-types";
 import React from "react";
+
+TimeInterval.propTypes = {
+  endDate: PropTypes.string,
+  format: PropTypes.object,
+  startDate: PropTypes.string,
+};
 
 function getMachineDateString(date, precision) {
   const { [precision]: length } = {

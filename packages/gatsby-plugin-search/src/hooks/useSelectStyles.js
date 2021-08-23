@@ -20,14 +20,14 @@ export default function useSelectStyles() {
         },
       };
     },
-    menuList: (provided, state) => {
+    menuList: (provided) => {
       return {
         ...provided,
         padding: 0,
         fontSize: "var(--select-field-menu-font-size, 1rem)",
       };
     },
-    control: (provided, state) => {
+    control: (provided) => {
       return {
         ...provided,
         borderColor: "var(--select-field-control-border-color, #DFE1E4)",
@@ -43,11 +43,11 @@ export default function useSelectStyles() {
         display: state.isMulti ? "flex" : "none",
       };
     },
-    clearIndicator: (provided, state) => ({
+    clearIndicator: (provided) => ({
       ...provided,
       display: "none",
     }),
-    dropdownIndicator: (provided, state) => {
+    dropdownIndicator: (provided) => {
       return {
         ...provided,
         color: "var(--select-field-dropdown-color, #2A2E3B)",
@@ -57,13 +57,13 @@ export default function useSelectStyles() {
         },
       };
     },
-    placeholder: (provided, state) => {
+    placeholder: (provided) => {
       return {
         ...provided,
         color: "var(--select-field-color, #2A2E3B)",
       };
     },
-    multiValue: (provided, state) => {
+    multiValue: (provided) => {
       return {
         ...provided,
         background: "var(--select-field-multi-background-color, #000000)",
@@ -71,7 +71,7 @@ export default function useSelectStyles() {
         borderRadius: 4,
       };
     },
-    multiValueRemove: (provided, state) => {
+    multiValueRemove: (provided) => {
       return {
         ...provided,
         color: "var(--select-field-multi-cross-color, #2A2E3B)",
@@ -83,7 +83,7 @@ export default function useSelectStyles() {
         },
       };
     },
-    multiValueLabel: (provided, state) => {
+    multiValueLabel: (provided) => {
       return {
         ...provided,
         color: "var(--select-field-multi-color, #2A2E3B)",

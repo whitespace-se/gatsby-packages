@@ -11,7 +11,6 @@ export default function useAsync(maker, deps) {
     setResult();
 
     return maker();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 
   promise.then((result) => {

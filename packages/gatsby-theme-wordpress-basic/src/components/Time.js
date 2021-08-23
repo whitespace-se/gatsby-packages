@@ -1,8 +1,16 @@
 import { useTicker } from "@whitespace/gatsby-hooks";
 import capitalizeString from "lodash/capitalize";
+import PropTypes from "prop-types";
 import React from "react";
 
 import timeAgo from "../utils/time-ago.js";
+
+Time.propTypes = {
+  ago: PropTypes.bool,
+  capitalize: PropTypes.bool,
+  date: PropTypes.any,
+  format: PropTypes.object,
+};
 
 function getMachineDateString(date, precision) {
   const { [precision]: length } = {
@@ -22,10 +30,10 @@ function Ago({ date }) {
 }
 
 export default function Time({
-  date,
-  format,
   ago = false,
   capitalize,
+  date,
+  format,
   ...restProps
 }) {
   date = new Date(date);

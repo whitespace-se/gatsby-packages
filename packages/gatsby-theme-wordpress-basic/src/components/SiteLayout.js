@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import PropTypes from "prop-types";
 import React from "react";
 
 import { usePageContext } from "../hooks";
@@ -8,10 +9,16 @@ import Header from "./Header";
 import PageBreadcrumbs from "./PageBreadcrumbs";
 import * as defaultStyles from "./SiteLayout.module.css";
 
+SiteLayout.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  styles: PropTypes.objectOf(PropTypes.string),
+};
+
 export default function SiteLayout({
-  styles = defaultStyles,
-  className,
   children,
+  className,
+  styles = defaultStyles,
 }) {
   const { contentNode: { isFrontPage } = {} } = usePageContext();
   return (

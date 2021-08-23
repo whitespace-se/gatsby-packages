@@ -1,5 +1,10 @@
 import { Link } from "gatsby";
+import PropTypes from "prop-types";
 import React from "react";
+
+Layout.propTypes = {
+  children: PropTypes.node,
+};
 
 export function Layout({ children }) {
   return (

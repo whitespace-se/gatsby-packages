@@ -1,4 +1,5 @@
 import cx from "classnames";
+import PropTypes from "prop-types";
 import React from "react";
 
 import ToggleButton from "./ToggleButton";
@@ -21,13 +22,29 @@ function normalizeOptions(options) {
   return options && options.map(normalizeOption);
 }
 
+ToggleButtonGroup.propTypes = {
+  className: PropTypes.string,
+  id: PropTypes.string,
+  itemAppearance: PropTypes.string,
+  multiple: PropTypes.bool,
+  name: PropTypes.any,
+  options: PropTypes.oneOfType([
+    PropTypes.objectOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    ),
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    ),
+  ]),
+};
+
 export default function ToggleButtonGroup({
-  name,
-  multiple = false,
-  options,
   className,
-  itemAppearance = "button",
   id,
+  itemAppearance = "button",
+  multiple = false,
+  name,
+  options,
   ...restProps
 }) {
   let normalizedOptions = normalizeOptions(options);

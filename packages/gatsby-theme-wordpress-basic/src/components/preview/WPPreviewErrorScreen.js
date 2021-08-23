@@ -1,7 +1,13 @@
 import { css } from "@emotion/css";
+import PropTypes from "prop-types";
 import React from "react";
 
 import WPPreviewTakeover from "./WPPreviewTakeover";
+
+WPPreviewErrorScreen.propTypes = {
+  error: PropTypes.shape({ message: PropTypes.node }),
+  label: PropTypes.node,
+};
 
 export default function WPPreviewErrorScreen({ error, label }) {
   return (

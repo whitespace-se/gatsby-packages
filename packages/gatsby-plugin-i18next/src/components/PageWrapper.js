@@ -1,7 +1,13 @@
 import { graphql, useStaticQuery } from "gatsby";
 import i18next from "i18next";
+import PropTypes from "prop-types";
 import React, { useEffect, useRef, useState } from "react";
 import { I18nextProvider } from "react-i18next";
+
+PageWrapper.propTypes = {
+  children: PropTypes.node,
+  language: PropTypes.string,
+};
 
 export default function PageWrapper({ children, language }) {
   const [i18nIsLoaded, setI18nIsLoaded] = useState(false);

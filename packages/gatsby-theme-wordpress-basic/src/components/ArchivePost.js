@@ -3,9 +3,23 @@ import {
   Time,
 } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
+import PropTypes from "prop-types";
 import React from "react";
 
 import Image from "./Image";
+
+ArchivePost.propTypes = {
+  date: PropTypes.any,
+  post: PropTypes.shape({
+    categories: PropTypes.array,
+    excerpt: PropTypes.string,
+    featuredImage: PropTypes.shape({
+      node: PropTypes.object,
+    }),
+    title: PropTypes.string,
+    url: PropTypes.string,
+  }),
+};
 
 const MAX_CATEGORY_COUNT = 2;
 

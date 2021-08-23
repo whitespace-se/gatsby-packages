@@ -1,6 +1,12 @@
+import PropTypes from "prop-types";
 import React, { useState } from "react";
 
 import context from "../context";
+
+StateSearchParamsProvider.propTypes = {
+  forcedParams: PropTypes.object,
+  children: PropTypes.node,
+};
 
 export default function StateSearchParamsProvider({
   forcedParams = {},

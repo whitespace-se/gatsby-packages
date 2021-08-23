@@ -5,23 +5,39 @@ import {
 } from "@whitespace/components";
 import withComponentDefaults from "@whitespace/components/dist/withComponentDefaults";
 import clsx from "clsx";
+import PropTypes from "prop-types";
 import React from "react";
 
 import * as defaultStyles from "./BoxNavigation.module.css";
+
+BoxNavigation.propTypes = {
+  className: PropTypes.string,
+  components: PropTypes.objectOf(PropTypes.elementType),
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.node,
+      uri: PropTypes.string,
+    }),
+  ),
+  link: PropTypes.any,
+  preamble: PropTypes.node,
+  styles: PropTypes.objectOf(PropTypes.string),
+  title: PropTypes.node,
+};
 
 export default withComponentDefaults(BoxNavigation, "boxNavigation");
 
 function BoxNavigation({
   className,
-  styles = defaultStyles,
   components: { Link = DefaultLink, Button = DefaultButton } = {
     Link: DefaultLink,
     Button: DefaultButton,
   },
-  title,
-  preamble,
-  link,
   items,
+  link,
+  preamble,
+  styles = defaultStyles,
+  title,
   ...restProps
 }) {
   if (items.length === 0) {

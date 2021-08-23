@@ -1,4 +1,5 @@
 import { flattenDeep, isEmpty, negate } from "lodash-es";
+import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 
 import { useSearchParams } from "../../hooks";
@@ -8,6 +9,14 @@ import context from "../context";
 
 import useMiniSearch from "./useMiniSearch";
 import useSearchDocuments from "./useSearchDocuments";
+
+MinisearchSearchBackendProvider.propTypes = {
+  children: PropTypes.node,
+  settings: PropTypes.shape({
+    minisearch: PropTypes.object,
+    attributesForFaceting: PropTypes.arrayOf(PropTypes.string),
+  }),
+};
 
 function extractKeys(objects) {
   return Object.keys(Object.assign({}, ...objects));

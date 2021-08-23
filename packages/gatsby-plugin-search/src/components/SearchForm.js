@@ -6,6 +6,7 @@ import parseDate from "date-fns/parse";
 import { Formik, Form } from "formik";
 import { mapValues } from "lodash";
 import { sortBy } from "lodash-es";
+import PropTypes from "prop-types";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -16,6 +17,11 @@ import * as styles from "./SearchForm.module.css";
 import SearchFormQueryField from "./SearchFormQueryField";
 import SelectField from "./SelectField";
 import ToggleButtonGroup from "./ToggleButtonGroup";
+
+SearchForm.propTypes = {
+  className: PropTypes.string,
+  showHitsTotal: PropTypes.bool,
+};
 
 function useFacetOptions(
   counts,
@@ -56,12 +62,8 @@ export default function SearchForm({
     hits,
   } = useSearch();
   const { t } = useTranslation();
-  const {
-    emptySearchResultMessage,
-    searchPlaceholderText,
-    searchLabelText,
-    searchButtonText,
-  } = useSearchSettings();
+  const { searchPlaceholderText, searchLabelText, searchButtonText } =
+    useSearchSettings();
 
   const generateID = useID();
 

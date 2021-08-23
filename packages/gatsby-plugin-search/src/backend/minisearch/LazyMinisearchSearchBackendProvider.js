@@ -1,8 +1,13 @@
+import PropTypes from "prop-types";
 import React, { Suspense } from "react";
 
 import { useSearchParams } from "../../hooks";
 import isEmptySearch from "../../utils/isEmptySearch";
 import FallbackSearchBackendProvider from "../fallback/FallbackSearchBackendProvider";
+
+LazyMinisearchSearchBackendProvider.propTypes = {
+  preload: PropTypes.bool,
+};
 
 const MinisearchBackendProvider = React.lazy(() =>
   import("./MinisearchSearchBackendProvider"),

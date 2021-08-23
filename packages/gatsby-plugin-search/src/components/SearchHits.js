@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -7,6 +6,7 @@ import SearchHitContact from "./SearchHitContact";
 import * as defaultStyles from "./SearchHits.module.css";
 
 SearchHits.propTypes = {
+  styles: PropTypes.objectOf(PropTypes.string),
   hits: PropTypes.array.isRequired,
 };
 

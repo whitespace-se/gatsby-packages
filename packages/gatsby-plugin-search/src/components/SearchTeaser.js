@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import PropTypes from "prop-types";
 import React from "react";
 
 import { ComponentProvider } from "../contexts/componentContext";
@@ -6,11 +7,18 @@ import * as focusWithinStyles from "../utils/focusWithin.module.css";
 
 import * as defaultStyles from "./SearchTeaser.module.css";
 
+SearchTeaser.propTypes = {
+  as: PropTypes.elementType,
+  children: PropTypes.node,
+  className: PropTypes.string,
+  styles: PropTypes.objectOf(PropTypes.string),
+};
+
 export default function SearchTeaser({
   as: Component = "article",
-  styles = defaultStyles,
-  className,
   children,
+  className,
+  styles = defaultStyles,
   ...restProps
 }) {
   return (

@@ -6,6 +6,7 @@ import {
   URLSearchParamsProvider,
 } from "@whitespace/gatsby-plugin-search";
 import { Formik, Field, Form } from "formik";
+import PropTypes from "prop-types";
 import React from "react";
 import ReactSelect from "react-select";
 import * as yup from "yup";
@@ -26,6 +27,25 @@ function normalizeOptions(options) {
   }
   return options && options.map(normalizeOption);
 }
+
+Select.propTypes = {
+  onChange: PropTypes.func,
+  options: PropTypes.oneOfType([
+    PropTypes.objectOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    ),
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    ),
+  ]),
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    ),
+  ]),
+};
 
 function Select({ options, value, onChange, ...props }) {
   let normalizedOptions = normalizeOptions(options);

@@ -1,8 +1,11 @@
 import { css } from "@emotion/css";
+import PropTypes from "prop-types";
 import React from "react";
 import PulseLoader from "react-spinners/PulseLoader";
 
 import WPPreviewTakeover from "./WPPreviewTakeover";
+
+WPPreviewLoadingScreen.propTypes = { label: PropTypes.node };
 
 export default function WPPreviewLoadingScreen({ label }) {
   return (

@@ -1,17 +1,29 @@
 import { useLocation } from "@gatsbyjs/reach-router";
 import { useURLParams } from "@whitespace/gatsby-hooks";
 import { mapValues, omit } from "lodash-es";
+import PropTypes from "prop-types";
 import React from "react";
 
 import context from "../context";
 
+URLSearchParamsProvider.propTypes = {
+  children: PropTypes.node,
+  decodeParam: PropTypes.func,
+  encodeParam: PropTypes.func,
+  forcedParams: PropTypes.object,
+  schema: PropTypes.shape({
+    cast: PropTypes.func.isRequired,
+  }).isRequired,
+  urlPattern: PropTypes.string,
+};
+
 export default function URLSearchParamsProvider({
-  urlPattern,
-  encodeParam = (value) => value,
+  children,
   decodeParam = (value) => value,
+  encodeParam = (value) => value,
   forcedParams = {},
   schema,
-  children,
+  urlPattern,
 }) {
   const location = useLocation();
 

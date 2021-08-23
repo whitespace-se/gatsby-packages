@@ -37,7 +37,11 @@ export default function SearchHit({
   ...restProps
 }) {
   return (
-    <SearchTeaser as="li" className={clsx(className, styles.teaser)}>
+    <SearchTeaser
+      as="li"
+      className={clsx(className, styles.teaser)}
+      {...restProps}
+    >
       <SearchTeaserContent>
         <SearchTeaserTitle link={{ url }} styles={styles}>
           {title}

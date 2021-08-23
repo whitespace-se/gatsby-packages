@@ -12,6 +12,7 @@ export default function useSearchParam(param) {
 
   const Link = useMemo(
     () =>
+      // eslint-disable-next-line react/prop-types
       forwardRef(function LinkWithRef({ to, ...restProps }, ref) {
         return (
           <WrappedLink

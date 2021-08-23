@@ -1,4 +1,11 @@
+import PropTypes from "prop-types";
 import React, { createContext, useContext } from "react";
+
+ComponentProvider.propTypes = {
+  component: PropTypes.string.isRequired,
+  children: PropTypes.node,
+  props: PropTypes.object,
+};
 
 const contexts = {};
 

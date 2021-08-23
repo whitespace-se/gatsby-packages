@@ -1,6 +1,7 @@
 import { Section } from "@jfrk/react-heading-levels";
 import withComponentDefaults from "@whitespace/components/dist/withComponentDefaults";
 import clsx from "clsx";
+import PropTypes from "prop-types";
 import React from "react";
 
 import { layout } from "../foundation";
@@ -15,6 +16,11 @@ import ArticlePublishDate from "./ArticlePublishDate";
 import ArticleSiblingPageNav from "./ArticleSiblingPageNav";
 import ArticleTagList from "./ArticleTagList";
 import ArticleTitle from "./ArticleTitle";
+
+Article.propTypes = {
+  className: PropTypes.string,
+  styles: PropTypes.objectOf(PropTypes.string),
+};
 
 export default withComponentDefaults(Article);
 

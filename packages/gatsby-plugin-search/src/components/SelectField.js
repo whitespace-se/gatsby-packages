@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import ReactSelect from "react-select";
 
@@ -19,6 +20,25 @@ function normalizeOptions(options) {
   }
   return options && options.map(normalizeOption);
 }
+
+SelectField.propTypes = {
+  onChange: PropTypes.func,
+  options: PropTypes.oneOfType([
+    PropTypes.objectOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    ),
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    ),
+  ]),
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+    PropTypes.arrayOf(
+      PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    ),
+  ]),
+};
 
 export default function SelectField({ options, value, onChange, ...props }) {
   let normalizedOptions = normalizeOptions(options);

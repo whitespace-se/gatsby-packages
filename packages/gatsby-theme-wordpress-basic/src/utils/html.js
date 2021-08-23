@@ -1,6 +1,7 @@
 import { Link } from "@whitespace/components";
 import { toString } from "hast-util-to-string";
 import memoize from "lodash/memoize";
+import PropTypes from "prop-types";
 import React from "react";
 import rehype2react from "rehype-react";
 import { unified } from "unified";
@@ -42,6 +43,11 @@ export default function createHTMLProcessor({ rehypeParse: parse }) {
   }
 
   function createStringifier({ contentMedia = [] } = {}) {
+    WPImage.propTypes = {
+      attachment: PropTypes.string,
+      width: PropTypes.number,
+      height: PropTypes.number,
+    };
     function WPImage({
       attachment: attachmentId,
       width: imgWidth,
@@ -70,6 +76,10 @@ export default function createHTMLProcessor({ rehypeParse: parse }) {
       );
     }
 
+    WPCaption.propTypes = {
+      attachment: PropTypes.string,
+      children: PropTypes.node,
+    };
     function WPCaption({ attachment: attachmentId, children, ...restProps }) {
       let attachment = contentMedia.find(
         (attachment) => attachment.databaseId === Number(attachmentId),
