@@ -22,7 +22,7 @@ Article.propTypes = {
   styles: PropTypes.objectOf(PropTypes.string),
 };
 
-export default withComponentDefaults(Article, 'article');
+export default withComponentDefaults(Article, "article");
 
 function Article({
   className,
