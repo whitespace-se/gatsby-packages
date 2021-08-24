@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.12.3...@whitespace/gatsby-theme-wordpress-basic@0.13.0) (2021-08-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* fix all lint errors
+
+### Bug Fixes
+
+* Removed error message `withComponentDefaults requires namespace` ([94b2eef](https://github.com/whitespace-se/gatsby-packages/commit/94b2eefe46c7b7f9d2e16d60152f690f410f5e55))
+* wp blocks did not handle media embedded correctly ([f9d2e10](https://github.com/whitespace-se/gatsby-packages/commit/f9d2e10b9fff39b260218c65bf024ecbe6479e25))
+
+
+### Miscellaneous Chores
+
+* fix all lint errors ([6516578](https://github.com/whitespace-se/gatsby-packages/commit/6516578c577cba9160802e28eb9e3383d7defb4b))
+
+
+
 ### [0.12.3](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.12.2...@whitespace/gatsby-theme-wordpress-basic@0.12.3) (2021-08-20)
 
 **Note:** Version bump only for package @whitespace/gatsby-theme-wordpress-basic

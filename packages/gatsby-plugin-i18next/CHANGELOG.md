@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-i18next@0.2.6...@whitespace/gatsby-plugin-i18next@0.3.0) (2021-08-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* fix all lint errors
+
+### Miscellaneous Chores
+
+* fix all lint errors ([6516578](https://github.com/whitespace-se/gatsby-packages/commit/6516578c577cba9160802e28eb9e3383d7defb4b))
+
+
+
 ### [0.2.6](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-i18next@0.2.5...@whitespace/gatsby-plugin-i18next@0.2.6) (2021-08-20)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-i18next

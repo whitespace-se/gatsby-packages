@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.10.1...@whitespace/gatsby-plugin-search@0.11.0) (2021-08-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* fix all lint errors
+
+### Miscellaneous Chores
+
+* fix all lint errors ([6516578](https://github.com/whitespace-se/gatsby-packages/commit/6516578c577cba9160802e28eb9e3383d7defb4b))
+
+
+
 ### [0.10.1](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.10.0...@whitespace/gatsby-plugin-search@0.10.1) (2021-08-20)
 
 
