@@ -2,12 +2,11 @@ name: Formatting
 
 on:
   push:
-    branches-ignore:
-      # Skip formatting during mob programming
-      - "mob/**"
+    branches:
+      - main
   pull_request:
     branches:
-      - "**"
+      - main
 
 jobs:
   build:
