@@ -7956,10 +7956,10 @@ esbuild-jest@^0.5.0:
     "@babel/plugin-transform-modules-commonjs" "^7.12.13"
     babel-jest "^26.6.3"
 
-esbuild@^0.12.21:
-  version "0.12.21"
-  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.12.21.tgz#7ff32a9ac73ce4310f9cb61ea4c3da9756570d46"
-  integrity sha512-7hyXbU3g94aREufI/5nls7Xcc+RGQeZWZApm6hoBaFvt2BPtpT4TjFMQ9Tb1jU8XyBGz00ShmiyflCogphMHFQ==
+esbuild@^0.12.22:
+  version "0.12.22"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.12.22.tgz#6031a1257b8d0307d306bed673b79c3668607f51"
+  integrity sha512-yWCr9RoFehpqoe/+MwZXJpYOEIt7KOEvNnjIeMZpMSyQt+KCBASM3y7yViiN5dJRphf1wGdUz1+M4rTtWd/ulA==
 
 escalade@^3.0.2, escalade@^3.1.1:
   version "3.1.1"
@@ -17553,10 +17553,10 @@ sass-loader@^10.1.1:
     schema-utils "^3.0.0"
     semver "^7.3.2"
 
-sass@^1.38.0:
-  version "1.38.0"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.38.0.tgz#2f3e60a1efdcdc910586fa79dc89d3399a145b4f"
-  integrity sha512-WBccZeMigAGKoI+NgD7Adh0ab1HUq+6BmyBUEaGxtErbUtWUevEbdgo5EZiJQofLUGcKtlNaO2IdN73AHEua5g==
+sass@^1.38.1:
+  version "1.38.1"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.38.1.tgz#54dfb17fb168846b5850324b82fc62dc68f51bad"
+  integrity sha512-Lj8nPaSYOuRhgqdyShV50fY5jKnvaRmikUNalMPmbH+tKMGgEKVkltI/lP30PEfO2T1t6R9yc2QIBLgOc3uaFw==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
 
