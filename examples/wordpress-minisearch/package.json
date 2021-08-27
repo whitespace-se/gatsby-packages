@@ -6,21 +6,22 @@
   "author": "Whitespace <code@whitespace.se>",
   "license": "0BSD",
   "scripts": {
-    "build": "yarn wp-generate-schema-fragments && NODE_OPTIONS='-r esm' gatsby build",
-    "clean": "NODE_OPTIONS='-r esm' gatsby clean",
-    "dev": "yarn wp-generate-schema-fragments && NODE_OPTIONS='-r esm' gatsby develop --port 8201 --open",
+    "build": "yarn wp-generate-schema-fragments && cross-env NODE_OPTIONS=\"-r esm\" gatsby build",
+    "clean": "cross-env NODE_OPTIONS=\"-r esm\" gatsby clean",
+    "dev": "yarn wp-generate-schema-fragments && cross-env NODE_OPTIONS=\"-r esm\" gatsby develop --port 8201 --open",
     "format": "run-s format:*",
     "format:eslint": "npx eslint --fix '**/*.js' || true",
     "format:prettier": "prettier --write \"**/*.{js,jsx,json,md,scss,css,yml,html}\"",
     "refresh": "curl -X POST http://localhost:8201/__refresh",
-    "serve": "NODE_OPTIONS='-r esm' gatsby serve --port 8201 --open",
+    "serve": "cross-env NODE_OPTIONS=\"-r esm\" gatsby serve --port 8201 --open",
     "start": "yarn dev",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "wp-generate-schema-fragments": "NODE_OPTIONS='-r esm' node scripts/wp-generate-schema-fragments"
+    "wp-generate-schema-fragments": "cross-env NODE_OPTIONS=\"-r esm\" node scripts/wp-generate-schema-fragments"
   },
   "dependencies": {
     "@whitespace/gatsby-plugin-search": "^0.11.0",
     "@whitespace/gatsby-theme-wordpress-basic": "^0.13.0",
+    "cross-env": "^7.0.3",
     "gatsby": "^3.12.0",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "react": "^17.0.2",

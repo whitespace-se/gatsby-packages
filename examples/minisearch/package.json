@@ -6,14 +6,15 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "NODE_OPTIONS='-r esm' gatsby develop --port 8101 --open",
-    "start": "NODE_OPTIONS='-r esm' gatsby develop --port 8101 --open",
-    "build": "NODE_OPTIONS='-r esm' gatsby build",
-    "serve": "NODE_OPTIONS='-r esm' gatsby serve --port 8101 --open",
-    "clean": "NODE_OPTIONS='-r esm' gatsby clean"
+    "develop": "cross-env NODE_OPTIONS=\"-r esm\" gatsby develop --port 8101 --open",
+    "start": "cross-env NODE_OPTIONS=\"-r esm\" gatsby develop --port 8101 --open",
+    "build": "cross-env NODE_OPTIONS=\"-r esm\" gatsby build",
+    "serve": "cross-env NODE_OPTIONS=\"-r esm\" gatsby serve --port 8101 --open",
+    "clean": "cross-env NODE_OPTIONS=\"-r esm\" gatsby clean"
   },
   "dependencies": {
     "@whitespace/gatsby-plugin-search": "0.11.0",
+    "cross-env": "^7.0.3",
     "formik": "^2.2.9",
     "gatsby": "^3.12.0",
     "gatsby-plugin-postcss": "^4.12.0",
