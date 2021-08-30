@@ -79,9 +79,21 @@ export async function createPages(params, pluginOptions) {
               }
             }
           `;
-          contentType.enum = snakeCase(
-            contentType.graphqlSingleName,
-          ).toUpperCase();
+
+          let inferredEnum = snakeCase(contentType.name).toUpperCase();
+          let oldEnum = snakeCase(contentType.graphqlSingleName).toUpperCase();
+          if (oldEnum !== inferredEnum) {
+            reporter.warn(
+              `Inferred enum for content type "${contentType.name}" has changed from "${oldEnum}" to "${inferredEnum}". Update your queries or override the inferred enum for this content type in your config for the gatsby-theme-wordpress-basic plugin.`,
+            );
+          }
+
+          contentType = {
+            enum: inferredEnum,
+            ...contentType,
+            ...includedContentTypes[contentType.name],
+          };
+
           await createPagesForContentNodes({
             contentType,
             query,
