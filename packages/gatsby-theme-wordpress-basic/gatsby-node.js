@@ -2,6 +2,7 @@ import { collectFragments } from "gatsby-plugin-fragments/node";
 import { snakeCase } from "lodash";
 
 import createPagesForContentNodes from "./src/createPages";
+import fetchPageTree from "./src/fetchPageTree";
 
 if (
   new Intl.DateTimeFormat("es", { month: "long" }).format(new Date(9e8)) !==
@@ -10,6 +11,23 @@ if (
   console.warn(
     `ICU data is not loaded. NODE_ICU_DATA="${process.env.NODE_ICU_DATA}"`,
   );
+}
+
+export const createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+
+  const typeDefs = `
+    type GraphQlQuery implements Node @dontInfer {
+      name: String!
+      data: JSON!
+    }
+  `;
+  createTypes(typeDefs);
+};
+
+export async function sourceNodes(params, pluginOptions) {
+  const { gql } = await collectFragments(pluginOptions);
+  await fetchPageTree({ ...params, gql }, pluginOptions);
 }
 
 export async function createPages(params, pluginOptions) {

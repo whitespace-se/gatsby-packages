@@ -1,7 +1,7 @@
 import formatDate from "date-fns/format";
 import omit from "lodash/omit";
-import prettierGraphQLParser from "prettier/parser-graphql";
-import { format } from "prettier/standalone";
+
+import formatGraphQL from "../node/formatGraphQL";
 
 import {
   getMainArchivePagePathFromPageContext,
@@ -20,13 +20,6 @@ const MonthArchivePageTemplate = require.resolve(
 );
 
 const SingleTemplate = require.resolve("./templates/SingleTemplate");
-
-function formatGraphQL(code) {
-  return format(code, {
-    parser: "graphql",
-    plugins: [prettierGraphQLParser],
-  });
-}
 
 export default ({ contentType, query }) =>
   async ({ actions, graphql, reporter }) => {

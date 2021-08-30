@@ -36,6 +36,7 @@
     "gatsby-source-filesystem": "^3.12.0",
     "gatsby-source-graphql": "^3.12.0",
     "gatsby-transformer-sharp": "^3.12.0",
+    "graphql-request": "^3.5.0",
     "hast-util-to-string": "^2.0.0",
     "i18next": "^20.4.0",
     "javascript-time-ago": "^2.3.8",
