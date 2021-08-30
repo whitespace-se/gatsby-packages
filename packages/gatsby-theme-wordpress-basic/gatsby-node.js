@@ -32,14 +32,21 @@ export async function sourceNodes(params, pluginOptions) {
 
 export async function createPages(params, pluginOptions) {
   const { graphql, reporter } = params;
-  const {
+  let {
     wp: {
       url,
       contentTypes: includedContentTypes = { post: {}, page: {} },
+      nodesPerPage,
     } = {},
   } = pluginOptions;
   const { gql } = await collectFragments(pluginOptions);
   reporter.info(`GATSBY_WORDPRESS_URL: ${url}`);
+  if (nodesPerPage == null && process.env.WORDPRESS_PAGES_PER_FETCH != null) {
+    reporter.warn(
+      `gatsby-theme-wordpress-basic no longer uses the WORDPRESS_PAGES_PER_FETCH env var directly. Instead add 'wp.nodesPerFetch' to your plugin config.`,
+    );
+    nodesPerPage = 100;
+  }
   if (url) {
     let {
       data: {
@@ -118,6 +125,7 @@ export async function createPages(params, pluginOptions) {
           await createPagesForContentNodes({
             contentType,
             query,
+            nodesPerPage,
           })({ ...params, gql }, pluginOptions);
         }),
     );

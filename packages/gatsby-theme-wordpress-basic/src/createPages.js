@@ -21,7 +21,7 @@ const MonthArchivePageTemplate = require.resolve(
 
 const SingleTemplate = require.resolve("./templates/SingleTemplate");
 
-export default ({ contentType, query }) =>
+export default ({ contentType, query, nodesPerPage }) =>
   async ({ actions, graphql, reporter }) => {
     const allContentNodes = [];
     const allContentNodesByYear = {};
@@ -30,7 +30,6 @@ export default ({ contentType, query }) =>
 
     let pageNumber = 0;
     let pageCount = 0;
-    const itemsPerPage = Number(process.env.WORDPRESS_PAGES_PER_FETCH) || 10;
     const commonVariables = {
       contentTypes: [contentType.enum],
       nameIn:
@@ -40,7 +39,7 @@ export default ({ contentType, query }) =>
     };
     const { createPage } = actions;
 
-    reporter.info(`${itemsPerPage} items per page`);
+    reporter.info(`${nodesPerPage} items per page`);
 
     const fetchPages = async (variables) =>
       await graphql(query, { ...commonVariables, ...variables })
@@ -98,7 +97,7 @@ export default ({ contentType, query }) =>
 
           if (hasNextPage) {
             pageNumber++;
-            return fetchPages({ first: itemsPerPage, after: endCursor });
+            return fetchPages({ first: nodesPerPage, after: endCursor });
           }
         })
         .catch((error) => {
@@ -119,7 +118,7 @@ ${JSON.stringify({ ...commonVariables, ...variables }, null, 2)}`,
      * Kick off our `fetchPages` method which will get us all
      * the pages we need to create individual pages.
      */
-    await fetchPages({ first: itemsPerPage, after: null });
+    await fetchPages({ first: nodesPerPage, after: null });
 
     allContentNodes.map((contentNode) => {
       let path = contentNode.uri;
