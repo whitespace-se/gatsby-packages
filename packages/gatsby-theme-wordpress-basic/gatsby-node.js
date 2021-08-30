@@ -15,11 +15,14 @@ if (
 export async function createPages(params, pluginOptions) {
   const { graphql, reporter } = params;
   const {
-    wp: { contentTypes: includedContentTypes = { post: {}, page: {} } } = {},
+    wp: {
+      url,
+      contentTypes: includedContentTypes = { post: {}, page: {} },
+    } = {},
   } = pluginOptions;
   const { gql } = await collectFragments(pluginOptions);
-  reporter.info(`GATSBY_WORDPRESS_URL: ${process.env.GATSBY_WORDPRESS_URL}`);
-  if (process.env.GATSBY_WORDPRESS_URL) {
+  reporter.info(`GATSBY_WORDPRESS_URL: ${url}`);
+  if (url) {
     let {
       data: {
         wp: {
