@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.13.0...@whitespace/gatsby-theme-wordpress-basic@0.14.0) (2021-08-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* gatsby-theme-wordpress-basic no longer uses the WORDPRESS_PAGES_PER_FETCH env var directly. Instead add 'wp.nodesPerFetch' to your plugin config.
+* If you have shadowed gatsby-theme-wordpress-basic/src/hooks/pages.js you will have to examine the  or stuff might break.
+* Inferred enum for content types is now based on the `name` field instead of `graphqlSingleName` to match the enum set by the wp-graphql WP plugin. This should make queries with custom post types work better in most situations, but if you already rely on a faulty enum you must update your queries or override the inferred enum through the plugin config.
+
+### Features
+
+* add `wp.nodesPerFetch` plugin option ([daab65f](https://github.com/whitespace-se/gatsby-packages/commit/daab65f23a24af47ca77a8a937844b72f3d3b80f))
+* allow override of content type fields ([3ade832](https://github.com/whitespace-se/gatsby-packages/commit/3ade832f1d2efb8dfb3cf6c065b9a1d758543e3f))
+
+
+### Bug Fixes
+
+* `wp.url` plugin option was ignored ([243a4cb](https://github.com/whitespace-se/gatsby-packages/commit/243a4cbb4403a43b6cfb2f0240335bdda58453fc))
+
+
+### Code Refactoring
+
+* fetch page tree in batches ([5011ce2](https://github.com/whitespace-se/gatsby-packages/commit/5011ce2e1ebae003090b9ee32b38d6bd3ef57ac9))
+
+
+
 ## [0.13.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.12.3...@whitespace/gatsby-theme-wordpress-basic@0.13.0) (2021-08-24)
 
 
