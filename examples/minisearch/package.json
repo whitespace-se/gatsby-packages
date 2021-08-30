@@ -13,9 +13,9 @@
     "clean": "cross-env NODE_OPTIONS=\"-r esm\" gatsby clean"
   },
   "dependencies": {
-    "@whitespace/gatsby-plugin-search": "0.11.0",
+    "@whitespace/gatsby-plugin-search": "0.11.1",
     "formik": "^2.2.9",
-    "gatsby": "^3.12.0",
+    "gatsby": "^3.12.1",
     "gatsby-plugin-postcss": "^4.12.0",
     "gatsby-plugin-sass": "^4.12.0",
     "gatsby-source-filesystem": "^3.12.0",
