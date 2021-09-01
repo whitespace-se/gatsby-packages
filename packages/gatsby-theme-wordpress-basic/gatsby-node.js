@@ -43,10 +43,12 @@ export async function createPages(params, pluginOptions) {
   } = pluginOptions;
   const { gql } = await collectFragments(pluginOptions);
   reporter.info(`GATSBY_WORDPRESS_URL: ${url}`);
-  if (nodesPerPage == null && process.env.WORDPRESS_PAGES_PER_FETCH != null) {
-    reporter.warn(
-      `gatsby-theme-wordpress-basic no longer uses the WORDPRESS_PAGES_PER_FETCH env var directly. Instead add 'wp.nodesPerFetch' to your plugin config.`,
-    );
+  if (nodesPerPage == null) {
+    if (process.env.WORDPRESS_PAGES_PER_FETCH != null) {
+      reporter.warn(
+        `gatsby-theme-wordpress-basic no longer uses the WORDPRESS_PAGES_PER_FETCH env var directly. Instead add 'wp.nodesPerFetch' to your plugin config.`,
+      );
+    }
     nodesPerPage = 100;
   }
   if (url) {
