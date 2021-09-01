@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.14.0...@whitespace/gatsby-theme-wordpress-basic@0.15.0) (2021-09-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* fetch search documents in batches
+
+### Bug Fixes
+
+* did not fetch all posts ([265364f](https://github.com/whitespace-se/gatsby-packages/commit/265364f01b1ba8b38db0d03ff03976155a05576c))
+* incorrect imports ([fcce742](https://github.com/whitespace-se/gatsby-packages/commit/fcce742014215ba3102b0b223a467456933f5210))
+
+
+### Code Refactoring
+
+* fetch search documents in batches ([5f58a51](https://github.com/whitespace-se/gatsby-packages/commit/5f58a51839a8e85bc0e63b7a1e5bfc57a3df0646))
+
+
+
 ## [0.14.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.13.0...@whitespace/gatsby-theme-wordpress-basic@0.14.0) (2021-08-30)
 
 

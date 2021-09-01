@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.2.7](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-page-wrapper@0.2.6...@whitespace/gatsby-plugin-page-wrapper@0.2.7) (2021-09-01)
+
+**Note:** Version bump only for package @whitespace/gatsby-plugin-page-wrapper
+
+
+
+
+
 ### [0.2.6](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-page-wrapper@0.2.5...@whitespace/gatsby-plugin-page-wrapper@0.2.6) (2021-08-20)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-page-wrapper
