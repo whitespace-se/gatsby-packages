@@ -2,7 +2,7 @@ import gql from "graphql-tag";
 import { cloneDeep } from "lodash";
 import traverse from "traverse";
 
-const getQuery = (query) => {
+export const getQuery = (query) => {
   if (typeof query === "object" && query.definitions) {
     return query;
   } else if (typeof query === "string") {
@@ -12,6 +12,21 @@ const getQuery = (query) => {
   } else {
     throw new Error("Could not parse query: " + query);
   }
+};
+
+export const getQueryName = (query) => {
+  query = getQuery(query);
+  let definitions = query.definitions;
+  if (!definitions) {
+    return;
+  }
+  let node = definitions.find(
+    (def) => def.kind === "OperationDefinition" && def.operation === "query",
+  );
+  if (!node) {
+    return;
+  }
+  return node.name.value;
 };
 
 export const mergeQueries = (querySources) => {

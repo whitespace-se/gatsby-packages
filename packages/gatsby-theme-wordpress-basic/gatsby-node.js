@@ -3,6 +3,7 @@ import { snakeCase } from "lodash";
 
 import createPagesForContentNodes from "./src/createPages";
 import fetchPageTree from "./src/fetchPageTree";
+import fetchSearchDocuments from "./src/fetchSearchDocuments";
 
 if (
   new Intl.DateTimeFormat("es", { month: "long" }).format(new Date(9e8)) !==
@@ -28,6 +29,7 @@ export const createSchemaCustomization = ({ actions }) => {
 export async function sourceNodes(params, pluginOptions) {
   const { gql } = await collectFragments(pluginOptions);
   await fetchPageTree({ ...params, gql }, pluginOptions);
+  await fetchSearchDocuments({ ...params, gql }, pluginOptions);
 }
 
 export async function createPages(params, pluginOptions) {

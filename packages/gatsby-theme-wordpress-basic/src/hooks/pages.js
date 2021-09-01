@@ -4,10 +4,10 @@ export default function usePages() {
   return (
     useStaticQuery(graphql`
       query PageTree {
-        graphQlQuery(name: { eq: "pageTree" }) {
+        graphQlQuery(name: { eq: "WPPaginatedNodesForPageTree" }) {
           data
         }
       }
-    `).graphQlQuery?.data?.pages || []
+    `).graphQlQuery?.data?.pages?.nodes || []
   );
 }
