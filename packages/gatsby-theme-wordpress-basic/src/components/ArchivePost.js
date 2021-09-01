@@ -1,12 +1,11 @@
-import {
-  Link,
-  Time,
-} from "@whitespace/gatsby-theme-wordpress-basic/src/components";
-import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
+import { Link } from "@whitespace/components";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { useHTMLProcessor } from "../hooks/html-processor";
+
 import Image from "./Image";
+import Time from "./Time";
 
 ArchivePost.propTypes = {
   date: PropTypes.any,
