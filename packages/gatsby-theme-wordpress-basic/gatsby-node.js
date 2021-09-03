@@ -1,6 +1,6 @@
 import { collectFragments } from "gatsby-plugin-fragments/node";
-import { snakeCase } from "lodash";
 
+import getIncludedContentTypes from "./node/getIncludedContentTypes";
 import createPagesForContentNodes from "./src/createPages";
 import fetchPageTree from "./src/fetchPageTree";
 import fetchSearchDocuments from "./src/fetchSearchDocuments";
@@ -34,13 +34,7 @@ export async function sourceNodes(params, pluginOptions) {
 
 export async function createPages(params, pluginOptions) {
   const { graphql, reporter } = params;
-  let {
-    wp: {
-      url,
-      contentTypes: includedContentTypes = { post: {}, page: {} },
-      nodesPerPage,
-    } = {},
-  } = pluginOptions;
+  let { wp: { url, nodesPerPage } = {} } = pluginOptions;
   const { gql } = await collectFragments(pluginOptions);
   reporter.info(`GATSBY_WORDPRESS_URL: ${url}`);
   if (nodesPerPage == null) {
@@ -78,60 +72,47 @@ export async function createPages(params, pluginOptions) {
         }
       }
     `);
+
+    contentTypes = getIncludedContentTypes(params, pluginOptions, contentTypes);
+
     await Promise.all(
-      contentTypes
-        .filter((contentType) => includedContentTypes[contentType.name])
-        .map(async (contentType) => {
-          const query = gql`
-            query WPPaginatedNodesForPagesQuery(
-              $first: Int
-              $after: String
-              $nameIn: [String]
-              $contentTypes: [WP_ContentTypeEnum]
-            ) {
-              wp {
-                contentNodes(
-                  first: $first
-                  after: $after
-                  where: {
-                    nameIn: $nameIn
-                    parent: null
-                    contentTypes: $contentTypes
-                  }
-                ) {
-                  pageInfo {
-                    hasNextPage
-                    endCursor
-                  }
-                  nodes {
-                    archiveDates
-                    ...WP_ContentNodeForPage
-                  }
+      contentTypes.map(async (contentType) => {
+        const query = gql`
+          query WPPaginatedNodesForPagesQuery(
+            $first: Int
+            $after: String
+            $nameIn: [String]
+            $contentTypes: [WP_ContentTypeEnum]
+          ) {
+            wp {
+              contentNodes(
+                first: $first
+                after: $after
+                where: {
+                  nameIn: $nameIn
+                  parent: null
+                  contentTypes: $contentTypes
+                }
+              ) {
+                pageInfo {
+                  hasNextPage
+                  endCursor
+                }
+                nodes {
+                  archiveDates
+                  ...WP_ContentNodeForPage
                 }
               }
             }
-          `;
-
-          let inferredEnum = snakeCase(contentType.name).toUpperCase();
-          let oldEnum = snakeCase(contentType.graphqlSingleName).toUpperCase();
-          if (oldEnum !== inferredEnum) {
-            reporter.warn(
-              `Inferred enum for content type "${contentType.name}" has changed from "${oldEnum}" to "${inferredEnum}". Update your queries or override the inferred enum for this content type in your config for the gatsby-theme-wordpress-basic plugin.`,
-            );
           }
+        `;
 
-          contentType = {
-            enum: inferredEnum,
-            ...contentType,
-            ...includedContentTypes[contentType.name],
-          };
-
-          await createPagesForContentNodes({
-            contentType,
-            query,
-            nodesPerPage,
-          })({ ...params, gql }, pluginOptions);
-        }),
+        await createPagesForContentNodes({
+          contentType,
+          query,
+          nodesPerPage,
+        })({ ...params, gql }, pluginOptions);
+      }),
     );
   }
 }

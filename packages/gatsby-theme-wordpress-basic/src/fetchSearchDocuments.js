@@ -1,26 +1,35 @@
+import getIncludedContentTypes from "../node/getIncludedContentTypes";
 import runBatchedWPQuery from "../node/runBatchedWPQuery";
 
 export default async function fetchSearchDocuments(params, pluginOptions) {
   const { gql } = params;
-  const { wp: { url, contentTypes = {}, nodesPerFetch = 100 } = {} } =
-    pluginOptions;
-  if (!url || contentTypes.page === false) {
+  const { wp: { url, nodesPerFetch = 100 } = {} } = pluginOptions;
+  if (!url) {
     return;
   }
 
   let query = gql`
-    query WPPagesForMiniSearch($nodesPerFetch: Int, $cursor: String) {
+    query WPContentNodesForMiniSearch(
+      $nodesPerFetch: Int
+      $cursor: String
+      $contentTypes: [WP_ContentTypeEnum]
+    ) {
       wp {
-        pages: contentNodes(
+        contentNodes: contentNodes(
           first: $nodesPerFetch
           after: $cursor
-          where: { contentTypes: [PAGE] }
+          where: { contentTypes: $contentTypes }
         ) {
           pageInfo {
             endCursor
             hasNextPage
           }
           nodes {
+            contentType {
+              node {
+                name
+              }
+            }
             ...WP_ContentNodeForSearch
           }
         }
@@ -28,33 +37,16 @@ export default async function fetchSearchDocuments(params, pluginOptions) {
     }
   `;
 
-  let variables = { nodesPerFetch };
+  let variables = {
+    nodesPerFetch,
+    contentTypes: getIncludedContentTypes(params, pluginOptions)
+      .filter((contentType) => contentType && contentType.hasArchive !== false)
+      .map((contentType) => contentType.enum),
+  };
+
+  console.log(variables);
 
   await runBatchedWPQuery(params, pluginOptions, query, variables, {
-    connection: "data.pages",
-  });
-
-  query = gql`
-    query WPPostsForMiniSearch($nodesPerFetch: Int, $cursor: String) {
-      wp {
-        posts: contentNodes(
-          first: $nodesPerFetch
-          after: $cursor
-          where: { contentTypes: [POST] }
-        ) {
-          pageInfo {
-            endCursor
-            hasNextPage
-          }
-          nodes {
-            ...WP_ContentNodeForSearch
-          }
-        }
-      }
-    }
-  `;
-
-  await runBatchedWPQuery(params, pluginOptions, query, variables, {
-    connection: "data.posts",
+    connection: "data.contentNodes",
   });
 }
