@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.15.1...@whitespace/gatsby-theme-wordpress-basic@0.16.0) (2021-09-03)
+
+
+### Features
+
+* allow fetch of all content types for minisearch ([ebaea68](https://github.com/whitespace-se/gatsby-packages/commit/ebaea68381bb04f20ee6735e3a5f8455885bc688))
+
+
+
 ### [0.15.1](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.15.0...@whitespace/gatsby-theme-wordpress-basic@0.15.1) (2021-09-03)
 
 
