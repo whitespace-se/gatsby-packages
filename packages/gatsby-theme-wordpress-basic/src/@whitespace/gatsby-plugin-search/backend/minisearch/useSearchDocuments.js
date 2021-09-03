@@ -24,23 +24,22 @@ function defaultContentNodeFields(source) {
 }
 
 export default function useSearchDocuments() {
-  const data =
-    useStaticQuery(graphql`
-      query WPNodesForMiniSearch {
-        pages: graphQlQuery(name: { eq: "WPPagesForMiniSearch" }) {
-          data
-        }
-        posts: graphQlQuery(name: { eq: "WPPostsForMiniSearch" }) {
-          data
-        }
+  const { pages, posts } = useStaticQuery(graphql`
+    query WPNodesForMiniSearch {
+      pages: graphQlQuery(name: { eq: "WPPagesForMiniSearch" }) {
+        data
       }
-    `).graphQlQuery?.data?.contentNodes?.nodes || [];
+      posts: graphQlQuery(name: { eq: "WPPostsForMiniSearch" }) {
+        data
+      }
+    }
+  `);
 
   return [
-    data.pages.nodes.map((source) => ({
+    pages.data.pages.nodes.map((source) => ({
       ...defaultContentNodeFields(source),
     })),
-    data.posts.nodes.map((source) => ({
+    posts.data.posts.nodes.map((source) => ({
       ...defaultContentNodeFields(source),
       tags: source.tags?.nodes,
     })),
