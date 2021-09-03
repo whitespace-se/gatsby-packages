@@ -55,7 +55,7 @@ export async function createPages(params, pluginOptions) {
     } = await graphql(gql`
       query WPcontentTypesQuery {
         wp {
-          contentTypes {
+          contentTypes(first: 1000) {
             nodes {
               name
               graphqlSingleName
