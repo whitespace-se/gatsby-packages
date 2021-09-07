@@ -44,8 +44,6 @@ export default async function fetchSearchDocuments(params, pluginOptions) {
       .map((contentType) => contentType.enum),
   };
 
-  console.log(variables);
-
   await runBatchedWPQuery(params, pluginOptions, query, variables, {
     connection: "data.contentNodes",
   });
