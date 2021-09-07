@@ -2,8 +2,8 @@ import { H } from "@jfrk/react-heading-levels";
 import {
   Button as DefaultButton,
   Link as DefaultLink,
+  withComponentDefaults,
 } from "@whitespace/components";
-import withComponentDefaults from "@whitespace/components/dist/withComponentDefaults";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";

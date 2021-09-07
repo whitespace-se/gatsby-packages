@@ -1,5 +1,4 @@
-import { Link } from "@whitespace/components";
-import withComponentDefaults from "@whitespace/components/dist/withComponentDefaults";
+import { Link, withComponentDefaults } from "@whitespace/components";
 import clsx from "clsx";
 import { graphql, useStaticQuery } from "gatsby";
 import PropTypes from "prop-types";

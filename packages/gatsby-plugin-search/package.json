@@ -21,17 +21,17 @@
     "react-select": "^4.3.1"
   },
   "peerDependencies": {
-    "@whitespace/components": "^0.12.0",
+    "@whitespace/components": "^0.12.1",
     "gatsby": "^3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-i18next": "^11.11.4"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^6.3.7",
-    "@storybook/builder-webpack5": "^6.3.7",
-    "@storybook/react": "^6.3.7",
-    "@whitespace/components": "^0.12.0",
+    "@storybook/addon-essentials": "^6.3.8",
+    "@storybook/builder-webpack5": "^6.3.8",
+    "@storybook/react": "^6.3.8",
+    "@whitespace/components": "^0.12.1",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.2.0",
     "esbuild": "^0.12.25",

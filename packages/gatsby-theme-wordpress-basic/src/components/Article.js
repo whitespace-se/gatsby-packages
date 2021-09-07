@@ -1,5 +1,5 @@
 import { Section } from "@jfrk/react-heading-levels";
-import withComponentDefaults from "@whitespace/components/dist/withComponentDefaults";
+import { withComponentDefaults } from "@whitespace/components";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
