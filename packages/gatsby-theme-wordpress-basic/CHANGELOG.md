@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.16.2](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.16.1...@whitespace/gatsby-theme-wordpress-basic@0.16.2) (2021-09-07)
+
+
+### Bug Fixes
+
+* remove debug code ([a9e80be](https://github.com/whitespace-se/gatsby-packages/commit/a9e80be5dab2f4de538fb179a3960bf5b5ea7ae2))
+
+
+
 ### [0.16.1](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.16.0...@whitespace/gatsby-theme-wordpress-basic@0.16.1) (2021-09-03)
 
 
