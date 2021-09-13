@@ -6,6 +6,10 @@ figure.component {
   margin: 0;
 }
 
+.link {
+  display: block;
+}
+
 .caption {
   display: flex;
   flex-direction: column;
