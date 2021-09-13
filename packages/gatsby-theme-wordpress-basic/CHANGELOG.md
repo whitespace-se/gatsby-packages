@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.16.3](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.16.2...@whitespace/gatsby-theme-wordpress-basic@0.16.3) (2021-09-13)
+
+
+### Bug Fixes
+
+* focus ring on images ([a1e11ec](https://github.com/whitespace-se/gatsby-packages/commit/a1e11ec93a43054be55598756b12d3afc615d435))
+
+
+
 ### [0.16.2](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.16.1...@whitespace/gatsby-theme-wordpress-basic@0.16.2) (2021-09-07)
 
 
