@@ -13,9 +13,9 @@ sourcing from Wordpress and provides some basic components and layout.
 
 ## Gatsby plugins
 
-### `@whitespace/gatsby-plugin-18next`
+### `@whitespace/gatsby-plugin-i18next`
 
-Adds [`react-18next`](https://react.i18next.com/) and the ability to define
+Adds [`react-i18next`](https://react.i18next.com/) and the ability to define
 translations via YAML files.
 
 ### `@whitespace/gatsby-plugin-page-wrapper`
