@@ -7,7 +7,7 @@ import React from "react";
 import context from "../context";
 
 URLSearchParamsProvider.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
   decodeParam: PropTypes.func,
   encodeParam: PropTypes.func,
   forcedParams: PropTypes.object,
