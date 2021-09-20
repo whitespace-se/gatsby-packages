@@ -5,9 +5,9 @@ export default function useSelectStyles() {
         ...provided,
         backgroundColor:
           state.isFocused || state.isSelected
-            ? "var(--select-field-option-active-background-color, #000000)"
-            : "var(--select-field-option-background-color, #ffffff)",
-        borderBottom: "1px solid var(--select-field-divider-color, #dfe1e4)",
+            ? "var(--select-field-option-active-background-color, #1D4ED8)"
+            : "var(--select-field-option-background-color, #E4E4E7)",
+        borderBottom: "1px solid var(--select-field-divider-color, #E4E4E7)",
         color:
           state.isFocused || state.isSelected
             ? "var(--select-field-option-active-color, #ffffff)"
@@ -15,7 +15,7 @@ export default function useSelectStyles() {
         padding: "0.5rem 1rem",
         "&:hover": {
           backgroundColor:
-            "var(--select-field-option-hover-background-color, #000000)",
+            "var(--select-field-option-hover-background-color, #E4E4E7)",
           color: "var(--select-field-option-hover-color, #ffffff)",
         },
       };
