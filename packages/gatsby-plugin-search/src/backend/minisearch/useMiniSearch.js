@@ -14,9 +14,18 @@ function isEmpty(value) {
 function filterHits({ miniSearch, documents, query, filterParams }) {
   const filter = (hit) =>
     Object.entries(filterParams)
-      .filter(([, value]) => !isEmpty(value))
-      .every(([key, value]) => {
-        return hit[key] === value;
+      .filter(([, filterValue]) => !isEmpty(filterValue))
+      .every(([key, filterValue]) => {
+        if (Array.isArray(hit[key])) {
+          if (Array.isArray(filterValue)) {
+            return hit[key].some((value) => filterValue.includes(value));
+          }
+          return hit[key].includes(filterValue);
+        }
+        if (Array.isArray(filterValue)) {
+          return filterValue.includes(hit[key]);
+        }
+        return hit[key] === filterValue;
       });
 
   // Skip minisearch altogether if there’s no query
