@@ -21,7 +21,7 @@
     "react-select": "^4.3.1"
   },
   "peerDependencies": {
-    "@whitespace/components": "^0.12.2",
+    "@whitespace/components": "^0.12.3",
     "gatsby": "^3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -31,15 +31,15 @@
     "@storybook/addon-essentials": "^6.3.8",
     "@storybook/builder-webpack5": "^6.3.8",
     "@storybook/react": "^6.3.8",
-    "@whitespace/components": "^0.12.2",
+    "@whitespace/components": "^0.12.3",
     "babel-loader": "^8.2.2",
-    "css-loader": "^6.2.0",
-    "esbuild": "^0.12.27",
-    "eslint-plugin-jest": "^24.4.0",
+    "css-loader": "^6.3.0",
+    "esbuild": "^0.13.2",
+    "eslint-plugin-jest": "^24.4.2",
     "gatsby": "^3",
     "gatsby-image": "^3.11.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "style-loader": "^3.2.1"
+    "style-loader": "^3.3.0"
   }
 }
