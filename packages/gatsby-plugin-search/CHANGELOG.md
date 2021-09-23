@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.11.5...@whitespace/gatsby-plugin-search@0.12.0) (2021-09-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update all deps
+
+### Bug Fixes
+
+* `useMiniSearch` did not handle fitlering on multi value fields ([9c41afd](https://github.com/whitespace-se/gatsby-packages/commit/9c41afd8f1624042444850b49fde7ed2a43c7fcf))
+* improve `StateSearchParamsProvider` ([60571b2](https://github.com/whitespace-se/gatsby-packages/commit/60571b2e78397969fde4ef91198348b9e94a53d1))
+* low contrast default styles for `SelectField` ([5118589](https://github.com/whitespace-se/gatsby-packages/commit/511858914e09d31f23f6d07e765fdf18af240da0))
+* proptypes for `URLSearchParamsProvider` ([32a6137](https://github.com/whitespace-se/gatsby-packages/commit/32a6137c83088726af1da658ac9eb96020ddf3cb))
+
+
+### Miscellaneous Chores
+
+* **deps:** update all deps ([4cfbb84](https://github.com/whitespace-se/gatsby-packages/commit/4cfbb8485f8c4871ed42bba82dcf753c462b6049))
+
+
+
 ### [0.11.5](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.11.4...@whitespace/gatsby-plugin-search@0.11.5) (2021-09-13)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-search
