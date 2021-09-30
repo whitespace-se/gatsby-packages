@@ -6,7 +6,7 @@ const getAttribute = (attribute) => (document) => document[attribute];
 
 function isEmpty(value) {
   if (Array.isArray(value)) {
-    return value.length === 0;
+    return value.every((value) => value == null || value === "");
   }
   return value == null || value === "";
 }
