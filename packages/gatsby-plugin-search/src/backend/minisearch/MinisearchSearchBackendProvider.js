@@ -16,6 +16,7 @@ MinisearchSearchBackendProvider.propTypes = {
     minisearch: PropTypes.object,
     attributesForFaceting: PropTypes.arrayOf(PropTypes.string),
   }),
+  transformParams: PropTypes.func,
 };
 
 function extractKeys(objects) {
@@ -39,15 +40,21 @@ function normalizeDocuments(documents) {
 }
 
 export default function MinisearchSearchBackendProvider({
-  settings: { miniSearch = {}, attributesForFaceting = [] } = {},
   children,
+  settings: { miniSearch = {}, attributesForFaceting = [] } = {},
+  transformParams = (params) => params,
 }) {
   const { Provider } = context;
   let documents = normalizeDocuments(useSearchDocuments());
 
+  let { params } = useSearchParams();
+
   let {
-    params: { sort = "score:desc", page, hitsPerPage = 20, ...otherParams },
-  } = useSearchParams();
+    sort = "score:desc",
+    page,
+    hitsPerPage = 20,
+    ...otherParams
+  } = transformParams(params);
 
   let [sortBy, sortOrder = "asc"] = sort.split(":");
 
