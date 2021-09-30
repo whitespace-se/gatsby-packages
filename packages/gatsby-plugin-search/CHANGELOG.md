@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.12.1](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.0...@whitespace/gatsby-plugin-search@0.12.1) (2021-09-30)
+
+
+### Features
+
+* add `transformParams` prop to MinisearchSearchBackendProvider ([8f98e23](https://github.com/whitespace-se/gatsby-packages/commit/8f98e235974f8429ea0a67dacce80bbbe4663fa9))
+
+
+### Bug Fixes
+
+* ignore empty strings in multi-value filters ([3ff4c6a](https://github.com/whitespace-se/gatsby-packages/commit/3ff4c6a4e5634b6197361e49ecadf235f4119d80))
+
+
+
 ## [0.12.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.11.5...@whitespace/gatsby-plugin-search@0.12.0) (2021-09-23)
 
 
