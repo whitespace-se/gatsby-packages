@@ -1,0 +1,112 @@
+.component {
+  background: var(--cc-background, purple);
+  color: var(--cc-foreground, white);
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  font-size: var(--cc-body-size, 1rem);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+
+  position: fixed;
+}
+
+.button-group {
+  margin: var(--cc-button-group-margin, 0.5rem);
+}
+
+.button {
+  padding: var(--cc-button-padding, 1rem);
+  border: 0;
+  border-radius: var(--cc-button-border-radius, 0.5rem);
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.button--decline {
+  background: var(--cc-decline-background, purple);
+  color: var(--cc-decline-foreground, white);
+}
+
+.button--approve {
+  background: var(--cc-approve-background, green);
+  color: var(--cc-approve-foregound, white);
+}
+
+.title {
+  font-size: var(--cc-title-size, 2rem);
+  font-weight: 600;
+}
+
+.description {
+  margin: 0;
+}
+
+.more,
+.more:hover,
+.more:focus {
+  color: inherit;
+}
+
+@media (min-width: 40rem) {
+  .top,
+  .bottom {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .top {
+    top: 0;
+    bottom: unset;
+  }
+
+  .topLeft {
+    left: 1rem;
+    top: 1rem;
+    max-width: 26rem;
+    border-radius: 0.25rem;
+  }
+
+  .topRight {
+    right: 1rem;
+    top: 1rem;
+    left: auto;
+    max-width: 26rem;
+    border-radius: 0.25rem;
+  }
+
+  .bottomLeft {
+    top: auto;
+    bottom: 1rem;
+    left: 1rem;
+    max-width: 26rem;
+    border-radius: 0.25rem;
+  }
+
+  .bottomRight {
+    top: auto;
+    right: 1rem;
+    bottom: 1rem;
+    left: auto;
+    max-width: 26rem;
+    border-radius: 0.25rem;
+  }
+
+  .bottom {
+    top: auto;
+    bottom: 0;
+    left: 0;
+  }
+
+  .topLeft,
+  .topRight,
+  .bottomLeft,
+  .bottomRight {
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+      0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+      0 100px 80px rgba(0, 0, 0, 0.07);
+  }
+}
