@@ -1,3 +1,3 @@
-export { default as CookieConsent } from "./CookieConsentContainer";
+export { default as CookieConsent } from "./components/CookieConsentContainer";
 
 export { default as CookieConsentProvider } from "./CookieConsentProvider";
