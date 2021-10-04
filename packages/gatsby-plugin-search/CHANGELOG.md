@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.12.2](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.1...@whitespace/gatsby-plugin-search@0.12.2) (2021-10-04)
+
+**Note:** Version bump only for package @whitespace/gatsby-plugin-search
+
+
+
+
+
 ### [0.12.1](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.0...@whitespace/gatsby-plugin-search@0.12.1) (2021-09-30)
 
 

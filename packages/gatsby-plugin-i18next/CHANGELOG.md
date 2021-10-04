@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.4.1](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-i18next@0.4.0...@whitespace/gatsby-plugin-i18next@0.4.1) (2021-10-04)
+
+
+### Bug Fixes
+
+* set a default value to avoid breakage when path is empty (i.e. 404 pages) ([6093a6a](https://github.com/whitespace-se/gatsby-packages/commit/6093a6a1f47fbea84dcfe5bb858f5f607d73e34e))
+
+
+
 ## [0.4.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-i18next@0.3.2...@whitespace/gatsby-plugin-i18next@0.4.0) (2021-09-23)
 
 
