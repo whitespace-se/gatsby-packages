@@ -1,5 +1,5 @@
 import { unblock } from "@jeanfredrik/yett";
-import { useHasMounted } from "@whitespace/gatsby-hooks/src";
+import { useHasMounted } from "@whitespace/gatsby-hooks";
 import differenceInMonths from "date-fns/differenceInMonths";
 import PropTypes from "prop-types";
 import React, { useEffect } from "react";
