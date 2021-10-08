@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.18.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.17.2...@whitespace/gatsby-theme-wordpress-basic@0.18.0) (2021-10-08)
+
+
+### Features
+
+* add "skip to main content" link ([f16863d](https://github.com/whitespace-se/gatsby-packages/commit/f16863de7c9c8ad5340c802a355a0078ce6583cf))
+
+
+
 ### [0.17.2](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.17.1...@whitespace/gatsby-theme-wordpress-basic@0.17.2) (2021-10-04)
 
 **Note:** Version bump only for package @whitespace/gatsby-theme-wordpress-basic
