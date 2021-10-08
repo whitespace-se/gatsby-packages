@@ -1,3 +1,4 @@
+import { SkipTo } from "@whitespace/components";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
@@ -21,6 +22,7 @@ export default function Header({
   const { t } = useTranslation();
   return (
     <header className={clsx(styles.component, className)} {...restProps}>
+      <SkipTo />
       <HeaderLogo linkTo="/" />
       <HeaderFlyOutMenu />
       <HeaderMainMenu aria-label={t("mainMenu")} />

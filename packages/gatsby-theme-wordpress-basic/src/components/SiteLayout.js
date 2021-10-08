@@ -24,7 +24,7 @@ export default function SiteLayout({
   return (
     <div className={clsx(styles.component, className)}>
       <Header />
-      <main className={styles.main}>
+      <main className={styles.main} id="main">
         {!isFrontPage && <PageBreadcrumbs className={styles.breadcrumbs} />}
         {children}
       </main>
