@@ -18,23 +18,23 @@
     "immer": "^9.0.6",
     "lodash-es": "^4.17.21",
     "minisearch": "^3.1.0",
-    "react-select": "^5.0.0"
+    "react-select": "^5.1.0"
   },
   "peerDependencies": {
-    "@whitespace/components": "^0.12.3",
+    "@whitespace/components": "^0.13.0",
     "gatsby": "^3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-i18next": "^11.12.0"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^6.3.9",
-    "@storybook/builder-webpack5": "^6.3.9",
-    "@storybook/react": "^6.3.9",
-    "@whitespace/components": "^0.12.3",
+    "@storybook/addon-essentials": "^6.3.10",
+    "@storybook/builder-webpack5": "^6.3.10",
+    "@storybook/react": "^6.3.10",
+    "@whitespace/components": "^0.13.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.3.0",
-    "esbuild": "^0.13.3",
+    "esbuild": "^0.13.4",
     "eslint-plugin-jest": "^24.5.2",
     "gatsby": "^3",
     "gatsby-image": "^3.11.0",

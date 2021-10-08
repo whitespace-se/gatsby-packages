@@ -5,12 +5,12 @@
   "author": "Whitespace Dev <code@whitespace.se>",
   "license": "MIT",
   "devDependencies": {
-    "gatsby": "^3.14.1",
+    "gatsby": "^3.14.2",
     "i18next": "^21.2.4",
     "react": "^17.0.2"
   },
   "peerDependencies": {
-    "gatsby": "^3.14.1",
+    "gatsby": "^3.14.2",
     "i18next": "^21.2.4",
     "react": "^17.0.2",
     "react-i18next": "^11.12.0"
