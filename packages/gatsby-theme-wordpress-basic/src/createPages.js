@@ -21,7 +21,7 @@ const MonthArchivePageTemplate = require.resolve(
 
 const SingleTemplate = require.resolve("./templates/SingleTemplate");
 
-export default ({ contentType, query, nodesPerPage }) =>
+export default ({ contentType, query, nodesPerFetch }) =>
   async ({ actions, graphql, reporter }) => {
     const allContentNodes = [];
     const allContentNodesByYear = {};
@@ -39,7 +39,7 @@ export default ({ contentType, query, nodesPerPage }) =>
     };
     const { createPage } = actions;
 
-    reporter.info(`${nodesPerPage} items per page`);
+    reporter.info(`${nodesPerFetch} items per page`);
 
     const fetchPages = async (variables) =>
       await graphql(query, { ...commonVariables, ...variables })
@@ -97,7 +97,7 @@ export default ({ contentType, query, nodesPerPage }) =>
 
           if (hasNextPage) {
             pageNumber++;
-            return fetchPages({ first: nodesPerPage, after: endCursor });
+            return fetchPages({ first: nodesPerFetch, after: endCursor });
           }
         })
         .catch((error) => {
@@ -118,7 +118,7 @@ ${JSON.stringify({ ...commonVariables, ...variables }, null, 2)}`,
      * Kick off our `fetchPages` method which will get us all
      * the pages we need to create individual pages.
      */
-    await fetchPages({ first: nodesPerPage, after: null });
+    await fetchPages({ first: nodesPerFetch, after: null });
 
     allContentNodes.map((contentNode) => {
       let path = contentNode.uri;
