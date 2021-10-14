@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.18.1](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.0...@whitespace/gatsby-theme-wordpress-basic@0.18.1) (2021-10-14)
+
+
+### Bug Fixes
+
+* `nodesPerFetch` didn’t work ([b33dc12](https://github.com/whitespace-se/gatsby-packages/commit/b33dc1227ec0f9f4921acca38f651543b6fec846))
+* sort posts by publishDate in desc order on archive pages ([d3a73a1](https://github.com/whitespace-se/gatsby-packages/commit/d3a73a14ed226a6326f09d58973f2a5fd11113f3))
+
+
+
 ## [0.18.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.17.2...@whitespace/gatsby-theme-wordpress-basic@0.18.0) (2021-10-08)
 
 
