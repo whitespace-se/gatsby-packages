@@ -202,7 +202,7 @@ export default function SearchForm({
             )}
           </div>
           <div className={styles.sortContainer}>
-            {"sort" in values && (
+            {"sort" in values && !(forcedParams && "sort" in forcedParams) && (
               <div className={styles.toggleButtonGroupWrapper}>
                 <div
                   id={generateID("sort-label")}

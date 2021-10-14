@@ -44,7 +44,7 @@ export default function Archive({
             <Section>
               <URLSearchParamsProvider
                 urlPattern={getArchiveURLPatternFromPageContext(pageContext)}
-                forcedParams={{ contentType: "post" }}
+                forcedParams={{ contentType: "post", sort: "publishDate:desc" }}
                 encodeParam={(value, param) => {
                   switch (param) {
                     case "month":
