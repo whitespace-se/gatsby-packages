@@ -34,3 +34,4 @@ export { default as BoxNavigation } from "./BoxNavigation";
 
 export { default as HTML } from "./HTML";
 export { default as MustacheDataProvider } from "./MustacheDataProvider";
+export { default as PageContent } from "./PageContent";

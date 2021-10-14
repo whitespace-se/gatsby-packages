@@ -2,9 +2,10 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
 
-import { useHTMLProcessor, usePageContext } from "../hooks";
+import { usePageContext } from "../hooks";
 
 import * as defaultStyles from "./ArticleBody.module.css";
+import PageContent from "./PageContent";
 import TextContent from "./TextContent";
 import WPBlocks from "./WPBlocks";
 
@@ -22,9 +23,6 @@ export default function ArticleBody({
     contentNode: { content: contentHTML, contentMedia, blocksJSON },
   } = usePageContext();
 
-  const { processPageContent } = useHTMLProcessor();
-  let { preamble, content } = processPageContent(contentHTML, { contentMedia });
-
   return (
     <TextContent className={clsx(styles.component, className)} {...restProps}>
       {blocksJSON ? (
@@ -35,10 +33,16 @@ export default function ArticleBody({
           />
         </>
       ) : (
-        <>
-          {preamble && <div className={clsx(styles.preamble)}>{preamble}</div>}
-          {content}
-        </>
+        <PageContent input={contentHTML} contentMedia={contentMedia}>
+          {({ preamble, content }) => (
+            <>
+              {preamble && (
+                <div className={clsx(styles.preamble)}>{preamble}</div>
+              )}
+              {content}
+            </>
+          )}
+        </PageContent>
       )}
     </TextContent>
   );
