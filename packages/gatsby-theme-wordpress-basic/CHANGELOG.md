@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.18.3](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.2...@whitespace/gatsby-theme-wordpress-basic@0.18.3) (2021-10-14)
+
+
+### Features
+
+* add `PageContent` component ([e4eb2a0](https://github.com/whitespace-se/gatsby-packages/commit/e4eb2a0c802da94219e11cd53887e3f8d14adb56))
+
+
+
 ### [0.18.2](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.1...@whitespace/gatsby-theme-wordpress-basic@0.18.2) (2021-10-14)
 
 
