@@ -2,8 +2,7 @@ import { Link } from "@whitespace/components";
 import PropTypes from "prop-types";
 import React from "react";
 
-import { useHTMLProcessor } from "../hooks/html-processor";
-
+import HTML from "./HTML";
 import Image from "./Image";
 import Time from "./Time";
 
@@ -29,7 +28,6 @@ function normalizeCategories(categories) {
 }
 
 export default function ArchivePost({ post, date }) {
-  const { processContent } = useHTMLProcessor();
   const image = post.featuredImage?.node;
   let categories = post.categories && normalizeCategories(post.categories);
   return (
@@ -73,7 +71,7 @@ export default function ArchivePost({ post, date }) {
             />
           </div>
           <div className="c-archive__result-excerpt">
-            {processContent(post.excerpt)}
+            <HTML>{post.excerpt}</HTML>
           </div>
         </div>
         {image && (

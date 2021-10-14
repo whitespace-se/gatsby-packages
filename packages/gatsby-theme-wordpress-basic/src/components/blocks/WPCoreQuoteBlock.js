@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-import { useHTMLProcessor } from "../../hooks/html-processor";
+import HTML from "../HTML";
 
 WPCoreQuoteBlock.propTypes = {
   block: PropTypes.shape({ originalContent: PropTypes.string.isRequired })
@@ -10,7 +10,5 @@ WPCoreQuoteBlock.propTypes = {
 };
 
 export default function WPCoreQuoteBlock({ block, contentMedia }) {
-  const { processContent } = useHTMLProcessor();
-  const content = processContent(block.originalContent, { contentMedia });
-  return <>{content}</>;
+  return <HTML contentMedia={contentMedia}>{block.originalContent}</HTML>;
 }

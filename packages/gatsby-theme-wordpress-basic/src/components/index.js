@@ -31,3 +31,6 @@ export { default as WPBlocks } from "./WPBlocks";
 
 export { default as BoxNavigation } from "./BoxNavigation";
 // export * from "./BoxNavigation";
+
+export { default as HTML } from "./HTML";
+export { default as MustacheDataProvider } from "./MustacheDataProvider";
