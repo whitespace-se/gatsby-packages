@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.18.4](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.3...@whitespace/gatsby-theme-wordpress-basic@0.18.4) (2021-10-15)
+
+
+### Bug Fixes
+
+* error on missing string in HTML and PageContent components ([05255fa](https://github.com/whitespace-se/gatsby-packages/commit/05255facc24fe89383ebabf4c44a2ea4addfd656))
+
+
+
 ### [0.18.3](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.2...@whitespace/gatsby-theme-wordpress-basic@0.18.3) (2021-10-14)
 
 
