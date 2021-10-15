@@ -20,7 +20,7 @@ SearchHit.propTypes = {
   label: PropTypes.string,
   styles: PropTypes.objectOf(PropTypes.string),
   text: PropTypes.string,
-  publishDate: PropTypes.dateTime,
+  publishDate: PropTypes.string,
   url: PropTypes.string,
   showImage: PropTypes.bool,
   showExcerpt: PropTypes.bool,
