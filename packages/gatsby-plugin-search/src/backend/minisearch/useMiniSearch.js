@@ -73,7 +73,7 @@ export default function useMiniSearch({
     const facets = {};
     attributesForFaceting.forEach((attribute) => {
       facets[attribute] = {};
-      facetValues[attribute].forEach((value) => {
+      facetValues[attribute].filter(Boolean).forEach((value) => {
         // Make a search for each facet value as if it was set to calculate the number of hits
         facets[attribute][value] = filterHits({
           miniSearch: miniSearchRef.current,
