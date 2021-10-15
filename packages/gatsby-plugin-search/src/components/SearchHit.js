@@ -1,15 +1,15 @@
-import clsx from "clsx";
-import PropTypes from "prop-types";
-import React from "react";
-
-import * as defaultStyles from "./SearchHit.module.css";
-
 import {
   SearchTeaser,
   SearchTeaserContent,
   SearchTeaserMedia,
   SearchTeaserTitle,
-} from "./";
+} from "@whitespace/gatsby-plugin-search/src/components";
+import clsx from "clsx";
+import { format, parseISO } from "date-fns";
+import PropTypes from "prop-types";
+import React from "react";
+
+import * as defaultStyles from "./SearchHit.module.css";
 
 SearchHit.propTypes = {
   children: PropTypes.node,
@@ -20,9 +20,11 @@ SearchHit.propTypes = {
   label: PropTypes.string,
   styles: PropTypes.objectOf(PropTypes.string),
   text: PropTypes.string,
+  publishDate: PropTypes.dateTime,
   url: PropTypes.string,
   showImage: PropTypes.bool,
   showExcerpt: PropTypes.bool,
+  showPublishDate: PropTypes.bool,
 };
 
 export default function SearchHit({
@@ -31,7 +33,9 @@ export default function SearchHit({
   label: title,
   showImage = true,
   showExcerpt = true,
+  showPublishDate = true,
   text: excerpt,
+  publishDate,
   url,
   image,
   ...restProps
@@ -46,6 +50,14 @@ export default function SearchHit({
         <SearchTeaserTitle link={{ url }} styles={styles}>
           {title}
         </SearchTeaserTitle>
+        {showPublishDate && publishDate && (
+          <time
+            className={clsx(styles.date)}
+            dateTime={format(parseISO(publishDate), "yyyy-MM-dd")}
+          >
+            {format(parseISO(publishDate), "yyyy-MM-dd")}
+          </time>
+        )}
         {showExcerpt && excerpt && (
           <p className={clsx(styles.excerpt)}>{excerpt}</p>
         )}
