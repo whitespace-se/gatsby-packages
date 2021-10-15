@@ -18,6 +18,7 @@ import {
   // getMainArchivePagePathFromPageContext,
   getArchiveURLPatternFromPageContext,
 } from "../contentType";
+import { layout } from "../foundation";
 import { usePageContext } from "../hooks";
 
 import * as defaultStyles from "./Archive.module.css";
@@ -34,7 +35,10 @@ export default function Archive({
 }) {
   let pageContext = usePageContext();
   return (
-    <article className={clsx(styles.component, className)} {...restProps}>
+    <article
+      className={clsx(layout.component, layout.componentWidthFull, className)}
+      {...restProps}
+    >
       <div className="o-grid">
         <div className="o-grid-row">
           <div className="o-grid-block o-grid-block--inherit">
