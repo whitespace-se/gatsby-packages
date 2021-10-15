@@ -8,9 +8,9 @@ HTML.propTypes = {
   children: PropTypes.string,
 };
 
-export default function HTML({ children: mustacheString, ...restProps }) {
+export default function HTML({ children: input, ...restProps }) {
   let data = useMustacheData();
-  let htmlString = Mustache.render(mustacheString, data);
+  let htmlString = Mustache.render(String(input || ""), data);
   let { processContent } = useHTMLProcessor();
   return processContent(htmlString, restProps);
 }

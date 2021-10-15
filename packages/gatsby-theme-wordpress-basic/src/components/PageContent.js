@@ -11,7 +11,7 @@ PageContent.propTypes = {
 
 export default function PageContent({ input, children, ...restProps }) {
   let data = useMustacheData();
-  let htmlString = Mustache.render(input, data);
+  let htmlString = Mustache.render(String(input || ""), data);
   let { processPageContent } = useHTMLProcessor();
   let { preamble, content } = processPageContent(htmlString, restProps);
   return children({ preamble, content });
