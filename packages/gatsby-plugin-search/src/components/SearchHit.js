@@ -38,14 +38,9 @@ export default function SearchHit({
   publishDate,
   url,
   image,
-  ...restProps
 }) {
   return (
-    <SearchTeaser
-      as="li"
-      className={clsx(className, styles.teaser)}
-      {...restProps}
-    >
+    <SearchTeaser as="li" className={clsx(className, styles.teaser)}>
       <SearchTeaserContent>
         <SearchTeaserTitle link={{ url }} styles={styles}>
           {title}
