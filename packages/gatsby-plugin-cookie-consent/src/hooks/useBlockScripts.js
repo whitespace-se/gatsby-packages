@@ -3,6 +3,7 @@ import { useEffect } from "react";
 
 const blockScripts = ({ whitelist }) => {
   let blacklist = [];
+  whitelist = whitelist || [];
 
   if (window.location.host !== "") {
     // Allow all scripts on same origin
