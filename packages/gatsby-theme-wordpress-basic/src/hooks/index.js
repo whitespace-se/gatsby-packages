@@ -16,3 +16,5 @@ export { default as usePages } from "./pages";
 export { default as useContentType } from "./useContentType";
 
 export { default as useContentTypes } from "./useContentTypes";
+
+export { default as useMustacheData } from "./useMustacheData";

@@ -1,17 +1,17 @@
 {
   "name": "@whitespace/gatsby-plugin-i18next",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "main": "index.js",
   "author": "Whitespace Dev <code@whitespace.se>",
   "license": "MIT",
   "devDependencies": {
     "gatsby": "^3.14.2",
-    "i18next": "^21.2.4",
+    "i18next": "^21.3.1",
     "react": "^17.0.2"
   },
   "peerDependencies": {
     "gatsby": "^3.14.2",
-    "i18next": "^21.2.4",
+    "i18next": "^21.3.1",
     "react": "^17.0.2",
     "react-i18next": "^11.12.0"
   },

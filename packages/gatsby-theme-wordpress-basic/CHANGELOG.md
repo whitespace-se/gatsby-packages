@@ -3,6 +3,43 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.18.4](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.3...@whitespace/gatsby-theme-wordpress-basic@0.18.4) (2021-10-15)
+
+
+### Bug Fixes
+
+* error on missing string in HTML and PageContent components ([05255fa](https://github.com/whitespace-se/gatsby-packages/commit/05255facc24fe89383ebabf4c44a2ea4addfd656))
+
+
+
+### [0.18.3](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.2...@whitespace/gatsby-theme-wordpress-basic@0.18.3) (2021-10-14)
+
+
+### Features
+
+* add `PageContent` component ([e4eb2a0](https://github.com/whitespace-se/gatsby-packages/commit/e4eb2a0c802da94219e11cd53887e3f8d14adb56))
+
+
+
+### [0.18.2](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.1...@whitespace/gatsby-theme-wordpress-basic@0.18.2) (2021-10-14)
+
+
+### Features
+
+* add `HTML` component ([c14e7ea](https://github.com/whitespace-se/gatsby-packages/commit/c14e7ea42a93d464fc9a71d04a45430950e638e1))
+
+
+
+### [0.18.1](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.0...@whitespace/gatsby-theme-wordpress-basic@0.18.1) (2021-10-14)
+
+
+### Bug Fixes
+
+* `nodesPerFetch` didn’t work ([b33dc12](https://github.com/whitespace-se/gatsby-packages/commit/b33dc1227ec0f9f4921acca38f651543b6fec846))
+* sort posts by publishDate in desc order on archive pages ([d3a73a1](https://github.com/whitespace-se/gatsby-packages/commit/d3a73a14ed226a6326f09d58973f2a5fd11113f3))
+
+
+
 ## [0.18.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.17.2...@whitespace/gatsby-theme-wordpress-basic@0.18.0) (2021-10-08)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@whitespace/gatsby-plugin-search",
-  "version": "0.12.3",
+  "version": "0.12.5",
   "description": "Adds search to your Gatsby site",
   "license": "MIT",
   "files": [
@@ -28,14 +28,14 @@
     "react-i18next": "^11.12.0"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^6.3.10",
-    "@storybook/builder-webpack5": "^6.3.10",
-    "@storybook/react": "^6.3.10",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/builder-webpack5": "^6.3.12",
+    "@storybook/react": "^6.3.12",
     "@whitespace/components": "^0.13.0",
     "babel-loader": "^8.2.2",
-    "css-loader": "^6.3.0",
-    "esbuild": "^0.13.4",
-    "eslint-plugin-jest": "^24.5.2",
+    "css-loader": "^6.4.0",
+    "esbuild": "^0.13.6",
+    "eslint-plugin-jest": "^25.0.6",
     "gatsby": "^3",
     "gatsby-image": "^3.11.0",
     "react": "^17.0.2",
