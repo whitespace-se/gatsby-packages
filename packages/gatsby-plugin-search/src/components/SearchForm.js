@@ -183,10 +183,10 @@ export default function SearchForm({
                       )
                       .map(([value]) => ({
                         label: t(
-                          `month${formatDate(
+                          `search.facetLabels.month.${formatDate(
                             parseDate(value, "yyyy-MM", new Date()),
-                            "M",
-                          )}Label`,
+                            "MMMM",
+                          ).toLowerCase()}`,
                         ),
                         value: value,
                       })),
