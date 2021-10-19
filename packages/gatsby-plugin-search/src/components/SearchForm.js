@@ -182,9 +182,11 @@ export default function SearchForm({
                           count > 0 && value.startsWith(values.year),
                       )
                       .map(([value]) => ({
-                        label: formatDate(
-                          parseDate(value, "yyyy-MM", new Date()),
-                          "MMMM",
+                        label: t(
+                          `month${formatDate(
+                            parseDate(value, "yyyy-MM", new Date()),
+                            "M",
+                          )}Label`,
                         ),
                         value: value,
                       })),
