@@ -75,6 +75,9 @@ export default function SearchForm({
 
   const tags = useFilterValues("tags");
 
+  const { query, page, contentType, ...otherFilters } = urlParams;
+  const showClearFilter = Object.values(otherFilters).length > 0;
+
   return (
     <Formik
       initialValues={params}
@@ -190,7 +193,7 @@ export default function SearchForm({
                 ]}
               />
             )}
-            {Object.values(urlParams).length > 0 && (
+            {showClearFilter && (
               <button
                 className={styles.clearFilter}
                 onClick={() => {
