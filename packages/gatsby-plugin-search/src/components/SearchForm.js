@@ -197,7 +197,7 @@ export default function SearchForm({
               <button
                 className={styles.clearFilter}
                 onClick={() => {
-                  setValues({});
+                  setValues({ query, page, contentType });
                   setTimeout(submitForm, 0);
                 }}
               >
