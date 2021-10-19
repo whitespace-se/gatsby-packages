@@ -150,6 +150,7 @@ export default function SearchForm({
                   { value: "", label: t(`search.facetLabels.year.any`) },
                   ...Object.entries(facets.year)
                     .filter(([, count]) => count > 0)
+                    .reverse()
                     .map(([value]) => ({
                       label: value,
                       value,
