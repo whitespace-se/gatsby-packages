@@ -16,9 +16,9 @@
 }
 
 .date {
-  font-size: var(--search-hit-date-size, 0.875rem);
+  font-size: var(--search-hit-meta-size, 0.875rem);
   margin-bottom: calc(var(--search-hit-spacing, 1rem) / 2);
-  color: var(--search-hit-date-color, #969aa7);
+  color: var(--search-hit-meta-color, #969aa7);
 }
 
 .excerpt {
