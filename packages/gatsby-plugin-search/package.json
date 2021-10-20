@@ -21,7 +21,7 @@
     "react-select": "^5.1.0"
   },
   "peerDependencies": {
-    "@whitespace/components": "^0.13.0",
+    "@whitespace/components": "^0.13.1",
     "gatsby": "^3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -31,11 +31,11 @@
     "@storybook/addon-essentials": "^6.3.12",
     "@storybook/builder-webpack5": "^6.3.12",
     "@storybook/react": "^6.3.12",
-    "@whitespace/components": "^0.13.0",
+    "@whitespace/components": "^0.13.1",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.4.0",
-    "esbuild": "^0.13.6",
-    "eslint-plugin-jest": "^25.0.6",
+    "esbuild": "^0.13.8",
+    "eslint-plugin-jest": "^25.2.2",
     "gatsby": "^3",
     "gatsby-image": "^3.11.0",
     "react": "^17.0.2",
