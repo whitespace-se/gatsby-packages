@@ -10,7 +10,6 @@ import {
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
-import * as yup from "yup";
 
 import {
   getMainArchivePageTitleFromPageContext,
@@ -18,7 +17,7 @@ import {
   // getMainArchivePagePathFromPageContext,
   getArchiveURLPatternFromPageContext,
 } from "../contentType";
-import { usePageContext } from "../hooks";
+import { useArchiveParamTypes, usePageContext } from "../hooks";
 
 import * as defaultStyles from "./Archive.module.css";
 
@@ -32,6 +31,7 @@ export default function Archive({
   className,
   ...restProps
 }) {
+  const paramTypes = useArchiveParamTypes();
   let pageContext = usePageContext();
   return (
     <article className={clsx(styles.component, className)} {...restProps}>
@@ -44,41 +44,51 @@ export default function Archive({
             <Section>
               <URLSearchParamsProvider
                 urlPattern={getArchiveURLPatternFromPageContext(pageContext)}
-                forcedParams={{ contentType: "post", sort: "publishDate:desc" }}
-                encodeParam={(value, param) => {
-                  switch (param) {
-                    case "month":
-                      return value.substring(5, 7);
-                    default:
-                      return value;
-                  }
+                forcedParams={{
+                  contentType: "post",
+                  sort: "publishDate:desc",
                 }}
-                decodeParam={(value, param, params) => {
-                  switch (param) {
-                    case "month":
-                      return `${params.year}-${value}`;
-                    default:
-                      return value;
-                  }
-                }}
-                schema={yup.object({
-                  // tags: yup.array().default([]),
-                  year: yup.string().ensure(),
-                  month: yup
-                    .string()
-                    .ensure()
-                    .when("year", (year, schema) =>
-                      year ? schema : schema.strip(),
-                    ),
+                paramTypes={paramTypes}
+                decodeParams={({ year, month, ...params }) => ({
+                  ...params,
+                  date: month ? `${year}-${month}` : year,
+                })}
+                encodeParams={({ date, ...params }) => ({
+                  ...params,
+                  ...(/^\d{4}$/.test(date) && { year: date }),
+                  ...(/^\d{4}-\d{2}$/.test(date) && {
+                    year: date.substring(0, 4),
+                    month: date.substring(5, 7),
+                  }),
                 })}
               >
                 <LazyMinisearchSearchBackendProvider
                   preload={true}
                   settings={{
-                    attributesForFaceting: ["year", "month"],
+                    attributesForFaceting: ["contentType", "tags", "month"],
                   }}
+                  transformParams={({ date, ...params }) => ({
+                    ...params,
+                    ...(/^\d{4}$/.test(date) && {
+                      month: [
+                        "01",
+                        "02",
+                        "03",
+                        "04",
+                        "05",
+                        "06",
+                        "07",
+                        "08",
+                        "09",
+                        "10",
+                        "11",
+                        "12",
+                      ].map((m) => `${date}-${m}`),
+                    }),
+                    ...(/^\d{4}-\d{2}$/.test(date) && { month: [date] }),
+                  })}
                 >
-                  <SearchForm showHitsTotal={false} />
+                  <SearchForm />
                   {process.env.NODE_ENV !== "production" && (
                     <details>
                       <summary>Debug</summary>

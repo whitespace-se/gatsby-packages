@@ -5,6 +5,8 @@ import { Field } from "formik";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { useSearchSettings } from "../../hooks";
+
 import * as styles from "./SearchFormQueryField.module.css";
 
 SearchFormQueryField.propTypes = {
@@ -15,10 +17,14 @@ SearchFormQueryField.propTypes = {
 
 export default function SearchFormQueryField({
   id,
-  label = "Search query",
-  submitLabel = "Search",
+  label,
+  submitLabel,
   ...restProps
 }) {
+  const { searchPlaceholderText, searchLabelText, searchButtonText } =
+    useSearchSettings();
+  label = label || searchLabelText || "Search query";
+  submitLabel = submitLabel || searchButtonText || "Search";
   const generateID = useID();
   return (
     <div className={styles.wrapper}>
@@ -33,6 +39,7 @@ export default function SearchFormQueryField({
         name="query"
         id={id || generateID("search-query")}
         className={cx(styles.input)}
+        placeholder={searchPlaceholderText}
         {...restProps}
       />
       <button type="submit" className={styles.submit}>

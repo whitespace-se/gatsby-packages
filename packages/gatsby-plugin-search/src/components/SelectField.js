@@ -3,23 +3,7 @@ import React from "react";
 import ReactSelect from "react-select";
 
 import { useSelectStyles } from "../hooks";
-
-function normalizeOption(option) {
-  if (typeof option !== "object") {
-    return { value: option, label: option };
-  }
-  return option;
-}
-
-function normalizeOptions(options) {
-  if (!Array.isArray(options)) {
-    return Object.entries(options).map(([value, rest]) => ({
-      ...normalizeOption(rest),
-      value,
-    }));
-  }
-  return options && options.map(normalizeOption);
-}
+import { normalizeOption, normalizeOptions } from "../utils";
 
 SelectField.propTypes = {
   onChange: PropTypes.func,
@@ -40,23 +24,33 @@ SelectField.propTypes = {
   ]),
 };
 
-export default function SelectField({ options, value, onChange, ...props }) {
+export default function SelectField({
+  options,
+  value,
+  onChange,
+  isMulti,
+  ...props
+}) {
   let normalizedOptions = normalizeOptions(options);
+
+  if (isMulti) {
+    normalizedOptions = normalizedOptions.filter(
+      (option) => option.value !== "",
+    );
+  }
 
   return (
     <ReactSelect
       {...props}
       options={normalizedOptions}
       styles={useSelectStyles()}
+      isMulti={isMulti}
       value={
         Array.isArray(value)
-          ? value.map(
-              (value) =>
-                normalizedOptions.find((option) => option.value === value) ||
-                normalizeOption(value),
+          ? value.map((value) =>
+              normalizedOptions.find((option) => option.value === value),
             )
-          : normalizedOptions.find((option) => option.value === value) ||
-            normalizeOption(value)
+          : normalizedOptions.find((option) => option.value === value)
       }
       onChange={
         onChange &&

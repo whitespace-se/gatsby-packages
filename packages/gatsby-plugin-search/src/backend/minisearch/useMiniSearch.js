@@ -2,6 +2,8 @@ import { sortBy, uniq } from "lodash-es";
 import MiniSearch from "minisearch";
 import { useRef } from "react";
 
+import { ensureArray } from "../../utils";
+
 const getAttribute = (attribute) => (document) => document[attribute];
 
 function isEmpty(value) {
@@ -50,7 +52,12 @@ export default function useMiniSearch({
 
   const facetValues = {};
   attributesForFaceting.forEach((attribute) => {
-    facetValues[attribute] = uniq(documents.map(getAttribute(attribute)));
+    facetValues[attribute] = uniq(
+      documents
+        .map(getAttribute(attribute))
+        .filter((value) => value != null)
+        .flatMap((value) => ensureArray(value)),
+    );
   });
 
   const search = async (request) => {
@@ -79,7 +86,13 @@ export default function useMiniSearch({
           miniSearch: miniSearchRef.current,
           documents,
           query,
-          filterParams: { ...filterParams, [attribute]: value },
+          filterParams: {
+            ...filterParams,
+            [attribute]:
+              Array.isArray(filterParams[attribute]) && !Array.isArray(value)
+                ? [...filterParams[attribute], value]
+                : value,
+          },
         }).length;
       });
     });

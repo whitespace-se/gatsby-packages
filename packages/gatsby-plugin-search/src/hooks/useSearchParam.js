@@ -1,43 +1,13 @@
 import { produce } from "immer";
-import React, { forwardRef, useMemo } from "react";
 
 import useSearchParams from "./useSearchParams";
 
 export default function useSearchParam(param) {
-  const [
-    params,
-    setParams,
-    { toURL, registerParamRule, registerParamDefaultValue, Link: WrappedLink },
-  ] = useSearchParams();
-
-  const Link = useMemo(
-    () =>
-      // eslint-disable-next-line react/prop-types
-      forwardRef(function LinkWithRef({ to, ...restProps }, ref) {
-        return (
-          <WrappedLink
-            ref={ref}
-            to={produce((params) => {
-              params[param] = typeof to === "function" ? to(params[param]) : to;
-            })}
-            {...restProps}
-          />
-        );
-      }),
-    [param, WrappedLink],
-  );
+  const { params, paramTypes, setParams, forcedParams } = useSearchParams();
 
   const more = {
-    registerParamRule: (rule) => registerParamRule(param, rule),
-    registerParamDefaultValue: (defaultValue) =>
-      registerParamDefaultValue(param, defaultValue),
-    toURL: (value) =>
-      toURL(
-        produce((params) => {
-          params[param] = value;
-        }),
-      ),
-    Link,
+    paramType: paramTypes[param],
+    isForced: param in forcedParams,
   };
 
   const setValue = (value) =>
