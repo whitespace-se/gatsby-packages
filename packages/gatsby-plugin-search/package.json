@@ -1,6 +1,6 @@
 {
   "name": "@whitespace/gatsby-plugin-search",
-  "version": "0.12.5",
+  "version": "0.12.6",
   "description": "Adds search to your Gatsby site",
   "license": "MIT",
   "files": [

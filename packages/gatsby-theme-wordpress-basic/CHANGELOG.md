@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.18.5](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.4...@whitespace/gatsby-theme-wordpress-basic@0.18.5) (2021-10-22)
+
+
+### Features
+
+* auto-generate search page ([b7d30d8](https://github.com/whitespace-se/gatsby-packages/commit/b7d30d80c2b7674b9db74ba9c7fd69741e535105))
+
+
+
 ### [0.18.4](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.3...@whitespace/gatsby-theme-wordpress-basic@0.18.4) (2021-10-15)
 
 
