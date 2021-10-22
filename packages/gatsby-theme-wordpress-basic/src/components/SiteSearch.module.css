@@ -1,0 +1,8 @@
+.component {
+  margin-top: var(--gap);
+  margin-bottom: var(--gap);
+}
+
+.form {
+  --icon-color: var(--color-foreground);
+}

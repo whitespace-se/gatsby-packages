@@ -20,3 +20,4 @@ export { default as useContentTypes } from "./useContentTypes";
 export { default as useMustacheData } from "./useMustacheData";
 
 export { default as useArchiveParamTypes } from "./useArchiveParamTypes";
+export { default as useSiteSearchParamTypes } from "./useSiteSearchParamTypes";

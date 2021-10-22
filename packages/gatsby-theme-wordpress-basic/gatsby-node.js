@@ -5,6 +5,8 @@ import createPagesForContentNodes from "./src/createPages";
 import fetchPageTree from "./src/fetchPageTree";
 import fetchSearchDocuments from "./src/fetchSearchDocuments";
 
+const SearchTemplate = require.resolve("./src/templates/SearchTemplate");
+
 if (
   new Intl.DateTimeFormat("es", { month: "long" }).format(new Date(9e8)) !==
   "enero"
@@ -33,8 +35,12 @@ export async function sourceNodes(params, pluginOptions) {
 }
 
 export async function createPages(params, pluginOptions) {
-  const { graphql, reporter } = params;
-  let { wp: { url, nodesPerFetch } = {} } = pluginOptions;
+  const { graphql, reporter, actions } = params;
+  const { createPage } = actions;
+  let {
+    wp: { url, nodesPerFetch } = {},
+    search: { paths: searchPagePaths = [] } = {},
+  } = pluginOptions;
   const { gql } = await collectFragments(pluginOptions);
   reporter.info(`GATSBY_WORDPRESS_URL: ${url}`);
   if (nodesPerFetch == null) {
@@ -115,4 +121,14 @@ export async function createPages(params, pluginOptions) {
       }),
     );
   }
+
+  searchPagePaths.forEach((path) => {
+    createPage({
+      path,
+      component: SearchTemplate,
+      context: {
+        isSearch: true,
+      },
+    });
+  });
 }
