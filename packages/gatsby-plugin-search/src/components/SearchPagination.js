@@ -19,7 +19,10 @@ export default function SearchPagination({
   ...restProps
 }) {
   const { t } = useTranslation();
-  const { page, totalPages, toURL } = useSearch();
+  const { page, totalPages, toURL, isEmptySearch } = useSearch();
+  if (isEmptySearch) {
+    return null;
+  }
   return (
     <Pagination
       className={clsx(styles.component, className)}

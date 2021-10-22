@@ -78,7 +78,10 @@ export default function MinisearchSearchBackendProvider({
   });
 
   const { result, error, isPending } = useAsync(
-    () => (isEmptySearch(request) ? Promise.resolve({}) : search(request)),
+    () =>
+      isEmptySearch(request)
+        ? Promise.resolve({ isEmptySearch: true })
+        : search(request),
     [JSON.stringify(request)],
   );
 
