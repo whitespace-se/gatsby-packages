@@ -1,8 +1,9 @@
-import formatDate from "date-fns/format";
 import parseDate from "date-fns/parse";
 import { transform } from "lodash";
 import { sortBy } from "lodash-es";
 import { useTranslation } from "react-i18next";
+
+import { formatMonth } from "../utils";
 
 function fromFacetsToOptions(
   counts,
@@ -32,19 +33,6 @@ function fromFacetsToOptions(
       sortByIteratee,
     ),
   ];
-}
-
-function capitalizeFirstLetter([first, ...rest], locale) {
-  return [first.toLocaleUpperCase(locale), ...rest].join("");
-}
-
-function formatMonth(date, locale) {
-  return capitalizeFirstLetter(
-    date.toLocaleDateString(locale, {
-      month: "long",
-    }),
-    locale,
-  );
 }
 
 export default function useSiteSearchParamTypes() {

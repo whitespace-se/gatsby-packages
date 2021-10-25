@@ -4,6 +4,8 @@ import { transform } from "lodash";
 import { sortBy } from "lodash-es";
 import { useTranslation } from "react-i18next";
 
+import { formatMonth } from "../utils";
+
 function fromFacetsToOptions(
   counts,
   {
@@ -35,7 +37,7 @@ function fromFacetsToOptions(
 }
 
 export default function useSiteSearchParamTypes() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   return {
     query: { type: "string", control: "query" },
     contentType: {
@@ -91,7 +93,7 @@ export default function useSiteSearchParamTypes() {
           showCounts: false,
           sortBy: "value",
           label: (value) =>
-            formatDate(parseDate(value, "yyyy-MM", new Date()), "MMMM"),
+            formatMonth(parseDate(value, "yyyy-MM", new Date()), i18n.language),
           anyLabel: () => t(`search.facetLabels.month.any`),
         }),
       conditions: { contentType: (value) => value === "post" },
