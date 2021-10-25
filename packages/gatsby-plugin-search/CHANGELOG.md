@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.12.7](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.6...@whitespace/gatsby-plugin-search@0.12.7) (2021-10-25)
+
+
+### Features
+
+* scroll to top on pagination click ([0f32d60](https://github.com/whitespace-se/gatsby-packages/commit/0f32d60c764a2e7831304c4506adbe94a434485a))
+
+
+### Bug Fixes
+
+* prop type validation error in pagination ([737be1d](https://github.com/whitespace-se/gatsby-packages/commit/737be1d7aecd510e17d1dd1246d74c65007cf58d))
+* search sort options missing ([780b03b](https://github.com/whitespace-se/gatsby-packages/commit/780b03bfa1c00584ae22edfd2b129f4bdf2d6677))
+
+
+
 ### [0.12.6](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.5...@whitespace/gatsby-plugin-search@0.12.6) (2021-10-22)
 
 

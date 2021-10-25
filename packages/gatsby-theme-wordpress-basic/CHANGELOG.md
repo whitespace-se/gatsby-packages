@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.18.6](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.5...@whitespace/gatsby-theme-wordpress-basic@0.18.6) (2021-10-25)
+
+
+### Bug Fixes
+
+* translate months on site search page ([a59bb6d](https://github.com/whitespace-se/gatsby-packages/commit/a59bb6dca6e7e2a3818f9d814b7adbb1e8034a48))
+
+
+
 ### [0.18.5](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.4...@whitespace/gatsby-theme-wordpress-basic@0.18.5) (2021-10-22)
 
 
