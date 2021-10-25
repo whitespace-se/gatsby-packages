@@ -2,7 +2,7 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
 
-import { usePageContext } from "../hooks";
+import { usePageContext, useHTMLProcessor } from "../hooks";
 
 import * as defaultStyles from "./ArticleFeaturedImage.module.css";
 import Image from "./Image";
@@ -31,10 +31,15 @@ export default function ArticleFeaturedImage({
   if (!featuredImage) {
     return null;
   }
+
+  const { processContent } = useHTMLProcessor();
+  let processedCaption = processContent(featuredImage.caption);
+
   return (
     <Image
       className={clsx(styles.component, className)}
       {...featuredImage}
+      caption={processedCaption}
       {...restProps}
     />
   );
