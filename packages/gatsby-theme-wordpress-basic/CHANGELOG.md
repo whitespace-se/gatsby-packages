@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.18.7](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.6...@whitespace/gatsby-theme-wordpress-basic@0.18.7) (2021-10-25)
+
+
+### Bug Fixes
+
+* use translated label for select field ([43fbfc6](https://github.com/whitespace-se/gatsby-packages/commit/43fbfc6eef6cec7eeaf600190d4dda17a54bce4d))
+
+
+
 ### [0.18.6](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.5...@whitespace/gatsby-theme-wordpress-basic@0.18.6) (2021-10-25)
 
 

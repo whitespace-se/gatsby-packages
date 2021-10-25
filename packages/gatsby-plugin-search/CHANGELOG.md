@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.12.8](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.7...@whitespace/gatsby-plugin-search@0.12.8) (2021-10-25)
+
+
+### Bug Fixes
+
+* total hits ([ccc536e](https://github.com/whitespace-se/gatsby-packages/commit/ccc536e798e75aebe6a3ab98fca570296f122271))
+* use translated label for select field ([43fbfc6](https://github.com/whitespace-se/gatsby-packages/commit/43fbfc6eef6cec7eeaf600190d4dda17a54bce4d))
+
+
+
 ### [0.12.7](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.6...@whitespace/gatsby-plugin-search@0.12.7) (2021-10-25)
 
 
