@@ -31,6 +31,9 @@ export default function SearchPagination({
       page={(page || 1) - 1}
       totalPages={totalPages}
       t={t}
+      onButtonClick={() => {
+        window.scrollTo({ top: 0, behavior: "instant" });
+      }}
     />
   );
 }
