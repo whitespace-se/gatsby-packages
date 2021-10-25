@@ -19,7 +19,7 @@ export default function SearchForm({
   showHitsTotal = true,
   ...props
 }) {
-  const { params, setParams, schema, hits } = useSearch();
+  const { params, setParams, schema, hits, totalHits } = useSearch();
   const { t } = useTranslation();
 
   return (
@@ -57,9 +57,9 @@ export default function SearchForm({
             <div className={styles.toggleButtonGroupWrapper}>
               <SearchFormField param="sort" />
             </div>
-            {showHitsTotal && hits?.length > 0 && (
+            {showHitsTotal && totalHits > 0 && (
               <div className={styles.searchHitsLabel}>
-                {t(`searchHits`)}: <span>{hits.length}</span>
+                {t(`searchHits`)}: <span>{totalHits}</span>
               </div>
             )}
           </div>
