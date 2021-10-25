@@ -20,7 +20,7 @@ export default function SearchPagination({
 }) {
   const { t } = useTranslation();
   const { page, totalPages, toURL, isEmptySearch } = useSearch();
-  if (isEmptySearch) {
+  if (isEmptySearch || !totalPages) {
     return null;
   }
   return (
