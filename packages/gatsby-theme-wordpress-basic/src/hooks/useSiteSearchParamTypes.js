@@ -58,6 +58,7 @@ export default function useSiteSearchParamTypes() {
       type: "string",
       multi: true,
       control: "select",
+      label: t("tagsLabel"),
       options: ({ facets }) =>
         facets?.tags &&
         fromFacetsToOptions(facets?.tags, {

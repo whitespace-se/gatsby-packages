@@ -13,7 +13,7 @@ SearchFormSelectField.propTypes = {
   name: PropTypes.string,
 };
 
-export default function SearchFormSelectField({ name, label, ...restProps }) {
+export default function SearchFormSelectField({ name, ...restProps }) {
   // const generateID = useID();
   const { setFieldValue, submitForm, values } = useFormikContext();
   const { paramType } = useSearchParam(name);
@@ -33,7 +33,7 @@ export default function SearchFormSelectField({ name, label, ...restProps }) {
     <SelectField
       name={name}
       isMulti={!!paramType.multi}
-      placeholder={label}
+      placeholder={paramType.label}
       value={value}
       onChange={(value) => {
         setFieldValue(name, value);
