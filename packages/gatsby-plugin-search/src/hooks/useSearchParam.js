@@ -6,7 +6,7 @@ export default function useSearchParam(param) {
   const { params, paramTypes, setParams, forcedParams } = useSearchParams();
 
   const more = {
-    paramType: paramTypes[param],
+    paramType: paramTypes?.[param],
     isForced: param in forcedParams,
   };
 
