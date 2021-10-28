@@ -23,7 +23,7 @@ export default function SearchFormField({ param, ...restProps }) {
     return null;
   }
 
-  let componentName = fromControlToComponentName(paramType.control);
+  let componentName = fromControlToComponentName(paramType?.control);
   let Component =
     // eslint-disable-next-line import/namespace
     componentName && availableControls[componentName];
