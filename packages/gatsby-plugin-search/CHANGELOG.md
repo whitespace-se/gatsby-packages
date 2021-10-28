@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.12.9](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.8...@whitespace/gatsby-plugin-search@0.12.9) (2021-10-28)
+
+
+### Bug Fixes
+
+* error in missing param type ([d1ff074](https://github.com/whitespace-se/gatsby-packages/commit/d1ff07428ec6df9b17406c6cd1852df78a88e6af))
+
+
+
 ### [0.12.8](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.7...@whitespace/gatsby-plugin-search@0.12.8) (2021-10-25)
 
 
