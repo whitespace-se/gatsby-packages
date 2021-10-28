@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.18.9](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.8...@whitespace/gatsby-theme-wordpress-basic@0.18.9) (2021-10-28)
+
+**Note:** Version bump only for package @whitespace/gatsby-theme-wordpress-basic
+
+
+
+
+
 ### [0.18.8](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.7...@whitespace/gatsby-theme-wordpress-basic@0.18.8) (2021-10-28)
 
 **Note:** Version bump only for package @whitespace/gatsby-theme-wordpress-basic
