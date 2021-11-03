@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.12.11](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.10...@whitespace/gatsby-plugin-search@0.12.11) (2021-11-03)
+
+
+### Features
+
+* add `paramTypes` prop to `StateSearchParamsProvider` component ([5b18006](https://github.com/whitespace-se/gatsby-packages/commit/5b180062586a439052757071d84255ea5291d6c6))
+
+
+
 ### [0.12.10](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.9...@whitespace/gatsby-plugin-search@0.12.10) (2021-10-28)
 
 
