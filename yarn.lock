@@ -2895,6 +2895,18 @@
     use-persisted-state "^0.3.3"
     use-ssr "^1.0.24"
 
+"@whitespace/gatsby-plugin-search@0.12.5":
+  version "0.12.5"
+  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-search/-/gatsby-plugin-search-0.12.5.tgz#168fd7b698dc926ee15ce6259bf87f76801dc999"
+  integrity sha512-6VI/2FjwqEJFF+RKQH5mgzjpDdwPbrATMYvAPWJh5NC/swoIKI5q+7OMoc/JZVNAGYJ2OdQ469N759+KviYxxg==
+  dependencies:
+    "@jfrk/react-heading-levels" "^1.0.0"
+    "@whitespace/gatsby-hooks" "^0.5.0"
+    immer "^9.0.6"
+    lodash-es "^4.17.21"
+    minisearch "^3.1.0"
+    react-select "^5.1.0"
+
 "@wry/context@^0.4.0":
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/@wry/context/-/context-0.4.4.tgz#e50f5fa1d6cfaabf2977d1fda5ae91717f8815f8"
