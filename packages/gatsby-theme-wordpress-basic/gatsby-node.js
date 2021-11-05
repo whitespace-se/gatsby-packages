@@ -4,6 +4,7 @@ import getIncludedContentTypes from "./node/getIncludedContentTypes";
 import createPagesForContentNodes from "./src/createPages";
 import fetchPageTree from "./src/fetchPageTree";
 import fetchSearchDocuments from "./src/fetchSearchDocuments";
+import fetchTaxonomyTerms from "./src/fetchTaxonomyTerms";
 
 const SearchTemplate = require.resolve("./src/templates/SearchTemplate");
 
@@ -32,6 +33,7 @@ export async function sourceNodes(params, pluginOptions) {
   const { gql } = await collectFragments(pluginOptions);
   await fetchPageTree({ ...params, gql }, pluginOptions);
   await fetchSearchDocuments({ ...params, gql }, pluginOptions);
+  await fetchTaxonomyTerms({ ...params, gql }, pluginOptions);
 }
 
 export async function createPages(params, pluginOptions) {

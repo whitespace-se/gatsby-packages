@@ -21,3 +21,4 @@ export { default as useMustacheData } from "./useMustacheData";
 
 export { default as useArchiveParamTypes } from "./useArchiveParamTypes";
 export { default as useSiteSearchParamTypes } from "./useSiteSearchParamTypes";
+export { default as useTaxonomies } from "./useTaxonomies";
