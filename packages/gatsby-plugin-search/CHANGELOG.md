@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.12.12](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.11...@whitespace/gatsby-plugin-search@0.12.12) (2021-11-05)
+
+
+### Bug Fixes
+
+* disable facetCounts feature for minisearch until it’s fixed ([85df67f](https://github.com/whitespace-se/gatsby-packages/commit/85df67f59882a0599fc604d7db0a7027b7bf04f5))
+
+
+
 ### [0.12.11](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.10...@whitespace/gatsby-plugin-search@0.12.11) (2021-11-03)
 
 

@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.18.11](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.10...@whitespace/gatsby-theme-wordpress-basic@0.18.11) (2021-11-05)
+
+
+### Features
+
+* add `useTaxonomies` hook ([81c3915](https://github.com/whitespace-se/gatsby-packages/commit/81c3915a2e98a86537b9b0b7c27f062f595ae1e2))
+
+
+
 ### [0.18.10](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.9...@whitespace/gatsby-theme-wordpress-basic@0.18.10) (2021-11-03)
 
 **Note:** Version bump only for package @whitespace/gatsby-theme-wordpress-basic
