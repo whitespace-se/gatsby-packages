@@ -25,7 +25,12 @@ function extractKeys(objects) {
 
 const isNotEmpty = negate(isEmpty);
 
-const features = ["facetCounts", "facets", "pagination", "query"];
+const features = [
+  // "facetCounts",
+  "facets",
+  "pagination",
+  "query",
+];
 
 function normalizeDocuments(documents) {
   return flattenDeep(documents)
