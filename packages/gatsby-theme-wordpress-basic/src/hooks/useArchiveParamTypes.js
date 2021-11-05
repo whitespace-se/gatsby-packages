@@ -1,41 +1,14 @@
 import parseDate from "date-fns/parse";
 import { transform } from "lodash";
-import { sortBy } from "lodash-es";
 import { useTranslation } from "react-i18next";
 
-import { formatMonth } from "../utils";
+import {
+  formatMonth,
+  fromFacetsToOptions,
+  getOptionsFromTaxonomy,
+} from "../utils";
 
-function fromFacetsToOptions(
-  counts,
-  {
-    showCounts,
-    sortBy: sortByIteratee = ({ count }) => -count,
-    label = (value) => value,
-    anyLabel = () => "Any",
-  } = {},
-) {
-  return [
-    {
-      value: "",
-      label: showCounts
-        ? `${anyLabel()} (${Object.values(counts).reduce(
-            (sum, count) => sum + count,
-            0,
-          )})`
-        : anyLabel(),
-    },
-    ...sortBy(
-      Object.entries(counts).map(([value, count]) => ({
-        value,
-        label: showCounts ? `${label(value)} (${count})` : label(value),
-        count,
-      })),
-      sortByIteratee,
-    ),
-  ];
-}
-
-export default function useSiteSearchParamTypes() {
+export default function useArchiveParamTypes() {
   const { t, i18n } = useTranslation();
   return {
     contentType: {
@@ -55,11 +28,7 @@ export default function useSiteSearchParamTypes() {
       type: "string",
       multi: true,
       control: "select",
-      options: ({ facets }) =>
-        facets?.tags &&
-        fromFacetsToOptions(facets?.tags, {
-          showCounts: false,
-        }),
+      options: getOptionsFromTaxonomy("tag"),
       conditions: { contentType: (value) => value === "post" },
     },
     date: {

@@ -1,7 +1,8 @@
 // import { useID } from "@whitespace/components";
+import { useTaxonomies } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks";
 import { useFormikContext, useField } from "formik";
 import PropTypes from "prop-types";
-import React, { useEffect } from "react";
+import React from "react";
 
 import { useSearch, useSearchParam } from "../../hooks";
 import SelectField from "../SelectField";
@@ -17,12 +18,14 @@ export default function SearchFormSelectField({ name, ...restProps }) {
   // const generateID = useID();
   const { setFieldValue, submitForm, values } = useFormikContext();
   const { paramType } = useSearchParam(name);
+  const taxonomies = useTaxonomies();
+
   const searchContext = useSearch();
   const [{ value }] = useField(name);
 
   let options =
     typeof paramType.options === "function"
-      ? paramType.options({ ...searchContext, values })
+      ? paramType.options({ ...searchContext, taxonomies, values })
       : paramType.options;
 
   if (!options || Object.values(options).length === 0) {
