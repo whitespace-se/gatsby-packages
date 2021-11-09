@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.18.13](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.12...@whitespace/gatsby-theme-wordpress-basic@0.18.13) (2021-11-09)
+
+
+### Features
+
+* allow setting of `transformProps` via theme ([b7d55ee](https://github.com/whitespace-se/gatsby-packages/commit/b7d55eeb896ee6308b4fc1c2ee32dba7fb6b78f5))
+
+
+
 ### [0.18.12](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.11...@whitespace/gatsby-theme-wordpress-basic@0.18.12) (2021-11-09)
 
 **Note:** Version bump only for package @whitespace/gatsby-theme-wordpress-basic
