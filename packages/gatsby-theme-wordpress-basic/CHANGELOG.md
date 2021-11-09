@@ -3,6 +3,83 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.18.13](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.12...@whitespace/gatsby-theme-wordpress-basic@0.18.13) (2021-11-09)
+
+
+### Features
+
+* allow setting of `transformProps` via theme ([b7d55ee](https://github.com/whitespace-se/gatsby-packages/commit/b7d55eeb896ee6308b4fc1c2ee32dba7fb6b78f5))
+
+
+
+### [0.18.12](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.11...@whitespace/gatsby-theme-wordpress-basic@0.18.12) (2021-11-09)
+
+**Note:** Version bump only for package @whitespace/gatsby-theme-wordpress-basic
+
+
+
+
+
+### [0.18.11](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.10...@whitespace/gatsby-theme-wordpress-basic@0.18.11) (2021-11-05)
+
+
+### Features
+
+* add `useTaxonomies` hook ([81c3915](https://github.com/whitespace-se/gatsby-packages/commit/81c3915a2e98a86537b9b0b7c27f062f595ae1e2))
+
+
+
+### [0.18.10](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.9...@whitespace/gatsby-theme-wordpress-basic@0.18.10) (2021-11-03)
+
+**Note:** Version bump only for package @whitespace/gatsby-theme-wordpress-basic
+
+
+
+
+
+### [0.18.9](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.8...@whitespace/gatsby-theme-wordpress-basic@0.18.9) (2021-10-28)
+
+**Note:** Version bump only for package @whitespace/gatsby-theme-wordpress-basic
+
+
+
+
+
+### [0.18.8](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.7...@whitespace/gatsby-theme-wordpress-basic@0.18.8) (2021-10-28)
+
+**Note:** Version bump only for package @whitespace/gatsby-theme-wordpress-basic
+
+
+
+
+
+### [0.18.7](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.6...@whitespace/gatsby-theme-wordpress-basic@0.18.7) (2021-10-25)
+
+
+### Bug Fixes
+
+* use translated label for select field ([43fbfc6](https://github.com/whitespace-se/gatsby-packages/commit/43fbfc6eef6cec7eeaf600190d4dda17a54bce4d))
+
+
+
+### [0.18.6](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.5...@whitespace/gatsby-theme-wordpress-basic@0.18.6) (2021-10-25)
+
+
+### Bug Fixes
+
+* translate months on site search page ([a59bb6d](https://github.com/whitespace-se/gatsby-packages/commit/a59bb6dca6e7e2a3818f9d814b7adbb1e8034a48))
+
+
+
+### [0.18.5](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.4...@whitespace/gatsby-theme-wordpress-basic@0.18.5) (2021-10-22)
+
+
+### Features
+
+* auto-generate search page ([b7d30d8](https://github.com/whitespace-se/gatsby-packages/commit/b7d30d80c2b7674b9db74ba9c7fd69741e535105))
+
+
+
 ### [0.18.4](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.3...@whitespace/gatsby-theme-wordpress-basic@0.18.4) (2021-10-15)
 
 

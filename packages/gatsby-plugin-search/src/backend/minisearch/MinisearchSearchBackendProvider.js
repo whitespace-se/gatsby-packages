@@ -25,7 +25,12 @@ function extractKeys(objects) {
 
 const isNotEmpty = negate(isEmpty);
 
-const features = ["facetCounts", "facets", "pagination", "query"];
+const features = [
+  // "facetCounts",
+  "facets",
+  "pagination",
+  "query",
+];
 
 function normalizeDocuments(documents) {
   return flattenDeep(documents)
@@ -78,7 +83,10 @@ export default function MinisearchSearchBackendProvider({
   });
 
   const { result, error, isPending } = useAsync(
-    () => (isEmptySearch(request) ? Promise.resolve({}) : search(request)),
+    () =>
+      isEmptySearch(request)
+        ? Promise.resolve({ isEmptySearch: true })
+        : search(request),
     [JSON.stringify(request)],
   );
 

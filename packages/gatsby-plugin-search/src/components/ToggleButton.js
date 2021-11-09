@@ -4,17 +4,9 @@ import { Field, useField } from "formik";
 import PropTypes from "prop-types";
 import React from "react";
 
-import * as styles from "./ToggleButton.module.css";
+import { ensureArray } from "../utils";
 
-function ensureArray(value, isEmpty = (value) => value === "") {
-  if (isEmpty(value)) {
-    return [];
-  }
-  if (Array.isArray(value)) {
-    return value;
-  }
-  return [value];
-}
+import * as styles from "./ToggleButton.module.css";
 
 function inArray(array, value, isEmpty = (value) => value === "") {
   array = ensureArray(array, isEmpty);

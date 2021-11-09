@@ -38,7 +38,7 @@ export default function useSearchDocuments() {
   return [
     data.contentNodes.nodes.map((source) => ({
       ...defaultContentNodeFields(source),
-      tags: source.tags?.nodes,
+      tags: source.tags?.nodes?.map((tag) => tag?.slug),
     })),
   ];
 }

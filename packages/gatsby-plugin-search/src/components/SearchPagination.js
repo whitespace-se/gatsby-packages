@@ -19,7 +19,10 @@ export default function SearchPagination({
   ...restProps
 }) {
   const { t } = useTranslation();
-  const { page, totalPages, toURL } = useSearch();
+  const { page, totalPages, toURL, isEmptySearch } = useSearch();
+  if (isEmptySearch || !totalPages) {
+    return null;
+  }
   return (
     <Pagination
       className={clsx(styles.component, className)}
@@ -28,6 +31,9 @@ export default function SearchPagination({
       page={(page || 1) - 1}
       totalPages={totalPages}
       t={t}
+      onButtonClick={() => {
+        window.scrollTo({ top: 0, behavior: "instant" });
+      }}
     />
   );
 }

@@ -4,6 +4,9 @@ import getIncludedContentTypes from "./node/getIncludedContentTypes";
 import createPagesForContentNodes from "./src/createPages";
 import fetchPageTree from "./src/fetchPageTree";
 import fetchSearchDocuments from "./src/fetchSearchDocuments";
+import fetchTaxonomyTerms from "./src/fetchTaxonomyTerms";
+
+const SearchTemplate = require.resolve("./src/templates/SearchTemplate");
 
 if (
   new Intl.DateTimeFormat("es", { month: "long" }).format(new Date(9e8)) !==
@@ -30,11 +33,16 @@ export async function sourceNodes(params, pluginOptions) {
   const { gql } = await collectFragments(pluginOptions);
   await fetchPageTree({ ...params, gql }, pluginOptions);
   await fetchSearchDocuments({ ...params, gql }, pluginOptions);
+  await fetchTaxonomyTerms({ ...params, gql }, pluginOptions);
 }
 
 export async function createPages(params, pluginOptions) {
-  const { graphql, reporter } = params;
-  let { wp: { url, nodesPerFetch } = {} } = pluginOptions;
+  const { graphql, reporter, actions } = params;
+  const { createPage } = actions;
+  let {
+    wp: { url, nodesPerFetch } = {},
+    search: { paths: searchPagePaths = [] } = {},
+  } = pluginOptions;
   const { gql } = await collectFragments(pluginOptions);
   reporter.info(`GATSBY_WORDPRESS_URL: ${url}`);
   if (nodesPerFetch == null) {
@@ -115,4 +123,14 @@ export async function createPages(params, pluginOptions) {
       }),
     );
   }
+
+  searchPagePaths.forEach((path) => {
+    createPage({
+      path,
+      component: SearchTemplate,
+      context: {
+        isSearch: true,
+      },
+    });
+  });
 }

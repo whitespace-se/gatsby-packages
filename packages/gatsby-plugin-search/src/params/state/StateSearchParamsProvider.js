@@ -1,7 +1,8 @@
 import { omit } from "lodash-es";
 import PropTypes from "prop-types";
-import React, { forwardRef, useCallback, useMemo, useState } from "react";
+import React, { forwardRef, useMemo, useState } from "react";
 
+import { getSchemaFromParamTypes } from "../../utils";
 import context from "../context";
 
 StateSearchParamsProvider.propTypes = {
@@ -9,7 +10,10 @@ StateSearchParamsProvider.propTypes = {
   forcedParams: PropTypes.object,
   schema: PropTypes.shape({
     cast: PropTypes.func.isRequired,
-  }).isRequired,
+    concat: PropTypes.func.isRequired,
+  }),
+  paramTypes: PropTypes.object,
+  Link: PropTypes.elementType,
 };
 
 const toURL = () => null;
@@ -25,10 +29,30 @@ export default function StateSearchParamsProvider({
   children,
   forcedParams = {},
   schema,
+  paramTypes,
   Link: WrappedLink = DefaultWrappedLink,
 }) {
   const { Provider } = context;
   const [explicitParams, setExcplicitParams] = useState({});
+
+  const schemaFromParamTypes = useMemo(
+    () => paramTypes && getSchemaFromParamTypes(paramTypes),
+    [paramTypes],
+  );
+
+  if (schemaFromParamTypes) {
+    if (schema) {
+      schema = schema.concat(schemaFromParamTypes);
+    } else {
+      schema = schemaFromParamTypes;
+    }
+  }
+
+  if (!schema) {
+    throw new Error(
+      "No schema or paramTypes props passed to <StateSearchParamsProvider>",
+    );
+  }
 
   const params = schema.cast({ ...explicitParams, ...forcedParams });
 
@@ -45,6 +69,7 @@ export default function StateSearchParamsProvider({
 
   const Link = useMemo(
     () =>
+      // eslint-disable-next-line react/prop-types
       forwardRef(function LinkWithRef({ to, onClick, ...restProps }, ref) {
         return (
           <WrappedLink
@@ -69,6 +94,7 @@ export default function StateSearchParamsProvider({
     setParams,
     toURL,
     Link,
+    paramTypes,
     schema,
   };
 

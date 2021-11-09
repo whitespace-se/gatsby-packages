@@ -3,6 +3,76 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.12.12](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.11...@whitespace/gatsby-plugin-search@0.12.12) (2021-11-05)
+
+
+### Bug Fixes
+
+* disable facetCounts feature for minisearch until it’s fixed ([85df67f](https://github.com/whitespace-se/gatsby-packages/commit/85df67f59882a0599fc604d7db0a7027b7bf04f5))
+
+
+
+### [0.12.11](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.10...@whitespace/gatsby-plugin-search@0.12.11) (2021-11-03)
+
+
+### Features
+
+* add `paramTypes` prop to `StateSearchParamsProvider` component ([5b18006](https://github.com/whitespace-se/gatsby-packages/commit/5b180062586a439052757071d84255ea5291d6c6))
+
+
+
+### [0.12.10](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.9...@whitespace/gatsby-plugin-search@0.12.10) (2021-10-28)
+
+
+### Bug Fixes
+
+* error in search fields for missing param types ([f3d4e34](https://github.com/whitespace-se/gatsby-packages/commit/f3d4e34257c6c42d73853c95205d8e72989b6887))
+
+
+
+### [0.12.9](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.8...@whitespace/gatsby-plugin-search@0.12.9) (2021-10-28)
+
+
+### Bug Fixes
+
+* error in missing param type ([d1ff074](https://github.com/whitespace-se/gatsby-packages/commit/d1ff07428ec6df9b17406c6cd1852df78a88e6af))
+
+
+
+### [0.12.8](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.7...@whitespace/gatsby-plugin-search@0.12.8) (2021-10-25)
+
+
+### Bug Fixes
+
+* total hits ([ccc536e](https://github.com/whitespace-se/gatsby-packages/commit/ccc536e798e75aebe6a3ab98fca570296f122271))
+* use translated label for select field ([43fbfc6](https://github.com/whitespace-se/gatsby-packages/commit/43fbfc6eef6cec7eeaf600190d4dda17a54bce4d))
+
+
+
+### [0.12.7](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.6...@whitespace/gatsby-plugin-search@0.12.7) (2021-10-25)
+
+
+### Features
+
+* scroll to top on pagination click ([0f32d60](https://github.com/whitespace-se/gatsby-packages/commit/0f32d60c764a2e7831304c4506adbe94a434485a))
+
+
+### Bug Fixes
+
+* prop type validation error in pagination ([737be1d](https://github.com/whitespace-se/gatsby-packages/commit/737be1d7aecd510e17d1dd1246d74c65007cf58d))
+* search sort options missing ([780b03b](https://github.com/whitespace-se/gatsby-packages/commit/780b03bfa1c00584ae22edfd2b129f4bdf2d6677))
+
+
+
+### [0.12.6](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.5...@whitespace/gatsby-plugin-search@0.12.6) (2021-10-22)
+
+
+### Bug Fixes
+
+* empty search wasn’t handled properly ([7f59431](https://github.com/whitespace-se/gatsby-packages/commit/7f59431d58fe6a02e79d89a71350f0a38f136de1))
+
+
+
 ### [0.12.5](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.4...@whitespace/gatsby-plugin-search@0.12.5) (2021-10-15)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-search
