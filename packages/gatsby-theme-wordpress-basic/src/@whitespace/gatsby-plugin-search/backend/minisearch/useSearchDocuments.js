@@ -13,6 +13,7 @@ function defaultContentNodeFields(source) {
     contentType: source.contentType?.node.name,
     label: source.title,
     date: source.dateGmt,
+    publishDate: source.dateGmt,
     year: source.dateGmt && formatDate(parseDate(source.dateGmt), "yyyy"),
     month: source.dateGmt && formatDate(parseDate(source.dateGmt), "yyyy-MM"),
     image: source.featuredImage?.node,
