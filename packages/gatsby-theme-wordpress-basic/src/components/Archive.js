@@ -19,7 +19,6 @@ import {
   // getMainArchivePagePathFromPageContext,
   getArchiveURLPatternFromPageContext,
 } from "../contentType";
-import { layout } from "../foundation";
 import { useArchiveParamTypes, usePageContext } from "../hooks";
 
 import * as defaultStyles from "./Archive.module.css";
@@ -39,7 +38,7 @@ function Archive({
   ...restProps
 }) {
   const paramTypes = useArchiveParamTypes();
-  let pageContext = usePageContext();
+  const pageContext = usePageContext();
 
   const forcedParams = {
     contentType: pageContext.contentType.name,
@@ -47,10 +46,7 @@ function Archive({
   };
 
   return (
-    <article
-      className={clsx(layout.component, layout.componentWidthFull, className)}
-      {...restProps}
-    >
+    <article className={clsx(styles.component, className)} {...restProps}>
       <div className="o-grid">
         <div className="o-grid-row">
           <div className="o-grid-block o-grid-block--inherit">
@@ -61,22 +57,6 @@ function Archive({
               <URLSearchParamsProvider
                 urlPattern={getArchiveURLPatternFromPageContext(pageContext)}
                 forcedParams={forcedParams}
-                encodeParam={(value, param) => {
-                  switch (param) {
-                    case "month":
-                      return value.substring(5, 7);
-                    default:
-                      return value;
-                  }
-                }}
-                decodeParam={(value, param, params) => {
-                  switch (param) {
-                    case "month":
-                      return `${params.year}-${value}`;
-                    default:
-                      return value;
-                  }
-
                 paramTypes={paramTypes}
                 decodeParams={({ year, month, ...params }) => ({
                   ...params,

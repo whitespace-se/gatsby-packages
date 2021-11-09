@@ -19,11 +19,8 @@ export default function SearchForm({
   showHitsTotal = true,
   ...props
 }) {
-  const { params, setParams, schema, hits, totalHits } = useSearch();
+  const { params, setParams, schema, totalHits } = useSearch();
   const { t } = useTranslation();
-
-  const { query, page, contentType, ...otherFilters } = urlParams;
-  const showClearFilter = Object.values(otherFilters).length > 0;
 
   return (
     <Formik
