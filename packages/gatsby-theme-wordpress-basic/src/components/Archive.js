@@ -34,6 +34,12 @@ export default function Archive({
   ...restProps
 }) {
   let pageContext = usePageContext();
+
+  const forcedParams = {
+    contentType: pageContext.contentType.name,
+    sort: "publishDate:desc",
+  };
+
   return (
     <article
       className={clsx(layout.component, layout.componentWidthFull, className)}
@@ -48,7 +54,7 @@ export default function Archive({
             <Section>
               <URLSearchParamsProvider
                 urlPattern={getArchiveURLPatternFromPageContext(pageContext)}
-                forcedParams={{ contentType: "post", sort: "publishDate:desc" }}
+                forcedParams={forcedParams}
                 encodeParam={(value, param) => {
                   switch (param) {
                     case "month":
