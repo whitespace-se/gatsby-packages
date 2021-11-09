@@ -10,14 +10,23 @@ SearchHits.propTypes = {
   hits: PropTypes.array.isRequired,
 };
 
+const SearchHitComponent = (props) => {
+  switch (props.contentType) {
+    case "contact":
+      return <SearchHitContact {...props} />;
+    case "event":
+      return <SearchHit showPublishDate={false} {...props} />;
+    default:
+      return <SearchHit {...props} />;
+  }
+};
+
 export default function SearchHits({ styles = defaultStyles, hits }) {
   return (
     <ul className={styles.wrapper}>
-      {hits.map((hit, index) => {
-        const HitComponent =
-          hit.contentType === "contact" ? SearchHitContact : SearchHit;
-        return <HitComponent {...hit} key={index} />;
-      })}
+      {hits.map((hit, index) => (
+        <SearchHitComponent {...hit} key={index} />
+      ))}
     </ul>
   );
 }
