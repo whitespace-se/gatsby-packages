@@ -1,15 +1,13 @@
-import {
-  SearchTeaser,
-  SearchTeaserContent,
-  SearchTeaserMedia,
-  SearchTeaserTitle,
-} from "@whitespace/gatsby-plugin-search/src/components";
 import clsx from "clsx";
 import { format, parseISO } from "date-fns";
 import PropTypes from "prop-types";
 import React from "react";
 
 import * as defaultStyles from "./SearchHit.module.css";
+import SearchTeaser from "./SearchTeaser";
+import SearchTeaserContent from "./SearchTeaserContent";
+import SearchTeaserMedia from "./SearchTeaserMedia";
+import SearchTeaserTitle from "./SearchTeaserTitle";
 
 SearchHit.propTypes = {
   children: PropTypes.node,
