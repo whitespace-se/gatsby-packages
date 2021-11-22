@@ -1,5 +1,5 @@
 import parseDate from "date-fns/parse";
-import { transform } from "lodash";
+import { camelCase, transform } from "lodash-es";
 import { useTranslation } from "react-i18next";
 
 import {
@@ -20,7 +20,8 @@ export default function useArchiveParamTypes() {
         fromFacetsToOptions(facets?.contentType, {
           showCounts: features.includes("facetCounts"),
           sortBy: "value",
-          label: (value) => t(`search.facetLabels.contentType.${value}`),
+          label: (value) =>
+            t(`search.facetLabels.contentType.${camelCase(value)}`),
           anyLabel: () => t(`search.facetLabels.contentType.any`),
         }),
     },

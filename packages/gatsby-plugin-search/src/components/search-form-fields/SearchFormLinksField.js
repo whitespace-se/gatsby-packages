@@ -15,7 +15,7 @@ SearchFormLinksField.propTypes = {
   name: PropTypes.string,
 };
 
-export default function SearchFormLinksField({ name, label, ...restProps }) {
+export default function SearchFormLinksField({ name, ...restProps }) {
   const generateID = useID();
   const { submitForm } = useFormikContext();
   const { paramType } = useSearchParam(name);
@@ -32,12 +32,7 @@ export default function SearchFormLinksField({ name, label, ...restProps }) {
 
   return (
     <>
-      <div
-        id={generateID(`${kebabCase(name)}-label`)}
-        className={visuallyHidden}
-      >
-        {label}
-      </div>
+      <div id={generateID(`${kebabCase(name)}-label`)}>{paramType.label}:</div>
       <ToggleButtonGroup
         aria-labelledby={generateID(`${kebabCase(name)}-label`)}
         options={options}

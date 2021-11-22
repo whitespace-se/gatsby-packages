@@ -19,7 +19,7 @@ export default function SearchForm({
   showHitsTotal = true,
   ...props
 }) {
-  const { params, setParams, schema, hits, totalHits } = useSearch();
+  const { params, setParams, schema, totalHits } = useSearch();
   const { t } = useTranslation();
 
   return (
