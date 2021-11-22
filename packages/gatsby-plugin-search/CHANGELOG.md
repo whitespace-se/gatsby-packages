@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.12...@whitespace/gatsby-plugin-search@0.13.0) (2021-11-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* improve site search
+
+### Features
+
+* add publish date to search results ([e34ef53](https://github.com/whitespace-se/gatsby-packages/commit/e34ef53a187f7951d4481d48c65394a21144ead6))
+* improve site search ([d677d0e](https://github.com/whitespace-se/gatsby-packages/commit/d677d0efbd3d30b1bec9203b416492de16411e42))
+
+
+### Bug Fixes
+
+* add translatable month i18n strings ([b9179c4](https://github.com/whitespace-se/gatsby-packages/commit/b9179c49f8a88046bb730a58774e267a89b29ac9))
+* avoid circular import ([998b737](https://github.com/whitespace-se/gatsby-packages/commit/998b73757840bf23c0524b26e25cd6aa967f0808))
+* clear only "other" params ([de34c9f](https://github.com/whitespace-se/gatsby-packages/commit/de34c9f41e2dd66ee3cc3e3722983a5d2021d783))
+* filter out undefined facets ([c257836](https://github.com/whitespace-se/gatsby-packages/commit/c2578363c618fa4571d06ddb72fff0f3b44a6a6a))
+* hide publish date for event search hits by default ([02cbff0](https://github.com/whitespace-se/gatsby-packages/commit/02cbff0474e4f72c74c3ef7b58c69e6310229a42))
+* lint error ([7182e68](https://github.com/whitespace-se/gatsby-packages/commit/7182e68a9f38f7255d447680fdc3d6d1f8277a08))
+* only show "clear filters" btn if url params are not query, page or contentType ([819de9c](https://github.com/whitespace-se/gatsby-packages/commit/819de9ce77626d79a2678e94654f699d55835383))
+* remove restProps ([783cd4d](https://github.com/whitespace-se/gatsby-packages/commit/783cd4d54e4c122ba387f1255480a51f216c04ef))
+* remove unused code after merge ([3189016](https://github.com/whitespace-se/gatsby-packages/commit/3189016bee8f3a5b41ed97b30a0c901b4cb80161))
+* rename prop to meta ([e7afed5](https://github.com/whitespace-se/gatsby-packages/commit/e7afed5a7758215d038a1f56905e80502dca8886))
+* reverse year filter so that it starts in desc order ([422d349](https://github.com/whitespace-se/gatsby-packages/commit/422d349df5ded337d7e59e2f83dbb37d980205f0))
+* use correct prop type ([10fa99d](https://github.com/whitespace-se/gatsby-packages/commit/10fa99d8063f6bec48795221392b5cc9efc735ff))
+* use facetLabels category instead ([0b9bc64](https://github.com/whitespace-se/gatsby-packages/commit/0b9bc64a029406419f775709aa99b09e8aeaf3c8))
+* use language-agnostic numbers for strings instead ([111ea4b](https://github.com/whitespace-se/gatsby-packages/commit/111ea4bbb838ab48041a07cc7099198e198c973c))
+
+
+
 ### [0.12.12](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.11...@whitespace/gatsby-plugin-search@0.12.12) (2021-11-05)
 
 

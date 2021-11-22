@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.19.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.13...@whitespace/gatsby-theme-wordpress-basic@0.19.0) (2021-11-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* improve site search
+
+### Features
+
+* improve site search ([d677d0e](https://github.com/whitespace-se/gatsby-packages/commit/d677d0efbd3d30b1bec9203b416492de16411e42))
+
+
+### Bug Fixes
+
+* add layout class to archive page ([a28374a](https://github.com/whitespace-se/gatsby-packages/commit/a28374a0541613b20d466ab315ace5bc6a128371))
+* add publishDate as default prop for search hits ([b69be9d](https://github.com/whitespace-se/gatsby-packages/commit/b69be9de35a49765579bde7c4aa1868995f5eed0))
+* deps ([980863d](https://github.com/whitespace-se/gatsby-packages/commit/980863d0a7f455a506642b831b095a912a72688e))
+* let page context set the forced params of Archive page ([124862c](https://github.com/whitespace-se/gatsby-packages/commit/124862ca7d9716a031ccaed6a4ff113d7fcec655))
+* remove unused code after merge ([3189016](https://github.com/whitespace-se/gatsby-packages/commit/3189016bee8f3a5b41ed97b30a0c901b4cb80161))
+
+
+
 ### [0.18.13](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.12...@whitespace/gatsby-theme-wordpress-basic@0.18.13) (2021-11-09)
 
 
