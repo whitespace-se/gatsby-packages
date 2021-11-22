@@ -19,7 +19,7 @@ export default function StaticMainArchive() {
       <div className="o-grid">
         <div className="o-grid-row">
           <div className="o-grid-block o-grid-block--inherit">
-            <H className="c-article__title c-archive__title">
+            <H className="c-article__title">
               {getMainArchivePageTitleFromPageContext(pageContext)}
             </H>
             <Section>

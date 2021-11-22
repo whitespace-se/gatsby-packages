@@ -1,6 +1,6 @@
 import formatDate from "date-fns/format";
 import parseDate from "date-fns/parse";
-import { transform } from "lodash";
+import { camelCase, transform } from "lodash-es";
 import { useTranslation } from "react-i18next";
 
 import {
@@ -22,7 +22,8 @@ export default function useSiteSearchParamTypes() {
         fromFacetsToOptions(facets?.contentType, {
           showCounts: features.includes("facetCounts"),
           sortBy: "value",
-          label: (value) => t(`search.facetLabels.contentType.${value}`),
+          label: (value) =>
+            t(`search.facetLabels.contentType.${camelCase(value)}`),
           anyLabel: () => t(`search.facetLabels.contentType.any`),
         }),
       conditions: { query: Boolean },
@@ -39,10 +40,10 @@ export default function useSiteSearchParamTypes() {
       type: "date",
       control: "month-select",
       yearOptions: ({ facets }) =>
-        facets?.month &&
+        facets?.months &&
         fromFacetsToOptions(
           transform(
-            facets.month,
+            facets.months,
             (years, monthCount, month) => {
               let year = month.substr(0, 4);
               years[year] = (years[year] || 0) + monthCount;
@@ -58,8 +59,8 @@ export default function useSiteSearchParamTypes() {
           },
         ),
       monthOptions: ({ facets }) =>
-        facets?.month &&
-        fromFacetsToOptions(facets.month, {
+        facets?.months &&
+        fromFacetsToOptions(facets.months, {
           showCounts: false,
           sortBy: "value",
           label: (value) =>

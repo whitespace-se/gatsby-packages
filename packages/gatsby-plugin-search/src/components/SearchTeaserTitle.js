@@ -1,5 +1,5 @@
 import { H } from "@jfrk/react-heading-levels";
-import { CoverLink } from "@whitespace/components";
+import { Link } from "@whitespace/components";
 import { useComponentContext } from "@whitespace/gatsby-plugin-search/src/contexts/componentContext";
 import clsx from "clsx";
 import PropTypes from "prop-types";
@@ -23,9 +23,9 @@ export default function SearchTeaserTitle({
   styles = styles ?? defaultStyles;
   return (
     <H className={clsx(styles.title, className)} {...restProps}>
-      <CoverLink className={styles.titleLink} {...link}>
+      <Link className={styles.titleLink} {...link}>
         {children}
-      </CoverLink>
+      </Link>
     </H>
   );
 }

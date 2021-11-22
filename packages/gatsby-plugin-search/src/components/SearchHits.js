@@ -1,8 +1,8 @@
+import { camelCase, upperFirst } from "lodash-es";
 import PropTypes from "prop-types";
 import React from "react";
 
-import SearchHit from "./SearchHit";
-import SearchHitContact from "./SearchHitContact";
+import * as hitComponents from "./search-hits";
 import * as defaultStyles from "./SearchHits.module.css";
 
 SearchHits.propTypes = {
@@ -10,18 +10,22 @@ SearchHits.propTypes = {
   hits: PropTypes.array.isRequired,
 };
 
+function getComponentFromContentType(contentType) {
+  let componentName =
+    contentType && `${upperFirst(camelCase(contentType))}SearchHit`;
+  return (
+    // eslint-disable-next-line import/namespace
+    (componentName && hitComponents[componentName]) ||
+    hitComponents.DefaultSearchHit
+  );
+}
+
 export default function SearchHits({ styles = defaultStyles, hits }) {
   return (
     <ul className={styles.wrapper}>
       {hits.map((hit, index) => {
-        switch (hit.contentType) {
-          case "contact":
-            return <SearchHitContact {...hit} key={index} />;
-          case "event":
-            return <SearchHit showPublishDate={false} {...hit} key={index} />;
-          default:
-            return <SearchHit {...hit} key={index} />;
-        }
+        const Component = getComponentFromContentType(hit.contentType);
+        return <Component hit={hit} key={index} />;
       })}
     </ul>
   );

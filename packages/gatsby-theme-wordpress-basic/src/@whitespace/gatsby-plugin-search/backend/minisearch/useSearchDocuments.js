@@ -7,15 +7,23 @@ function htmlToText(html) {
 }
 
 function defaultContentNodeFields(source) {
+  let contentType = source.contentType?.node.name;
+  let dates =
+    contentType !== "page" ? source.dateGmt && [source.dateGmt] : null;
+  let date = dates?.[0];
   return {
     id: source.id,
     url: source.url || source.uri,
-    contentType: source.contentType?.node.name,
+    contentType,
     label: source.title,
-    date: source.dateGmt,
+    dates,
+    date,
+    year: date && formatDate(parseDate(date), "yyyy"),
+    month: date && formatDate(parseDate(date), "yyyy-MM"),
+    years: dates && dates.map((date) => formatDate(parseDate(date), "yyyy")),
+    months:
+      dates && dates.map((date) => formatDate(parseDate(date), "yyyy-MM")),
     publishDate: source.dateGmt,
-    year: source.dateGmt && formatDate(parseDate(source.dateGmt), "yyyy"),
-    month: source.dateGmt && formatDate(parseDate(source.dateGmt), "yyyy-MM"),
     image: source.featuredImage?.node,
     text: [
       // Post content
