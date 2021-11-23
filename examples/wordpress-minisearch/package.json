@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@whitespace/gatsby-plugin-search": "^0.12.5",
-    "@whitespace/gatsby-theme-wordpress-basic": "^0.18.4",
+    "@whitespace/gatsby-theme-wordpress-basic": "^0.19",
     "gatsby": "^3.14.3",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "react": "^17.0.2",
