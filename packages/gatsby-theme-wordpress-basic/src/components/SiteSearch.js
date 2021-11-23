@@ -1,5 +1,9 @@
 import { H, Section } from "@jfrk/react-heading-levels";
-import { PageGrid, withComponentDefaults } from "@whitespace/components";
+import {
+  PageGrid,
+  PageGridItem,
+  withComponentDefaults,
+} from "@whitespace/components";
 import {
   URLSearchParamsProvider,
   SearchResults,
@@ -32,10 +36,10 @@ function SiteSearch({
   const { t } = useTranslation();
   const paramTypes = useSiteSearchParamTypes();
   return (
-    <>
-      <H className="c-article__title">{t("siteSearchTitle")}</H>
-      <Section>
-        <div className={clsx(searchStyles.component)}>
+    <PageGrid>
+      <PageGridItem>
+        <H className="c-article__title">{t("siteSearchTitle")}</H>
+        <Section>
           <div className={clsx(searchStyles.wrapper)}>
             <URLSearchParamsProvider
               paramTypes={paramTypes}
@@ -56,8 +60,8 @@ function SiteSearch({
               </SearchBackendProvider>
             </URLSearchParamsProvider>
           </div>
-        </div>
-      </Section>
-    </>
+        </Section>
+      </PageGridItem>
+    </PageGrid>
   );
 }
