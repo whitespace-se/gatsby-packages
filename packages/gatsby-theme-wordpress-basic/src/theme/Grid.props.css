@@ -1,0 +1,10 @@
+:root {
+  --grid-column-gap: 0.875rem;
+  --grid-column-min-width: 18rem;
+}
+
+@media screen and (min-width: 60rem) {
+  :root {
+    --grid-column-gap: 2rem;
+  }
+}
