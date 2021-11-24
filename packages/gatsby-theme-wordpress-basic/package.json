@@ -1,6 +1,6 @@
 {
   "name": "@whitespace/gatsby-theme-wordpress-basic",
-  "version": "0.19.0",
+  "version": "0.19.1",
   "description": "Whitespace’s basic Gatsby theme for Wordpress",
   "license": "MIT",
   "files": [

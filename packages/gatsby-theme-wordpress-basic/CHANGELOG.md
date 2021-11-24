@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.19.1](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.19.0...@whitespace/gatsby-theme-wordpress-basic@0.19.1) (2021-11-24)
+
+
+### Features
+
+* add grid css props ([1db5658](https://github.com/whitespace-se/gatsby-packages/commit/1db56586fd3499d14858c75041a14b161f8b7323))
+
+
+### Bug Fixes
+
+* site search page content width ([4f0794f](https://github.com/whitespace-se/gatsby-packages/commit/4f0794f93929558aad8ae28d06e0c7fc6edb63af))
+* **deps:** versions mismatch ([0bfc6c7](https://github.com/whitespace-se/gatsby-packages/commit/0bfc6c7356133ed79d87d32b40b6330f84d90a53))
+
+
+
 ## [0.19.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.18.13...@whitespace/gatsby-theme-wordpress-basic@0.19.0) (2021-11-22)
 
 
