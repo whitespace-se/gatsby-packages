@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.13.1](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.13.0...@whitespace/gatsby-plugin-search@0.13.1) (2021-11-25)
+
+
+### Bug Fixes
+
+* Avoid JSON stringify error ([103ef43](https://github.com/whitespace-se/gatsby-packages/commit/103ef43ab673728fed83e227925dbabd4619849f))
+
+
+
 ## [0.13.0](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.12.12...@whitespace/gatsby-plugin-search@0.13.0) (2021-11-22)
 
 

@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.19.2](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.19.1...@whitespace/gatsby-theme-wordpress-basic@0.19.2) (2021-11-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* Add ability to override cards and teasers per content type
+
+### Features
+
+* Add ability to override cards and teasers per content type ([7ea8733](https://github.com/whitespace-se/gatsby-packages/commit/7ea873305ee2a7ee0a22d67823a6fe334a269e6b))
+
+
+### Bug Fixes
+
+* Remove debug code ([a5c2dad](https://github.com/whitespace-se/gatsby-packages/commit/a5c2dadf7eb75db8c5dbf8f48d43115d7f187dba))
+
+
+
 ### [0.19.1](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.19.0...@whitespace/gatsby-theme-wordpress-basic@0.19.1) (2021-11-24)
 
 
