@@ -2876,23 +2876,10 @@
     "@webassemblyjs/ast" "1.11.1"
     "@xtuc/long" "4.2.2"
 
-"@whitespace/components@^0.13.1":
-  version "0.13.1"
-  resolved "https://registry.yarnpkg.com/@whitespace/components/-/components-0.13.1.tgz#4ace5e167174cf4a164d95c541ae37ee13d030c4"
-  integrity sha512-K1g2xNSrid5WOpSOl2610SGq5yedQsmRRI2eTRqAfrQ7Wq/ieYAXH+aSQepiZiRNejEXlOgkLGHSdRofyrUu4Q==
-  dependencies:
-    "@jfrk/react-heading-levels" "^1.0.0"
-    clsx "^1.1.1"
-    prop-types "^15.7.2"
-    tailwindcss "^2.2.4"
-    traverse "^0.6.6"
-  optionalDependencies:
-    gatsby "^3.3.0"
-
-"@whitespace/components@^0.13.7":
-  version "0.13.7"
-  resolved "https://registry.yarnpkg.com/@whitespace/components/-/components-0.13.7.tgz#ca07d3f77b12cb81041923771ec2ef47316942d7"
-  integrity sha512-hchsms0X1fipJpYRFTbYOBr4wGWgLF0k/OpO+VO35444aZmCjdzzeua10/2j6T21JERiksvkHla6laYxnGvP2Q==
+"@whitespace/components@^0.13.1", "@whitespace/components@^0.13.7":
+  version "0.13.11"
+  resolved "https://registry.yarnpkg.com/@whitespace/components/-/components-0.13.11.tgz#c0d6957c2e69e120e35e904e57b78243e69afb63"
+  integrity sha512-cF1yBp5lgQyZ/ZeOS6jjTMxJ+4RfQc6IOs/OQP4yIGY0Uvb6utwIDtbKJCBYeY7hUTusNmoPx1/Xa5GYW1EmXw==
   dependencies:
     "@jfrk/react-heading-levels" "^1.0.0"
     clsx "^1.1.1"
@@ -2915,10 +2902,10 @@
     use-persisted-state "^0.3.3"
     use-ssr "^1.0.24"
 
-"@whitespace/gatsby-plugin-search@0.12.5":
-  version "0.12.5"
-  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-search/-/gatsby-plugin-search-0.12.5.tgz#168fd7b698dc926ee15ce6259bf87f76801dc999"
-  integrity sha512-6VI/2FjwqEJFF+RKQH5mgzjpDdwPbrATMYvAPWJh5NC/swoIKI5q+7OMoc/JZVNAGYJ2OdQ469N759+KviYxxg==
+"@whitespace/gatsby-plugin-search@^0.12.12", "@whitespace/gatsby-plugin-search@^0.12.5":
+  version "0.12.12"
+  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-search/-/gatsby-plugin-search-0.12.12.tgz#58e32fcb630115dfa9a68c15c9a2cc2dd791ec29"
+  integrity sha512-rHbYxquTWB3jF3a9fcJ6Z1l2OHAdZJYy/q6te00jQuTctSI0Nx57w9p4U+uZ/elqNvSDAiWIqRIkugg5luRy5A==
   dependencies:
     "@jfrk/react-heading-levels" "^1.0.0"
     "@whitespace/gatsby-hooks" "^0.5.0"
@@ -2926,6 +2913,67 @@
     lodash-es "^4.17.21"
     minisearch "^3.1.0"
     react-select "^5.1.0"
+
+"@whitespace/gatsby-theme-wordpress-basic@^0.18.11":
+  version "0.18.13"
+  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-theme-wordpress-basic/-/gatsby-theme-wordpress-basic-0.18.13.tgz#28f0be1594695a9e6d6d133ce77e33185a523c86"
+  integrity sha512-xDKBfs3APOoFeVQ+ZrZNkqJuN4rhq6hqhkQs/2yOnimABJlocV6skkgZVTjcgAr7lht5jvMwjbCCzWt5PBRIOw==
+  dependencies:
+    "@apollo/react-hooks" "^4.0.0"
+    "@emotion/css" "^11.5.0"
+    "@emotion/react" "^11.5.0"
+    "@emotion/styled" "^11.3.0"
+    "@jfrk/react-heading-levels" "^1.0.0"
+    "@jfrk/react-id" "^1.0.0"
+    "@whitespace/components" "^0.13.1"
+    "@whitespace/gatsby-hooks" "^0.5.0"
+    "@whitespace/gatsby-plugin-i18next" "^0.4.4"
+    "@whitespace/gatsby-plugin-page-wrapper" "^0.3.3"
+    "@whitespace/gatsby-plugin-search" "^0.12.12"
+    apollo-boost "^0.4.9"
+    apollo-cache-inmemory "^1.6.6"
+    clsx "^1.1.1"
+    date-fns "^2.25.0"
+    esm "^3.2.25"
+    gatsby-image "^3.11.0"
+    gatsby-plugin-emotion "^6.14.0"
+    gatsby-plugin-fragments "^1.1.2"
+    gatsby-plugin-meta-redirect "^1.1.1"
+    gatsby-plugin-postcss "^4.14.0"
+    gatsby-plugin-react-helmet "^4.14.0"
+    gatsby-plugin-sharp "^3.14.1"
+    gatsby-source-filesystem "^3.14.0"
+    gatsby-source-graphql "^3.14.0"
+    gatsby-transformer-sharp "^3.14.0"
+    graphql-request "^3.6.1"
+    graphql-tag "^2.12.5"
+    hast-util-to-string "^2.0.0"
+    i18next "^21.3.2"
+    javascript-time-ago "^2.3.9"
+    lodash "^4.17.21"
+    mustache "^4.2.0"
+    node-fetch "^3.0.0"
+    nuka-carousel "^4.8.0"
+    postcss "^8.3.9"
+    postcss-preset-env "^6.7.0"
+    prop-types "^15.7.2"
+    query-string "^7.0.1"
+    react-helmet "^6.1.0"
+    react-i18next "^11.12.0"
+    react-spinners "^0.11.0"
+    rehype-dom-parse "^4.0.1"
+    rehype-parse "^8.0.3"
+    rehype-react "^7.0.3"
+    sass "^1.43.2"
+    tagged-template-noop "^2.1.1"
+    toml "^3.0.0"
+    traverse "^0.6.6"
+    unified "^10.1.0"
+    unist-util-visit "^4.1.0"
+    unist-util-visit-parents "^5.1.0"
+    url-polyfill "^1.1.12"
+    use-ssr "^1.0.24"
+    yup "^0.32.11"
 
 "@wry/context@^0.4.0":
   version "0.4.4"
@@ -6956,7 +7004,7 @@ gatsby-worker@^0.5.0:
     "@babel/core" "^7.15.5"
     "@babel/runtime" "^7.15.4"
 
-gatsby@^3, gatsby@^3.14.3, gatsby@^3.3.0:
+gatsby@^3, gatsby@^3.14.3:
   version "3.14.3"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-3.14.3.tgz#62bc020d0997f4b30e419abe644f60483f99e8b5"
   integrity sha512-B6NmmIvGGVNktky0YGugxMJlZAbKEzGMMBA8ojbaDhfEzfNXxsyHYd0aHKL0fNwPEqMKUsllaACdXrw6CWRk2g==
@@ -10679,6 +10727,13 @@ node-fetch@2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
+
+node-fetch@^2:
+  version "2.6.6"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.6.tgz#1751a7c01834e8e1697758732e9efb6eeadfaf89"
+  integrity sha512-Z8/6vRlTUChSdIgMa51jxQ4lrw/Jy5SOW10ObaA47/RElsAN2c5Pn8bTgFGWn/ibwzXTE8qwr1Yzx28vsecXEA==
+  dependencies:
+    whatwg-url "^5.0.0"
 
 node-fetch@^2.5.0, node-fetch@^2.6.1:
   version "2.6.5"
