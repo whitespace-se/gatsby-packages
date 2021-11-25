@@ -1,0 +1,22 @@
+.component {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--taxonomies-gap, 0.5rem);
+  padding-left: 0;
+  padding-top: var(--taxonomies-padding-top, 1rem);
+  align-content: center;
+  position: relative;
+  z-index: 99;
+}
+
+.taxonomy {
+  list-style: none;
+  background-color: var(--taxonomies-background, lightgray);
+  padding: var(--taxonomies-taxonomy-padding, 0.375rem 0.75rem);
+  border-radius: var(--taxonomies-taxonomy-border-radius, 2rem);
+  font-size: var(--taxonomies-taxonomy-font-size, 0.75rem);
+  width: max-content;
+
+  --link-color: var(--color-foreground);
+  --link-text-decoration: none;
+}
