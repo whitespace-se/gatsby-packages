@@ -1,7 +1,6 @@
 import { H, Section } from "@jfrk/react-heading-levels";
 import { withComponentDefaults } from "@whitespace/components";
 import {
-  SearchContextDebug,
   SearchForm,
   SearchResults,
   URLSearchParamsProvider,
@@ -76,12 +75,6 @@ function Archive({
               >
                 <SearchBackendProvider transformParams={transformParams}>
                   <SearchForm />
-                  {process.env.NODE_ENV !== "production" && (
-                    <details>
-                      <summary>Debug</summary>
-                      <SearchContextDebug />
-                    </details>
-                  )}
                   <SearchResults />
                   <SearchPagination />
                 </SearchBackendProvider>
