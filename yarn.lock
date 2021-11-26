@@ -2876,10 +2876,10 @@
     "@webassemblyjs/ast" "1.11.1"
     "@xtuc/long" "4.2.2"
 
-"@whitespace/components@^0.13.1", "@whitespace/components@^0.13.7":
-  version "0.13.11"
-  resolved "https://registry.yarnpkg.com/@whitespace/components/-/components-0.13.11.tgz#c0d6957c2e69e120e35e904e57b78243e69afb63"
-  integrity sha512-cF1yBp5lgQyZ/ZeOS6jjTMxJ+4RfQc6IOs/OQP4yIGY0Uvb6utwIDtbKJCBYeY7hUTusNmoPx1/Xa5GYW1EmXw==
+"@whitespace/components@^0.13.13":
+  version "0.13.13"
+  resolved "https://registry.yarnpkg.com/@whitespace/components/-/components-0.13.13.tgz#c67a8a2be22acb9d559cc377e80f87c3c763ac48"
+  integrity sha512-/SDAtt0HJsYMpl0dPSJRyiDRCEReYHg7JYtnvFF5BQLTTZdd9NOpDinPWFhJFnAp+YWwWQm3PL2QaQdpm8TXUg==
   dependencies:
     "@jfrk/react-heading-levels" "^1.0.0"
     clsx "^1.1.1"
@@ -2901,79 +2901,6 @@
     query-string "^7.0.0"
     use-persisted-state "^0.3.3"
     use-ssr "^1.0.24"
-
-"@whitespace/gatsby-plugin-search@^0.12.12", "@whitespace/gatsby-plugin-search@^0.12.5":
-  version "0.12.12"
-  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-search/-/gatsby-plugin-search-0.12.12.tgz#58e32fcb630115dfa9a68c15c9a2cc2dd791ec29"
-  integrity sha512-rHbYxquTWB3jF3a9fcJ6Z1l2OHAdZJYy/q6te00jQuTctSI0Nx57w9p4U+uZ/elqNvSDAiWIqRIkugg5luRy5A==
-  dependencies:
-    "@jfrk/react-heading-levels" "^1.0.0"
-    "@whitespace/gatsby-hooks" "^0.5.0"
-    immer "^9.0.6"
-    lodash-es "^4.17.21"
-    minisearch "^3.1.0"
-    react-select "^5.1.0"
-
-"@whitespace/gatsby-theme-wordpress-basic@^0.18.11":
-  version "0.18.13"
-  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-theme-wordpress-basic/-/gatsby-theme-wordpress-basic-0.18.13.tgz#28f0be1594695a9e6d6d133ce77e33185a523c86"
-  integrity sha512-xDKBfs3APOoFeVQ+ZrZNkqJuN4rhq6hqhkQs/2yOnimABJlocV6skkgZVTjcgAr7lht5jvMwjbCCzWt5PBRIOw==
-  dependencies:
-    "@apollo/react-hooks" "^4.0.0"
-    "@emotion/css" "^11.5.0"
-    "@emotion/react" "^11.5.0"
-    "@emotion/styled" "^11.3.0"
-    "@jfrk/react-heading-levels" "^1.0.0"
-    "@jfrk/react-id" "^1.0.0"
-    "@whitespace/components" "^0.13.1"
-    "@whitespace/gatsby-hooks" "^0.5.0"
-    "@whitespace/gatsby-plugin-i18next" "^0.4.4"
-    "@whitespace/gatsby-plugin-page-wrapper" "^0.3.3"
-    "@whitespace/gatsby-plugin-search" "^0.12.12"
-    apollo-boost "^0.4.9"
-    apollo-cache-inmemory "^1.6.6"
-    clsx "^1.1.1"
-    date-fns "^2.25.0"
-    esm "^3.2.25"
-    gatsby-image "^3.11.0"
-    gatsby-plugin-emotion "^6.14.0"
-    gatsby-plugin-fragments "^1.1.2"
-    gatsby-plugin-meta-redirect "^1.1.1"
-    gatsby-plugin-postcss "^4.14.0"
-    gatsby-plugin-react-helmet "^4.14.0"
-    gatsby-plugin-sharp "^3.14.1"
-    gatsby-source-filesystem "^3.14.0"
-    gatsby-source-graphql "^3.14.0"
-    gatsby-transformer-sharp "^3.14.0"
-    graphql-request "^3.6.1"
-    graphql-tag "^2.12.5"
-    hast-util-to-string "^2.0.0"
-    i18next "^21.3.2"
-    javascript-time-ago "^2.3.9"
-    lodash "^4.17.21"
-    mustache "^4.2.0"
-    node-fetch "^3.0.0"
-    nuka-carousel "^4.8.0"
-    postcss "^8.3.9"
-    postcss-preset-env "^6.7.0"
-    prop-types "^15.7.2"
-    query-string "^7.0.1"
-    react-helmet "^6.1.0"
-    react-i18next "^11.12.0"
-    react-spinners "^0.11.0"
-    rehype-dom-parse "^4.0.1"
-    rehype-parse "^8.0.3"
-    rehype-react "^7.0.3"
-    sass "^1.43.2"
-    tagged-template-noop "^2.1.1"
-    toml "^3.0.0"
-    traverse "^0.6.6"
-    unified "^10.1.0"
-    unist-util-visit "^4.1.0"
-    unist-util-visit-parents "^5.1.0"
-    url-polyfill "^1.1.12"
-    use-ssr "^1.0.24"
-    yup "^0.32.11"
 
 "@wry/context@^0.4.0":
   version "0.4.4"
@@ -5026,11 +4953,6 @@ damerau-levenshtein@^1.0.6:
   resolved "https://registry.yarnpkg.com/damerau-levenshtein/-/damerau-levenshtein-1.0.7.tgz#64368003512a1a6992593741a09a9d31a836f55d"
   integrity sha512-VvdQIPGdWP0SqFXghj79Wf/5LArmreyMsGLa6FG6iC4t3j7j5s71TrwWmT/4akbDQIqjfACkLZmjXhA7g2oUZw==
 
-data-uri-to-buffer@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/data-uri-to-buffer/-/data-uri-to-buffer-3.0.1.tgz#594b8973938c5bc2c33046535785341abc4f3636"
-  integrity sha512-WboRycPNsVw3B3TL559F7kuBUM4d8CgMEvk6xEJlOp7OBPjt6G7z8WMWlD2rOFZLk6OYfFIUGsCOWzcQH9K2og==
-
 data-urls@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/data-urls/-/data-urls-2.0.0.tgz#156485a72963a970f5d5821aaf642bef2bf2db9b"
@@ -6304,13 +6226,6 @@ fd@~0.0.2:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/fd/-/fd-0.0.3.tgz#b3240de86dbf5a345baae7382a07d4713566ff0c"
   integrity sha512-iAHrIslQb3U68OcMSP0kkNWabp7sSN6d2TBSb2JO3gcLJVDd4owr/hKM4SFJovFOUeeXeItjYgouEDTMWiVAnA==
-
-fetch-blob@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/fetch-blob/-/fetch-blob-3.1.2.tgz#6bc438675f3851ecea51758ac91f6a1cd1bacabd"
-  integrity sha512-hunJbvy/6OLjCD0uuhLdp0mMPzP/yd2ssd1t2FCJsaA7wkWhpbp9xfuNVpv7Ll4jFhzp6T4LAupSiV9uOeg0VQ==
-  dependencies:
-    web-streams-polyfill "^3.0.3"
 
 figures@^3.0.0:
   version "3.2.0"
@@ -10742,14 +10657,6 @@ node-fetch@^2.5.0, node-fetch@^2.6.1:
   dependencies:
     whatwg-url "^5.0.0"
 
-node-fetch@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-3.0.0.tgz#79da7146a520036f2c5f644e4a26095f17e411ea"
-  integrity sha512-bKMI+C7/T/SPU1lKnbQbwxptpCrG9ashG+VkytmXCPZyuM9jB6VU+hY0oi4lC8LxTtAeWdckNCTa3nrGsAdA3Q==
-  dependencies:
-    data-uri-to-buffer "^3.0.1"
-    fetch-blob "^3.1.2"
-
 node-int64@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/node-int64/-/node-int64-0.4.0.tgz#87a9065cdb355d3182d8f94ce11188b825c68a3b"
@@ -15089,11 +14996,6 @@ web-namespaces@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/web-namespaces/-/web-namespaces-2.0.0.tgz#1f6a2d7b5823329abaedeb6bdf09ef2fed35db13"
   integrity sha512-dE7ELZRVWh0ceQsRgkjLgsAvwTuv3kcjSY/hLjqL0llleUlQBDjE9JkB9FCBY5F2mnFEwiyJoowl8+NVGHe8dw==
-
-web-streams-polyfill@^3.0.3:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/web-streams-polyfill/-/web-streams-polyfill-3.1.1.tgz#1516f2d4ea8f1bdbfed15eb65cb2df87098c8364"
-  integrity sha512-Czi3fG883e96T4DLEPRvufrF2ydhOOW1+1a6c3gNjH2aIh50DNFBdfwh2AKoOf1rXvpvavAoA11Qdq9+BKjE0Q==
 
 webidl-conversions@^3.0.0:
   version "3.0.1"
