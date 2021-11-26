@@ -19,7 +19,7 @@
     "wp-generate-schema-fragments": "cross-env NODE_OPTIONS=\"-r esm\" node scripts/wp-generate-schema-fragments"
   },
   "dependencies": {
-    "@whitespace/gatsby-plugin-search": "^0.12.5",
+    "@whitespace/gatsby-plugin-search": "^0.13.1",
     "@whitespace/gatsby-theme-wordpress-basic": "^0.19",
     "gatsby": "^3.14.3",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
