@@ -1,15 +1,18 @@
 :root {
+  --default-site-layout-main-padding-top: 1.25rem;
   --default-site-layout-main-padding-bottom: 1.25rem;
 }
 
 @media screen and (min-width: 40rem) {
   :root {
+    --default-site-layout-main-padding-top: 2rem;
     --default-site-layout-main-padding-bottom: 2rem;
   }
 }
 
 @media screen and (min-width: 60rem) {
   :root {
+    --default-site-layout-main-padding-top: 3rem;
     --default-site-layout-main-padding-bottom: 3rem;
   }
 }
@@ -23,6 +26,10 @@
 .main {
   display: grid;
   gap: 1rem;
+  padding-top: var(
+    --site-layout-main-padding-top,
+    var(--default-site-layout-main-padding-top)
+  );
   padding-bottom: var(
     --site-layout-main-padding-bottom,
     var(--default-site-layout-main-padding-bottom)
