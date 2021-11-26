@@ -1,12 +1,21 @@
 :root {
   --page-grid-wrapper-max-width: 76rem;
   --page-grid-gap: var(--grid-column-gap, 1rem);
+  --page-grid-row-gap: 1.25rem;
   --page-grid-item-min-width: var(--grid-column-min-width, 17.5rem);
   --page-grid-layout-gap: 1rem;
 }
 
 @media screen and (min-width: 40rem) {
   :root {
+    --page-grid-row-gap: 2rem;
+    --page-grid-layout-gap: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  :root {
+    --page-grid-row-gap: 2.5rem;
     --page-grid-layout-gap: 2.5rem;
   }
 }
