@@ -1,6 +1,6 @@
 {
   "name": "@whitespace/gatsby-plugin-cookie-consent",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "index.js",
   "author": "Whitespace Dev <code@whitespace.se>",
   "description": "Adds a cookie consent component to gatsby sites",

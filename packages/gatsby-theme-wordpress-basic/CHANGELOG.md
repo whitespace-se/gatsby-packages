@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.19.3](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.19.2...@whitespace/gatsby-theme-wordpress-basic@0.19.3) (2021-11-29)
+
+
+### Features
+
+* add `--page-grid-row-gap` value ([3d81428](https://github.com/whitespace-se/gatsby-packages/commit/3d814280dba97955ba9e1a3fba7198ee9064f64e))
+* add `--site-layout-main-padding-top` ([8a3e71f](https://github.com/whitespace-se/gatsby-packages/commit/8a3e71f9661b1f3d0380cc570ce5c1235c868728))
+
+
+### Bug Fixes
+
+* **deps:** wrong versions ([5f96884](https://github.com/whitespace-se/gatsby-packages/commit/5f9688479d3c620e1a64d86393c1a814b6dc9c65))
+
+
+
 ### [0.19.2](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.19.1...@whitespace/gatsby-theme-wordpress-basic@0.19.2) (2021-11-25)
 
 
