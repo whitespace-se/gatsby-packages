@@ -23,9 +23,7 @@
   min-height: 100vh;
 }
 
-.main {
-  display: grid;
-  gap: 1rem;
+.content {
   padding-top: var(
     --site-layout-main-padding-top,
     var(--default-site-layout-main-padding-top)
@@ -37,6 +35,5 @@
 }
 
 .breadcrumbs {
-  margin: 1rem;
   border-bottom: var(--site-layout-breadcrumbs-border-bottom, 0);
 }
