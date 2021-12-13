@@ -2,7 +2,7 @@
   "name": "@whitespace/gatsby-theme-wordpress-basic",
   "version": "0.19.3",
   "description": "Whitespace’s basic Gatsby theme for Wordpress",
-  "license": "MIT",
+  "license": "AGPL",
   "files": [
     "src/**/*",
     "node/**/*",

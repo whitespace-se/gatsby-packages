@@ -4,7 +4,7 @@
   "main": "index.js",
   "author": "Whitespace Dev <code@whitespace.se>",
   "description": "Adds a cookie consent component to gatsby sites",
-  "license": "MIT",
+  "license": "AGPL",
   "files": [
     "src/**/*",
     "README.md",

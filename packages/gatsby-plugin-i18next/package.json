@@ -3,7 +3,7 @@
   "version": "0.4.4",
   "main": "index.js",
   "author": "Whitespace Dev <code@whitespace.se>",
-  "license": "MIT",
+  "license": "AGPL",
   "devDependencies": {
     "gatsby": "^3.14.3",
     "i18next": "^21.3.2",

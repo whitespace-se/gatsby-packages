@@ -4,7 +4,7 @@
   "description": "Gatsby example site that uses Wordpress and Minisearch",
   "version": "0.0.0",
   "author": "Whitespace <code@whitespace.se>",
-  "license": "0BSD",
+  "license": "AGPL",
   "scripts": {
     "build": "yarn wp-generate-schema-fragments && cross-env NODE_OPTIONS=\"-r esm\" gatsby build",
     "clean": "cross-env NODE_OPTIONS=\"-r esm\" gatsby clean",
