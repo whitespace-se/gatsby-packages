@@ -1,0 +1,27 @@
+{
+  "name": "gatsby-plugin-matomo",
+  "version": "0.1.0",
+  "description": "Whitespace’s basic Gatsby plugin for Matomo",
+  "author": "Whitespace Dev <code@whitespace.se>",
+  "license": "AGPL",
+  "files": [
+    "src/**/*",
+    "node/**/*",
+    "README.md",
+    "*.js"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "gatsby": "^3.14.3",
+    "react": "^17.0.2",
+    "react-dom": "^16.9.0 || ^17.0.0",
+    "cross-env": "^7.0.3",
+    "gatsby-plugin-utils": "^2.5.0-next.0"
+  },
+  "peerDependencies": {
+    "gatsby": "^4.0.0-next",
+    "react": "^16.9.0 || ^17.0.0",
+    "react-dom": "^16.9.0 || ^17.0.0"
+  }
+}

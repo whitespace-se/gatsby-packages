@@ -27,6 +27,10 @@ reverse order.
 
 Adds a framework for search and archive pages.
 
+### `@whitespace/gatsby-plugin-matomo`
+
+A Gatsby plugin for support of Matomo.
+
 ## Examples
 
 The `/examples` directory contains demo apps and submodules linking to Gatsby
