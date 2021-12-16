@@ -10,8 +10,7 @@
     "README.md",
     "*.js"
   ],
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "gatsby": "^3.14.3",
     "react": "^17.0.2",
