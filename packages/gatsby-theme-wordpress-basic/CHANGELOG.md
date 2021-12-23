@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.19.4](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.19.3...@whitespace/gatsby-theme-wordpress-basic@0.19.4) (2021-12-23)
+
+
+### Bug Fixes
+
+* layout spacing ([b6a2596](https://github.com/whitespace-se/gatsby-packages/commit/b6a25961c73657a749304dd7b1bc5eb685ae6abf))
+
+
+
 ### [0.19.3](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.19.2...@whitespace/gatsby-theme-wordpress-basic@0.19.3) (2021-11-29)
 
 
