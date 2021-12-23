@@ -12,7 +12,7 @@ export function onRouteUpdate(_, pluginOptions) {
         ? pluginOptions.routeChangeEventName
         : `gatsby-route-change`;
 
-      data.push({ event: eventName });
+      data?.push({ event: eventName });
     }, 50);
   }
 }

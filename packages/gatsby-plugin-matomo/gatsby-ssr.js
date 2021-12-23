@@ -1,19 +1,20 @@
-import { oneLine, stripIndent } from "common-tags";
+import { oneLine } from "common-tags";
 import React from "react";
 
 const generateMTM = ({
   mtmContainerId,
   mtmHost,
   mtmDataVariableName,
-}) => stripIndent`
-var _mtm = window.${mtmDataVariableName} = window.${mtmDataVariableName} || [];
-_mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
-var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-g.async=true; g.src='${mtmHost}/js/${mtmContainerId}.js'; s.parentNode.insertBefore(g,s);`;
+}) => oneLine`
+  var _mtm = window.${mtmDataVariableName} = window.${mtmDataVariableName} || [];
+  _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtmStart'});
+  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+  g.async=true; g.src='${mtmHost}/js/${mtmContainerId}.js'; s.parentNode.insertBefore(g,s);
+`;
 
-const generateMTMPAQ = ({ mtmPAQDataVariableName }) => stripIndent`
+const generateMTMPAQ = ({ mtmPAQDataVariableName }) => oneLine`
   var _paq = window.${mtmPAQDataVariableName} = window.${mtmPAQDataVariableName} || [];
-}`;
+`;
 
 const generateMTMframe = ({ mtmContainerId, mtmHost }) =>
   oneLine`<iframe src="${mtmHost}/js/${mtmContainerId}.js" height="0" width="0" style="display: none; visibility: hidden" aria-hidden="true"></iframe>`;
@@ -42,7 +43,7 @@ const generateDefaultDataVariable = (
     )});`;
   }
 
-  return stripIndent`${result}`;
+  return oneLine`${result}`;
 };
 
 export const onRenderBody = (
