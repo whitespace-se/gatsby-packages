@@ -10,6 +10,9 @@
     "README.md",
     "*.js"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "common-tags": "^1.8.2"
   },
