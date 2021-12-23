@@ -10,16 +10,16 @@
     "README.md",
     "*.js"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "common-tags": "^1.8.2"
+  },
   "devDependencies": {
-    "gatsby": "^3.14.3",
-    "react": "^17.0.2",
-    "react-dom": "^16.9.0 || ^17.0.0",
-    "cross-env": "^7.0.3",
-    "gatsby-plugin-utils": "^2.5.0-next.0"
+    "gatsby": "^3.0.0 || ^4.0.0",
+    "react": "^16.9.0 || ^17.0.0",
+    "react-dom": "^16.9.0 || ^17.0.0"
   },
   "peerDependencies": {
-    "gatsby": "^4.0.0-next",
+    "gatsby": "^3.0.0 || ^4.0.0",
     "react": "^16.9.0 || ^17.0.0",
     "react-dom": "^16.9.0 || ^17.0.0"
   }
