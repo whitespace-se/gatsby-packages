@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.19.5](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.19.4...@whitespace/gatsby-theme-wordpress-basic@0.19.5) (2022-01-13)
+
+
+### Features
+
+* add export `truey` and `falsey` ([f7025dc](https://github.com/whitespace-se/gatsby-packages/commit/f7025dc95f3734bceba5bff522aeae8ac710e185))
+* Remove explicit `/graphql` from config ([f2fae61](https://github.com/whitespace-se/gatsby-packages/commit/f2fae611e37297cba5152733b13167e8ee77c76e))
+
+
+
 ### [0.19.4](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-theme-wordpress-basic@0.19.3...@whitespace/gatsby-theme-wordpress-basic@0.19.4) (2021-12-23)
 
 

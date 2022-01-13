@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [0.1.1](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-matomo@0.1.0...@whitespace/gatsby-plugin-matomo@0.1.1) (2022-01-13)
+
+
+### Bug Fixes
+
+* Error in onRouteUpdate ([3addbcf](https://github.com/whitespace-se/gatsby-packages/commit/3addbcf21ebd2b0503ae1f8358208835a10cd7ed))
+* publish config ([3c8f4d4](https://github.com/whitespace-se/gatsby-packages/commit/3c8f4d4bb0f5c5a7289f1cd719f46b463c91c24a))
+
+
+
 ## 0.1.0 (2021-12-23)
 
 
