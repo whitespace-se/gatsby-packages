@@ -19,7 +19,7 @@ export const plugins = [
         languages: ["en"],
       },
       wp: {
-        url: `${process.env.GATSBY_WORDPRESS_URL}/graphql`,
+        url: process.env.GATSBY_WORDPRESS_URL,
         refetchInterval: process.env.WORDPRESS_REFETCH_INTERVAL,
       },
       // XXX: postcss.config.js doesn’t seem to load automatically

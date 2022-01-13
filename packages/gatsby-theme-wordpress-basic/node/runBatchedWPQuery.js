@@ -83,7 +83,7 @@ export default async function runBatchedWPQuery(
     try {
       reporter.info(`Fetching batch ${pageNumber + 1}...`);
 
-      let data = await request(url, query, {
+      let data = await request(`${url}/graphql`, query, {
         ...variables,
         cursor: nextCursor,
       });
