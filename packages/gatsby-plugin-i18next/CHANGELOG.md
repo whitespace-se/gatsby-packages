@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.0.0-rc.0 (2022-01-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update all deps
+* fix all lint errors
+* **deps:** update all packages
+
+### Bug Fixes
+
+* **deps:** two versions of react-i18next ([41a55ab](https://github.com/whitespace-se/gatsby-packages/commit/41a55abea127ce337a292be7e3b2e573f43c86d2))
+* set a default value to avoid breakage when path is empty (i.e. 404 pages) ([6093a6a](https://github.com/whitespace-se/gatsby-packages/commit/6093a6a1f47fbea84dcfe5bb858f5f607d73e34e))
+
+
+### Miscellaneous Chores
+
+* **deps:** update all deps ([4cfbb84](https://github.com/whitespace-se/gatsby-packages/commit/4cfbb8485f8c4871ed42bba82dcf753c462b6049))
+* **deps:** update all packages ([d0efc38](https://github.com/whitespace-se/gatsby-packages/commit/d0efc3882d169b0ad9d0342ae9f94ea51e39e019))
+* fix all lint errors ([6516578](https://github.com/whitespace-se/gatsby-packages/commit/6516578c577cba9160802e28eb9e3383d7defb4b))
+
+
+
 ### [0.4.5](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-i18next@0.4.4...@whitespace/gatsby-plugin-i18next@0.4.5) (2021-12-23)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-i18next

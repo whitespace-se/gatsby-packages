@@ -3,6 +3,90 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.0.0-rc.0 (2022-01-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* improve site search
+* **deps:** update all deps
+* fix all lint errors
+* implement archive pages
+* **deps:** update all packages
+
+### Features
+
+* add `paramTypes` prop to `StateSearchParamsProvider` component ([5b18006](https://github.com/whitespace-se/gatsby-packages/commit/5b180062586a439052757071d84255ea5291d6c6))
+* add `transformParams` prop to MinisearchSearchBackendProvider ([8f98e23](https://github.com/whitespace-se/gatsby-packages/commit/8f98e235974f8429ea0a67dacce80bbbe4663fa9))
+* add classname props to search form ([3192b43](https://github.com/whitespace-se/gatsby-packages/commit/3192b43250ac0198ef89e0510bacb1e3faffa971))
+* add new css variables ([9a9eb81](https://github.com/whitespace-se/gatsby-packages/commit/9a9eb810e14a870baadcf87349e6bd485b917166))
+* add publish date to search results ([e34ef53](https://github.com/whitespace-se/gatsby-packages/commit/e34ef53a187f7951d4481d48c65394a21144ead6))
+* add supplementing components, hooks and utils to search ([888cbba](https://github.com/whitespace-se/gatsby-packages/commit/888cbba2a9f87b604aefae38e4e6604308133032))
+* implement archive pages ([e5240c7](https://github.com/whitespace-se/gatsby-packages/commit/e5240c73aa75db91cccba76ef8dee6c39f2c9b5b))
+* improve site search ([d677d0e](https://github.com/whitespace-se/gatsby-packages/commit/d677d0efbd3d30b1bec9203b416492de16411e42))
+* scroll to top on pagination click ([0f32d60](https://github.com/whitespace-se/gatsby-packages/commit/0f32d60c764a2e7831304c4506adbe94a434485a))
+* update style and display of contact information ([3a68aec](https://github.com/whitespace-se/gatsby-packages/commit/3a68aec19dadab487ff74f01e1ea5e8cd1fb7ba5))
+
+
+### Bug Fixes
+
+* `useMiniSearch` did not handle fitlering on multi value fields ([9c41afd](https://github.com/whitespace-se/gatsby-packages/commit/9c41afd8f1624042444850b49fde7ed2a43c7fcf))
+* adapt styling to new method of adding variables ([53fc38d](https://github.com/whitespace-se/gatsby-packages/commit/53fc38dabe80a9020b5b2889b89614fa964b8869))
+* add more precise variables ([ff1346f](https://github.com/whitespace-se/gatsby-packages/commit/ff1346fb21aad3bf14cc7958c97bb09fda7360ac))
+* add new variable to view search hits total ([46f63d6](https://github.com/whitespace-se/gatsby-packages/commit/46f63d695fb9dd76e1d88402ea72671508c0b1b6))
+* add placeholder for tags filter ([a59ec85](https://github.com/whitespace-se/gatsby-packages/commit/a59ec85283ee6e919475de3b182e15aa3de0fbb7))
+* add support for titles without links ([ef5a65f](https://github.com/whitespace-se/gatsby-packages/commit/ef5a65f2778ae9c5f48ff43eb719572ca3737b56))
+* add translatable month i18n strings ([b9179c4](https://github.com/whitespace-se/gatsby-packages/commit/b9179c49f8a88046bb730a58774e267a89b29ac9))
+* allow translation of pagination button labels ([47b44e5](https://github.com/whitespace-se/gatsby-packages/commit/47b44e59776edc9c1289665fe31a4be65c07b0e1))
+* avoid circular import ([998b737](https://github.com/whitespace-se/gatsby-packages/commit/998b73757840bf23c0524b26e25cd6aa967f0808))
+* Avoid JSON stringify error ([103ef43](https://github.com/whitespace-se/gatsby-packages/commit/103ef43ab673728fed83e227925dbabd4619849f))
+* better styling for multi filter ([a3c740f](https://github.com/whitespace-se/gatsby-packages/commit/a3c740f7a7f2820d2642facb77f793238eeda81a))
+* clear only "other" params ([de34c9f](https://github.com/whitespace-se/gatsby-packages/commit/de34c9f41e2dd66ee3cc3e3722983a5d2021d783))
+* **deps:** allow override of Link props in CoverLink ([a5c0237](https://github.com/whitespace-se/gatsby-packages/commit/a5c0237847cd9453edbc3a14fde713c0f998ede4))
+* **deps:** two versions of react-i18next ([41a55ab](https://github.com/whitespace-se/gatsby-packages/commit/41a55abea127ce337a292be7e3b2e573f43c86d2))
+* **deps:** Use same Gatsby version range as other packes ([a615032](https://github.com/whitespace-se/gatsby-packages/commit/a6150329abde6c1297e867dc3c21d94751eac444))
+* **deps:** wrong versions ([5f96884](https://github.com/whitespace-se/gatsby-packages/commit/5f9688479d3c620e1a64d86393c1a814b6dc9c65))
+* disable facetCounts feature for minisearch until it’s fixed ([85df67f](https://github.com/whitespace-se/gatsby-packages/commit/85df67f59882a0599fc604d7db0a7027b7bf04f5))
+* empty search wasn’t handled properly ([7f59431](https://github.com/whitespace-se/gatsby-packages/commit/7f59431d58fe6a02e79d89a71350f0a38f136de1))
+* error in missing param type ([d1ff074](https://github.com/whitespace-se/gatsby-packages/commit/d1ff07428ec6df9b17406c6cd1852df78a88e6af))
+* error in search fields for missing param types ([f3d4e34](https://github.com/whitespace-se/gatsby-packages/commit/f3d4e34257c6c42d73853c95205d8e72989b6887))
+* filter out undefined facets ([c257836](https://github.com/whitespace-se/gatsby-packages/commit/c2578363c618fa4571d06ddb72fff0f3b44a6a6a))
+* hide publish date for event search hits by default ([02cbff0](https://github.com/whitespace-se/gatsby-packages/commit/02cbff0474e4f72c74c3ef7b58c69e6310229a42))
+* ignore empty strings in multi-value filters ([3ff4c6a](https://github.com/whitespace-se/gatsby-packages/commit/3ff4c6a4e5634b6197361e49ecadf235f4119d80))
+* improve `StateSearchParamsProvider` ([60571b2](https://github.com/whitespace-se/gatsby-packages/commit/60571b2e78397969fde4ef91198348b9e94a53d1))
+* lint error ([7182e68](https://github.com/whitespace-se/gatsby-packages/commit/7182e68a9f38f7255d447680fdc3d6d1f8277a08))
+* low contrast default styles for `SelectField` ([5118589](https://github.com/whitespace-se/gatsby-packages/commit/511858914e09d31f23f6d07e765fdf18af240da0))
+* only show "clear filters" btn if url params are not query, page or contentType ([819de9c](https://github.com/whitespace-se/gatsby-packages/commit/819de9ce77626d79a2678e94654f699d55835383))
+* prop type validation error in pagination ([737be1d](https://github.com/whitespace-se/gatsby-packages/commit/737be1d7aecd510e17d1dd1246d74c65007cf58d))
+* proptypes for `URLSearchParamsProvider` ([32a6137](https://github.com/whitespace-se/gatsby-packages/commit/32a6137c83088726af1da658ac9eb96020ddf3cb))
+* remove added "fix" for titles without links ([0688e4e](https://github.com/whitespace-se/gatsby-packages/commit/0688e4ecd1d6bc12d15dd088fb7316a0d8fec794))
+* remove predetermined spacing variables ([ec75720](https://github.com/whitespace-se/gatsby-packages/commit/ec75720cd3ef7c0a3f2ecc46a0158129794fc7b6))
+* remove restProps ([783cd4d](https://github.com/whitespace-se/gatsby-packages/commit/783cd4d54e4c122ba387f1255480a51f216c04ef))
+* remove unsused css module rules ([2b29e5c](https://github.com/whitespace-se/gatsby-packages/commit/2b29e5cee9795739e3adcc0a9b335ddbf41e84fe))
+* remove unused code after merge ([3189016](https://github.com/whitespace-se/gatsby-packages/commit/3189016bee8f3a5b41ed97b30a0c901b4cb80161))
+* rename prop to meta ([e7afed5](https://github.com/whitespace-se/gatsby-packages/commit/e7afed5a7758215d038a1f56905e80502dca8886))
+* replace border bottom on hits with border-top ([31be7ff](https://github.com/whitespace-se/gatsby-packages/commit/31be7ffd02f6e3ef6cdfa8c5fb7faa5d43db1e9a))
+* reverse year filter so that it starts in desc order ([422d349](https://github.com/whitespace-se/gatsby-packages/commit/422d349df5ded337d7e59e2f83dbb37d980205f0))
+* search sort options missing ([780b03b](https://github.com/whitespace-se/gatsby-packages/commit/780b03bfa1c00584ae22edfd2b129f4bdf2d6677))
+* separate search hit contact and search hit ([2d43f11](https://github.com/whitespace-se/gatsby-packages/commit/2d43f11f1fe3494a66aded947e6d472f605d8cf9))
+* sort posts by publishDate in desc order on archive pages ([d3a73a1](https://github.com/whitespace-se/gatsby-packages/commit/d3a73a14ed226a6326f09d58973f2a5fd11113f3))
+* style multi filter and add default value for spacing variable ([108bfbd](https://github.com/whitespace-se/gatsby-packages/commit/108bfbd4b46b12158b34cae0b2b69255d5e123f0))
+* total hits ([ccc536e](https://github.com/whitespace-se/gatsby-packages/commit/ccc536e798e75aebe6a3ab98fca570296f122271))
+* update search settings translatable strings ([87eb01e](https://github.com/whitespace-se/gatsby-packages/commit/87eb01eadfc3b2ab88b3da56ae4213b098512f26))
+* use correct prop type ([10fa99d](https://github.com/whitespace-se/gatsby-packages/commit/10fa99d8063f6bec48795221392b5cc9efc735ff))
+* use facetLabels category instead ([0b9bc64](https://github.com/whitespace-se/gatsby-packages/commit/0b9bc64a029406419f775709aa99b09e8aeaf3c8))
+* use language-agnostic numbers for strings instead ([111ea4b](https://github.com/whitespace-se/gatsby-packages/commit/111ea4bbb838ab48041a07cc7099198e198c973c))
+* use translated label for select field ([43fbfc6](https://github.com/whitespace-se/gatsby-packages/commit/43fbfc6eef6cec7eeaf600190d4dda17a54bce4d))
+
+
+### Miscellaneous Chores
+
+* **deps:** update all deps ([4cfbb84](https://github.com/whitespace-se/gatsby-packages/commit/4cfbb8485f8c4871ed42bba82dcf753c462b6049))
+* **deps:** update all packages ([d0efc38](https://github.com/whitespace-se/gatsby-packages/commit/d0efc3882d169b0ad9d0342ae9f94ea51e39e019))
+* fix all lint errors ([6516578](https://github.com/whitespace-se/gatsby-packages/commit/6516578c577cba9160802e28eb9e3383d7defb4b))
+
+
+
 ### [0.13.3](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-search@0.13.2...@whitespace/gatsby-plugin-search@0.13.3) (2021-12-23)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-search

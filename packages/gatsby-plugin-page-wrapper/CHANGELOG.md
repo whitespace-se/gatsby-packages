@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.0.0-rc.0 (2022-01-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update all deps
+* **deps:** update all packages
+
+### Miscellaneous Chores
+
+* **deps:** update all deps ([4cfbb84](https://github.com/whitespace-se/gatsby-packages/commit/4cfbb8485f8c4871ed42bba82dcf753c462b6049))
+* **deps:** update all packages ([d0efc38](https://github.com/whitespace-se/gatsby-packages/commit/d0efc3882d169b0ad9d0342ae9f94ea51e39e019))
+
+
+
 ### [0.3.4](https://github.com/whitespace-se/gatsby-packages/compare/@whitespace/gatsby-plugin-page-wrapper@0.3.3...@whitespace/gatsby-plugin-page-wrapper@0.3.4) (2021-12-23)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-page-wrapper

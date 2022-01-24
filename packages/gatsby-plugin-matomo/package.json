@@ -1,6 +1,6 @@
 {
   "name": "@whitespace/gatsby-plugin-matomo",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0-rc.0",
   "description": "Whitespace’s basic Gatsby plugin for Matomo",
   "author": "Whitespace Dev <code@whitespace.se>",
   "license": "AGPL",
