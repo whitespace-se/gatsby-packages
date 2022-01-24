@@ -1,4 +1,5 @@
 CHANGELOG.md
+/lerna.json
 
 # From /example/gatsby-site-i18n/.prettierignore
 /examples/gatsby-site-i18n/.cache
