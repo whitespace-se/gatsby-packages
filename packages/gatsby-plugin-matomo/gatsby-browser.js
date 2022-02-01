@@ -13,7 +13,7 @@ export function onRouteUpdate(
 
       const eventName = routeChangeEventName
         ? routeChangeEventName
-        : `gatsby-route-change`;
+        : `mtm.PageView`;
 
       data.push({ event: eventName });
     }, 50);
