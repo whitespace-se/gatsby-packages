@@ -2,9 +2,9 @@ import React from "react";
 
 import PageWrapper from "./src/components/PageWrapper";
 
-function getLanguageFromPageProps({ path }, languages, defaultLanguage) {
-  let urlPrefix = path.split("/")[1];
-  if (languages.includes(urlPrefix)) {
+function getLanguageFromPageProps({ location }, languages, defaultLanguage) {
+  let urlPrefix = location?.pathname?.split("/")[1];
+  if (urlPrefix && languages.includes(urlPrefix)) {
     return urlPrefix;
   }
   return defaultLanguage;
