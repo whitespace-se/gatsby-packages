@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.0.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.0.0...v1.0.1) (2022-03-01)
+
+
+### Bug Fixes
+
+* **gatsby-plugin-i18next:** Blank pages in SSR [#27](https://github.com/whitespace-se/gatsby-packages/issues/27) ([88cbdff](https://github.com/whitespace-se/gatsby-packages/commit/88cbdff1b52f9d6fbd58cea568f063165f4f801c))
+* **gatsby-theme-wordpress-basic:** Error in `useMenu` ([8f45171](https://github.com/whitespace-se/gatsby-packages/commit/8f451716c26845f0c99d66c67febc6e89326ddab))
+
+
+
 ## [1.0.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.0.0-rc.1...v1.0.0) (2022-01-25)
 
 **Note:** Version bump only for package root
