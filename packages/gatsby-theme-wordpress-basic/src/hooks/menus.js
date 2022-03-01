@@ -38,7 +38,7 @@ export default function useMenus({ transform = defaultTransform }) {
   return transform(data, { pages });
 }
 
-export function useMenu(location, { ...options }) {
+export function useMenu(location, { ...options } = {}) {
   let menus = useMenus({ ...options });
   return menus.find((menu) => (menu.locations || []).includes(location));
 }
