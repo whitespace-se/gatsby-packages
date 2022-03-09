@@ -34,11 +34,24 @@ exports.pluginOptionsSchema = ({ Joi }) =>
         `Data variable for PAQ to be set before Matomo plugin is loaded. Should be an object or a function.`,
       ),
     mtmPAQDataVariableName: Joi.string().description(`PAQ Data variable name.`),
-    routeChangeEventName: Joi.string()
+    routeChangeEventName: Joi.alternatives()
+      .try(Joi.string(), Joi.boolean().equal(false))
       .default(`gatsby-route-change`)
       .description(
         `Name of the event that is triggered on every Gatsby route change.`,
       ),
+    trackPageViews: Joi.boolean()
+      .default(false)
+      .description(`Whether to register page views on route changes.`),
+    disableLinkTracking: Joi.boolean()
+      .default(false)
+      .description(`Whether to track links.`),
+    disableContentImpressionTracking: Joi.boolean()
+      .default(false)
+      .description(`Whether to track content impressions.`),
+    requireCookieConsent: Joi.boolean()
+      .default(false)
+      .description(`Whether to require cookie consent.`),
     mtmHost: Joi.string()
       .default(`https://www.matomo.com`)
       .description(`The origin where MTM is hosted.`),

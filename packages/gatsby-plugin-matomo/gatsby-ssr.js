@@ -49,13 +49,14 @@ const generateDefaultDataVariable = (
 export const onRenderBody = (
   { setHeadComponents, setPreBodyComponents, reporter },
   {
-    mtmContainerId,
     includeInDevelopment = false,
-    mtmDefaultDataVariable,
+    mtmContainerId,
     mtmDataVariableName = `mtm`,
+    mtmDefaultDataVariable,
     mtmHost = `https://www.matomo.com`,
-    mtmPAQDefaultDataVariable,
     mtmPAQDataVariableName = `paq`,
+    mtmPAQDefaultDataVariable,
+    requireCookieConsent = false,
   },
 ) => {
   if (process.env.NODE_ENV === `production` || includeInDevelopment) {
@@ -106,7 +107,11 @@ export const onRenderBody = (
             ${defaultMTMPAQCode}
             ${generateMTMPAQ({
               mtmPAQDataVariableName,
-            })}`,
+            })}
+            ${
+              requireCookieConsent ? `_paq.push(['requireCookieConsent']);` : ""
+            }
+            `,
           }}
         />,
       );

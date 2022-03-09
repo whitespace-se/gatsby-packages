@@ -1,21 +1,51 @@
 export function onRouteUpdate(
-  _,
+  { location, prevLocation },
   {
+    disableContentImpressionTracking = false,
+    disableLinkTracking = false,
     includeInDevelopment = false,
-    mtmDataVariableName = "mtm",
     routeChangeEventName = `gatsby-route-change`,
+    trackPageViews = false,
   },
 ) {
-  if (process.env.NODE_ENV === `production` || includeInDevelopment) {
-    // wrap inside a timeout to ensure the title has properly been changed
-    setTimeout(() => {
-      const data = mtmDataVariableName && window[mtmDataVariableName];
+  if (process.env.NODE_ENV !== `production` && !includeInDevelopment) {
+    return;
+  }
 
+  const url = location && location.pathname + location.search + location.hash;
+  const prevUrl =
+    prevLocation &&
+    prevLocation.pathname + prevLocation.search + prevLocation.hash;
+
+  // wrap inside a timeout to ensure the title has properly been changed
+  setTimeout(() => {
+    const _mtm = window._mtm;
+    const _paq = window._paq;
+
+    if (trackPageViews) {
+      const { title } = document;
+
+      if (prevUrl) {
+        _paq.push(["setReferrerUrl", prevUrl]);
+      }
+
+      _paq.push(["setCustomUrl", url]);
+      _paq.push(["setDocumentTitle", title]);
+      _paq.push(["trackPageView"]);
+      if (disableLinkTracking) {
+        _paq.push(["enableLinkTracking"]);
+      }
+      if (disableContentImpressionTracking) {
+        _paq.push(["trackAllContentImpressions"]);
+      }
+    }
+
+    if (routeChangeEventName !== false) {
       const eventName = routeChangeEventName
         ? routeChangeEventName
         : `gatsby-route-change`;
 
-      data.push({ event: eventName });
-    }, 50);
-  }
+      _mtm.push({ event: eventName });
+    }
+  }, 50);
 }
