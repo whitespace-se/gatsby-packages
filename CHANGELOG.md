@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.0.2-rc.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.0.1...v1.0.2-rc.0) (2022-03-09)
+
+
+### Bug Fixes
+
+* Track pageviews correctly and add option to require cookie consent ([e46164f](https://github.com/whitespace-se/gatsby-packages/commit/e46164faa26eeeece272a48bb1cda126c323a55f))
+
+
+
 ### [1.0.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.0.0...v1.0.1) (2022-03-01)
 
 
