@@ -2,6 +2,7 @@ import CookieConsentProvider from "@whitespace/gatsby-plugin-cookie-consent/src/
 import React from "react";
 
 import { Layout } from "./src/components/Layout";
+import MatomoCookieHandler from "./src/components/MatomoCookieHandler";
 import "./src/index.css";
 
 export const wrapRootElement = ({ element }) => {
@@ -9,5 +10,10 @@ export const wrapRootElement = ({ element }) => {
 };
 
 export function wrapPageElement({ element }) {
-  return <Layout>{element}</Layout>;
+  return (
+    <Layout>
+      <MatomoCookieHandler />
+      {element}
+    </Layout>
+  );
 }

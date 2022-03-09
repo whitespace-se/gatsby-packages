@@ -1,6 +1,6 @@
 export default function useCookieConsentSettings() {
   return {
-    whitelist: [""],
+    whitelist: ["https://whitespace.analys.co/*"],
     active: true,
     position: "bottom",
     strings: {

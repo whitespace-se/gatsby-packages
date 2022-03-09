@@ -1,15 +1,13 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
 
-const IndexPage = () => {
+export default function AboutPage() {
   return (
     <main>
       <Helmet>
-        <title>Example site</title>
+        <title>About | Example site</title>
       </Helmet>
-      <h1>Welcome</h1>
+      <h1>About</h1>
     </main>
   );
-};
-
-export default IndexPage;
+}
