@@ -1,3 +1,4 @@
+import { useHasMounted } from "@whitespace/gatsby-hooks";
 import PropTypes from "prop-types";
 import React, { Suspense } from "react";
 
@@ -17,7 +18,12 @@ export default function LazyMinisearchSearchBackendProvider({
   preload,
   ...props
 }) {
+  const hasMounted = useHasMounted();
   const { params } = useSearchParams();
+
+  if (!hasMounted) {
+    return null;
+  }
   if (!preload && isEmptySearch(params)) {
     return <FallbackSearchBackendProvider {...props} />;
   }
