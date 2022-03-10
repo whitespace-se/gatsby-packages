@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.0.2-rc.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.0.2-rc.0...v1.0.2-rc.1) (2022-03-10)
+
+
+### Bug Fixes
+
+* SSR error ([fea82a9](https://github.com/whitespace-se/gatsby-packages/commit/fea82a91e769718512ab3e11487cd5aba6f2eb60))
+
+
+
 ### [1.0.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.0.0...v1.0.1) (2022-03-01)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-search
