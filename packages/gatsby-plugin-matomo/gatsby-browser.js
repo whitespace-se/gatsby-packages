@@ -1,7 +1,6 @@
 export function onRouteUpdate(
   { location, prevLocation },
   {
-    disableLinkTracking = false,
     includeInDevelopment = false,
     routeChangeEventName = `gatsby-route-change`,
     trackPageViews = false,
@@ -31,9 +30,6 @@ export function onRouteUpdate(
       _paq.push(["setCustomUrl", url]);
       _paq.push(["setDocumentTitle", title]);
       _paq.push(["trackPageView"]);
-      if (disableLinkTracking) {
-        _paq.push(["enableLinkTracking"]);
-      }
     }
 
     if (routeChangeEventName !== false) {
