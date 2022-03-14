@@ -1,7 +1,6 @@
 export function onRouteUpdate(
   { location, prevLocation },
   {
-    disableContentImpressionTracking = false,
     disableLinkTracking = false,
     includeInDevelopment = false,
     routeChangeEventName = `gatsby-route-change`,
@@ -34,9 +33,6 @@ export function onRouteUpdate(
       _paq.push(["trackPageView"]);
       if (disableLinkTracking) {
         _paq.push(["enableLinkTracking"]);
-      }
-      if (disableContentImpressionTracking) {
-        _paq.push(["trackAllContentImpressions"]);
       }
     }
 
