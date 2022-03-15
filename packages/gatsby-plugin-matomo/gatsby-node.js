@@ -43,6 +43,9 @@ exports.pluginOptionsSchema = ({ Joi }) =>
     trackPageViews: Joi.boolean()
       .default(false)
       .description(`Whether to register page views on route changes.`),
+    disableLinkTracking: Joi.boolean()
+      .default(false)
+      .description(`Whether to track links.`),
     requireCookieConsent: Joi.boolean()
       .default(false)
       .description(`Whether to require cookie consent.`),
