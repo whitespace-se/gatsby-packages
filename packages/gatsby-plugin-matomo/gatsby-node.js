@@ -46,6 +46,9 @@ exports.pluginOptionsSchema = ({ Joi }) =>
     disableLinkTracking: Joi.boolean()
       .default(false)
       .description(`Whether to track links.`),
+    disableContentImpressionTracking: Joi.boolean()
+      .default(false)
+      .description(`Whether to track content impressions.`),
     requireCookieConsent: Joi.boolean()
       .default(false)
       .description(`Whether to require cookie consent.`),
