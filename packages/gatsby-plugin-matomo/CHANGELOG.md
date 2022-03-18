@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.0.2-rc.2](https://github.com/whitespace-se/gatsby-packages/compare/v1.0.2-rc.1...v1.0.2-rc.2) (2022-03-18)
+
+
+### Bug Fixes
+
+* Disable disableLinkTracking ([1904e18](https://github.com/whitespace-se/gatsby-packages/commit/1904e189ad16905abe3abfe0f9b941e8a7cdad0b))
+* Remove disableContentImpressionTracking ([7209d38](https://github.com/whitespace-se/gatsby-packages/commit/7209d38edf8b3f8797f32d727056132654d5fbfa))
+
+
+### Reverts
+
+* Revert "Remove disableContentImpressionTracking" ([8dccc8e](https://github.com/whitespace-se/gatsby-packages/commit/8dccc8e1882c4f2ee4084c7097829964b52b1815))
+* Revert "Disable disableLinkTracking" ([86811c4](https://github.com/whitespace-se/gatsby-packages/commit/86811c412ca2f5cb7451f8ce41fa0afa96ea7b24))
+* Revert "Remove: mtmDDV, mtmDVN, mtmPAQDDV, mtmPAQDVN" ([d268abc](https://github.com/whitespace-se/gatsby-packages/commit/d268abcbecb6b231db5de9042e994c7dacb4631b))
+
+
+
 ### [1.0.2-rc.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.0.2-rc.0...v1.0.2-rc.1) (2022-03-10)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-matomo
