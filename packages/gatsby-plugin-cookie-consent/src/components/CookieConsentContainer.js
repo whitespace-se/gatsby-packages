@@ -26,18 +26,17 @@ export default function CookieConsentContainer({
   const hasMounted = useHasMounted();
 
   useEffect(() => {
-    if (store.answer === "accept") {
+    if (store?.answer === "accept") {
       unblock();
     }
-  }, [store.answer]);
+  }, [store?.answer]);
 
   if (!hasMounted) return null;
 
   if (
     !active ||
-    (store &&
-      store.answer &&
-      store.answeredAt &&
+    (store?.answer &&
+      store?.answeredAt &&
       differenceInMonths(new Date(), new Date(store.answeredAt)) < 12)
   ) {
     return null;
