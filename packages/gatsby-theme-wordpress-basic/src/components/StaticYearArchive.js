@@ -1,8 +1,6 @@
 import { H, Section } from "@jfrk/react-heading-levels";
-import {
-  Link,
-  Time,
-} from "@whitespace/gatsby-theme-wordpress-basic/src/components";
+import { Link } from "@whitespace/components";
+import { Time } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import { usePageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/page-context";
 import parseDate from "date-fns/parse";
 import sortBy from "lodash/sortBy";
