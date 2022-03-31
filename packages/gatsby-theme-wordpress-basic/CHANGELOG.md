@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.0.2](https://github.com/whitespace-se/gatsby-packages/compare/v1.0.2-rc.2...v1.0.2) (2022-03-31)
+
+
+### Bug Fixes
+
+* Deprecated import of Link component ([fb5c8bb](https://github.com/whitespace-se/gatsby-packages/commit/fb5c8bb054df23eebba22555dea91f43e6efa1fe))
+
+
+
 ### [1.0.2-rc.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.0.2-rc.0...v1.0.2-rc.1) (2022-03-10)
 
 **Note:** Version bump only for package @whitespace/gatsby-theme-wordpress-basic
