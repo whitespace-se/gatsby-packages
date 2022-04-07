@@ -1,1 +1,1 @@
-export default "div";
+export { PageGridItem as default } from "@whitespace/components";
