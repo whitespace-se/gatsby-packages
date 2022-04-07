@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/react";
 import { H, Section } from "@jfrk/react-heading-levels";
-import { withComponentDefaults } from "@whitespace/components";
+import { withComponentDefaults, PageGridItem } from "@whitespace/components";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 
@@ -46,25 +46,30 @@ function SiteIndex({
 
   return (
     <SiteIndexWrapper {...restProps}>
-      <SiteIndexNav
-        options={options}
-        currentChar={currentChar}
-        language={language}
-      />
-      <SiteIndexContent>
-        <H>{label}</H>
-        <Section>
-          {pages?.length ? (
-            <SiteIndexList>
-              {pages.map((page, index) => {
-                return <SiteIndexTeaser key={index} page={page} />;
-              })}
-            </SiteIndexList>
-          ) : (
-            <p>{t(["siteIndex.emptyResult", "No pages"])}</p>
-          )}
-        </Section>
-      </SiteIndexContent>
+      <PageGridItem>
+        <H>{t(["siteIndex.pageTitle", "Content A to Z"])}</H>
+        <SiteIndexNav
+          options={options}
+          currentChar={currentChar}
+          language={language}
+        />
+      </PageGridItem>
+      <Section>
+        <SiteIndexContent>
+          <H>{label}</H>
+          <Section>
+            {pages?.length ? (
+              <SiteIndexList>
+                {pages.map((page, index) => {
+                  return <SiteIndexTeaser key={index} page={page} />;
+                })}
+              </SiteIndexList>
+            ) : (
+              <p>{t(["siteIndex.emptyResult", "No pages"])}</p>
+            )}
+          </Section>
+        </SiteIndexContent>
+      </Section>
     </SiteIndexWrapper>
   );
 }
