@@ -14,6 +14,17 @@ const defaultLocalizations = {
   },
 };
 
+export const createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type SitePageContext {
+      isIncludedInSiteIndex: Boolean
+      siteIndexInitial: String
+    }
+  `;
+  createTypes(typeDefs);
+};
+
 export const onCreatePage = ({ page, actions }, { ...pluginOptions }) => {
   let { deletePage, createPage } = actions;
   let {
