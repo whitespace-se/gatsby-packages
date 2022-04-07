@@ -1,0 +1,30 @@
+{
+  "name": "@whitespace/gatsby-plugin-site-index",
+  "version": "1.0.2",
+  "description": "Generates a site index",
+  "author": "Whitespace Dev <code@whitespace.se>",
+  "license": "AGPL",
+  "files": [
+    "src/**/*",
+    "node/**/*",
+    "README.md",
+    "*.js"
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "jest": "^27.5.1"
+  },
+  "peerDependencies": {
+    "gatsby": "^3.0.0 || ^4.0.0",
+    "react": "^16.9.0 || ^17.0.0",
+    "react-dom": "^16.9.0 || ^17.0.0"
+  },
+  "devDependencies": {
+    "esm": "^3.2.25"
+  }
+}
