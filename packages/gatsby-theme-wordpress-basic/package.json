@@ -21,6 +21,7 @@
     "@whitespace/gatsby-plugin-i18next": "^1.0.2",
     "@whitespace/gatsby-plugin-page-wrapper": "^1.0.2",
     "@whitespace/gatsby-plugin-search": "^1.0.2",
+    "@whitespace/gatsby-plugin-site-index": "^1.0.2",
     "apollo-boost": "^0.4.9",
     "apollo-cache-inmemory": "^1.6.6",
     "clsx": "^1.1.1",

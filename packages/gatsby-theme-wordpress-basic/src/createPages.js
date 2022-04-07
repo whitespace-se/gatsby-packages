@@ -1,3 +1,4 @@
+import { getLanguageFromPathname } from "@whitespace/gatsby-plugin-i18next";
 import formatDate from "date-fns/format";
 import omit from "lodash/omit";
 
@@ -22,7 +23,8 @@ const MonthArchivePageTemplate = require.resolve(
 const SingleTemplate = require.resolve("./templates/SingleTemplate");
 
 export default ({ contentType, query, nodesPerFetch }) =>
-  async ({ actions, graphql, reporter }) => {
+  async ({ actions, graphql, reporter }, { i18next }) => {
+    const { defaultLanguage = "en", languages = ["en"] } = i18next;
     const allContentNodes = [];
     const allContentNodesByYear = {};
     const allContentNodesByMonth = {};
@@ -123,12 +125,18 @@ ${JSON.stringify({ ...commonVariables, ...variables }, null, 2)}`,
     allContentNodes.map((contentNode) => {
       let path = contentNode.uri;
       let component = SingleTemplate;
+      let language =
+        contentNode.language ||
+        getLanguageFromPathname(path, languages, defaultLanguage);
 
       createPage({
         path,
         component,
         context: {
+          title: contentNode.title,
+          language,
           contentNode,
+          contentType,
         },
       });
       pageCount++;

@@ -6,6 +6,7 @@ module.exports = ({
   wp,
   postCss = {},
   i18next = {},
+  pageIndex = false,
 } = {}) => {
   return {
     plugins: [
@@ -65,6 +66,18 @@ module.exports = ({
 
       // Search
       `@whitespace/gatsby-plugin-search`,
+
+      // Page Index
+      ...(pageIndex
+        ? [
+            {
+              resolve: "@whitespace/gatsby-plugin-site-index",
+              options: {
+                ...pageIndex,
+              },
+            },
+          ]
+        : []),
     ],
   };
 };
