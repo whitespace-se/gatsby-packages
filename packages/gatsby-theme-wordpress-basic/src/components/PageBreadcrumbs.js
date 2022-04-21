@@ -26,10 +26,10 @@ export default function PageBreadcrumbs({
   const allPages = usePages();
   let items = [getFrontPage(allPages)];
   const contentTypes = useContentTypes();
+  const pageContext = usePageContext();
   if (customItems) {
     items.push(...customItems);
   } else {
-    const pageContext = usePageContext();
     const { contentNode: { contentType: { node: contentType } = {} } = {} } =
       pageContext;
     const pageContentTypeName = contentType?.name;
