@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.1.0-next.3...v1.1.0) (2022-05-09)
+
+
+### Features
+
+* Add SEO metadata ([81aa081](https://github.com/whitespace-se/gatsby-packages/commit/81aa081def66ff67b5bd2f7c2e5a93f6c5227bae))
+
+
+
 ## [1.1.0-next.3](https://github.com/whitespace-se/gatsby-packages/compare/v1.1.0-next.2...v1.1.0-next.3) (2022-04-07)
 
 

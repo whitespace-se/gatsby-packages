@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.1.0-next.3...v1.1.0) (2022-05-09)
+
+**Note:** Version bump only for package @whitespace/gatsby-plugin-site-index
+
+
+
+
+
 ## [1.1.0-next.3](https://github.com/whitespace-se/gatsby-packages/compare/v1.1.0-next.2...v1.1.0-next.3) (2022-04-07)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-site-index
