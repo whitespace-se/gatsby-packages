@@ -1,11 +1,18 @@
 import React from "react";
 
-import { Article } from "../components";
+import { Article, SEO } from "../components";
+import { usePageContext } from "../hooks";
 
 export default function SingleTemplate() {
+  const {
+    contentNode: { title, isFrontPage },
+  } = usePageContext();
   return (
-    <Article
-    // displayMode="full"
-    />
+    <>
+      <SEO title={title} isFrontPage={isFrontPage} />
+      <Article
+      // displayMode="full"
+      />
+    </>
   );
 }

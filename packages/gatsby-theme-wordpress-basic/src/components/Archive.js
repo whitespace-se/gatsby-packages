@@ -20,6 +20,7 @@ import { useArchiveParamTypes, usePageContext } from "../hooks";
 
 import * as defaultStyles from "./Archive.module.css";
 import DefaultSearchBackendProvider from "./DefaultSearchBackendProvider";
+import SEO from "./SEO";
 
 Archive.propTypes = {
   className: PropTypes.string,
@@ -47,42 +48,45 @@ function Archive({
     sort: "publishDate:desc",
   };
 
+  const title = getMainArchivePageTitleFromPageContext(pageContext);
+
   return (
-    <article className={clsx(styles.component, className)} {...restProps}>
-      <div className="o-grid">
-        <div className="o-grid-row">
-          <div className="o-grid-block o-grid-block--inherit">
-            <H className="c-article__title">
-              {getMainArchivePageTitleFromPageContext(pageContext)}
-            </H>
-            <Section>
-              <URLSearchParamsProvider
-                urlPattern={getArchiveURLPatternFromPageContext(pageContext)}
-                forcedParams={forcedParams}
-                paramTypes={paramTypes}
-                decodeParams={({ year, month, ...params }) => ({
-                  ...params,
-                  date: month ? `${year}-${month}` : year,
-                })}
-                encodeParams={({ date, ...params }) => ({
-                  ...params,
-                  ...(/^\d{4}$/.test(date) && { year: date }),
-                  ...(/^\d{4}-\d{2}$/.test(date) && {
-                    year: date.substring(0, 4),
-                    month: date.substring(5, 7),
-                  }),
-                })}
-              >
-                <SearchBackendProvider transformParams={transformParams}>
-                  <SearchForm />
-                  <SearchResults />
-                  <SearchPagination />
-                </SearchBackendProvider>
-              </URLSearchParamsProvider>
-            </Section>
+    <>
+      <SEO title={title} />
+      <article className={clsx(styles.component, className)} {...restProps}>
+        <div className="o-grid">
+          <div className="o-grid-row">
+            <div className="o-grid-block o-grid-block--inherit">
+              <H className="c-article__title">{title}</H>
+              <Section>
+                <URLSearchParamsProvider
+                  urlPattern={getArchiveURLPatternFromPageContext(pageContext)}
+                  forcedParams={forcedParams}
+                  paramTypes={paramTypes}
+                  decodeParams={({ year, month, ...params }) => ({
+                    ...params,
+                    date: month ? `${year}-${month}` : year,
+                  })}
+                  encodeParams={({ date, ...params }) => ({
+                    ...params,
+                    ...(/^\d{4}$/.test(date) && { year: date }),
+                    ...(/^\d{4}-\d{2}$/.test(date) && {
+                      year: date.substring(0, 4),
+                      month: date.substring(5, 7),
+                    }),
+                  })}
+                >
+                  <SearchBackendProvider transformParams={transformParams}>
+                    <SearchForm />
+                    <SearchResults />
+                    <SearchPagination />
+                  </SearchBackendProvider>
+                </URLSearchParamsProvider>
+              </Section>
+            </div>
           </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </>
   );
 }

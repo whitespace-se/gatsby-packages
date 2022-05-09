@@ -18,6 +18,7 @@ import { useTranslation } from "react-i18next";
 import { useSiteSearchParamTypes } from "../hooks";
 
 import DefaultSearchBackendProvider from "./DefaultSearchBackendProvider";
+import SEO from "./SEO";
 import * as searchStyles from "./SiteSearch.module.css";
 
 SiteSearch.propTypes = {
@@ -35,33 +36,39 @@ function SiteSearch({
 }) {
   const { t } = useTranslation();
   const paramTypes = useSiteSearchParamTypes();
+
+  const title = t("siteSearchTitle");
+
   return (
-    <PageGrid>
-      <PageGridItem>
-        <H className="c-article__title">{t("siteSearchTitle")}</H>
-        <Section>
-          <div className={clsx(searchStyles.wrapper)}>
-            <URLSearchParamsProvider
-              paramTypes={paramTypes}
-              decodeParams={({ year, month, ...params }) => ({
-                ...params,
-                date: month || year,
-              })}
-              encodeParams={({ date, ...params }) => ({
-                ...params,
-                ...(/^\d{4}$/.test(date) && { year: date }),
-                ...(/^\d{4}-\d{2}$/.test(date) && { month: date }),
-              })}
-            >
-              <SearchBackendProvider transformParams={transformParams}>
-                <SearchForm className={searchStyles.form} />
-                <SearchResults />
-                <SearchPagination />
-              </SearchBackendProvider>
-            </URLSearchParamsProvider>
-          </div>
-        </Section>
-      </PageGridItem>
-    </PageGrid>
+    <>
+      <SEO title={title} />
+      <PageGrid>
+        <PageGridItem>
+          <H className="c-article__title">{title}</H>
+          <Section>
+            <div className={clsx(searchStyles.wrapper)}>
+              <URLSearchParamsProvider
+                paramTypes={paramTypes}
+                decodeParams={({ year, month, ...params }) => ({
+                  ...params,
+                  date: month || year,
+                })}
+                encodeParams={({ date, ...params }) => ({
+                  ...params,
+                  ...(/^\d{4}$/.test(date) && { year: date }),
+                  ...(/^\d{4}-\d{2}$/.test(date) && { month: date }),
+                })}
+              >
+                <SearchBackendProvider transformParams={transformParams}>
+                  <SearchForm className={searchStyles.form} />
+                  <SearchResults />
+                  <SearchPagination />
+                </SearchBackendProvider>
+              </URLSearchParamsProvider>
+            </div>
+          </Section>
+        </PageGridItem>
+      </PageGrid>
+    </>
   );
 }

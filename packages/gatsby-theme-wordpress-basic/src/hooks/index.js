@@ -20,5 +20,7 @@ export { default as useContentTypes } from "./useContentTypes";
 export { default as useMustacheData } from "./useMustacheData";
 
 export { default as useArchiveParamTypes } from "./useArchiveParamTypes";
+export { default as useOpenGraphContent } from "./useOpenGraphContent";
+export { default as useSiteMetadata } from "./useSiteMetadata";
 export { default as useSiteSearchParamTypes } from "./useSiteSearchParamTypes";
 export { default as useTaxonomies } from "./useTaxonomies";

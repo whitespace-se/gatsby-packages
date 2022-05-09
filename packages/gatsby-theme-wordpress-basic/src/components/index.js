@@ -9,6 +9,7 @@ export { default as Image } from "./Image";
 export { default as Link } from "./Link";
 export { default as MustacheDataProvider } from "./MustacheDataProvider";
 export { default as PageContent } from "./PageContent";
+export { default as SEO } from "./SEO";
 export { default as SiteLayout } from "./SiteLayout";
 export { default as TermList } from "./TermList";
 export { default as TextContent } from "./TextContent";

@@ -8,6 +8,7 @@ import React from "react";
 import { getMonthArchivePageTitleFromPageContext } from "../contentType";
 
 import ArchivePost from "./ArchivePost";
+import SEO from "./SEO";
 
 export default function StaticMonthArchive() {
   const pageContext = usePageContext();
@@ -31,34 +32,36 @@ export default function StaticMonthArchive() {
 
   const sortedDays = [...days];
   sortedDays.sort();
+  const title = getMonthArchivePageTitleFromPageContext(pageContext);
 
   return (
-    <div className="c-article o-margin-top-large">
-      <div className="o-grid">
-        <div className="o-grid-row">
-          <div className="o-grid-block o-grid-block--inherit">
-            <H className="c-article__title">
-              {getMonthArchivePageTitleFromPageContext(pageContext)}
-            </H>
-            <Section>
-              <ul className="c-list c-list__search-result">
-                {sortedDays.flatMap((day) => {
-                  let date = parseDate(day, "yyyy/MM/dd", new Date());
-                  return uniq(postsByDay[day]).map((post, index) => {
-                    return (
-                      <ArchivePost
-                        key={`${day}-${index}`}
-                        post={post}
-                        date={date}
-                      />
-                    );
-                  });
-                })}
-              </ul>
-            </Section>
+    <>
+      <SEO title={title} />
+      <div className="c-article o-margin-top-large">
+        <div className="o-grid">
+          <div className="o-grid-row">
+            <div className="o-grid-block o-grid-block--inherit">
+              <H className="c-article__title">{title}</H>
+              <Section>
+                <ul className="c-list c-list__search-result">
+                  {sortedDays.flatMap((day) => {
+                    let date = parseDate(day, "yyyy/MM/dd", new Date());
+                    return uniq(postsByDay[day]).map((post, index) => {
+                      return (
+                        <ArchivePost
+                          key={`${day}-${index}`}
+                          post={post}
+                          date={date}
+                        />
+                      );
+                    });
+                  })}
+                </ul>
+              </Section>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
