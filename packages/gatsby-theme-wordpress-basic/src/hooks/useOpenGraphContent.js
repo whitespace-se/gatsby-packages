@@ -3,21 +3,15 @@ import { usePageContext } from "./page-context";
 
 export default function useOpenGraphContent(siteMeta, initialSeo) {
   const context = usePageContext();
+  const contentNode = context?.contentNode;
+  const contentType = contentNode?.contentType?.node?.name;
 
-  let {
-    contentNode: {
-      contentType: { node: { name: contentTypeName } = {} } = {},
-      openGraph,
-      content,
-      description,
-      featuredImage,
-      uri,
-    } = {},
-  } = context;
+  let { openGraph, content, description, featuredImage, uri } =
+    contentNode || {};
 
   const { processPageContent, stripHTML } = useHTMLProcessor();
 
-  if (contentTypeName) {
+  if (contentType) {
     const processedContent = processPageContent(content);
 
     if (!description) {

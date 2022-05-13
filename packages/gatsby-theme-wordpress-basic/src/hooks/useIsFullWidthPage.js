@@ -1,16 +1,12 @@
 import { usePageContext } from "./page-context";
 
 export default function useIsFullWidthPage() {
-  let {
-    contentNode: {
-      isFrontPage,
-      contentType: {
-        node: { name: contentTypeName },
-      },
-    },
-  } = usePageContext();
+  let pageContext = usePageContext();
+
+  let isFrontPage = pageContext.contentNode?.isFrontPage;
+  let contentType = pageContext.contentNode?.contentType?.node?.name;
 
   const articleLayouts = ["page", "post"];
 
-  return isFrontPage || !articleLayouts.includes(contentTypeName);
+  return isFrontPage || !articleLayouts.includes(contentType);
 }

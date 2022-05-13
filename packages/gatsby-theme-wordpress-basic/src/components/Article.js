@@ -30,18 +30,12 @@ function Article({
   // displayMode,
   ...restProps
 }) {
-  let {
-    contentNode: {
-      isFrontPage,
-      contentType: {
-        node: { name: contentTypeName },
-      },
-    },
-    // isPreview,
-  } = usePageContext();
+  let pageContext = usePageContext();
+
+  let isFrontPage = pageContext.contentNode?.isFrontPage;
+  let contentType = pageContext.contentNode?.contentType?.node?.name;
 
   let isFullWidthPage = useIsFullWidthPage();
-
   return (
     <article
       className={clsx(layout.component, layout.componentWidthFull, className)}
@@ -59,7 +53,7 @@ function Article({
         <ArticleTitle />
         <Section>
           <ArticleChildPageNav className={styles.childPages} />
-          {contentTypeName === "post" && (
+          {contentType === "post" && (
             <ArticlePublishDate className={styles.publishedDate} />
           )}
           <ArticleBody />
