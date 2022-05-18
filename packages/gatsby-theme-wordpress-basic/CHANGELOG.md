@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.0-next.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.0...v1.2.0-next.1) (2022-05-18)
+
+
+### Bug Fixes
+
+* **deps:** Missing breadcrumbs plugin ([4c77bc1](https://github.com/whitespace-se/gatsby-packages/commit/4c77bc14edf0c5a214f7b53e3ef977566a616b45))
+
+
+
 ## [1.2.0-next.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.1.0...v1.2.0-next.0) (2022-05-18)
 
 
