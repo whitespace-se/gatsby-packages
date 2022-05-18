@@ -1,0 +1,29 @@
+{
+  "name": "@whitespace/gatsby-plugin-breadcrumbs",
+  "private": true,
+  "version": "1.1.0",
+  "main": "index.js",
+  "author": "Whitespace Dev <code@whitespace.se>",
+  "description": "Provides a breadcrumbs component for Gatsby",
+  "license": "AGPL",
+  "files": [
+    "src/**/*",
+    "README.md",
+    "*.js"
+  ],
+  "scripts": {
+    "storybook": "NODE_ENV=production start-storybook -p 6006",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "dependencies": {
+    "@whitespace/components": "^0.13.13",
+    "@whitespace/gatsby-hooks": "^0.5.0",
+    "prop-types": "^15.7.2"
+  },
+  "peerDependencies": {
+    "gatsby": "^3.14.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-i18next": "^11.12.0"
+  }
+}

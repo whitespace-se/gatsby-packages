@@ -105,6 +105,7 @@ export const createPages = async ({ actions }, pluginOptions) => {
           initials,
           language,
           title,
+          isSiteIndexPage: true,
         },
       });
     });

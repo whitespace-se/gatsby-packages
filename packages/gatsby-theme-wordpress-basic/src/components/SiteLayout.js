@@ -1,3 +1,4 @@
+import { PageBreadcrumbs } from "@whitespace/gatsby-plugin-breadcrumbs";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
@@ -6,7 +7,6 @@ import { usePageContext } from "../hooks";
 
 import Footer from "./Footer";
 import Header from "./Header";
-import PageBreadcrumbs from "./PageBreadcrumbs";
 import * as defaultStyles from "./SiteLayout.module.css";
 
 SiteLayout.propTypes = {

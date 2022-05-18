@@ -78,6 +78,9 @@ module.exports = ({
             },
           ]
         : []),
+
+      // Breadcrumbs
+      `@whitespace/gatsby-plugin-breadcrumbs`,
     ],
   };
 };
