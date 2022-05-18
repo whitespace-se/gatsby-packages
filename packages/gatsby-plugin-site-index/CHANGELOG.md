@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.0-next.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.1.0...v1.2.0-next.0) (2022-05-18)
+
+
+### Features
+
+* Improve breadcrumbs ([2713f9d](https://github.com/whitespace-se/gatsby-packages/commit/2713f9dd03789e997b998598ee2259a6457674b1))
+
+
+
 ## [1.1.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.1.0-next.3...v1.1.0) (2022-05-09)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-site-index
