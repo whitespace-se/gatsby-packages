@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.0-next.2](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.1...v1.2.0-next.2) (2022-06-02)
+
+
+### Features
+
+* set maxWidth on WPCaption comps when using attachment sizes in WP ([b1d26f6](https://github.com/whitespace-se/gatsby-packages/commit/b1d26f66c39ec5adc87550f7b7f1ab4515ea5541))
+
+
+
 ## [1.2.0-next.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.0...v1.2.0-next.1) (2022-05-18)
 
 
