@@ -57,6 +57,7 @@ export const onCreatePage = ({ page, actions }, { ...pluginOptions }) => {
 export const createPages = async ({ actions }, pluginOptions) => {
   const { createPage, createRedirect } = actions;
   let {
+    disablePageCreation = false,
     template = SiteIndexTemplate,
     localizations = defaultLocalizations,
 
@@ -84,6 +85,10 @@ export const createPages = async ({ actions }, pluginOptions) => {
       return restInitial.label;
     },
   } = pluginOptions;
+
+  if (disablePageCreation) {
+    return;
+  }
 
   Object.entries(localizations).forEach(([language, options]) => {
     let { basePath, alphabet } = options;

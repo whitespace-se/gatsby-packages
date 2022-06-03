@@ -67,17 +67,15 @@ module.exports = ({
       // Search
       `@whitespace/gatsby-plugin-search`,
 
-      // Page Index
-      ...(siteIndex
-        ? [
-            {
-              resolve: "@whitespace/gatsby-plugin-site-index",
-              options: {
-                ...siteIndex,
-              },
-            },
-          ]
-        : []),
+      // Site index
+      {
+        resolve: "@whitespace/gatsby-plugin-site-index",
+        options: siteIndex
+          ? {
+              ...siteIndex,
+            }
+          : { disablePageCreation: true },
+      },
 
       // Breadcrumbs
       `@whitespace/gatsby-plugin-breadcrumbs`,
