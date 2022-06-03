@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.0-next.5](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.4...v1.2.0-next.5) (2022-06-03)
+
+
+### Bug Fixes
+
+* Prevent build error when site index is disabled ([a76a533](https://github.com/whitespace-se/gatsby-packages/commit/a76a533dfc24f8a6a1f1691964175eb12ecc8c2c))
+
+
+
 ## [1.2.0-next.4](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.3...v1.2.0-next.4) (2022-06-03)
 
 
