@@ -19,6 +19,7 @@ export const createSchemaCustomization = ({ actions }) => {
   const typeDefs = `
     type SitePageContext {
       isIncludedInSiteIndex: Boolean
+      isSiteIndexPage: Boolean
       siteIndexInitial: String
     }
   `;
