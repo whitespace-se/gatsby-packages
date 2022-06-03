@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.0-next.3](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.2...v1.2.0-next.3) (2022-06-03)
+
+
+### Bug Fixes
+
+* Don't transform wp-uploads urls ([b426015](https://github.com/whitespace-se/gatsby-packages/commit/b426015f33c1cec2731d427ff5c93b9cbfeada94))
+
+
+
 ## [1.2.0-next.2](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.1...v1.2.0-next.2) (2022-06-02)
 
 
