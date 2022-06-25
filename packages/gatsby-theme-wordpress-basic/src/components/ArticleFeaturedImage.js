@@ -2,7 +2,7 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
 
-import { usePageContext } from "../hooks";
+import { usePageContext, useHTMLProcessor } from "../hooks";
 
 import * as defaultStyles from "./ArticleFeaturedImage.module.css";
 import Image from "./Image";
@@ -18,11 +18,18 @@ export default function ArticleFeaturedImage({
   ...restProps
 }) {
   let {
-    contentNode: { featuredImage },
+    contentNode: {
+      featuredImage,
+      displaySettings: { postSingleShowFeaturedImage },
+    },
     // isPreview,
   } = usePageContext();
 
-  featuredImage = !!(featuredImage && featuredImage.node) && {
+  featuredImage = !!(
+    featuredImage &&
+    featuredImage.node &&
+    postSingleShowFeaturedImage
+  ) && {
     ...featuredImage.node,
     width: "1025",
     height: "288",
@@ -31,10 +38,15 @@ export default function ArticleFeaturedImage({
   if (!featuredImage) {
     return null;
   }
+
+  const { processContent } = useHTMLProcessor();
+  let processedCaption = processContent(featuredImage.caption);
+
   return (
     <Image
       className={clsx(styles.component, className)}
       {...featuredImage}
+      caption={processedCaption}
       {...restProps}
     />
   );
