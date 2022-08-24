@@ -19,7 +19,7 @@ export default async function fetchSearchDocuments(params, pluginOptions) {
         contentNodes: contentNodes(
           first: $nodesPerFetch
           after: $cursor
-          where: { contentTypes: $contentTypes }
+          where: { contentTypes: $contentTypes, nameIn: $nameIn }
         ) {
           pageInfo {
             endCursor
