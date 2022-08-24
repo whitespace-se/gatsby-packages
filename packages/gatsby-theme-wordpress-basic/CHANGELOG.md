@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.0-next.6](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.5...v1.2.0-next.6) (2022-08-24)
+
+
+### Features
+
+* Use `WORDPRESS_SPECIFIC_POSTS` when fetching MiniSearch documents ([1496ccd](https://github.com/whitespace-se/gatsby-packages/commit/1496ccd21151a940b7556b9241afb89dd23a8746))
+
+
+
 ## [1.2.0-next.5](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.4...v1.2.0-next.5) (2022-06-03)
 
 **Note:** Version bump only for package @whitespace/gatsby-theme-wordpress-basic
