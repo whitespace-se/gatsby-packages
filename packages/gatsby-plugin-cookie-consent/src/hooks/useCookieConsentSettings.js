@@ -1,6 +1,5 @@
 export default function useCookieConsentSettings() {
   return {
-    whitelist: [""],
     active: true,
     position: "bottom",
     strings: {

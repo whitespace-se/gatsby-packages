@@ -1,4 +1,3 @@
-import { unblock } from "@jeanfredrik/yett";
 import { useHasMounted } from "@whitespace/gatsby-hooks";
 import differenceInMonths from "date-fns/differenceInMonths";
 import PropTypes from "prop-types";
@@ -27,7 +26,7 @@ export default function CookieConsentContainer({
 
   useEffect(() => {
     if (store?.answer === "accept") {
-      unblock();
+      window.yett?.unblock();
     }
   }, [store?.answer]);
 

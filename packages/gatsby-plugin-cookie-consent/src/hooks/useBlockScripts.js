@@ -1,4 +1,3 @@
-import { init } from "@jeanfredrik/yett";
 import { useEffect } from "react";
 
 const blockScripts = ({ whitelist }) => {
@@ -36,7 +35,7 @@ const blockScripts = ({ whitelist }) => {
       })
     : null;
 
-  init({
+  window.yett.init({
     blacklist,
     whitelist,
   });
