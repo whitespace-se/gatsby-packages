@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.0-next.7](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.6...v1.2.0-next.7) (2022-08-24)
+
+
+### Features
+
+* Block scripts in head ([f7b7e7f](https://github.com/whitespace-se/gatsby-packages/commit/f7b7e7fd0a6fd0a74a21eb1d524fd5c340cca0a2))
+
+
+
 ## [1.2.0-next.6](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.5...v1.2.0-next.6) (2022-08-24)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-cookie-consent
