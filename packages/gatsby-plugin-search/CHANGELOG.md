@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.0-next.8](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.7...v1.2.0-next.8) (2022-09-12)
+
+
+### Features
+
+* Index Minisearch docs asynchronously ([67733d3](https://github.com/whitespace-se/gatsby-packages/commit/67733d39c916f895370142da26e7b214cc8dd0bd))
+
+
+
 ## [1.2.0-next.7](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.6...v1.2.0-next.7) (2022-08-24)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-search
