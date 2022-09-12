@@ -13,6 +13,7 @@ export default function FallbackSearchBackendProvider({ children }) {
   const { Provider } = context;
   const params = useSearchParams();
   const value = {
+    isReady: false,
     isPending: isEmptySearch(params),
     error: null,
     isError: false,

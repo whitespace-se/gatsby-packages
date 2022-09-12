@@ -73,7 +73,7 @@ export default function MinisearchSearchBackendProvider({
 
   const storeFields = extractKeys(documents);
 
-  const { search } = useMiniSearch({
+  const { isReady, search } = useMiniSearch({
     documents,
     fields: ["label", "text"],
     storeFields,
@@ -86,13 +86,16 @@ export default function MinisearchSearchBackendProvider({
     () =>
       isEmptySearch(request)
         ? Promise.resolve({ isEmptySearch: true })
-        : search(request),
-    [JSON.stringify(request)],
+        : isReady
+        ? search(request)
+        : Promise.resolve({ isPending: true }),
+    [JSON.stringify(request), isReady],
   );
 
   const value = useMemo(
     () => ({
       ...result,
+      isReady,
       isPending,
       error,
       isError: !!error,

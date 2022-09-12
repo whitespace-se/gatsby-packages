@@ -7,12 +7,12 @@ import SearchHits from "./SearchHits";
 
 export default function SearchResults({ ...restProps }) {
   const { t } = useTranslation();
-  const { hits, isPending, error, isEmptySearch } = useSearch();
+  const { hits, isReady, isPending, error, isEmptySearch } = useSearch();
   return (
     <div {...restProps}>
       {isEmptySearch ? (
         <div>{t("Enter search query…")}</div>
-      ) : isPending ? (
+      ) : isPending || !isReady ? (
         <div>{t("Fetching search results…")}</div>
       ) : error ? (
         <div>{t("An error occurred while fetching search results")}</div>
