@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.8...v1.2.0) (2022-09-25)
+
+
+### Features
+
+* Allow Nested Pages redirects in page tree ([5b6805b](https://github.com/whitespace-se/gatsby-packages/commit/5b6805bf0942849516104cabfe1928dcedb42558))
+
+
+
 ## [1.2.0-next.8](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.7...v1.2.0-next.8) (2022-09-12)
 
 
