@@ -7,6 +7,7 @@ module.exports = ({
   postCss = {},
   i18next = {},
   siteIndex = false,
+  disableSearchPlugin,
 } = {}) => {
   return {
     plugins: [
@@ -65,7 +66,9 @@ module.exports = ({
       `gatsby-plugin-meta-redirect`,
 
       // Search
-      `@whitespace/gatsby-plugin-search`,
+      ...(disableSearchPlugin
+        ? []
+        : [{ resolve: `@whitespace/gatsby-plugin-search` }]),
 
       // Site index
       {
