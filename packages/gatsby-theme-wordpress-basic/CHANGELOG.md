@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.0-next.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0...v1.3.0-next.0) (2022-10-05)
+
+
+### Features
+
+* Add `disableDefaultArchivePages` theme option ([f28e475](https://github.com/whitespace-se/gatsby-packages/commit/f28e4756994b9ee502eae16d544ad27042f16c61))
+* Add option for disabling the search plugin ([e22f93c](https://github.com/whitespace-se/gatsby-packages/commit/e22f93ca21bb0bed4fe5436f6a3182f0eb7a74b9))
+
+
+
 ## [1.2.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.8...v1.2.0) (2022-09-25)
 
 
