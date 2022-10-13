@@ -4218,9 +4218,9 @@
     use-ssr "^1.0.24"
 
 "@whitespace/gatsby-plugin-cookie-consent@*":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-cookie-consent/-/gatsby-plugin-cookie-consent-1.0.2.tgz#552c9273b592c9247797ddac0462b1332b29ba7d"
-  integrity sha512-XL9Xj7SayMuYJWBwD7oknQl8pLusVUyq+tAZbvTYVSuHFzj5yxwj5O9U/vwsPkkmCoNJow7/v5J9nSipSIuOgA==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-cookie-consent/-/gatsby-plugin-cookie-consent-1.1.0.tgz#0438f5cd79270c62cad2631409e5f11a9abbecf4"
+  integrity sha512-FXFOF6n5gPk/p4xoQAsXx3KIUn4O/7xGQYTvE0mhqkI6KdjDwB1bBeAqj0uY2B/b1C5ajQIld/hRZMAZMwGQ6g==
   dependencies:
     "@jeanfredrik/yett" "^2.0.0"
     "@whitespace/components" "^0.13.13"
@@ -4231,27 +4231,27 @@
     prop-types "^15.7.2"
     use-persisted-state "^0.3.3"
 
-"@whitespace/gatsby-plugin-i18next@*", "@whitespace/gatsby-plugin-i18next@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-i18next/-/gatsby-plugin-i18next-1.0.2.tgz#1ed30db9e3fc9b2b7a946f67ddc691ad96da87bb"
-  integrity sha512-pv6f3aVC+viBbhdJRZXPfxIIyRbxPHVb2INaKm61sZI+kDltsERX49+HvgKiEbDAh91uMkji0IVFOF5qeQ14Uw==
+"@whitespace/gatsby-plugin-i18next@*", "@whitespace/gatsby-plugin-i18next@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-i18next/-/gatsby-plugin-i18next-1.1.0.tgz#3c363ab9c515afa8d3e4e36df3ac94581d78e919"
+  integrity sha512-qJKKl5RADybEqo0fzf7IgwYIgH21Gc5aZsp0yP1f5hr6lw83+aX/8359ZA/OCaB8/48z9X5gpODWd7eJaWM/Gg==
   dependencies:
     esm "^3.2.25"
     js-yaml "^4.1.0"
     tagged-template-noop "^2.1.1"
     toml "^3.0.0"
 
-"@whitespace/gatsby-plugin-page-wrapper@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-page-wrapper/-/gatsby-plugin-page-wrapper-1.0.2.tgz#652582401a0699b535ea70ecb77fb56c0d746636"
-  integrity sha512-7QJjclR58OhxfeITFSguaUBweH7+eb7x7v+W5v2u78oxI8b5hS8UzUMMkmPk82gbBHRTasNWX3njmevi6ZPRyQ==
+"@whitespace/gatsby-plugin-page-wrapper@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-page-wrapper/-/gatsby-plugin-page-wrapper-1.1.0.tgz#d5bfd090395c2093e532bf794f7556e94baf5809"
+  integrity sha512-A7mGJnWCRs/qxwOkj7pzLmPT7wTt7NraLgiUhnM1VgrM3ccgbSm3rMuxOrg5zdsOOlAmH9ChjU2lXcGCEB2QVA==
   dependencies:
     prop-types "^15.7.2"
 
-"@whitespace/gatsby-plugin-search@*", "@whitespace/gatsby-plugin-search@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-search/-/gatsby-plugin-search-1.0.2.tgz#f613106a5a1aad499860900f727fb8b0991ddbee"
-  integrity sha512-GOwrstUtrRr8lpMmBQ2mCWPJ05D8RiTEavfn5o3KkYpB3J4uKSqH9o9hvumcSa7V/C9TKYFqLNT+pRYhJxPTqg==
+"@whitespace/gatsby-plugin-search@*", "@whitespace/gatsby-plugin-search@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-search/-/gatsby-plugin-search-1.1.0.tgz#f887803569dabfa35ae35cd3d621757db5548a37"
+  integrity sha512-IZMnf/MmI8veSaC/5Aq6qLM5i+IZEjVtLRpIVtkklmJGAukAhl9wgR0JL7Ll4fT6IdchDgaIkr2lPclYtazDtA==
   dependencies:
     "@jfrk/react-heading-levels" "^1.0.0"
     "@whitespace/gatsby-hooks" "^0.5.0"
@@ -4260,10 +4260,17 @@
     minisearch "^3.1.0"
     react-select "^5.1.0"
 
+"@whitespace/gatsby-plugin-site-index@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-plugin-site-index/-/gatsby-plugin-site-index-1.1.0.tgz#ecb88a4d35c19d6b0d5fdcb7dca34132a140b992"
+  integrity sha512-Jeyn4Bqr9hc5TMoxH69nCMtNfD3eEvArjvQ0Xk1MaXIjLSlkTNh6QrAo7amLTxrf63au91JIx7fHkzzm0txmXA==
+  dependencies:
+    jest "^27.5.1"
+
 "@whitespace/gatsby-theme-wordpress-basic@*":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-theme-wordpress-basic/-/gatsby-theme-wordpress-basic-1.0.2.tgz#334666b81760e0be22d786743c7ec371ab523512"
-  integrity sha512-MYc9FTOucuHYWi3wxW3URSV8hJKB5XEr3BgRzTHM1XDmMB9Q2x3STs9xbnE1RETN69gkbnQ3ZfoTxB8/VuiQzA==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@whitespace/gatsby-theme-wordpress-basic/-/gatsby-theme-wordpress-basic-1.1.0.tgz#71bad3df326a3fb1be0fa6d4ab8f988585e030af"
+  integrity sha512-s4t0Kj53v5lNd42xurNg3SHtaOA9eTD+Xx/wkHELMlL1ZRdDUwjyAGE6EGCR2wNozWzURQ8Lx7Cq/kTaJcbBzQ==
   dependencies:
     "@apollo/react-hooks" "^4.0.0"
     "@emotion/css" "^11.5.0"
@@ -4273,9 +4280,10 @@
     "@jfrk/react-id" "^1.0.0"
     "@whitespace/components" "^0.13.13"
     "@whitespace/gatsby-hooks" "^0.5.0"
-    "@whitespace/gatsby-plugin-i18next" "^1.0.2"
-    "@whitespace/gatsby-plugin-page-wrapper" "^1.0.2"
-    "@whitespace/gatsby-plugin-search" "^1.0.2"
+    "@whitespace/gatsby-plugin-i18next" "^1.1.0"
+    "@whitespace/gatsby-plugin-page-wrapper" "^1.1.0"
+    "@whitespace/gatsby-plugin-search" "^1.1.0"
+    "@whitespace/gatsby-plugin-site-index" "^1.1.0"
     apollo-boost "^0.4.9"
     apollo-cache-inmemory "^1.6.6"
     clsx "^1.1.1"

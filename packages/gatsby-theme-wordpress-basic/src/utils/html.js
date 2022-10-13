@@ -78,9 +78,15 @@ export default function createHTMLProcessor({ rehypeParse: parse }) {
 
     WPCaption.propTypes = {
       attachment: PropTypes.string,
+      width: PropTypes.number,
       children: PropTypes.node,
     };
-    function WPCaption({ attachment: attachmentId, children, ...restProps }) {
+    function WPCaption({
+      attachment: attachmentId,
+      width: imgWidth,
+      children,
+      ...restProps
+    }) {
       let attachment = contentMedia.find(
         (attachment) => attachment.databaseId === Number(attachmentId),
       );
@@ -107,6 +113,7 @@ export default function createHTMLProcessor({ rehypeParse: parse }) {
           base64={base64}
           aspectRatio={aspectRatio}
           alt={alt}
+          maxWidth={imgWidth}
           caption={
             React.Children.count(children) === 0
               ? processContent(caption)
@@ -148,8 +155,10 @@ export default function createHTMLProcessor({ rehypeParse: parse }) {
         visit(tree, isElementWithClassName("wp-caption"), (node, index) => {
           node.tagName = "wp-caption";
           let [, attachment] = node.properties.id.match(/(\d+)/);
+          let [width] = node.properties.style.match(/\d+/g);
           node.properties = {
             attachment,
+            width: parseInt(width),
           };
           let newChildren = [];
           visit(node, isElementWithClassName("wp-caption-text"), (node) => {

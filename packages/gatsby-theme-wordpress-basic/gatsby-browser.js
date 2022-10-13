@@ -9,19 +9,13 @@ import "./src/index.css";
 
 const htmlProcessor = createHTMLProcessor({ rehypeParse });
 
-export const wrapPageElement = ({ element }, { enableSEO }) => {
+export function wrapRootElement({ element }, { enableSEO }) {
   return (
     <pluginOptionsContext.Provider value={{ enableSEO }}>
-      {element}
+      <HTMLProcessorProvider htmlProcessor={htmlProcessor}>
+        {element}
+      </HTMLProcessorProvider>
     </pluginOptionsContext.Provider>
-  );
-};
-
-export function wrapRootElement({ element }) {
-  return (
-    <HTMLProcessorProvider htmlProcessor={htmlProcessor}>
-      {element}
-    </HTMLProcessorProvider>
   );
 }
 

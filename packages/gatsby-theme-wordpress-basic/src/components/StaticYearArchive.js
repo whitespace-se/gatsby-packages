@@ -19,7 +19,7 @@ export default function StaticYearArchive() {
   const title = getYearArchivePageTitleFromPageContext(pageContext);
   return (
     <>
-      <SEO title={title} />{" "}
+      <SEO title={title} />
       <div className="c-article o-margin-top-large">
         <div className="o-grid">
           <div className="o-grid-row">

@@ -1,6 +1,6 @@
 import { sortBy, uniq } from "lodash-es";
 import MiniSearch from "minisearch";
-import { useRef } from "react";
+import { useCallback, useRef, useState } from "react";
 
 import { ensureArray } from "../../utils";
 
@@ -44,10 +44,16 @@ export default function useMiniSearch({
   ...options
 }) {
   const miniSearchRef = useRef();
+  const [isReady, setIsReady] = useState(false);
+
+  const addDocuments = useCallback(async (documents) => {
+    await miniSearchRef.current.addAllAsync(documents);
+    setIsReady(true);
+  }, []);
 
   if (!miniSearchRef.current) {
     miniSearchRef.current = new MiniSearch(options);
-    miniSearchRef.current.addAll(documents);
+    addDocuments(documents);
   }
 
   const facetValues = {};
@@ -117,5 +123,5 @@ export default function useMiniSearch({
     };
   };
 
-  return { search };
+  return { isReady, search };
 }

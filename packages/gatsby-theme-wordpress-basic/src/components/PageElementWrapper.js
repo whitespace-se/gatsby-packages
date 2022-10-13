@@ -36,7 +36,10 @@ export default function PageElementWrapper({ pageContext, children }) {
               <IconProvider getIconSrc={(name) => `/icons/${name}.svg`}>
                 <URLTransformerProvider
                   transformURL={(url) =>
-                    url && url.replace(process.env.GATSBY_WORDPRESS_URL, "")
+                    url &&
+                    (url.startsWith(process.env.GATSBY_WORDPRESS_URL + "/wp-")
+                      ? url
+                      : url.replace(process.env.GATSBY_WORDPRESS_URL, ""))
                   }
                 >
                   <SiteLayout>{children}</SiteLayout>

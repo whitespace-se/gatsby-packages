@@ -13,12 +13,13 @@ export default async function fetchSearchDocuments(params, pluginOptions) {
       $nodesPerFetch: Int
       $cursor: String
       $contentTypes: [WP_ContentTypeEnum]
+      $nameIn: [String]
     ) {
       wp {
         contentNodes: contentNodes(
           first: $nodesPerFetch
           after: $cursor
-          where: { contentTypes: $contentTypes }
+          where: { contentTypes: $contentTypes, nameIn: $nameIn }
         ) {
           pageInfo {
             endCursor
@@ -42,6 +43,10 @@ export default async function fetchSearchDocuments(params, pluginOptions) {
     contentTypes: getIncludedContentTypes(params, pluginOptions)
       .filter((contentType) => contentType && contentType.hasArchive !== false)
       .map((contentType) => contentType.enum),
+    nameIn:
+      (process.env.WORDPRESS_SPECIFIC_POSTS &&
+        process.env.WORDPRESS_SPECIFIC_POSTS.split(",")) ||
+      [],
   };
 
   await runBatchedWPQuery(params, pluginOptions, query, variables, {

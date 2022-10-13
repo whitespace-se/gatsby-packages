@@ -19,6 +19,7 @@ export const createSchemaCustomization = ({ actions }) => {
   const typeDefs = `
     type SitePageContext {
       isIncludedInSiteIndex: Boolean
+      isSiteIndexPage: Boolean
       siteIndexInitial: String
     }
   `;
@@ -57,6 +58,7 @@ export const onCreatePage = ({ page, actions }, { ...pluginOptions }) => {
 export const createPages = async ({ actions }, pluginOptions) => {
   const { createPage, createRedirect } = actions;
   let {
+    disablePageCreation = false,
     template = SiteIndexTemplate,
     localizations = defaultLocalizations,
 
@@ -85,6 +87,10 @@ export const createPages = async ({ actions }, pluginOptions) => {
     },
   } = pluginOptions;
 
+  if (disablePageCreation) {
+    return;
+  }
+
   Object.entries(localizations).forEach(([language, options]) => {
     let { basePath, alphabet } = options;
 
@@ -105,6 +111,7 @@ export const createPages = async ({ actions }, pluginOptions) => {
           initials,
           language,
           title,
+          isSiteIndexPage: true,
         },
       });
     });

@@ -26,6 +26,7 @@ export default async function fetchPageTree(params, pluginOptions) {
             title
             isFrontPage
             uri
+            menuOrder
             ...WP_PageForPageTree
           }
         }

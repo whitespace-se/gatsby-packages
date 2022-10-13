@@ -1,13 +1,44 @@
 import { useStaticQuery, graphql } from "gatsby";
 
 export default function usePages() {
-  return (
-    useStaticQuery(graphql`
-      query PageTree {
-        graphQlQuery(name: { eq: "WPPaginatedNodesForPageTree" }) {
-          data
+  let data = useStaticQuery(graphql`
+    query PageTree {
+      graphQlQuery(name: { eq: "WPPaginatedNodesForPageTree" }) {
+        data
+      }
+      wp {
+        npRedirects(first: 10000) {
+          nodes {
+            id
+            parentId
+            title
+            # isFrontPage
+            uri
+            menuOrder
+            connectedNode {
+              node {
+                ... on WP_Page {
+                  uri
+                  ...WP_PageForMenuItem
+                }
+              }
+            }
+            # label
+            # description
+            # url
+            # target
+            ...WP_NpRedirectForPageTree
+          }
         }
       }
-    `).graphQlQuery?.data?.pages?.nodes || []
+    }
+  `);
+
+  let pages = data.graphQlQuery?.data?.pages?.nodes || [];
+  let npRedirects = (data.wp?.npRedirects?.nodes || []).map(
+    ({ connectedNode, ...rest }) => ({ ...rest, ...connectedNode?.node }),
   );
+  let items = [...pages, ...npRedirects];
+  items.sort((a, b) => a.menuOrder - b.menuOrder);
+  return items;
 }

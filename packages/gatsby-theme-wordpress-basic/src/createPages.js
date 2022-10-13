@@ -65,6 +65,7 @@ export default ({ contentType, query, nodesPerFetch }) =>
           if (contentType.hasArchive && pageNumber === 0) {
             archivePageContext = {
               contentType,
+              isArchivePage: true,
             };
           }
 
@@ -133,7 +134,7 @@ ${JSON.stringify({ ...commonVariables, ...variables }, null, 2)}`,
         path,
         component,
         context: {
-          title: contentNode.title,
+          ...contentNode,
           language,
           contentNode,
           contentType,
