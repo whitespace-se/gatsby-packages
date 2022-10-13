@@ -16,7 +16,7 @@ DefaultSearchHit.propTypes = {
   dateFormat: PropTypes.objectOf(PropTypes.string),
   hit: PropTypes.shape({
     contentType: PropTypes.string,
-    date: PropTypes.string,
+    date: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
     text: PropTypes.node,
     image: PropTypes.object,
     label: PropTypes.node,
