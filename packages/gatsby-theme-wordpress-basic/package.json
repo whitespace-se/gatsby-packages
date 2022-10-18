@@ -40,6 +40,7 @@
     "gatsby-transformer-sharp": "^3.14.0",
     "graphql-request": "^3.6.1",
     "graphql-tag": "^2.12.5",
+    "hash-sum": "^2.0.0",
     "hast-util-to-string": "^2.0.0",
     "i18next": "^21.3.2",
     "javascript-time-ago": "^2.3.9",
