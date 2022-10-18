@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.0-next.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0-next.0...v1.3.0-next.1) (2022-10-18)
+
+
+### Features
+
+* Add support for module shortcodes ([90eeed4](https://github.com/whitespace-se/gatsby-packages/commit/90eeed4bd57191bcb7cd0609d4255c784c461d86))
+
+
+### Bug Fixes
+
+* Allow date to be Date object ([de3b7a4](https://github.com/whitespace-se/gatsby-packages/commit/de3b7a42e7e49b42e65a3f35aa7341c3d217f4a0))
+
+
+
 ## [1.3.0-next.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0...v1.3.0-next.0) (2022-10-05)
 
 

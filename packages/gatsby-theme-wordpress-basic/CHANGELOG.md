@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.0-next.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0-next.0...v1.3.0-next.1) (2022-10-18)
+
+
+### Features
+
+* Add support for module shortcodes ([90eeed4](https://github.com/whitespace-se/gatsby-packages/commit/90eeed4bd57191bcb7cd0609d4255c784c461d86))
+
+
+
 ## [1.3.0-next.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0...v1.3.0-next.0) (2022-10-05)
 
 
