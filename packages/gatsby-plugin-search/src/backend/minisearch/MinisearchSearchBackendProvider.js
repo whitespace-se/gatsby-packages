@@ -57,7 +57,7 @@ export default function MinisearchSearchBackendProvider({
   let {
     sort = "score:desc",
     page,
-    hitsPerPage = 20,
+    hitsPerPage = 24,
     ...otherParams
   } = transformParams(params);
 
