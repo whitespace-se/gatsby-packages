@@ -11,11 +11,7 @@ export default async function fetchPageTree(params, pluginOptions) {
   let query = gql`
     query WPPaginatedNodesForPageTree($nodesPerFetch: Int, $cursor: String) {
       wp {
-        pages(
-          first: $nodesPerFetch
-          after: $cursor
-          where: { parent: null, orderby: { field: MENU_ORDER, order: ASC } }
-        ) {
+        pages(first: $nodesPerFetch, after: $cursor, where: { parent: null }) {
           pageInfo {
             hasNextPage
             endCursor
@@ -23,10 +19,11 @@ export default async function fetchPageTree(params, pluginOptions) {
           nodes {
             id
             parentId
+            databaseId # Required for sorting
             title
             isFrontPage
             uri
-            menuOrder
+            menuOrder # Required for sorting
             ...WP_PageForPageTree
           }
         }
