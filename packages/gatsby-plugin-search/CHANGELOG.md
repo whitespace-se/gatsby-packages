@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.0-next.2](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0-next.1...v1.3.0-next.2) (2022-11-01)
+
+
+### Features
+
+* Change default hits per page to 24 ([142cc11](https://github.com/whitespace-se/gatsby-packages/commit/142cc1164f2ded07a69da1ace145ae12633d8ead))
+
+
+
 ## [1.3.0-next.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0-next.0...v1.3.0-next.1) (2022-10-18)
 
 
