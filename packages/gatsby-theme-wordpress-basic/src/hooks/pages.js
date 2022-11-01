@@ -35,6 +35,9 @@ export default function usePages() {
   `);
 
   let pages = data.graphQlQuery?.data?.pages?.nodes || [];
+  pages.sort(
+    (a, b) => a.menuOrder - b.menuOrder || a.databaseId - b.databaseId,
+  );
   let npRedirects = (data.wp?.npRedirects?.nodes || []).map(
     ({ connectedNode, ...rest }) => ({ ...rest, ...connectedNode?.node }),
   );
