@@ -6,7 +6,7 @@ module.exports = ({
   wp,
   postCss = {},
   i18next = {},
-  siteIndex = false,
+  siteIndex = {},
   disableSearchPlugin,
 } = {}) => {
   return {
