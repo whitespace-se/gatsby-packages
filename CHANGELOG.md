@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.0-next.3](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0-next.2...v1.3.0-next.3) (2022-11-04)
+
+
+### Features
+
+* Add sitemap ([9ef2f5e](https://github.com/whitespace-se/gatsby-packages/commit/9ef2f5e83974d6a3a107da8aa543414d74c94d36))
+* Enable site index by default ([7670c10](https://github.com/whitespace-se/gatsby-packages/commit/7670c101f6af0994a46e96e9b7ae4bfa488151fe))
+
+
+
 ## [1.3.0-next.2](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0-next.1...v1.3.0-next.2) (2022-11-01)
 
 
