@@ -1,5 +1,17 @@
 const path = require("path");
 
+const { format: formatDate } = require("date-fns");
+
+function mixin(defaultOptions, options) {
+  if (typeof options === "function") {
+    return options(defaultOptions);
+  }
+  if (typeof options === "object") {
+    return { ...defaultOptions, ...options };
+  }
+  return defaultOptions;
+}
+
 module.exports = ({
   basePath,
   fragmentsDir,
@@ -8,6 +20,7 @@ module.exports = ({
   i18next = {},
   siteIndex = {},
   disableSearchPlugin,
+  sitemap = {},
 } = {}) => {
   return {
     plugins: [
@@ -82,6 +95,59 @@ module.exports = ({
 
       // Breadcrumbs
       `@whitespace/gatsby-plugin-breadcrumbs`,
+
+      // Sitemap
+      ...(sitemap
+        ? [
+            {
+              resolve: `gatsby-plugin-sitemap`,
+              options: mixin(
+                {
+                  sitemapSize: 5000,
+                  query: `
+                  {
+                    site {
+                      siteMetadata {
+                        siteUrl
+                      }
+                    }
+                    allSitePage {
+                      edges {
+                        node {
+                          path
+                          context {
+                            contentType {
+                              name
+                            }
+                            contentNode {
+                              modifiedGmt
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                `,
+                  serialize: ({ site, allSitePage }) =>
+                    allSitePage.edges.map(({ node: { path, context } }) => {
+                      // let postType = context.contentType?.name;
+                      let { modifiedGmt } = context?.contentNode || {};
+                      return {
+                        url: site.siteMetadata.siteUrl + path,
+                        changefreq: `daily`,
+                        priority: 0.7,
+                        lastmod: formatDate(
+                          modifiedGmt ? new Date(modifiedGmt) : new Date(),
+                          `yyyy-MM-dd`,
+                        ),
+                      };
+                    }),
+                },
+                sitemap,
+              ),
+            },
+          ]
+        : []),
     ],
   };
 };

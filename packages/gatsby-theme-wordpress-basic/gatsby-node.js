@@ -108,6 +108,7 @@ export async function createPages(params, pluginOptions) {
                 }
                 nodes {
                   archiveDates
+                  modifiedGmt # Required for sitemap
                   ...WP_ContentNodeForPage
                 }
               }
