@@ -15,12 +15,14 @@ function mixin(defaultOptions, options) {
 module.exports = ({
   basePath,
   fragmentsDir,
+  siteMetadata,
   wp,
   postCss = {},
   i18next = {},
   siteIndex = {},
   disableSearchPlugin,
   sitemap = {},
+  robotsTxt: { disallowAll: robotsTxtDisallowAll, ...robotsTxt } = {},
 } = {}) => {
   return {
     plugins: [
@@ -148,6 +150,29 @@ module.exports = ({
             },
           ]
         : []),
+
+      {
+        resolve: "gatsby-plugin-robots-txt",
+        options: mixin(
+          {
+            sitemap: `${siteMetadata.siteUrl}/sitemap.xml`,
+            policy: robotsTxtDisallowAll
+              ? [
+                  {
+                    userAgent: "*",
+                    disallow: "/",
+                  },
+                ]
+              : [
+                  {
+                    userAgent: "*",
+                    allow: "/",
+                  },
+                ],
+          },
+          robotsTxt,
+        ),
+      },
     ],
   };
 };
