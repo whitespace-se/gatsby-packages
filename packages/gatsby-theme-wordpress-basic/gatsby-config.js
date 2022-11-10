@@ -14,7 +14,7 @@ function mixin(defaultOptions, options) {
 
 module.exports = ({
   basePath,
-  fragmentsDir,
+  fragmentsDir = "./src/fragments",
   siteMetadata,
   wp,
   postCss = {},
@@ -33,7 +33,7 @@ module.exports = ({
       {
         resolve: `gatsby-plugin-fragments`,
         options: {
-          fragmentsDir,
+          fragmentsDir: path.resolve(basePath, fragmentsDir),
         },
       },
 
@@ -175,4 +175,23 @@ module.exports = ({
       },
     ],
   };
+};
+
+exports.pluginOptionsSchema = ({ Joi }) => {
+  return Joi.object({
+    basePath: Joi.string().required(),
+    fragmentsDir: Joi.string().default("./src/fragments"),
+    siteMetadata: Joi.object({
+      siteUrl: Joi.string().required(),
+    }).required(),
+    wp: Joi.object({
+      url: Joi.string().required(),
+      refetchInterval: Joi.number(),
+    }),
+    postCss: Joi.object(),
+    // i18next: Joi.object(),
+    // siteIndex: Joi.object(),
+    disableSearchPlugin: Joi.boolean().default(false),
+    // sitemap: Joi.object(),
+  });
 };
