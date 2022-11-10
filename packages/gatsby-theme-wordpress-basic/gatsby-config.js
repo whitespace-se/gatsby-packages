@@ -22,6 +22,7 @@ module.exports = ({
   siteIndex = {},
   disableSearchPlugin,
   sitemap = {},
+  manifest = {},
   robotsTxt: { disallowAll: robotsTxtDisallowAll, ...robotsTxt } = {},
 } = {}) => {
   return {
@@ -97,6 +98,14 @@ module.exports = ({
 
       // Breadcrumbs
       `@whitespace/gatsby-plugin-breadcrumbs`,
+
+      // Manifest
+      {
+        resolve: `gatsby-plugin-manifest`,
+        options: {
+          ...manifest,
+        },
+      },
 
       // Sitemap
       ...(sitemap
@@ -193,5 +202,7 @@ exports.pluginOptionsSchema = ({ Joi }) => {
     // siteIndex: Joi.object(),
     disableSearchPlugin: Joi.boolean().default(false),
     // sitemap: Joi.object(),
+    manifest: Joi.object(),
+    robotsTxt: Joi.object(),
   });
 };
