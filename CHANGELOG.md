@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.0.3](https://github.com/whitespace-se/gatsby-packages/compare/v1.0.2...v1.0.3) (2022-11-11)
+
+
+### Bug Fixes
+
+* Missing pages in page tree ([aef2fcc](https://github.com/whitespace-se/gatsby-packages/commit/aef2fcc4c538191199f197050966b7f632027614))
+
+
+
 ### [1.0.2](https://github.com/whitespace-se/gatsby-packages/compare/v1.0.2-rc.2...v1.0.2) (2022-03-31)
 
 
