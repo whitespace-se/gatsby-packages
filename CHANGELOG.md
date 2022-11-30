@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.0-next.5](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0-next.4...v1.3.0-next.5) (2022-11-30)
+
+
+### Features
+
+* Add manifest plugin ([5ee7cff](https://github.com/whitespace-se/gatsby-packages/commit/5ee7cffd60f2ecaedece0e44abc65ead2606d2ee))
+* Add robots txt plugin ([4bf7820](https://github.com/whitespace-se/gatsby-packages/commit/4bf7820b0ef4651f2149f84cf7b1e1c9a8238d2e))
+* Add support for regular Matomo script via siteId ([205f3c2](https://github.com/whitespace-se/gatsby-packages/commit/205f3c23dffefa81b1b5812d65e71fe4a8960465))
+
+
+### Bug Fixes
+
+* Always show NP redirects in menus ([380a954](https://github.com/whitespace-se/gatsby-packages/commit/380a95459b4ca5067e8fd552d8f176120b2c5a69))
+* Handle empty search correctly ([bd20044](https://github.com/whitespace-se/gatsby-packages/commit/bd20044a0e58821b53bdc930785f0c5757e9fbaa))
+
+
+
 ## [1.3.0-next.4](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0-next.3...v1.3.0-next.4) (2022-11-10)
 
 

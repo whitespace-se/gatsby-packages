@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.0-next.5](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0-next.4...v1.3.0-next.5) (2022-11-30)
+
+
+### Bug Fixes
+
+* Handle empty search correctly ([bd20044](https://github.com/whitespace-se/gatsby-packages/commit/bd20044a0e58821b53bdc930785f0c5757e9fbaa))
+
+
+
 ## [1.3.0-next.4](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0-next.3...v1.3.0-next.4) (2022-11-10)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-search
