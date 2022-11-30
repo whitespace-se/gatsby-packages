@@ -39,7 +39,11 @@ export default function usePages() {
     (a, b) => a.menuOrder - b.menuOrder || a.databaseId - b.databaseId,
   );
   let npRedirects = (data.wp?.npRedirects?.nodes || []).map(
-    ({ connectedNode, ...rest }) => ({ ...rest, ...connectedNode?.node }),
+    ({ connectedNode, ...rest }) => ({
+      ...rest,
+      ...connectedNode?.node,
+      showInMenu: true,
+    }),
   );
   let items = [...pages, ...npRedirects];
   items.sort((a, b) => a.menuOrder - b.menuOrder);
