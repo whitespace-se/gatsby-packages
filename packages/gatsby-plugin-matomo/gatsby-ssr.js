@@ -12,6 +12,25 @@ const generateMTM = ({
   g.async=true; g.src='${mtmHost}/js/${mtmContainerId}.js'; s.parentNode.insertBefore(g,s);
 `;
 
+const generateMTMSite = ({
+  mtmSiteId,
+  mtmHost,
+  mtmPAQDataVariableName,
+}) => oneLine`
+  var _paq = window.${mtmPAQDataVariableName} = window.${mtmPAQDataVariableName} || [];
+  /*
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  */
+  (function() {
+    var u="${mtmHost.replace(/\/$/, "")}/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', ${mtmSiteId}]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+`;
+
 const generateMTMPAQ = ({ mtmPAQDataVariableName }) => oneLine`
   var _paq = window.${mtmPAQDataVariableName} = window.${mtmPAQDataVariableName} || [];
 `;
@@ -51,6 +70,7 @@ export const onRenderBody = (
   {
     includeInDevelopment = false,
     mtmContainerId,
+    mtmSiteId,
     mtmDataVariableName = `mtm`,
     mtmDefaultDataVariable,
     mtmHost = `https://www.matomo.com`,
@@ -83,20 +103,37 @@ export const onRenderBody = (
 
     const inlineScripts = [];
 
-    inlineScripts.push(
-      <script
-        key="plugin-matomo-mtm"
-        dangerouslySetInnerHTML={{
-          __html: oneLine`
-          ${defaultMTMCode}
-          ${generateMTM({
-            mtmContainerId,
-            mtmHost,
-            mtmDataVariableName,
-          })}`,
-        }}
-      />,
-    );
+    if (mtmContainerId) {
+      inlineScripts.push(
+        <script
+          key="plugin-matomo-mtm"
+          dangerouslySetInnerHTML={{
+            __html: oneLine`
+            ${defaultMTMCode}
+            ${generateMTM({
+              mtmContainerId,
+              mtmHost,
+              mtmDataVariableName,
+            })}`,
+          }}
+        />,
+      );
+    } else if (mtmSiteId && mtmPAQDataVariableName) {
+      inlineScripts.push(
+        <script
+          key="plugin-matomo-mtm-site"
+          dangerouslySetInnerHTML={{
+            __html: oneLine`
+            ${defaultMTMCode}
+            ${generateMTMSite({
+              mtmSiteId,
+              mtmHost,
+              mtmPAQDataVariableName,
+            })}`,
+          }}
+        />,
+      );
+    }
 
     if (mtmPAQDataVariableName) {
       inlineScripts.push(
@@ -119,17 +156,19 @@ export const onRenderBody = (
 
     setHeadComponents(inlineScripts);
 
-    setPreBodyComponents([
-      <noscript
-        key="plugin-matomo-mtm"
-        dangerouslySetInnerHTML={{
-          __html: generateMTMframe({
-            mtmContainerId,
-            mtmHost,
-            mtmDataVariableName,
-          }),
-        }}
-      />,
-    ]);
+    if (mtmContainerId) {
+      setPreBodyComponents([
+        <noscript
+          key="plugin-matomo-mtm"
+          dangerouslySetInnerHTML={{
+            __html: generateMTMframe({
+              mtmContainerId,
+              mtmHost,
+              mtmDataVariableName,
+            }),
+          }}
+        />,
+      ]);
+    }
   }
 };
