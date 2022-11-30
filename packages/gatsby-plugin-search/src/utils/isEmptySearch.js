@@ -7,5 +7,9 @@ export default function isEmptySearch({
   size,
   ...params
 }) {
+  void sortBy;
+  void sortOrder;
+  void from;
+  void size;
   return Object.values(params).every(isEmpty);
 }
