@@ -1,12 +1,29 @@
 const path = require("path");
 
+const { format: formatDate } = require("date-fns");
+
+function mixin(defaultOptions, options) {
+  if (typeof options === "function") {
+    return options(defaultOptions);
+  }
+  if (typeof options === "object") {
+    return { ...defaultOptions, ...options };
+  }
+  return defaultOptions;
+}
+
 module.exports = ({
   basePath,
-  fragmentsDir,
+  fragmentsDir = "./src/fragments",
+  siteMetadata,
   wp,
   postCss = {},
   i18next = {},
-  siteIndex = false,
+  siteIndex = {},
+  disableSearchPlugin,
+  sitemap = {},
+  manifest = {},
+  robotsTxt: { disallowAll: robotsTxtDisallowAll, ...robotsTxt } = {},
 } = {}) => {
   return {
     plugins: [
@@ -17,7 +34,7 @@ module.exports = ({
       {
         resolve: `gatsby-plugin-fragments`,
         options: {
-          fragmentsDir,
+          fragmentsDir: path.resolve(basePath, fragmentsDir),
         },
       },
 
@@ -65,7 +82,9 @@ module.exports = ({
       `gatsby-plugin-meta-redirect`,
 
       // Search
-      `@whitespace/gatsby-plugin-search`,
+      ...(disableSearchPlugin
+        ? []
+        : [{ resolve: `@whitespace/gatsby-plugin-search` }]),
 
       // Site index
       {
@@ -79,6 +98,111 @@ module.exports = ({
 
       // Breadcrumbs
       `@whitespace/gatsby-plugin-breadcrumbs`,
+
+      // Manifest
+      {
+        resolve: `gatsby-plugin-manifest`,
+        options: {
+          ...manifest,
+        },
+      },
+
+      // Sitemap
+      ...(sitemap
+        ? [
+            {
+              resolve: `gatsby-plugin-sitemap`,
+              options: mixin(
+                {
+                  sitemapSize: 5000,
+                  query: `
+                  {
+                    site {
+                      siteMetadata {
+                        siteUrl
+                      }
+                    }
+                    allSitePage {
+                      edges {
+                        node {
+                          path
+                          context {
+                            contentType {
+                              name
+                            }
+                            contentNode {
+                              modifiedGmt
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                `,
+                  serialize: ({ site, allSitePage }) =>
+                    allSitePage.edges.map(({ node: { path, context } }) => {
+                      // let postType = context.contentType?.name;
+                      let { modifiedGmt } = context?.contentNode || {};
+                      return {
+                        url: site.siteMetadata.siteUrl + path,
+                        changefreq: `daily`,
+                        priority: 0.7,
+                        lastmod: formatDate(
+                          modifiedGmt ? new Date(modifiedGmt) : new Date(),
+                          `yyyy-MM-dd`,
+                        ),
+                      };
+                    }),
+                },
+                sitemap,
+              ),
+            },
+          ]
+        : []),
+
+      {
+        resolve: "gatsby-plugin-robots-txt",
+        options: mixin(
+          {
+            sitemap: `${siteMetadata.siteUrl}/sitemap.xml`,
+            policy: robotsTxtDisallowAll
+              ? [
+                  {
+                    userAgent: "*",
+                    disallow: "/",
+                  },
+                ]
+              : [
+                  {
+                    userAgent: "*",
+                    allow: "/",
+                  },
+                ],
+          },
+          robotsTxt,
+        ),
+      },
     ],
   };
+};
+
+exports.pluginOptionsSchema = ({ Joi }) => {
+  return Joi.object({
+    basePath: Joi.string().required(),
+    fragmentsDir: Joi.string().default("./src/fragments"),
+    siteMetadata: Joi.object({
+      siteUrl: Joi.string().required(),
+    }).required(),
+    wp: Joi.object({
+      url: Joi.string().required(),
+      refetchInterval: Joi.number(),
+    }),
+    postCss: Joi.object(),
+    // i18next: Joi.object(),
+    // siteIndex: Joi.object(),
+    disableSearchPlugin: Joi.boolean().default(false),
+    // sitemap: Joi.object(),
+    manifest: Joi.object(),
+    robotsTxt: Joi.object(),
+  });
 };

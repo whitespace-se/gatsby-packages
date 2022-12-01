@@ -3,16 +3,13 @@ import rehypeParse from "rehype-parse";
 
 import { pluginOptionsContext } from "./src/contexts";
 import { HTMLProcessorProvider } from "./src/hooks";
-import createHTMLProcessor from "./src/utils/html";
 
 import "./src/index.css";
-
-const htmlProcessor = createHTMLProcessor({ rehypeParse });
 
 export function wrapRootElement({ element }, { enableSEO }) {
   return (
     <pluginOptionsContext.Provider value={{ enableSEO }}>
-      <HTMLProcessorProvider htmlProcessor={htmlProcessor}>
+      <HTMLProcessorProvider rehypeParse={rehypeParse}>
         {element}
       </HTMLProcessorProvider>
     </pluginOptionsContext.Provider>

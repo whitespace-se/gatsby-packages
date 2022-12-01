@@ -27,6 +27,7 @@ WPDefaultContentNodeCard.propTypes = {
     theme: PropTypes.string,
     title: PropTypes.node,
     url: PropTypes.string,
+    showAll: PropTypes.bool,
     taxonomies: PropTypes.arrayOf(PropTypes.object),
   }),
   dateFormat: PropTypes.objectOf(PropTypes.string),
@@ -42,7 +43,8 @@ export default function WPDefaultContentNodeCard({
   },
   ...restProps
 }) {
-  const { date, excerpt, image, title, url, theme, taxonomies } = contentNode;
+  const { date, excerpt, image, showAll, title, url, theme, taxonomies } =
+    contentNode;
   return (
     <Card
       link={{ url }}
@@ -77,7 +79,11 @@ export default function WPDefaultContentNodeCard({
             />
           </CardMeta>
         )}
-        {excerpt && <p className={clsx(styles.excerpt)}>{excerpt}</p>}
+        {excerpt && (
+          <p className={clsx(styles.excerpt, !showAll && styles.collapsed)}>
+            {excerpt}
+          </p>
+        )}
         {taxonomies && taxonomies.length > 0 && (
           <TermList taxonomies={taxonomies} />
         )}

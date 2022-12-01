@@ -72,7 +72,7 @@ export default function useMiniSearch({
       sortBy: sortField,
       sortOrder,
       from = 0,
-      size = 20,
+      size = 24,
       ...filterParams
     } = request;
 

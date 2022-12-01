@@ -3,12 +3,73 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-### [1.2.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0...v1.2.1) (2022-11-11)
+## [1.3.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0-next.5...v1.3.0) (2022-12-01)
+
+**Note:** Version bump only for package @whitespace/gatsby-theme-wordpress-basic
+
+
+
+
+
+## [1.3.0-next.5](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0-next.4...v1.3.0-next.5) (2022-11-30)
+
+
+### Features
+
+* Add manifest plugin ([5ee7cff](https://github.com/whitespace-se/gatsby-packages/commit/5ee7cffd60f2ecaedece0e44abc65ead2606d2ee))
+* Add robots txt plugin ([4bf7820](https://github.com/whitespace-se/gatsby-packages/commit/4bf7820b0ef4651f2149f84cf7b1e1c9a8238d2e))
 
 
 ### Bug Fixes
 
-* Missing pages in page tree ([e058940](https://github.com/whitespace-se/gatsby-packages/commit/e058940ea6d1edec8a5928bb9f213c7ef570efcc))
+* Always show NP redirects in menus ([380a954](https://github.com/whitespace-se/gatsby-packages/commit/380a95459b4ca5067e8fd552d8f176120b2c5a69))
+
+
+
+## [1.3.0-next.4](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0-next.3...v1.3.0-next.4) (2022-11-10)
+
+
+### Features
+
+* add showAll prop to WPContenNodeCard ([3a0a46f](https://github.com/whitespace-se/gatsby-packages/commit/3a0a46f58fee22b0456d8aaf89a391aa0590c63d))
+
+
+
+## [1.3.0-next.3](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0-next.2...v1.3.0-next.3) (2022-11-04)
+
+
+### Features
+
+* Add sitemap ([9ef2f5e](https://github.com/whitespace-se/gatsby-packages/commit/9ef2f5e83974d6a3a107da8aa543414d74c94d36))
+* Enable site index by default ([7670c10](https://github.com/whitespace-se/gatsby-packages/commit/7670c101f6af0994a46e96e9b7ae4bfa488151fe))
+
+
+
+## [1.3.0-next.2](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0-next.1...v1.3.0-next.2) (2022-11-01)
+
+
+### Bug Fixes
+
+* Missing pages in page tree ([64522ff](https://github.com/whitespace-se/gatsby-packages/commit/64522ff6496a65baaa7d3f9a00c0175516878454))
+
+
+
+## [1.3.0-next.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0-next.0...v1.3.0-next.1) (2022-10-18)
+
+
+### Features
+
+* Add support for module shortcodes ([90eeed4](https://github.com/whitespace-se/gatsby-packages/commit/90eeed4bd57191bcb7cd0609d4255c784c461d86))
+
+
+
+## [1.3.0-next.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0...v1.3.0-next.0) (2022-10-05)
+
+
+### Features
+
+* Add `disableDefaultArchivePages` theme option ([f28e475](https://github.com/whitespace-se/gatsby-packages/commit/f28e4756994b9ee502eae16d544ad27042f16c61))
+* Add option for disabling the search plugin ([e22f93c](https://github.com/whitespace-se/gatsby-packages/commit/e22f93ca21bb0bed4fe5436f6a3182f0eb7a74b9))
 
 
 

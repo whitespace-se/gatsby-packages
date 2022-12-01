@@ -1,4 +1,5 @@
 import { Link } from "@whitespace/components";
+import hashSum from "hash-sum";
 import { toString } from "hast-util-to-string";
 import memoize from "lodash/memoize";
 import PropTypes from "prop-types";
@@ -10,7 +11,12 @@ import { visitParents } from "unist-util-visit-parents";
 
 import { Image } from "../components";
 
-export default function createHTMLProcessor({ rehypeParse: parse }) {
+export default function createHTMLProcessor({
+  rehypeParse: parse,
+  inputTransforms = [],
+  treeTransforms = [],
+  stringifierComponents = {},
+}) {
   function splitTree() {
     return function splitSubTree(nodes) {
       let tree = nodes[0];
@@ -23,7 +29,7 @@ export default function createHTMLProcessor({ rehypeParse: parse }) {
 
       let [subtree1, subtree2] = splitSubTree(nodes.slice(1));
 
-      return [
+      let subTree = [
         {
           ...tree,
           children: [
@@ -39,10 +45,13 @@ export default function createHTMLProcessor({ rehypeParse: parse }) {
           ],
         },
       ];
+
+      return subTree;
     };
   }
 
-  function createStringifier({ contentMedia = [] } = {}) {
+  function createStringifier(options = {}) {
+    let { contentMedia = [] } = options;
     WPImage.propTypes = {
       attachment: PropTypes.string,
       width: PropTypes.number,
@@ -125,14 +134,25 @@ export default function createHTMLProcessor({ rehypeParse: parse }) {
       );
     }
 
+    let additionalComponents = {};
+
+    Object.entries(stringifierComponents).forEach(([element, Component]) => {
+      additionalComponents[element] = (props) => (
+        <Component {...props} htmlProcessorContext={options} />
+      );
+    });
+
+    let components = {
+      a: Link,
+      "wp-caption": WPCaption,
+      "wp-image": WPImage,
+      ...additionalComponents,
+    };
+
     return unified().use(rehype2react, {
       createElement: React.createElement,
       Fragment: React.Fragment,
-      components: {
-        a: Link,
-        "wp-caption": WPCaption,
-        "wp-image": WPImage,
-      },
+      components,
     });
   }
 
@@ -201,6 +221,10 @@ export default function createHTMLProcessor({ rehypeParse: parse }) {
         });
       }
 
+      treeTransforms.forEach((transformer) =>
+        transformer(tree, { ...options, visit }),
+      );
+
       // let wpCaptionElements = selectAll(".wp-caption", tree);
       // wpCaptionElements.forEach((node) => {
       //   node.tagName = "wp-caption";
@@ -210,36 +234,53 @@ export default function createHTMLProcessor({ rehypeParse: parse }) {
       return stringifier.stringify(tree);
     };
 
-  const processContent = memoize((content, options) => {
-    const tree = unified().use(parse, { fragment: true }).parse(content);
-    return processContentTree(options)(tree);
-  });
+  const processContent = memoize(
+    (content, options) => {
+      content = inputTransforms.reduce(
+        (content, transformer) => transformer(content, { ...options }),
+        content,
+      );
+      const tree = unified().use(parse, { fragment: true }).parse(content);
+      return processContentTree(options)(tree);
+    },
+    (content, options) => `${content}::${hashSum(options)}`,
+  );
 
-  const processPageContent = memoize((content, options) => {
-    const tree = unified().use(parse, { fragment: true }).parse(content);
+  const processPageContent = memoize(
+    (content, options) => {
+      content = inputTransforms.reduce(
+        (content, transformer) => transformer(content, { ...options }),
+        content,
+      );
+      const tree = unified().use(parse, { fragment: true }).parse(content);
 
-    let preambleTree = null,
-      contentTree = tree;
-    visitParents(
-      tree,
-      { type: "comment", value: "more" },
-      (node, ancestors) => {
-        [preambleTree, contentTree] = splitTree()([...ancestors, node]);
-        return visitParents.EXIT;
-      },
-    );
+      let preambleTree = null,
+        contentTree = tree;
+      visitParents(
+        tree,
+        { type: "comment", value: "more" },
+        (node, ancestors) => {
+          [preambleTree, contentTree] = splitTree()([...ancestors, node]);
+          return visitParents.EXIT;
+        },
+      );
 
-    [preambleTree, contentTree] = [preambleTree, contentTree].map(
-      processContentTree(options),
-    );
+      [preambleTree, contentTree] = [preambleTree, contentTree].map(
+        processContentTree(options),
+      );
 
-    return {
-      preamble: preambleTree,
-      content: contentTree,
-    };
-  });
+      return {
+        preamble: preambleTree,
+        content: contentTree,
+      };
+    },
+    (content, options) => `${content}::${hashSum(options)}`,
+  );
 
   const stripHTML = (string, allowedElements = []) => {
+    // string = inputTransforms.reduce((string, transformer) =>
+    //   transformer(string, {}),
+    //  string);
     if (allowedElements.length === 0 && typeof document !== "undefined") {
       const div = document.createElement("div");
       div.innerHTML = string;

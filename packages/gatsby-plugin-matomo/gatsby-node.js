@@ -17,6 +17,9 @@ exports.pluginOptionsSchema = ({ Joi }) =>
     mtmContainerId: Joi.string().description(
       `Matomo container ID that can be found in your MATOMO dashboard.`,
     ),
+    mtmSiteId: Joi.string().description(
+      `Matomo site ID if MTM is not activated.`,
+    ),
     includeInDevelopment: Joi.boolean()
       .default(false)
       .description(`Include Matomo plugin when running in development mode.`),

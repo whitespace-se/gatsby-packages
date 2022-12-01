@@ -5,6 +5,7 @@ export * from "./preview";
 export { default as Article } from "./Article";
 export { default as BoxNavigation } from "./BoxNavigation";
 export { default as HTML } from "./HTML";
+export { default as HtmlProcessorExtensionProvider } from "./HtmlProcessorExtensionProvider";
 export { default as Image } from "./Image";
 export { default as Link } from "./Link";
 export { default as MustacheDataProvider } from "./MustacheDataProvider";
