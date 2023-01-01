@@ -1,6 +1,6 @@
-import getInitial from "./getInitial";
+const getInitial = require("./getInitial");
 
-export default function getMatchingInitial(locale, alphabet, string) {
+module.exports = function getMatchingInitial(locale, alphabet, string) {
   let initial = getInitial(locale, string);
   if (alphabet.includes(initial)) {
     return initial;
@@ -11,4 +11,4 @@ export default function getMatchingInitial(locale, alphabet, string) {
         candidate.localeCompare(initial, locale, { sensitivity: "base" }) === 0,
     ) || ""
   );
-}
+};

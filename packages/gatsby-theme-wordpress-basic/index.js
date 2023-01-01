@@ -1,6 +1,6 @@
-module.exports = require("./node/config");
+exports.loadConfig = require("./node/config").loadConfig;
 
-module.exports.falsey = function falsey(value) {
+exports.falsey = function falsey(value) {
   try {
     return !JSON.parse(value);
   } catch {
@@ -8,7 +8,7 @@ module.exports.falsey = function falsey(value) {
   }
 };
 
-module.exports.truey = function truey(value) {
+exports.truey = function truey(value) {
   try {
     return !!JSON.parse(value);
   } catch {

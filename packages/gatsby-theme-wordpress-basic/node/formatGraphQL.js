@@ -1,9 +1,9 @@
-import prettierGraphQLParser from "prettier/parser-graphql";
-import { format } from "prettier/standalone";
+const prettierGraphQLParser = require("prettier/parser-graphql");
+const { format } = require("prettier/standalone");
 
-export default function formatGraphQL(code) {
+module.exports = function formatGraphQL(code) {
   return format(code, {
     parser: "graphql",
     plugins: [prettierGraphQLParser],
   });
-}
+};

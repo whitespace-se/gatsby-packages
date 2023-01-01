@@ -1,6 +1,6 @@
-import runBatchedWPQuery from "../node/runBatchedWPQuery";
+const runBatchedWPQuery = require("../node/runBatchedWPQuery");
 
-export default async function fetchPageTree(params, pluginOptions) {
+module.exports = async function fetchPageTree(params, pluginOptions) {
   const { gql } = params;
   const { wp: { url, contentTypes = {}, nodesPerFetch = 100 } = {} } =
     pluginOptions;
@@ -36,4 +36,4 @@ export default async function fetchPageTree(params, pluginOptions) {
   await runBatchedWPQuery(params, pluginOptions, query, variables, {
     connection: "data.pages",
   });
-}
+};

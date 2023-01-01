@@ -1,4 +1,4 @@
-import getMatchingInitial from "./src/utils/getMatchingInitial";
+const getMatchingInitial = require("./src/utils/getMatchingInitial");
 
 const SiteIndexTemplate = require.resolve("./src/components/SiteIndexTemplate");
 
@@ -14,7 +14,7 @@ const defaultLocalizations = {
   },
 };
 
-export const createSchemaCustomization = ({ actions }) => {
+exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = `
     type SitePageContext {
@@ -26,7 +26,7 @@ export const createSchemaCustomization = ({ actions }) => {
   createTypes(typeDefs);
 };
 
-export const onCreatePage = ({ page, actions }, { ...pluginOptions }) => {
+exports.onCreatePage = ({ page, actions }, { ...pluginOptions }) => {
   let { deletePage, createPage } = actions;
   let {
     getPageTitle = (page) => page.context.title,
@@ -55,7 +55,7 @@ export const onCreatePage = ({ page, actions }, { ...pluginOptions }) => {
   });
 };
 
-export const createPages = async ({ actions }, pluginOptions) => {
+exports.createPages = async ({ actions }, pluginOptions) => {
   const { createPage, createRedirect } = actions;
   let {
     disablePageCreation = false,

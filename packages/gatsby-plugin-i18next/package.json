@@ -16,7 +16,6 @@
     "react-i18next": "^11.12.0"
   },
   "dependencies": {
-    "esm": "^3.2.25",
     "js-yaml": "^4.1.0",
     "tagged-template-noop": "^2.1.1",
     "toml": "^3.0.0"

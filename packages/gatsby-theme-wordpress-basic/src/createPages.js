@@ -1,14 +1,16 @@
-import { getLanguageFromPathname } from "@whitespace/gatsby-plugin-i18next";
-import formatDate from "date-fns/format";
-import omit from "lodash/omit";
+const {
+  getLanguageFromPathname,
+} = require("@whitespace/gatsby-plugin-i18next");
+const formatDate = require("date-fns/format");
+const omit = require("lodash/omit");
 
-import formatGraphQL from "../node/formatGraphQL";
+const formatGraphQL = require("../node/formatGraphQL");
 
-import {
+const {
   getMainArchivePagePathFromPageContext,
   getYearArchivePagePathFromPageContext,
   getMonthArchivePagePathFromPageContext,
-} from "./contentType";
+} = require("./contentType");
 
 const MainArchivePageTemplate = require.resolve(
   "./templates/MainArchiveTemplate",
@@ -22,7 +24,8 @@ const MonthArchivePageTemplate = require.resolve(
 
 const SingleTemplate = require.resolve("./templates/SingleTemplate");
 
-export default ({ contentType, query, nodesPerFetch }) =>
+module.exports =
+  ({ contentType, query, nodesPerFetch }) =>
   async (
     { actions, graphql, reporter },
     { i18next, disableDefaultArchivePages },

@@ -1,6 +1,6 @@
-import { findLastIndex } from "lodash";
+const { findLastIndex } = require("lodash");
 
-export const createSchemaCustomization = ({ actions }) => {
+exports.createSchemaCustomization = ({ actions }) => {
   // const { createTypes } = actions;
   // const typeDefs = `
   //   type SitePage {
@@ -11,7 +11,7 @@ export const createSchemaCustomization = ({ actions }) => {
   // createTypes(typeDefs);
 };
 
-export const createResolvers = ({ createResolvers }) => {
+exports.createResolvers = ({ createResolvers }) => {
   createResolvers({
     SitePage: {
       parentPage: {

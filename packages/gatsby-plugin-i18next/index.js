@@ -1,4 +1,4 @@
-export function getLanguageFromPageProps(
+exports.getLanguageFromPageProps = function getLanguageFromPageProps(
   { location },
   languages,
   defaultLanguage,
@@ -8,12 +8,14 @@ export function getLanguageFromPageProps(
     languages,
     defaultLanguage,
   );
-}
+};
 
-export function getLanguageFromPathname(pathname, languages, defaultLanguage) {
+function getLanguageFromPathname(pathname, languages, defaultLanguage) {
   let urlPrefix = pathname && pathname.replace(/^\//, "").split("/")[0];
   if (urlPrefix && languages.includes(urlPrefix)) {
     return urlPrefix;
   }
   return defaultLanguage;
 }
+
+exports.getLanguageFromPathname = getLanguageFromPathname;

@@ -1,10 +1,10 @@
-import { collectFragments } from "gatsby-plugin-fragments/node";
+const { collectFragments } = require("gatsby-plugin-fragments/node");
 
-import getIncludedContentTypes from "./node/getIncludedContentTypes";
-import createPagesForContentNodes from "./src/createPages";
-import fetchPageTree from "./src/fetchPageTree";
-import fetchSearchDocuments from "./src/fetchSearchDocuments";
-import fetchTaxonomyTerms from "./src/fetchTaxonomyTerms";
+const getIncludedContentTypes = require("./node/getIncludedContentTypes");
+const createPagesForContentNodes = require("./src/createPages");
+const fetchPageTree = require("./src/fetchPageTree");
+const fetchSearchDocuments = require("./src/fetchSearchDocuments");
+const fetchTaxonomyTerms = require("./src/fetchTaxonomyTerms");
 
 const SearchTemplate = require.resolve("./src/templates/SearchTemplate");
 
@@ -17,7 +17,7 @@ if (
   );
 }
 
-export const createSchemaCustomization = ({ actions }) => {
+exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
 
   const typeDefs = `
@@ -29,14 +29,14 @@ export const createSchemaCustomization = ({ actions }) => {
   createTypes(typeDefs);
 };
 
-export async function sourceNodes(params, pluginOptions) {
+exports.sourceNodes = async function sourceNodes(params, pluginOptions) {
   const { gql } = await collectFragments(pluginOptions);
   await fetchPageTree({ ...params, gql }, pluginOptions);
   await fetchSearchDocuments({ ...params, gql }, pluginOptions);
   await fetchTaxonomyTerms({ ...params, gql }, pluginOptions);
-}
+};
 
-export async function createPages(params, pluginOptions) {
+exports.createPages = async function createPages(params, pluginOptions) {
   const { graphql, reporter, actions } = params;
   const { createPage } = actions;
   let {
@@ -134,4 +134,4 @@ export async function createPages(params, pluginOptions) {
       },
     });
   });
-}
+};

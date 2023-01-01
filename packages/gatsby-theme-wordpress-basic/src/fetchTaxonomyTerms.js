@@ -1,7 +1,7 @@
-import getIncludedTaxonomies from "../node/getIncludedTaxonomies";
-import runBatchedWPQuery from "../node/runBatchedWPQuery";
+const getIncludedTaxonomies = require("../node/getIncludedTaxonomies");
+const runBatchedWPQuery = require("../node/runBatchedWPQuery");
 
-export default async function fetchTaxonomyTerms(params, pluginOptions) {
+module.exports = async function fetchTaxonomyTerms(params, pluginOptions) {
   const { gql } = params;
   const { wp: { url, nodesPerFetch = 100 } = {} } = pluginOptions;
   if (!url) {
@@ -47,4 +47,4 @@ export default async function fetchTaxonomyTerms(params, pluginOptions) {
   await runBatchedWPQuery(params, pluginOptions, query, variables, {
     connection: "data.terms",
   });
-}
+};

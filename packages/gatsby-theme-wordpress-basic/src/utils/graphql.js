@@ -1,8 +1,8 @@
-import gql from "graphql-tag";
-import { cloneDeep } from "lodash";
-import traverse from "traverse";
+const gql = require("graphql-tag");
+const { cloneDeep } = require("lodash");
+const traverse = require("traverse");
 
-export const getQuery = (query) => {
+const getQuery = (query) => {
   if (typeof query === "object" && query.definitions) {
     return query;
   } else if (typeof query === "string") {
@@ -14,7 +14,7 @@ export const getQuery = (query) => {
   }
 };
 
-export const getQueryName = (query) => {
+const getQueryName = (query) => {
   query = getQuery(query);
   let definitions = query.definitions;
   if (!definitions) {
@@ -29,7 +29,7 @@ export const getQueryName = (query) => {
   return node.name.value;
 };
 
-export const mergeQueries = (querySources) => {
+const mergeQueries = (querySources) => {
   const doc = {
     kind: "Document",
     definitions: querySources.flatMap(
@@ -39,7 +39,7 @@ export const mergeQueries = (querySources) => {
   return doc;
 };
 
-export const getIsolatedQuery = (querySource, fieldName, typeName) => {
+const getIsolatedQuery = (querySource, fieldName, typeName) => {
   const query = getQuery(querySource);
   const updatedQuery = cloneDeep(query);
 
@@ -73,4 +73,11 @@ export const getIsolatedQuery = (querySource, fieldName, typeName) => {
   });
 
   return updatedQuery;
+};
+
+module.exports = {
+  getQuery,
+  getQueryName,
+  mergeQueries,
+  getIsolatedQuery,
 };

@@ -1,4 +1,4 @@
-export default function getIncludedTaxonomies(
+module.exports = function getIncludedTaxonomies(
   params,
   pluginOptions,
   taxonomies,
@@ -25,4 +25,4 @@ export default function getIncludedTaxonomies(
       }
       return taxonomy;
     });
-}
+};

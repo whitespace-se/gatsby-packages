@@ -1,8 +1,8 @@
-import parseDate from "date-fns/parse";
-import capitalize from "lodash/capitalize";
-import kebabCase from "lodash/kebabCase";
+const { parse: parseDate } = require("date-fns");
+const capitalize = require("lodash/capitalize");
+const kebabCase = require("lodash/kebabCase");
 
-export function makeUri(...candidates) {
+function makeUri(...candidates) {
   return candidates
     .map((candidate) =>
       candidate
@@ -14,7 +14,7 @@ export function makeUri(...candidates) {
     .find((candidate) => candidate.length > 0);
 }
 
-export function getMainArchivePagePathFromPageContext({
+function getMainArchivePagePathFromPageContext({
   contentType: {
     uri,
     labels: { menuName },
@@ -24,7 +24,7 @@ export function getMainArchivePagePathFromPageContext({
   return uri;
 }
 
-export function getMainArchivePageLabelFromPageContext({
+function getMainArchivePageLabelFromPageContext({
   contentType: {
     labels: { menuName },
   },
@@ -32,7 +32,7 @@ export function getMainArchivePageLabelFromPageContext({
   return menuName;
 }
 
-export function getMainArchivePageTitleFromPageContext({
+function getMainArchivePageTitleFromPageContext({
   contentType: {
     labels: { archives },
   },
@@ -40,7 +40,7 @@ export function getMainArchivePageTitleFromPageContext({
   return `${archives}`;
 }
 
-export function getYearArchivePageTitleFromPageContext({
+function getYearArchivePageTitleFromPageContext({
   year,
   contentType: {
     labels: { archives },
@@ -49,14 +49,14 @@ export function getYearArchivePageTitleFromPageContext({
   return `${archives} för ${year}`;
 }
 
-export function getYearArchivePageLabelFromPageContext({ year, month }) {
+function getYearArchivePageLabelFromPageContext({ year, month }) {
   if (year == null && month != null) {
     year = month.substring(0, 4);
   }
   return year;
 }
 
-export function getYearArchivePagePathFromPageContext({
+function getYearArchivePagePathFromPageContext({
   year,
   month,
   contentType: {
@@ -71,7 +71,7 @@ export function getYearArchivePagePathFromPageContext({
   return `${uri}/${year}`;
 }
 
-export function getMonthArchivePageTitleFromPageContext({
+function getMonthArchivePageTitleFromPageContext({
   month,
   contentType: {
     labels: { archives },
@@ -84,7 +84,7 @@ export function getMonthArchivePageTitleFromPageContext({
   })}`;
 }
 
-export function getMonthArchivePageLabelFromPageContext({ month }) {
+function getMonthArchivePageLabelFromPageContext({ month }) {
   let date = parseDate(month, "yyyy/MM", new Date());
   return capitalize(
     date.toLocaleString("sv", {
@@ -93,7 +93,7 @@ export function getMonthArchivePageLabelFromPageContext({ month }) {
   );
 }
 
-export function getMonthArchivePagePathFromPageContext({
+function getMonthArchivePagePathFromPageContext({
   month,
   contentType: {
     uri,
@@ -104,7 +104,7 @@ export function getMonthArchivePagePathFromPageContext({
   return `${uri}/${month}`;
 }
 
-export function getArchiveURLPatternFromPageContext({
+function getArchiveURLPatternFromPageContext({
   contentType: {
     uri,
     labels: { menuName },
@@ -113,3 +113,17 @@ export function getArchiveURLPatternFromPageContext({
   uri = makeUri(uri, menuName);
   return `${uri}/:year(\\d+)?/:month(\\d+)?`;
 }
+
+module.exports = {
+  makeUri,
+  getMainArchivePagePathFromPageContext,
+  getMainArchivePageLabelFromPageContext,
+  getMainArchivePageTitleFromPageContext,
+  getYearArchivePageTitleFromPageContext,
+  getYearArchivePageLabelFromPageContext,
+  getYearArchivePagePathFromPageContext,
+  getMonthArchivePageTitleFromPageContext,
+  getMonthArchivePageLabelFromPageContext,
+  getMonthArchivePagePathFromPageContext,
+  getArchiveURLPatternFromPageContext,
+};

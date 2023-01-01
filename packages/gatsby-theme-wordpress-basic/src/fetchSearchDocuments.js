@@ -1,7 +1,7 @@
-import getIncludedContentTypes from "../node/getIncludedContentTypes";
-import runBatchedWPQuery from "../node/runBatchedWPQuery";
+const getIncludedContentTypes = require("../node/getIncludedContentTypes");
+const runBatchedWPQuery = require("../node/runBatchedWPQuery");
 
-export default async function fetchSearchDocuments(params, pluginOptions) {
+module.exports = async function fetchSearchDocuments(params, pluginOptions) {
   const { gql } = params;
   const { wp: { url, nodesPerFetch = 100 } = {} } = pluginOptions;
   if (!url) {
@@ -52,4 +52,4 @@ export default async function fetchSearchDocuments(params, pluginOptions) {
   await runBatchedWPQuery(params, pluginOptions, query, variables, {
     connection: "data.contentNodes",
   });
-}
+};

@@ -27,7 +27,6 @@
     "apollo-cache-inmemory": "^1.6.6",
     "clsx": "^1.1.1",
     "date-fns": "^2.25.0",
-    "esm": "^3.2.25",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-emotion": "^6.14.0",
     "gatsby-plugin-fragments": "^1.1.2",

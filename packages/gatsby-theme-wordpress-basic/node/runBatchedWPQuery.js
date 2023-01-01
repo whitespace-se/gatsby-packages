@@ -1,10 +1,10 @@
-import { print } from "graphql";
-import { request } from "graphql-request";
-import { mergeAllWith, get } from "lodash/fp";
+const { print } = require("graphql");
+const { request } = require("graphql-request");
+const { mergeAllWith, get } = require("lodash/fp");
 
-import { getIsolatedQuery, getQueryName } from "../src/utils/graphql";
+const { getIsolatedQuery, getQueryName } = require("../src/utils/graphql");
 
-import formatGraphQL from "./formatGraphQL";
+const formatGraphQL = require("./formatGraphQL");
 
 const defaultMergeBatches = mergeAllWith((objValue, srcValue) => {
   if (Array.isArray(objValue)) {
@@ -12,7 +12,7 @@ const defaultMergeBatches = mergeAllWith((objValue, srcValue) => {
   }
 });
 
-export default async function runBatchedWPQuery(
+module.exports = async function runBatchedWPQuery(
   params,
   pluginOptions,
   query,
@@ -126,4 +126,4 @@ export default async function runBatchedWPQuery(
   };
   createNode(node);
   reporter.success(`Batched query "${name}" done`);
-}
+};

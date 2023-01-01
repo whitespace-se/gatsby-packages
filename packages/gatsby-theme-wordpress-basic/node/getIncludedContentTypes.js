@@ -1,6 +1,6 @@
-import { snakeCase } from "lodash";
+const { snakeCase } = require("lodash");
 
-export default function getIncludedContentTypes(
+module.exports = function getIncludedContentTypes(
   params,
   pluginOptions,
   contentTypes,
@@ -33,4 +33,4 @@ export default function getIncludedContentTypes(
       }
       return contentType;
     });
-}
+};
