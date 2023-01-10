@@ -1,0 +1,10 @@
+.input {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+
+.label {
+  --button-font-size: var(--toggle-button-label-font-size, 0.875rem);
+  --link-font-size: var(--toggle-button-label-font-size, inherit);
+}

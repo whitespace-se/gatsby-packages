@@ -24,7 +24,9 @@ module.exports = ({
   sitemap = {},
   manifest = {},
   robotsTxt: { disallowAll: robotsTxtDisallowAll, ...robotsTxt } = {},
+  search,
 } = {}) => {
+  fragmentsDir = path.resolve(basePath, fragmentsDir);
   return {
     plugins: [
       // We put this first so that all other `wrapPageElement` implementations will run after
@@ -34,7 +36,7 @@ module.exports = ({
       {
         resolve: `gatsby-plugin-fragments`,
         options: {
-          fragmentsDir: path.resolve(basePath, fragmentsDir),
+          fragmentsDir,
         },
       },
 
@@ -84,7 +86,15 @@ module.exports = ({
       // Search
       ...(disableSearchPlugin
         ? []
-        : [{ resolve: `@whitespace/gatsby-plugin-search` }]),
+        : [
+            {
+              resolve: `@whitespace/gatsby-plugin-search`,
+              options: {
+                fragmentsDir,
+                ...search,
+              },
+            },
+          ]),
 
       // Site index
       {

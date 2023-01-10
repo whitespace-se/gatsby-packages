@@ -26,6 +26,7 @@
     "prettier": "^2.4.1"
   },
   "resolutions": {
+    "@whitespace/components": "^0.13.22",
     "postcss": "^8",
     "postcss-preset-env": "^7"
   }

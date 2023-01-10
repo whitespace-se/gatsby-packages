@@ -7,6 +7,9 @@ const fetchSearchDocuments = require("./src/fetchSearchDocuments");
 const fetchTaxonomyTerms = require("./src/fetchTaxonomyTerms");
 
 const SearchTemplate = require.resolve("./src/templates/SearchTemplate");
+const AlgoliaSearchTemplate = require.resolve(
+  "./src/templates/AlgoliaSearchTemplate",
+);
 
 if (
   new Intl.DateTimeFormat("es", { month: "long" }).format(new Date(9e8)) !==
@@ -41,7 +44,7 @@ exports.createPages = async function createPages(params, pluginOptions) {
   const { createPage } = actions;
   let {
     wp: { url, nodesPerFetch } = {},
-    search: { paths: searchPagePaths = [] } = {},
+    search: { paths: searchPagePaths = [], algolia: algoliaOptions } = {},
   } = pluginOptions;
   const { gql } = await collectFragments(pluginOptions);
   reporter.info(`GATSBY_WORDPRESS_URL: ${url}`);
@@ -125,12 +128,21 @@ exports.createPages = async function createPages(params, pluginOptions) {
     );
   }
 
-  searchPagePaths.forEach((path) => {
+  if (Array.isArray(searchPagePaths)) {
+    searchPagePaths = Object.keys(searchPagePaths).reduce(
+      (obj, key) => ((obj[key] = {}), obj),
+      {},
+    );
+  }
+  Object.entries(searchPagePaths).forEach(([path, page]) => {
     createPage({
       path,
-      component: SearchTemplate,
+      component: algoliaOptions ? AlgoliaSearchTemplate : SearchTemplate,
+      ...page,
       context: {
+        title: "Search",
         isSearch: true,
+        ...page?.context,
       },
     });
   });
