@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0...v1.4.0-next.0) (2023-01-10)
+
+
+### Features
+
+* Remove esm dependency ([1d8056c](https://github.com/whitespace-se/gatsby-packages/commit/1d8056cb4b4c9a23c98590007d418c5776107e49))
+
+
+
 ## [1.3.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0-next.5...v1.3.0) (2022-12-01)
 
 ### [1.2.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0-next.4...v1.2.1) (2022-11-11)
