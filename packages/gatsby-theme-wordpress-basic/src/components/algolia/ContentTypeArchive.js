@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 import { Configure } from "react-instantsearch-hooks-web";
 
-import SearchBox from "./SearchBox";
 // import SearchDebug from "./SearchDebug";
 import SearchHit from "./SearchHit";
 import SearchHits from "./SearchHits";
@@ -40,16 +39,7 @@ export default function CotnentTypeArchive({ contentType }) {
   // }, []);
 
   return (
-    <SearchProvider
-      routing={true}
-      skipSearchIf={() => false}
-      // transformParams={(params) => ({
-      //   ...params,
-      //   filters: [params.filters, `language:${i18n.language}`]
-      //     .filter(Boolean)
-      //     .join(" AND "),
-      // })}
-    >
+    <SearchProvider routing={true} skipSearchIf={() => false}>
       {({ indexName }) => (
         <div
           css={css`
@@ -61,7 +51,6 @@ export default function CotnentTypeArchive({ contentType }) {
           <Configure filters={`language:${i18n.language}`} />
           <Configure filters={`contentType.name:${contentType.name}`} />
           <Configure sortBy={`${indexName}_publish_date`} />
-          <SearchBox searchAsYouType={false} />
           <div
             css={css`
               display: grid;
