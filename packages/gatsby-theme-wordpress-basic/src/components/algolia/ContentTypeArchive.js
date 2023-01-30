@@ -12,13 +12,13 @@ import SearchPagination from "./SearchPagination";
 import SearchProvider from "./SearchProvider";
 import SearchRangeInput from "./SearchRangeInput";
 
-CotnentTypeArchive.propTypes = {
+ContentTypeArchive.propTypes = {
   contentType: PropTypes.shape({
     name: PropTypes.string.isRequired,
   }),
 };
 
-export default function CotnentTypeArchive({ contentType }) {
+export default function ContentTypeArchive({ contentType }) {
   // const {
   //   indexUiState,
   //   setIndexUiState,
