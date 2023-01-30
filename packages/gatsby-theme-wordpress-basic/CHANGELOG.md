@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.0...v1.4.0-next.1) (2023-01-30)
+
+
+### Features
+
+* Generate archive pages with algolia search ([3527fbc](https://github.com/whitespace-se/gatsby-packages/commit/3527fbc45d6949e830a4299c3face3941d7efe1c))
+
+
+
 ## [1.4.0-next.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0...v1.4.0-next.0) (2023-01-10)
 
 
