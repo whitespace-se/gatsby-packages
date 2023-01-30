@@ -10,6 +10,7 @@ const {
   getMainArchivePagePathFromPageContext,
   getYearArchivePagePathFromPageContext,
   getMonthArchivePagePathFromPageContext,
+  getMainArchivePageTitleFromPageContext,
 } = require("./contentType");
 
 const MainArchivePageTemplate = require.resolve(
@@ -21,6 +22,7 @@ const YearArchivePageTemplate = require.resolve(
 const MonthArchivePageTemplate = require.resolve(
   "./templates/MonthArchiveTemplate",
 );
+const ContentTypeTemplate = require.resolve("./templates/ContentTypeTemplate");
 
 const SingleTemplate = require.resolve("./templates/SingleTemplate");
 
@@ -28,7 +30,11 @@ module.exports =
   ({ contentType, query, nodesPerFetch }) =>
   async (
     { actions, graphql, reporter },
-    { i18next, disableDefaultArchivePages },
+    {
+      i18next,
+      disableDefaultArchivePages,
+      search: { algolia: algoliaOptions } = {},
+    },
   ) => {
     const { defaultLanguage = "en", languages = ["en"] } = i18next;
     const allContentNodes = [];
@@ -158,100 +164,120 @@ ${JSON.stringify({ ...commonVariables, ...variables }, null, 2)}`,
     });
 
     if (!disableDefaultArchivePages && archivePageContext) {
-      let path = getMainArchivePagePathFromPageContext(archivePageContext);
-      let component = MainArchivePageTemplate;
-      let years = Object.entries(allContentNodesByYear).map(
-        ([year, posts]) => ({
-          year,
-          postCount: posts.length,
-          url: getYearArchivePagePathFromPageContext({
+      if (algoliaOptions) {
+        let path = getMainArchivePagePathFromPageContext(archivePageContext);
+        let title = getMainArchivePageTitleFromPageContext(archivePageContext);
+        let component = ContentTypeTemplate;
+
+        createPage({
+          path,
+          component,
+          context: {
+            ...archivePageContext,
+            title,
+          },
+        });
+        pageCount++;
+
+        reporter.info(
+          `Archive page created for ${contentType.labels.singularName}: ${path}`,
+        );
+      } else {
+        let path = getMainArchivePagePathFromPageContext(archivePageContext);
+        let component = MainArchivePageTemplate;
+        let years = Object.entries(allContentNodesByYear).map(
+          ([year, posts]) => ({
+            year,
+            postCount: posts.length,
+            url: getYearArchivePagePathFromPageContext({
+              year,
+              ...archivePageContext,
+            }),
+            months: Object.entries(allContentNodesByMonth)
+              .filter(([month]) => month.startsWith(year))
+              .map(([month, posts]) => ({
+                month,
+                postCount: posts.length,
+                url: getMonthArchivePagePathFromPageContext({
+                  month,
+                  ...archivePageContext,
+                }),
+              })),
+          }),
+        );
+
+        createPage({
+          path,
+          component,
+          context: {
+            ...archivePageContext,
+            years,
+            postCount: allContentNodes.length,
+          },
+        });
+        pageCount++;
+
+        reporter.info(
+          `main archive page created for ${contentType.labels.singularName}: ${path}`,
+        );
+
+        Object.entries(allContentNodesByYear).map(([year, posts]) => {
+          let path = getYearArchivePagePathFromPageContext({
             year,
             ...archivePageContext,
-          }),
-          months: Object.entries(allContentNodesByMonth)
-            .filter(([month]) => month.startsWith(year))
-            .map(([month, posts]) => ({
+          });
+          let component = YearArchivePageTemplate;
+          let months = Object.entries(allContentNodesByMonth).map(
+            ([month, posts]) => ({
               month,
               postCount: posts.length,
               url: getMonthArchivePagePathFromPageContext({
                 month,
                 ...archivePageContext,
               }),
-            })),
-        }),
-      );
-
-      createPage({
-        path,
-        component,
-        context: {
-          ...archivePageContext,
-          years,
-          postCount: allContentNodes.length,
-        },
-      });
-      pageCount++;
-
-      reporter.info(
-        `main archive page created for ${contentType.labels.singularName}: ${path}`,
-      );
-
-      Object.entries(allContentNodesByYear).map(([year, posts]) => {
-        let path = getYearArchivePagePathFromPageContext({
-          year,
-          ...archivePageContext,
-        });
-        let component = YearArchivePageTemplate;
-        let months = Object.entries(allContentNodesByMonth).map(
-          ([month, posts]) => ({
-            month,
-            postCount: posts.length,
-            url: getMonthArchivePagePathFromPageContext({
-              month,
-              ...archivePageContext,
             }),
-          }),
-        );
+          );
 
-        createPage({
-          path,
-          component,
-          context: {
-            ...archivePageContext,
-            year,
-            months,
-            postCount: posts.length,
-          },
+          createPage({
+            path,
+            component,
+            context: {
+              ...archivePageContext,
+              year,
+              months,
+              postCount: posts.length,
+            },
+          });
+          pageCount++;
+
+          reporter.info(
+            `year archive page created for ${contentType.labels.singularName} ${year}: ${path}`,
+          );
         });
-        pageCount++;
 
-        reporter.info(
-          `year archive page created for ${contentType.labels.singularName} ${year}: ${path}`,
-        );
-      });
-
-      Object.entries(allContentNodesByMonth).map(([month, posts]) => {
-        let path = getMonthArchivePagePathFromPageContext({
-          month,
-          ...archivePageContext,
-        });
-        let component = MonthArchivePageTemplate;
-
-        createPage({
-          path,
-          component,
-          context: {
-            ...archivePageContext,
+        Object.entries(allContentNodesByMonth).map(([month, posts]) => {
+          let path = getMonthArchivePagePathFromPageContext({
             month,
-            posts: posts.map((post) => omit(post, ["modularityModules"])),
-          },
-        });
-        pageCount++;
+            ...archivePageContext,
+          });
+          let component = MonthArchivePageTemplate;
 
-        reporter.info(
-          `month archive page created for ${contentType.labels.singularName} ${month}: ${path}`,
-        );
-      });
+          createPage({
+            path,
+            component,
+            context: {
+              ...archivePageContext,
+              month,
+              posts: posts.map((post) => omit(post, ["modularityModules"])),
+            },
+          });
+          pageCount++;
+
+          reporter.info(
+            `month archive page created for ${contentType.labels.singularName} ${month}: ${path}`,
+          );
+        });
+      }
     }
 
     reporter.info(`# -----> PAGES TOTAL: ${pageCount}`);
