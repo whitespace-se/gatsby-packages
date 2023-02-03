@@ -1,11 +1,13 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react";
+import { searchPluginConfigContext } from "@whitespace/gatsby-plugin-search/src/contexts";
 import PropTypes from "prop-types";
-// import { Fragment } from "react";
+import { useContext, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Configure } from "react-instantsearch-hooks-web";
 
 // import SearchDebug from "./SearchDebug";
+import SearchBox from "./SearchBox";
 import SearchHit from "./SearchHit";
 import SearchHits from "./SearchHits";
 import SearchPagination from "./SearchPagination";
@@ -31,12 +33,22 @@ export default function ContentTypeArchive({ contentType }) {
   // } = useInstantSearch();
 
   const { i18n } = useTranslation();
-  // const searchPluginConfig = useContext(searchPluginConfigContext);
-  // const facets = useMemo(() => {
-  //   return {
-  //     ...searchPluginConfig?.facets,
-  //   };
-  // }, []);
+  const searchPluginConfig = useContext(searchPluginConfigContext);
+  const archiveConfig = useMemo(() => {
+    let archiveConfig = searchPluginConfig?.archives?.[contentType.name] || {};
+    return {
+      searchBox: false,
+      sortBy: archiveConfig.searchBox ? "relevance" : "publish_date",
+      ...archiveConfig,
+      facets: {
+        dates: true,
+        ...archiveConfig?.facets,
+      },
+    };
+  }, []);
+
+  console.log("searchPluginConfig", searchPluginConfig);
+  console.log("archiveConfig", archiveConfig);
 
   return (
     <SearchProvider routing={true} skipSearchIf={() => false}>
@@ -50,7 +62,10 @@ export default function ContentTypeArchive({ contentType }) {
         >
           <Configure filters={`language:${i18n.language}`} />
           <Configure filters={`contentType.name:${contentType.name}`} />
-          <Configure sortBy={`${indexName}_publish_date`} />
+          {archiveConfig.sortBy !== "relevance" && (
+            <Configure sortBy={`${indexName}_${archiveConfig.sortBy}`} />
+          )}
+          {!!archiveConfig.searchBox && <SearchBox searchAsYouType={false} />}
           <div
             css={css`
               display: grid;
@@ -58,12 +73,14 @@ export default function ContentTypeArchive({ contentType }) {
               gap: 1rem;
             `}
           >
-            <SearchRangeInput
-              css={css`
-                grid-column: span 2;
-              `}
-              attribute="dates.numeric"
-            />
+            {!!archiveConfig.facets.dates && (
+              <SearchRangeInput
+                css={css`
+                  grid-column: span 2;
+                `}
+                attribute="dates.numeric"
+              />
+            )}
           </div>
           {/* <SearchDebug /> */}
           <SearchHits hitComponent={SearchHit} />

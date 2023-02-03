@@ -28,7 +28,7 @@ function AlgoliaContextWrapper({
 
 export const wrapRootElement = (
   { element },
-  { algolia: algoliaOptions, facets },
+  { algolia: algoliaOptions, facets, archives },
 ) => {
   let indexName = algoliaOptions?.indexName;
   let {
@@ -43,6 +43,7 @@ export const wrapRootElement = (
       hosts={hosts}
       indexName={indexName}
       facets={facets}
+      archives={archives}
     >
       {element}
     </AlgoliaContextWrapper>
