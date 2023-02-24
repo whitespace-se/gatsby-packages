@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.3](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.2...v1.4.0-next.3) (2023-02-24)
+
+
+### Features
+
+* Add `GATSBY_WORDPRESS_UPLOADS_URL` env var ([bb34969](https://github.com/whitespace-se/gatsby-packages/commit/bb3496966564603fbd911c26732757b8125b04be))
+
+
+### Bug Fixes
+
+* Error with "all content" facet ([70d05d0](https://github.com/whitespace-se/gatsby-packages/commit/70d05d06bf0ba95b3c06694d7f7b82ab2d21884b))
+
+
+
 ## [1.4.0-next.2](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.1...v1.4.0-next.2) (2023-02-03)
 
 
