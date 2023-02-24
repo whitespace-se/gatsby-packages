@@ -47,9 +47,6 @@ export default function ContentTypeArchive({ contentType }) {
     };
   }, []);
 
-  console.log("searchPluginConfig", searchPluginConfig);
-  console.log("archiveConfig", archiveConfig);
-
   return (
     <SearchProvider routing={true} skipSearchIf={() => false}>
       {({ indexName }) => (

@@ -152,7 +152,6 @@ export default function SearchRangeInput(props) {
     <Formik
       initialValues={initialValues}
       onSubmit={async (values) => {
-        console.log({ values });
         let { min, max } = values[name];
 
         let newValue = [min, max]
