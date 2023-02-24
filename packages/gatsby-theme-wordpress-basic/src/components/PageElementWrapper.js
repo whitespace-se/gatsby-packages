@@ -36,10 +36,20 @@ export default function PageElementWrapper({ pageContext, children }) {
               <IconProvider getIconSrc={(name) => `/icons/${name}.svg`}>
                 <URLTransformerProvider
                   transformURL={(url) =>
-                    url &&
-                    (url.startsWith(process.env.GATSBY_WORDPRESS_URL + "/wp-")
+                    process.env.GATSBY_WORDPRESS_UPLOADS_URL &&
+                    url?.startsWith(
+                      process.env.GATSBY_WORDPRESS_URL + "/wp-content/uploads/",
+                    )
+                      ? url.replace(
+                          process.env.GATSBY_WORDPRESS_URL +
+                            "/wp-content/uploads",
+                          process.env.GATSBY_WORDPRESS_UPLOADS_URL,
+                        )
+                      : url?.startsWith(
+                          process.env.GATSBY_WORDPRESS_URL + "/wp-",
+                        )
                       ? url
-                      : url.replace(process.env.GATSBY_WORDPRESS_URL, ""))
+                      : url?.replace(process.env.GATSBY_WORDPRESS_URL, "")
                   }
                 >
                   <SiteLayout>{children}</SiteLayout>
