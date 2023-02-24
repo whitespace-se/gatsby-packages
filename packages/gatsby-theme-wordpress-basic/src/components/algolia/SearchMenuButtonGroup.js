@@ -98,7 +98,7 @@ export default function SearchMenuButtonGroup(props) {
     }),
   );
 
-  const value = items.find((item) => item.isRefined)?.value;
+  const value = items.find((item) => item.isRefined)?.value || "";
   const name = attribute.replace(/\./g, "_");
 
   if (!results || results.intercepted) {
