@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.4](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.3...v1.4.0-next.4) (2023-03-16)
+
+
+### Bug Fixes
+
+* Prevent infinite loop in page creation ([300a26f](https://github.com/whitespace-se/gatsby-packages/commit/300a26f0fce219a3b5443f261b7cb4c623a22286))
+
+
+
 ## [1.4.0-next.3](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.2...v1.4.0-next.3) (2023-02-24)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-site-index
