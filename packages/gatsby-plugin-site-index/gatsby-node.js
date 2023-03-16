@@ -1,3 +1,5 @@
+const { isEqual } = require("lodash");
+
 const getMatchingInitial = require("./src/utils/getMatchingInitial");
 
 const SiteIndexTemplate = require.resolve("./src/components/SiteIndexTemplate");
@@ -44,15 +46,19 @@ exports.onCreatePage = ({ page, actions }, { ...pluginOptions }) => {
   let { alphabet } = localizations[language];
   let initial = getMatchingInitial(language, alphabet, title);
 
-  deletePage(page);
-  createPage({
+  let newPage = {
     ...page,
     context: {
       ...page.context,
       isIncludedInSiteIndex: true,
       siteIndexInitial: initial,
     },
-  });
+  };
+
+  if (!isEqual(page, newPage)) {
+    deletePage(page);
+    createPage(newPage);
+  }
 };
 
 exports.createPages = async ({ actions }, pluginOptions) => {
