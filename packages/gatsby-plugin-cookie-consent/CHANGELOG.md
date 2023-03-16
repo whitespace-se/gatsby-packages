@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.2.2](https://github.com/whitespace-se/gatsby-packages/compare/v1.1.1...v1.2.2) (2023-03-16)
+
+### [1.2.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0...v1.2.1) (2022-11-11)
+
+## [1.2.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.8...v1.2.0) (2022-09-25)
+
+## [1.2.0-next.8](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.7...v1.2.0-next.8) (2022-09-12)
+
+## [1.2.0-next.7](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.6...v1.2.0-next.7) (2022-08-24)
+
+
+### Features
+
+* Block scripts in head ([f7b7e7f](https://github.com/whitespace-se/gatsby-packages/commit/f7b7e7fd0a6fd0a74a21eb1d524fd5c340cca0a2))
+
+## [1.2.0-next.6](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.5...v1.2.0-next.6) (2022-08-24)
+
+## [1.2.0-next.5](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.4...v1.2.0-next.5) (2022-06-03)
+
+## [1.2.0-next.4](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.3...v1.2.0-next.4) (2022-06-03)
+
+## [1.2.0-next.3](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.2...v1.2.0-next.3) (2022-06-03)
+
+## [1.2.0-next.2](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.1...v1.2.0-next.2) (2022-06-02)
+
+## [1.2.0-next.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.0...v1.2.0-next.1) (2022-05-18)
+
+## [1.2.0-next.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.1.0...v1.2.0-next.0) (2022-05-18)
+
+
+
 ### [1.2.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0...v1.2.1) (2022-11-11)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-cookie-consent

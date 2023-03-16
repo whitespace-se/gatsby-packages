@@ -3,6 +3,94 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.2.2](https://github.com/whitespace-se/gatsby-packages/compare/v1.1.1...v1.2.2) (2023-03-16)
+
+### [1.2.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0...v1.2.1) (2022-11-11)
+
+
+### Bug Fixes
+
+* Missing pages in page tree ([e058940](https://github.com/whitespace-se/gatsby-packages/commit/e058940ea6d1edec8a5928bb9f213c7ef570efcc))
+
+## [1.2.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.8...v1.2.0) (2022-09-25)
+
+
+### Features
+
+* Allow Nested Pages redirects in page tree ([5b6805b](https://github.com/whitespace-se/gatsby-packages/commit/5b6805bf0942849516104cabfe1928dcedb42558))
+
+## [1.2.0-next.8](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.7...v1.2.0-next.8) (2022-09-12)
+
+
+### Features
+
+* Index Minisearch docs asynchronously ([67733d3](https://github.com/whitespace-se/gatsby-packages/commit/67733d39c916f895370142da26e7b214cc8dd0bd))
+
+## [1.2.0-next.7](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.6...v1.2.0-next.7) (2022-08-24)
+
+
+### Features
+
+* Block scripts in head ([f7b7e7f](https://github.com/whitespace-se/gatsby-packages/commit/f7b7e7fd0a6fd0a74a21eb1d524fd5c340cca0a2))
+
+
+### Bug Fixes
+
+* Error in WPContentNodesForMiniSearch ([5e51353](https://github.com/whitespace-se/gatsby-packages/commit/5e51353b10a3eb3e2fc7e16087eacc0aa6820ca8))
+
+## [1.2.0-next.6](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.5...v1.2.0-next.6) (2022-08-24)
+
+
+### Features
+
+* Use `WORDPRESS_SPECIFIC_POSTS` when fetching MiniSearch documents ([1496ccd](https://github.com/whitespace-se/gatsby-packages/commit/1496ccd21151a940b7556b9241afb89dd23a8746))
+
+## [1.2.0-next.5](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.4...v1.2.0-next.5) (2022-06-03)
+
+
+### Bug Fixes
+
+* Prevent build error when site index is disabled ([a76a533](https://github.com/whitespace-se/gatsby-packages/commit/a76a533dfc24f8a6a1f1691964175eb12ecc8c2c))
+
+## [1.2.0-next.4](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.3...v1.2.0-next.4) (2022-06-03)
+
+
+### Bug Fixes
+
+* Prevent build error when site index is disabled ([77a3914](https://github.com/whitespace-se/gatsby-packages/commit/77a391435e778b967994e114eaa3a1407c6bb64a))
+
+## [1.2.0-next.3](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.2...v1.2.0-next.3) (2022-06-03)
+
+
+### Bug Fixes
+
+* Don't transform wp-uploads urls ([b426015](https://github.com/whitespace-se/gatsby-packages/commit/b426015f33c1cec2731d427ff5c93b9cbfeada94))
+
+## [1.2.0-next.2](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.1...v1.2.0-next.2) (2022-06-02)
+
+## [1.2.0-next.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0-next.0...v1.2.0-next.1) (2022-05-18)
+
+
+### Bug Fixes
+
+* **deps:** Missing breadcrumbs plugin ([4c77bc1](https://github.com/whitespace-se/gatsby-packages/commit/4c77bc14edf0c5a214f7b53e3ef977566a616b45))
+
+## [1.2.0-next.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.1.0...v1.2.0-next.0) (2022-05-18)
+
+
+### Features
+
+* Improve breadcrumbs ([2713f9d](https://github.com/whitespace-se/gatsby-packages/commit/2713f9dd03789e997b998598ee2259a6457674b1))
+* set maxWidth on WPCaption comps when using attachment sizes in WP ([b1d26f6](https://github.com/whitespace-se/gatsby-packages/commit/b1d26f66c39ec5adc87550f7b7f1ab4515ea5541))
+
+
+### Bug Fixes
+
+* Runtime errors ([308ad01](https://github.com/whitespace-se/gatsby-packages/commit/308ad01c7782838506d4ffb1b8fc902304cde80a))
+* Runtime errors ([6d1e103](https://github.com/whitespace-se/gatsby-packages/commit/6d1e103dc420d56292a9a141c1ca8d0bbcbd6ed4))
+
+
+
 ### [1.2.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.2.0...v1.2.1) (2022-11-11)
 
 
