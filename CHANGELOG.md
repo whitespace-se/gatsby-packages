@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.3.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0...v1.3.1) (2023-03-16)
+
+
+### Bug Fixes
+
+* Wrong MTM url for Matomo CDN-based tracking ([39fdd10](https://github.com/whitespace-se/gatsby-packages/commit/39fdd1040b6680a93cf6e5ec9b347e5f3fd8b7d9))
+
+
+
 ## [1.3.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0-next.5...v1.3.0) (2022-12-01)
 
 ### [1.2.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0-next.4...v1.2.1) (2022-11-11)
