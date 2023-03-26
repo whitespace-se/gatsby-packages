@@ -1,3 +1,5 @@
+const path = require("path");
+
 const { collectFragments } = require("gatsby-plugin-fragments/node");
 
 const getIncludedContentTypes = require("./node/getIncludedContentTypes");
@@ -20,16 +22,46 @@ if (
   );
 }
 
+let absoluteComponentPath;
+
+exports.onPreInit = ({ store }, { wsui }) => {
+  // path.join(
+  //   store.getState().program.directory,
+  //   defaultLayoutComponentPath,
+  // )
+  let component = wsui
+    ? `@whitespace/gatsby-theme-wordpress-basic/src/wsui-components/SiteLayout.js`
+    : `@whitespace/gatsby-theme-wordpress-basic/src/components/SiteLayout.js`;
+  // let component = `@whitespace/gatsby-theme-wordpress-basic/src/components/SiteLayout.js`;
+
+  absoluteComponentPath = component;
+};
+
+exports.onCreateWebpackConfig = ({ actions, plugins }) => {
+  actions.setWebpackConfig({
+    plugins: [
+      plugins.define({
+        GATSBY_LAYOUT_COMPONENT_PATH: JSON.stringify(absoluteComponentPath),
+      }),
+    ],
+  });
+};
+
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
 
-  const typeDefs = `
+  createTypes(`
+    type SitePageContext {
+      isArchivePage: Boolean
+    }
+  `);
+
+  createTypes(`
     type GraphQlQuery implements Node @dontInfer {
       name: String!
       data: JSON!
     }
-  `;
-  createTypes(typeDefs);
+  `);
 };
 
 exports.sourceNodes = async function sourceNodes(params, pluginOptions) {

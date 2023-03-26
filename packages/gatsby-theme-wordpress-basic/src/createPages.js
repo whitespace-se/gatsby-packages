@@ -26,6 +26,8 @@ const ContentTypeTemplate = require.resolve("./templates/ContentTypeTemplate");
 
 const SingleTemplate = require.resolve("./templates/SingleTemplate");
 
+const WsuiSingleTemplate = require.resolve("./wsui-templates/SingleTemplate");
+
 module.exports =
   ({ contentType, query, nodesPerFetch }) =>
   async (
@@ -34,6 +36,7 @@ module.exports =
       i18next,
       disableDefaultArchivePages,
       search: { algolia: algoliaOptions } = {},
+      wsui,
     },
   ) => {
     const { defaultLanguage = "en", languages = ["en"] } = i18next;
@@ -141,7 +144,7 @@ ${JSON.stringify({ ...commonVariables, ...variables }, null, 2)}`,
 
     allContentNodes.map((contentNode) => {
       let path = contentNode.uri;
-      let component = SingleTemplate;
+      let component = wsui ? WsuiSingleTemplate : SingleTemplate;
       let language =
         contentNode.language ||
         getLanguageFromPathname(path, languages, defaultLanguage);

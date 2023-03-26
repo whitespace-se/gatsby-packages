@@ -27,6 +27,7 @@ rules:
         order: asc
         caseInsensitive: true
       newlines-between: always
+  react/prop-types: off
   react/self-closing-comp: error
 overrides:
   - files: "*.test.js"

@@ -16,6 +16,7 @@ module.exports = ({
   basePath,
   fragmentsDir = "./src/fragments",
   siteMetadata,
+  wsui,
   wp,
   postCss = {},
   i18next = {},
@@ -82,6 +83,16 @@ module.exports = ({
         },
       },
       `gatsby-plugin-meta-redirect`,
+
+      // WSUI
+      ...(wsui
+        ? [
+            {
+              resolve: `@whitespace/gatsby-plugin-wsui`,
+              options: { ...wsui },
+            },
+          ]
+        : []),
 
       // Search
       ...(disableSearchPlugin

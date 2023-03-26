@@ -1,3 +1,5 @@
+/* global GATSBY_LAYOUT_COMPONENT_PATH */
+
 import { HeadingLevelProvider } from "@jfrk/react-heading-levels";
 import { IDContextProvider } from "@jfrk/react-id";
 import {
@@ -9,7 +11,6 @@ import { StoreProvider } from "@whitespace/gatsby-hooks";
 import PropTypes from "prop-types";
 import React, { createContext } from "react";
 
-import { SiteLayout } from "../components";
 import { PageContextProvider } from "../hooks";
 import theme from "../theme";
 
@@ -21,6 +22,8 @@ PageElementWrapper.propTypes = {
 export const pageWrapperContext = createContext();
 
 export const PageWrapperContextProvider = pageWrapperContext.Provider;
+
+const SiteLayout = require(GATSBY_LAYOUT_COMPONENT_PATH).default;
 
 export default function PageElementWrapper({ pageContext, children }) {
   return (

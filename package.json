@@ -27,6 +27,7 @@
   },
   "resolutions": {
     "@whitespace/components": "^0.13.22",
+    "@apollo/client": "3.5.10",
     "postcss": "^8",
     "postcss-preset-env": "^7"
   }
