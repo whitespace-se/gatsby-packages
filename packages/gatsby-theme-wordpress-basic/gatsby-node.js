@@ -1,4 +1,4 @@
-const path = require("path");
+// const path = require("path");
 
 const { collectFragments } = require("gatsby-plugin-fragments/node");
 
@@ -24,13 +24,13 @@ if (
 
 let absoluteComponentPath;
 
-exports.onPreInit = ({ store }, { wsui }) => {
+exports.onPreInit = (_, { wsui }) => {
   // path.join(
   //   store.getState().program.directory,
   //   defaultLayoutComponentPath,
   // )
   let component = wsui
-    ? `@whitespace/gatsby-theme-wordpress-basic/src/wsui-components/SiteLayout.js`
+    ? `@whitespace/gatsby-theme-wordpress-basic/src/wsui-components/SiteLayout.jsx`
     : `@whitespace/gatsby-theme-wordpress-basic/src/components/SiteLayout.js`;
   // let component = `@whitespace/gatsby-theme-wordpress-basic/src/components/SiteLayout.js`;
 

@@ -1,6 +1,7 @@
 export * from "./boxNavigation";
 
 export * from "./html-processor";
+export { default as HTMLProcessorProvider } from "./HTMLProcessorProvider";
 
 export { default as useIsFullWidthPage } from "./useIsFullWidthPage";
 

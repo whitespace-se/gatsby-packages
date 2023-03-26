@@ -2,8 +2,9 @@ import PropTypes from "prop-types";
 import React, { useContext } from "react";
 import Helmet from "react-helmet";
 
-import { pluginOptionsContext } from "../contexts";
-import { useOpenGraphContent, useSiteMetadata } from "../hooks";
+import pluginOptionsContext from "../contexts/pluginOptionsContext";
+import useOpenGraphContent from "../hooks/useOpenGraphContent";
+import useSiteMetadata from "../hooks/useSiteMetadata";
 
 SEO.propTypes = {
   description: PropTypes.string,

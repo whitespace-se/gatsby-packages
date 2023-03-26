@@ -1,3 +1,9 @@
-export { default as PageContent } from "./PageContent";
-export { default as PageHeading } from "./PageHeading";
-export { default as PagePreamble } from "./PagePreamble";
+export { default as Footer } from "./Footer.jsx";
+export { default as Header } from "./Header.jsx";
+export { default as Image } from "./Image.jsx";
+export { default as SiteLayout } from "./SiteLayout.jsx";
+export { default as PageContent } from "./PageContent.jsx";
+export { default as PageHeading } from "./PageHeading.jsx";
+export { default as PagePreamble } from "./PagePreamble.jsx";
+export { default as Seo } from "./Seo.jsx";
+export { default as TextContent } from "./TextContent.jsx";

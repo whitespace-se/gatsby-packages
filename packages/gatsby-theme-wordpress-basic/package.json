@@ -9,6 +9,10 @@
     "README.md",
     "*.js"
   ],
+  "scripts": {
+    "storybook": "storybook dev -p 6800",
+    "build-storybook": "storybook build"
+  },
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
     "@emotion/css": "^11.5.0",
@@ -16,6 +20,7 @@
     "@emotion/styled": "^11.3.0",
     "@jfrk/react-heading-levels": "^1.0.0",
     "@jfrk/react-id": "^1.0.0",
+    "@vitejs/plugin-react": "^3.1.0",
     "@whitespace/components": "^0.13.13",
     "@whitespace/gatsby-hooks": "^0.5.0",
     "@whitespace/gatsby-plugin-breadcrumbs": "^1.4.0-next.4",
@@ -70,6 +75,7 @@
     "unist-util-visit-parents": "^5.1.0",
     "url-polyfill": "^1.1.12",
     "use-ssr": "^1.0.24",
+    "vite": "^4.2.1",
     "yup": "^0.32.11"
   },
   "peerDependencies": {
@@ -78,9 +84,19 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^7.0.0-rc.4",
+    "@storybook/addon-essentials": "^7.0.0-rc.4",
+    "@storybook/addon-interactions": "^7.0.0-rc.4",
+    "@storybook/addon-links": "^7.0.0-rc.4",
+    "@storybook/react": "^7.0.0-rc.4",
+    "@storybook/react-vite": "^7.0.0-rc.4",
+    "@storybook/testing-library": "^0.0.14-next.1",
+    "@whitespace/storybook-addon-html": "^5.1.1",
     "gatsby": "^3.14.3",
     "prettier": "^2.4.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-syntax-highlighter": "^15.5.0",
+    "storybook": "^7.0.0-rc.4"
   }
 }

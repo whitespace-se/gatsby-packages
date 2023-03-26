@@ -26,7 +26,7 @@ const ContentTypeTemplate = require.resolve("./templates/ContentTypeTemplate");
 
 const SingleTemplate = require.resolve("./templates/SingleTemplate");
 
-const WsuiSingleTemplate = require.resolve("./wsui-templates/SingleTemplate");
+const WsuiTemplate = require.resolve("./wsui-templates/TemplateController.jsx");
 
 module.exports =
   ({ contentType, query, nodesPerFetch }) =>
@@ -144,7 +144,7 @@ ${JSON.stringify({ ...commonVariables, ...variables }, null, 2)}`,
 
     allContentNodes.map((contentNode) => {
       let path = contentNode.uri;
-      let component = wsui ? WsuiSingleTemplate : SingleTemplate;
+      let component = wsui ? WsuiTemplate : SingleTemplate;
       let language =
         contentNode.language ||
         getLanguageFromPathname(path, languages, defaultLanguage);

@@ -3,7 +3,7 @@ import { jsx } from "@emotion/react";
 
 import usePageContent from "../hooks/usePageContent";
 
-import TextContent from "./TextContent";
+import TextContent from "./TextContent.jsx";
 
 export default function PagePreamble({ ...restProps }) {
   const { preamble } = usePageContent();

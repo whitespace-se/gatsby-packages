@@ -1,0 +1,29 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import DefaultTemplate from "@whitespace/gatsby-theme-wordpress-basic/src/wsui-templates/DefaultTemplate.jsx";
+import { PageContextProvider } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/page-context.js";
+
+<Meta title="DefaultTemplate" component={DefaultTemplate} argTypes={{}} />
+
+export const Template = ({ ...args }) => (
+  <PageContextProvider value={{ ...args }}>
+    <DefaultTemplate />
+  </PageContextProvider>
+);
+
+# DefaultTemplate
+
+## Props
+
+## Basic usage
+
+<Canvas>
+  <Story
+    name="Basic usage"
+    args={{
+      title: "Lorem ipsum",
+      content: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><!--more--><p>Donec auctor, nisl eget ultricies tincidunt, nisl nisl aliquam massa, eget aliquam nisl nisl eu nisl. Nulla</p>",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

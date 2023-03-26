@@ -1,10 +1,10 @@
 import { H } from "@jfrk/react-heading-levels";
 import React from "react";
 
-import { usePageContext } from "../hooks";
+import { usePageContext } from "../hooks/page-context";
 import usePageContent from "../hooks/usePageContent";
 
-import TextContent from "./TextContent";
+import TextContent from "./TextContent.jsx";
 
 export default function PageHeading({ ...restProps }) {
   const title = usePageContext()?.title;

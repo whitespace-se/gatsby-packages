@@ -1,10 +1,9 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react";
 import { Section } from "@jfrk/react-heading-levels";
-import { PageGrid, PageGridItem } from "@wsui/base";
+import { PageGrid, PageGridItem, useThemeProps } from "@wsui/base";
 
-import { SEO } from "../components";
-import { usePageContext } from "../hooks";
+import { usePageContext } from "../hooks/page-context";
 import {
   // PageChildNavigation,
   PageContent,
@@ -13,6 +12,7 @@ import {
   PageHeading,
   PagePreamble,
   // PageSiblingNavigation,
+  Seo,
 } from "../wsui-components";
 
 export default function DefaultPageTemplate(props) {
@@ -20,7 +20,7 @@ export default function DefaultPageTemplate(props) {
   const { title, isFrontPage } = usePageContext();
   return (
     <article css={css``}>
-      <SEO title={title} isFrontPage={isFrontPage} />
+      <Seo title={title} isFrontPage={isFrontPage} />
 
       {/* Featured image */}
       {/* <PageFeaturedImage /> */}

@@ -1,5 +1,5 @@
-import { usePageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks";
 import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
+import { usePageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/page-context";
 import useMustacheData from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/useMustacheData";
 import Mustache from "mustache";
 

@@ -1,7 +1,7 @@
-import { usePageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks";
+import { usePageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/page-context";
 import { useThemeProps } from "@wsui/base";
 import { camelCase, upperFirst } from "lodash";
-import React, { Fragment } from "react";
+import React from "react";
 
 import * as components from "./index.js";
 
@@ -18,7 +18,6 @@ const defaultGetTemplate = ({ pageContext, defaultTemplate, templates }) => {
 
 export default function SingleTemplate(props) {
   props = useThemeProps({ props, name: "TemplateController" });
-  props = useThemeProps({ props, name: "SingleTemplate" });
   let {
     // eslint-disable-next-line import/namespace
     defaultTemplate = components["DefaultTemplate"],

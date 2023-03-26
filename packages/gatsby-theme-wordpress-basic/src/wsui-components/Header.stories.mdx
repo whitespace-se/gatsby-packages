@@ -1,0 +1,18 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import Header from "@whitespace/gatsby-theme-wordpress-basic/src/wsui-components/Header";
+
+<Meta title="Header" component={Header} argTypes={{}} />
+
+export const Template = ({ ...args }) => <Header {...args} />;
+
+# Header
+
+## Props
+
+## Basic usage
+
+<Canvas>
+  <Story name="Basic usage" args={{}}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
