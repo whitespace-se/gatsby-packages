@@ -15,7 +15,6 @@ export default function createHTMLProcessor({
   treeTransforms = [],
   stringifierComponents = {},
 }) {
-  console.log({ stringifierComponents });
   function splitTree() {
     return function splitSubTree(nodes) {
       let tree = nodes[0];
@@ -127,7 +126,7 @@ export default function createHTMLProcessor({
   );
 
   const processPageContent = memoize(
-    (content, options) => {
+    (content, options = {}) => {
       content = inputTransforms.reduce(
         (content, transformer) => transformer(content, { ...options }),
         content,
@@ -135,7 +134,15 @@ export default function createHTMLProcessor({
       const tree = unified().use(parse, { fragment: true }).parse(content);
 
       let preambleTree = null,
-        contentTree = tree;
+        contentTree = tree,
+        headingTree = null;
+
+      if (options.extractHeading) {
+        if (tree?.children?.[0]?.tagName === "h1") {
+          headingTree = tree.children.shift();
+        }
+      }
+
       visitParents(
         tree,
         { type: "comment", value: "more" },
@@ -145,13 +152,16 @@ export default function createHTMLProcessor({
         },
       );
 
-      [preambleTree, contentTree] = [preambleTree, contentTree].map(
-        processContentTree(options),
-      );
+      [preambleTree, contentTree, headingTree] = [
+        preambleTree,
+        contentTree,
+        headingTree,
+      ].map(processContentTree(options));
 
       return {
         preamble: preambleTree,
         content: contentTree,
+        heading: headingTree,
       };
     },
     (content, options) => `${content}::${hashSum(options)}`,
