@@ -1,7 +1,9 @@
-import InternalLinkElement from "@whitespace/gatsby-theme-wordpress-basic/src/components/InternalLinkElement";
 import { createTheme } from "@wsui/base";
 
+import InternalLinkElement from "./InternalLinkElement.jsx";
+
 export default createTheme({
+  colors: {},
   components: {
     Clickable: {
       defaultProps: {

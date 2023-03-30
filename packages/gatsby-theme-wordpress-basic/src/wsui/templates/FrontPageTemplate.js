@@ -6,13 +6,13 @@ import { SEO } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import { usePageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks";
 
 // import { Fragment } from "react";
-import PageContent from "../components/PageContent";
-import PageContentAreaModules from "../components/PageContentAreaModules";
-import PageGrid from "../components/PageGrid";
-import PageGridItem from "../components/PageGridItem";
-import PageGridRow from "../components/PageGridRow";
-import PagePreamble from "../components/PagePreamble";
-import PageSliderAreaModules from "../components/PageSliderAreaModules";
+import PageContent from "../../components/PageContent";
+import PageContentAreaModules from "../../components/PageContentAreaModules";
+import PageGrid from "../../components/PageGrid";
+import PageGridItem from "../../components/PageGridItem";
+import PageGridRow from "../../components/PageGridRow";
+import PagePreamble from "../../components/PagePreamble";
+import PageSliderAreaModules from "../../components/PageSliderAreaModules";
 
 export default function FrontPageTemplate() {
   const { title } = usePageContext();

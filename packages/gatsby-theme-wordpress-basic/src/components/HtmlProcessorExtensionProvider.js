@@ -1,19 +1,18 @@
-import merge from "lodash/fp/merge";
-import PropTypes from "prop-types";
+import { mergeWith } from "lodash/fp";
 import React, { useContext } from "react";
+
+const mergeAndConcat = mergeWith((a, b) =>
+  Array.isArray(a) ? a.concat(b) : b,
+);
 
 import htmlProcessorExtensionContext from "../contexts/htmlProcessorExtensionContext";
 
-HtmlProcessorExtensionProvider.propTypes = {
-  children: PropTypes.node,
-  extension: PropTypes.object,
-};
-
 export default function HtmlProcessorExtensionProvider({
   children,
-  extension,
+  ...extension
 }) {
-  const value = merge(useContext(htmlProcessorExtensionContext), extension);
+  let parentExtension = useContext(htmlProcessorExtensionContext);
+  const value = mergeAndConcat(parentExtension, extension);
   const { Provider } = htmlProcessorExtensionContext;
   return <Provider value={value}>{children}</Provider>;
 }

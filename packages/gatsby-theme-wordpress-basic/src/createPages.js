@@ -26,7 +26,7 @@ const ContentTypeTemplate = require.resolve("./templates/ContentTypeTemplate");
 
 const SingleTemplate = require.resolve("./templates/SingleTemplate");
 
-const WsuiTemplate = require.resolve("./wsui-templates/TemplateController.jsx");
+const WsuiTemplate = require.resolve("./wsui/templates/TemplateController.jsx");
 
 module.exports =
   ({ contentType, query, nodesPerFetch }) =>

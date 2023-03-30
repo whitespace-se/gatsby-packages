@@ -1,6 +1,6 @@
 import React from "react";
 
-import usePageContent from "../hooks/usePageContent";
+import usePageContent from "../../hooks/usePageContent";
 
 import TextContent from "./TextContent.jsx";
 

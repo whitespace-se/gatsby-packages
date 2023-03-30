@@ -12,7 +12,7 @@ export * from "./multisite";
 
 export * from "./page-context";
 
-export { default as usePages } from "./pages";
+export { default as usePages } from "./usePages";
 
 export { default as useContentType } from "./useContentType";
 

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/react";
 
-import usePageContent from "../hooks/usePageContent";
+import usePageContent from "../../hooks/usePageContent";
 
 import TextContent from "./TextContent.jsx";
 

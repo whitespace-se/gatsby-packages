@@ -1,8 +1,8 @@
 import { H } from "@jfrk/react-heading-levels";
 import React from "react";
 
-import { usePageContext } from "../hooks/page-context";
-import usePageContent from "../hooks/usePageContent";
+import { usePageContext } from "../../hooks/page-context";
+import usePageContent from "../../hooks/usePageContent";
 
 import TextContent from "./TextContent.jsx";
 

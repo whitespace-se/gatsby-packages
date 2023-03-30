@@ -54,18 +54,30 @@ export function getPageThemeColor(allPages, id) {
   return "default";
 }
 
-export function getTreeStructure(allPages, parentId = null) {
+export function getTreeStructure(
+  allPages,
+  parentId = null,
+  {
+    childrenProp = "children",
+    transform = (page, children) => ({
+      key: page.id,
+      label: page.title,
+      url: page.uri,
+      ...page,
+      [childrenProp]: children,
+    }),
+  } = {},
+) {
   return (
     parentId == null
       ? getTopLevelPages(allPages)
       : getChildren(allPages, parentId)
   )
     .filter((page) => page.showInMenu !== false)
-    .map((page) => ({
-      key: page.id,
-      label: page.title,
-      url: page.uri,
-      ...page,
-      children: getTreeStructure(allPages, page.id),
-    }));
+    .map((page) =>
+      transform(
+        page,
+        getTreeStructure(allPages, page.id, { childrenProp, transform }),
+      ),
+    );
 }

@@ -1,7 +1,7 @@
 import { ThemeProvider, GlobalStyles, IconProvider } from "@wsui/base";
 import React from "react";
 
-import theme from "./theme";
+import theme from "./theme.jsx";
 
 export default function WsuiProvider({ children }) {
   return (

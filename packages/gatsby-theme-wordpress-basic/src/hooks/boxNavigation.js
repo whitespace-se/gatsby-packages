@@ -1,6 +1,6 @@
 import { getChildren, getSiblings } from "../utils/pageTree";
 
-import usePages from "./pages";
+import usePages from "./usePages";
 
 export function usePageChildren(pageId) {
   const allPages = usePages();

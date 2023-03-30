@@ -7,15 +7,15 @@ import { useMenu } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/menu
 import usePages from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/pages";
 import { getChildren } from "@whitespace/gatsby-theme-wordpress-basic/src/utils/pageTree";
 
-import LandingPageHero from "../../../components/LandingPageHero";
-import PageContent from "../components/PageContent";
-import PageContentAreaModules from "../components/PageContentAreaModules";
-import PageFeaturedImage from "../components/PageFeaturedImage";
-import PageGrid from "../components/PageGrid";
-import PageGridItem from "../components/PageGridItem";
-import PageGridRow from "../components/PageGridRow";
-import PagePreamble from "../components/PagePreamble";
-import PageSliderAreaModules from "../components/PageSliderAreaModules";
+import LandingPageHero from "../../components/LandingPageHero";
+import PageContent from "../../components/PageContent";
+import PageContentAreaModules from "../../components/PageContentAreaModules";
+import PageFeaturedImage from "../../components/PageFeaturedImage";
+import PageGrid from "../../components/PageGrid";
+import PageGridItem from "../../components/PageGridItem";
+import PageGridRow from "../../components/PageGridRow";
+import PagePreamble from "../../components/PagePreamble";
+import PageSliderAreaModules from "../../components/PageSliderAreaModules";
 
 export default function LandingPageTemplate() {
   const { title, isFrontPage } = usePageContext();

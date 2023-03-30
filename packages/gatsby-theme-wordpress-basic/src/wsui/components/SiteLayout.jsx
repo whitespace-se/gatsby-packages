@@ -4,8 +4,8 @@ import React from "react";
 
 // import { usePageContext } from "../hooks";
 
-import Footer from "./Footer";
-import Header from "./Header";
+import Footer from "./Footer.jsx";
+import Header from "./Header.jsx";
 
 SiteLayout.propTypes = {
   children: PropTypes.node,

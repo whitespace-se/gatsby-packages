@@ -5,7 +5,7 @@ import { PageGrid, PageGridItem } from "@whitespace/components";
 import PropTypes from "prop-types";
 // import { useTranslation } from "react-i18next";
 
-import ContentTypeArchive from "../components/algolia/ContentTypeArchive";
+import ContentTypeArchive from "../../components/algolia/ContentTypeArchive";
 
 ContentTypeTemplate.propTypes = {
   pageContext: PropTypes.shape({

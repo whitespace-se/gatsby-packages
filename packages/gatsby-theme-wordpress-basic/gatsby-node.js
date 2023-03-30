@@ -22,26 +22,26 @@ if (
   );
 }
 
-let absoluteComponentPath;
+let layoutComponentPath;
+let rootElementWrapperPath;
 
 exports.onPreInit = (_, { wsui }) => {
-  // path.join(
-  //   store.getState().program.directory,
-  //   defaultLayoutComponentPath,
-  // )
-  let component = wsui
-    ? `@whitespace/gatsby-theme-wordpress-basic/src/wsui-components/SiteLayout.jsx`
+  layoutComponentPath = wsui
+    ? `@whitespace/gatsby-theme-wordpress-basic/src/wsui/components/SiteLayout.jsx`
     : `@whitespace/gatsby-theme-wordpress-basic/src/components/SiteLayout.js`;
-  // let component = `@whitespace/gatsby-theme-wordpress-basic/src/components/SiteLayout.js`;
-
-  absoluteComponentPath = component;
+  rootElementWrapperPath = wsui
+    ? `@whitespace/gatsby-theme-wordpress-basic/src/wsui/components/RootElementWrapper.jsx`
+    : `@whitespace/gatsby-theme-wordpress-basic/src/components/RootElementWrapper.js`;
 };
 
 exports.onCreateWebpackConfig = ({ actions, plugins }) => {
   actions.setWebpackConfig({
     plugins: [
       plugins.define({
-        GATSBY_LAYOUT_COMPONENT_PATH: JSON.stringify(absoluteComponentPath),
+        GATSBY_LAYOUT_COMPONENT_PATH: JSON.stringify(layoutComponentPath),
+        GATSBY_ROOT_ELEMENT_WRAPPER_PATH: JSON.stringify(
+          rootElementWrapperPath,
+        ),
       }),
     ],
   });

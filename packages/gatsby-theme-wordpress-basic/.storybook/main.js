@@ -14,4 +14,11 @@ export default {
     autodocs: true,
   },
   staticDirs: ["./static"],
+  refs: {
+    wsui: {
+      title: "WSUI",
+      url: "https://wsui.dev.w8e.se",
+      expanded: false, // optional, true by default
+    },
+  },
 };

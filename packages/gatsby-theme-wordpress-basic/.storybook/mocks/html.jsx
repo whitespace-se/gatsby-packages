@@ -9,7 +9,7 @@ import { unified } from "unified";
 import { visit } from "unist-util-visit";
 import { visitParents } from "unist-util-visit-parents";
 
-import { Image } from "@whitespace/gatsby-theme-wordpress-basic/src/wsui-components";
+import { Image } from "@whitespace/gatsby-theme-wordpress-basic/src/wsui/components";
 
 export default function createHTMLProcessor({
   rehypeParse: parse,
@@ -137,9 +137,7 @@ export default function createHTMLProcessor({
     let additionalComponents = {};
 
     Object.entries(stringifierComponents).forEach(([element, Component]) => {
-      additionalComponents[element] = (props) => (
-        <Component {...props} htmlProcessorContext={options} />
-      );
+      additionalComponents[element] = (props) => <Component {...props} />;
     });
 
     let components = {

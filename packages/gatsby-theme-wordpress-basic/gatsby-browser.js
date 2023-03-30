@@ -1,3 +1,5 @@
+/* global GATSBY_ROOT_ELEMENT_WRAPPER_PATH */
+
 import React from "react";
 import rehypeParse from "rehype-dom-parse";
 
@@ -6,12 +8,16 @@ import { HTMLProcessorProvider } from "./src/hooks";
 
 import "./src/index.css";
 
+const RootElementWrapper = require(GATSBY_ROOT_ELEMENT_WRAPPER_PATH).default;
+
 export function wrapRootElement({ element }, { enableSEO }) {
   return (
     <pluginOptionsContext.Provider value={{ enableSEO }}>
-      <HTMLProcessorProvider rehypeParse={rehypeParse}>
-        {element}
-      </HTMLProcessorProvider>
+      <RootElementWrapper>
+        <HTMLProcessorProvider rehypeParse={rehypeParse}>
+          {element}
+        </HTMLProcessorProvider>
+      </RootElementWrapper>
     </pluginOptionsContext.Provider>
   );
 }

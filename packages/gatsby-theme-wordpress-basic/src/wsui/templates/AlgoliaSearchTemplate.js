@@ -5,7 +5,7 @@ import { PageGrid, PageGridItem } from "@whitespace/components";
 import PropTypes from "prop-types";
 // import { useTranslation } from "react-i18next";
 
-import SiteSearch from "../components/algolia/SiteSearch";
+import SiteSearch from "../../components/algolia/SiteSearch";
 
 SearchTemplate.propTypes = {
   pageContext: PropTypes.shape({

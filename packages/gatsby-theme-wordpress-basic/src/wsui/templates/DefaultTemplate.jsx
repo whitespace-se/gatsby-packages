@@ -3,7 +3,7 @@ import { css, jsx } from "@emotion/react";
 import { Section } from "@jfrk/react-heading-levels";
 import { PageGrid, PageGridItem, useThemeProps } from "@wsui/base";
 
-import { usePageContext } from "../hooks/page-context";
+import { usePageContext } from "../../hooks/page-context";
 import {
   // PageChildNavigation,
   PageContent,
@@ -13,7 +13,7 @@ import {
   PagePreamble,
   // PageSiblingNavigation,
   Seo,
-} from "../wsui-components";
+} from "../components";
 
 export default function DefaultPageTemplate(props) {
   props = useThemeProps({ props, name: "DefaultPageTemplate" });
