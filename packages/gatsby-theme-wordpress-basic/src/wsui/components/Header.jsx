@@ -36,7 +36,7 @@ export default function Header(inProps) {
           color: ${theme.getColor([color, "text"])};
         `}
       >
-        <PageGridItem>
+        <PageGridItem colspan={12}>
           <div
             css={css`
               display: grid;
