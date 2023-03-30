@@ -7,7 +7,6 @@ import { usePageContext } from "../../hooks/page-context";
 import {
   // PageChildNavigation,
   PageContent,
-  // PageContentAreaModules,
   // PageFeaturedImage,
   PageHeading,
   PagePreamble,
@@ -17,16 +16,20 @@ import {
 
 export default function DefaultPageTemplate(props) {
   props = useThemeProps({ props, name: "DefaultPageTemplate" });
-  const { title, isFrontPage } = usePageContext();
+  const { title } = usePageContext();
   return (
     <article css={css``}>
-      <Seo title={title} isFrontPage={isFrontPage} />
+      <Seo title={title} />
 
       {/* Featured image */}
       {/* <PageFeaturedImage /> */}
 
-      <PageGrid css={css``}>
-        <PageGridItem colspan={8}>
+      <PageGrid
+        css={css`
+          padding-block: 2rem;
+        `}
+      >
+        <PageGridItem colspan={7}>
           <PageHeading css={css``} marginAfter />
           <Section>
             {/* <PageChildNavigation /> */}
@@ -36,7 +39,6 @@ export default function DefaultPageTemplate(props) {
         </PageGridItem>
       </PageGrid>
       <Section>
-        {/* <PageContentAreaModules defaultColspan={8} css={css``} /> */}
         {/* <footer className={styles.footer}>
           <PageMeta />
           <PageGrid css={css``}>
