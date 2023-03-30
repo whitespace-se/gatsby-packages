@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.6](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.5...v1.4.0-next.6) (2023-03-30)
+
+
+### Features
+
+* Add front page and landing page templates ([2107ade](https://github.com/whitespace-se/gatsby-packages/commit/2107adec9f8abbc11acbf960306b9c4da68d4e82))
+* Allow replacing page heading with content h1 ([4bc6eb7](https://github.com/whitespace-se/gatsby-packages/commit/4bc6eb798b56c8558de95703fbb480aaa295a1e7))
+* Set default grid item width ([bdd9cf5](https://github.com/whitespace-se/gatsby-packages/commit/bdd9cf594d2929def1ffa1a95109c0ad0ae31ea3))
+
+
+### Bug Fixes
+
+* Header content width ([73eadd0](https://github.com/whitespace-se/gatsby-packages/commit/73eadd00f312e40b5f210200d928ae11b4db9e0a))
+
+
+
 ## [1.4.0-next.5](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.1...v1.4.0-next.5) (2023-03-30)
 
 ## [1.4.0-next.4](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.3...v1.4.0-next.4) (2023-03-16)
