@@ -3,6 +3,57 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.5](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.1...v1.4.0-next.5) (2023-03-30)
+
+## [1.4.0-next.4](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.3...v1.4.0-next.4) (2023-03-16)
+
+
+### Bug Fixes
+
+* Prevent infinite loop in page creation ([300a26f](https://github.com/whitespace-se/gatsby-packages/commit/300a26f0fce219a3b5443f261b7cb4c623a22286))
+
+## [1.4.0-next.3](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.2...v1.4.0-next.3) (2023-02-24)
+
+
+### Features
+
+* Add `GATSBY_WORDPRESS_UPLOADS_URL` env var ([bb34969](https://github.com/whitespace-se/gatsby-packages/commit/bb3496966564603fbd911c26732757b8125b04be))
+
+
+### Bug Fixes
+
+* Error with "all content" facet ([70d05d0](https://github.com/whitespace-se/gatsby-packages/commit/70d05d06bf0ba95b3c06694d7f7b82ab2d21884b))
+
+## [1.4.0-next.2](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.1...v1.4.0-next.2) (2023-02-03)
+
+
+### Features
+
+* Add config options for archive pages ([e9266b3](https://github.com/whitespace-se/gatsby-packages/commit/e9266b3da8ae68baf7675605db0fd8ffc2972c18))
+
+
+### Bug Fixes
+
+* Remove search box from archive pages ([1f648bb](https://github.com/whitespace-se/gatsby-packages/commit/1f648bbe093d995bc63daa54599de9c7d09340d6))
+* Typo ([2907bf6](https://github.com/whitespace-se/gatsby-packages/commit/2907bf67a3872342e75c17c3b1cd8771b932668a))
+
+## [1.4.0-next.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.0...v1.4.0-next.1) (2023-01-30)
+
+
+### Features
+
+* Generate archive pages with algolia search ([3527fbc](https://github.com/whitespace-se/gatsby-packages/commit/3527fbc45d6949e830a4299c3face3941d7efe1c))
+
+## [1.4.0-next.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0...v1.4.0-next.0) (2023-01-10)
+
+
+### Features
+
+* Add Algolia search ([835110f](https://github.com/whitespace-se/gatsby-packages/commit/835110f37d1801dee05b5b2e166c9ffa1f1b6af9))
+* Remove esm dependency ([1d8056c](https://github.com/whitespace-se/gatsby-packages/commit/1d8056cb4b4c9a23c98590007d418c5776107e49))
+
+
+
 ## [1.4.0-next.4](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.3...v1.4.0-next.4) (2023-03-16)
 
 
