@@ -1,10 +1,10 @@
 export default function Seo() {
-// {
-// description,
-// isFrontPage = false,
-// lang,
-// meta = [],
-// title = "",
-// }
+  // {
+  // description,
+  // isFrontPage = false,
+  // lang,
+  // meta = [],
+  // title = "",
+  // }
   return null;
 }
