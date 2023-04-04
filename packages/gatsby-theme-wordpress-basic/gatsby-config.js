@@ -112,6 +112,11 @@ module.exports = ({
         resolve: "@whitespace/gatsby-plugin-site-index",
         options: siteIndex
           ? {
+              template: wsui
+                ? require.resolve(
+                    "@whitespace/gatsby-plugin-site-index/src/wsui/components/SiteIndexTemplate.jsx",
+                  )
+                : undefined,
               ...siteIndex,
             }
           : { disablePageCreation: true },

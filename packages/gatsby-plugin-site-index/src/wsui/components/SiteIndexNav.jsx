@@ -1,19 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react";
-import { Button } from "@whitespace/components";
-import PropTypes from "prop-types";
-
-SiteIndexNav.propTypes = {
-  currentChar: PropTypes.string.isRequired,
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      char: PropTypes.string.isRequired,
-      hasPages: PropTypes.bool,
-      label: PropTypes.string.isRequired,
-      path: PropTypes.string,
-    }),
-  ),
-};
+import { Button } from "@wsui/base";
 
 export default function SiteIndexNav({ options, currentChar, ...restProps }) {
   return (
