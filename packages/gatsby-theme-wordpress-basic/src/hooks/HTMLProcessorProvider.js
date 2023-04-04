@@ -15,7 +15,6 @@ HTMLProcessorProvider.propTypes = {
 export default function HTMLProcessorProvider({ rehypeParse, children }) {
   const { Provider } = htmlProcessorContext;
   let extension = useContext(htmlProcessorExtensionContext);
-  console.log({ extension });
   let htmlProcessorRef = useRef(null);
   if (!htmlProcessorRef.current) {
     htmlProcessorRef.current = createHTMLProcessor({
