@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.9](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.8...v1.4.0-next.9) (2023-04-04)
+
+
+### Bug Fixes
+
+* Build errors ([52b01aa](https://github.com/whitespace-se/gatsby-packages/commit/52b01aa94ff95bb714db442a970eb347fd012a84))
+
+
+
 ## [1.4.0-next.8](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.7...v1.4.0-next.8) (2023-04-04)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-matomo
