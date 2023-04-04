@@ -1,3 +1,4 @@
+/* eslint-disable ssr-friendly/no-dom-globals-in-module-scope */
 let { blacklist = [], whitelist = [] } = window.pluginCookieConsentConfig;
 
 if (window.location.host !== "") {

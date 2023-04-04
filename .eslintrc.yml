@@ -3,10 +3,12 @@ plugins:
   - import
   - jest
   - react
+  - ssr-friendly
 extends:
   - eslint:recommended
   - plugin:import/recommended
   - plugin:react/recommended
+  - plugin:ssr-friendly/recommended
 parserOptions:
   ecmaVersion: 2021
   ecmaFeatures:
