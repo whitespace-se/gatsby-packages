@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.8](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.7...v1.4.0-next.8) (2023-04-04)
+
+
+### Bug Fixes
+
+* SSR issue ([8bbe7df](https://github.com/whitespace-se/gatsby-packages/commit/8bbe7dfdb0ffcae0ba2a27a61c99a7d80ea9539f))
+
+
+
 ## [1.4.0-next.7](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.6...v1.4.0-next.7) (2023-04-03)
 
 **Note:** Version bump only for package root
