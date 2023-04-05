@@ -6613,10 +6613,10 @@
   dependencies:
     tslib "^2.3.0"
 
-"@wsui/base@0.2.112", "@wsui/base@^0.2.12":
-  version "0.2.112"
-  resolved "https://registry.yarnpkg.com/@wsui/base/-/base-0.2.112.tgz#c3fc0e4f67cea7cb1fa519389e49d1d0dc212e3c"
-  integrity sha512-LKQiwmnZFmw1RgOek2eBU0MjbSHXn+4z24YCLg3uxRWWyP/8wNTwrHIoDPy/QIadlN5YUOLtHVr8xOwRpybL6w==
+"@wsui/base@0.3.1", "@wsui/base@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@wsui/base/-/base-0.3.1.tgz#cc58eb06438a43253554a76c308e14f9e0de7d8e"
+  integrity sha512-cSyBoKz5ToujtWYzDlYAvMfKttecsR2j93sbFNedFrhbvKaI/voA2qv8GhyLXwOvaOmXQILaTXzoND55+aXsnw==
   dependencies:
     uid "^2.0.1"
     "@emotion/is-prop-valid" "^1.2.0"
@@ -6627,12 +6627,12 @@
     lodash "^4.17.21"
     usehooks-ts "^2.9.1"
 
-"@wsui/theme-standard@^0.2.12":
-  version "0.2.12"
-  resolved "https://registry.yarnpkg.com/@wsui/theme-standard/-/theme-standard-0.2.12.tgz#63fa6e473ca316f0d9db895e7b8fd779d24bc9b3"
-  integrity sha512-PkyPLAizyc6Bgng/oDo6ahTYPC49Qp7DCf61yNfMaQMDk9/NB6X/BTqgjGgSkJHDkzeVI27ha9PIOqrn/wWcxA==
+"@wsui/theme-standard@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@wsui/theme-standard/-/theme-standard-0.3.1.tgz#7449500f31c774b5368114bfca101a90f83934b6"
+  integrity sha512-jDZJRZlpRiZ34YuTys2trO5NK5IWT9r9sA/IJo4xDA5sXwMHvxxNHdkJV/Y1ZFZ5PMaIHPZ5IPjngU5De7032Q==
   dependencies:
-    "@wsui/base" "0.2.112"
+    "@wsui/base" "0.3.1"
     tailwindcss "^3.2.4"
 
 "@xtuc/ieee754@^1.2.0":
