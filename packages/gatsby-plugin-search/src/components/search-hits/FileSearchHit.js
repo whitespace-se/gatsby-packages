@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-DefaultSearchHit.propTypes = {
+FileSearchHit.propTypes = {
   dateFormat: PropTypes.objectOf(PropTypes.string),
   hit: PropTypes.shape({
     date: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
@@ -21,7 +21,7 @@ DefaultSearchHit.propTypes = {
   }),
 };
 
-export default function DefaultSearchHit({
+export default function FileSearchHit({
   dateFormat = {
     dateStyle: "short",
   },
