@@ -1,14 +1,15 @@
+import { Time } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
+import mime from "mime/lite";
+import PropTypes from "prop-types";
+import React from "react";
+import { useTranslation } from "react-i18next";
+
 import SearchTeaser from "../SearchTeaser";
 import SearchTeaserContent from "../SearchTeaserContent";
 import SearchTeaserExcerpt from "../SearchTeaserExcerpt";
 import SearchTeaserMedia from "../SearchTeaserMedia";
 import SearchTeaserMeta from "../SearchTeaserMeta";
 import SearchTeaserTitle from "../SearchTeaserTitle";
-import { Time } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
-import mime from "mime/lite";
-import PropTypes from "prop-types";
-import React from "react";
-import { useTranslation } from "react-i18next";
 
 FileSearchHit.propTypes = {
   dateFormat: PropTypes.objectOf(PropTypes.string),
