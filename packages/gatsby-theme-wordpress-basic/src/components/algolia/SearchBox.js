@@ -48,6 +48,7 @@ export default function SearchBox(props) {
         >
           <FormInputField
             label={label}
+            hideLabel
             id={id || generateID("search-query")}
             name="query"
             placeholder={
@@ -65,12 +66,6 @@ export default function SearchBox(props) {
               --form-input-font-family: var(--search-form-font-family, inherit);
               --form-input-font-size: var(--search-form-font-size, 100%);
               --form-input-color: var(--search-form-surface, #000000);
-
-              & > label {
-                position: absolute;
-                clip: rect(0, 0, 0, 0);
-                pointer-events: none;
-              }
             `}
             {...restProps}
           />
