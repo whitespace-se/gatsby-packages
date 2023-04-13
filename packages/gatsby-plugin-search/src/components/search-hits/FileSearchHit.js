@@ -30,7 +30,6 @@ export default function FileSearchHit({
   ...restProps
 }) {
   const { t, i18n } = useTranslation();
-  console.log(hit);
   const {
     date,
     text,
