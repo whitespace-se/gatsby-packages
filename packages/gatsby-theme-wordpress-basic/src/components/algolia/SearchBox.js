@@ -48,49 +48,32 @@ export default function SearchBox(props) {
         >
           <FormInputField
             label={label}
-            hideLabel
             id={id || generateID("search-query")}
             name="query"
             placeholder={
               placeholder || t(["search.searchBoxPlaceholder", "Search…"])
             }
             css={css`
-              --form-input-width: 100%;
-              // --form-input-height: ;
-              // --form-input-margin: ;
+              --form-input-width: var(--search-form-input-width, 100%);
               --form-input-padding: var(--search-form-padding-default, 1rem);
-              --form-input-border: none;
-              --form-input-border-radius: 0.25rem;
+              --form-input-border: var(--search-form-border, none);
+              --form-input-border-radius: var(
+                --search-form-border-radius,
+                0.25rem
+              );
               --form-input-background: var(--search-form-background, #ffffff);
-              // --form-input-box-shadow: ;
-              --form-input-font-family: inherit;
-              // --form-input-font-weight: 500;
-              --form-input-font-size: 100%;
-              // --form-input-letter-spacing: ;
-              // --form-input-line-height: ;
+              --form-input-font-family: var(--search-form-font-family, inherit);
+              --form-input-font-size: var(--search-form-font-size, 100%);
               --form-input-color: var(--search-form-surface, #000000);
-              // --form-input-box-sizing: ;
 
-              // display: block;
+              & > label {
+                position: absolute;
+                clip: rect(0, 0, 0, 0);
+                pointer-events: none;
+              }
             `}
             {...restProps}
           />
-          {/* {!!value.length && (
-            <IconButton
-              type="reset"
-              aria-label={t("search.clearQuery", "Clear")}
-              css={css`
-                grid-row: 1;
-                grid-column: 1;
-                justify-self: end;
-              `}
-            >
-              <Icon name="dismiss" />
-            </IconButton>
-          )} */}
-          {/* <IconButton type="submit" aria-label={submitLabel} color="primary">
-          <Icon name="search" />
-        </IconButton> */}
           <button
             type="submit"
             aria-label={submitLabel}
