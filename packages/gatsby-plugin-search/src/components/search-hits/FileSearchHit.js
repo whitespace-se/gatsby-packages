@@ -1,9 +1,9 @@
-import SearchTeaser from "@whitespace/gatsby-plugin-search/src/components/SearchTeaser";
-import SearchTeaserContent from "@whitespace/gatsby-plugin-search/src/components/SearchTeaserContent";
-import SearchTeaserExcerpt from "@whitespace/gatsby-plugin-search/src/components/SearchTeaserExcerpt";
-import SearchTeaserMedia from "@whitespace/gatsby-plugin-search/src/components/SearchTeaserMedia";
-import SearchTeaserMeta from "@whitespace/gatsby-plugin-search/src/components/SearchTeaserMeta";
-import SearchTeaserTitle from "@whitespace/gatsby-plugin-search/src/components/SearchTeaserTitle";
+import SearchTeaser from "../SearchTeaser";
+import SearchTeaserContent from "../SearchTeaserContent";
+import SearchTeaserExcerpt from "../SearchTeaserExcerpt";
+import SearchTeaserMedia from "../SearchTeaserMedia";
+import SearchTeaserMeta from "../SearchTeaserMeta";
+import SearchTeaserTitle from "../SearchTeaserTitle";
 import { Time } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import mime from "mime/lite";
 import PropTypes from "prop-types";
