@@ -1,9 +1,10 @@
 import { H } from "@jfrk/react-heading-levels";
 import { Link } from "@whitespace/components";
-import { useComponentContext } from "../contexts/componentContext";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
+
+import { useComponentContext } from "../contexts/componentContext";
 
 SearchTeaserTitle.propTypes = {
   children: PropTypes.node,
