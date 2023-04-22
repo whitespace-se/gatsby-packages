@@ -1,6 +1,6 @@
 import { useID, Icon } from "@whitespace/components";
 import { visuallyHidden } from "@whitespace/components/dist/utils/styles.module.css";
-import cx from "classnames";
+import clsx from "clsx";
 import { Field } from "formik";
 import PropTypes from "prop-types";
 import React from "react";
@@ -29,7 +29,7 @@ export default function SearchFormQueryField({
   return (
     <div className={styles.wrapper}>
       <label
-        className={cx(styles.visuallyHidden, visuallyHidden)}
+        className={clsx(styles.visuallyHidden, visuallyHidden)}
         htmlFor={id || generateID("search-query")}
       >
         {label}
@@ -38,7 +38,7 @@ export default function SearchFormQueryField({
         type="search"
         name="query"
         id={id || generateID("search-query")}
-        className={cx(styles.input)}
+        className={clsx(styles.input)}
         placeholder={searchPlaceholderText}
         {...restProps}
       />

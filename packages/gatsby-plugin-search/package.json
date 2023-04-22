@@ -15,23 +15,26 @@
   "dependencies": {
     "@jfrk/react-heading-levels": "^1.0.0",
     "@whitespace/gatsby-hooks": "^0.5.0",
+    "clsx": "^1.2.1",
+    "formik": "^2.2.9",
     "gatsby-plugin-algolia": "^1.0.2",
     "html-entities": "^2.3.3",
     "immer": "^9.0.6",
     "lodash-es": "^4.17.21",
     "minisearch": "^3.1.0",
     "react-instantsearch-hooks-web": "^6.33.0",
-    "react-select": "^5.1.0"
+    "react-select": "^5.1.0",
+    "yup": "^0.32.11"
   },
   "peerDependencies": {
-    "@whitespace/components": "^0.13.13",
+    "@whitespace/components": "^0.13.24",
     "gatsby": "^3.14.3",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-i18next": "^11.12.0"
   },
   "devDependencies": {
-    "@whitespace/components": "^0.13.13",
+    "@whitespace/components": "^0.13.24",
     "eslint-plugin-jest": "^25.2.2",
     "gatsby": "^3.14.3",
     "react": "^17.0.0",

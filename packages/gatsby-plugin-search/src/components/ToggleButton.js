@@ -1,5 +1,5 @@
 import { useID, Button, Link } from "@whitespace/components";
-import cx from "classnames";
+import clsx from "clsx";
 import { Field, useField } from "formik";
 import PropTypes from "prop-types";
 import React from "react";
@@ -52,7 +52,7 @@ export default function ToggleButton({
     <>
       <Field
         type={type}
-        className={cx(
+        className={clsx(
           styles.input,
           isInitial && styles.isInitial,
           isChecked && styles.isChecked,
@@ -62,7 +62,7 @@ export default function ToggleButton({
         value={value}
         {...restProps}
       />
-      <Label className={cx(styles.label)} htmlFor={id}>
+      <Label className={clsx(styles.label)} htmlFor={id}>
         {label}
       </Label>
     </>

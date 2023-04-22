@@ -1,4 +1,4 @@
-import cx from "classnames";
+import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -52,7 +52,7 @@ export default function ToggleButtonGroup({
     <>
       <div
         role="group"
-        className={cx(styles.group, className)}
+        className={clsx(styles.group, className)}
         id={id}
         {...restProps}
       >
