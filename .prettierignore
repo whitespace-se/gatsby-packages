@@ -1,20 +1,2 @@
 CHANGELOG.md
 /lerna.json
-
-# From /example/gatsby-site-i18n/.prettierignore
-/examples/gatsby-site-i18n/.cache
-/examples/gatsby-site-i18n/public
-
-# From /example/gatsby-starter-wordpress-basic/.prettierignore
-/examples/gatsby-starter-wordpress-basic/.cache
-/examples/gatsby-starter-wordpress-basic/public
-/examples/gatsby-starter-wordpress-basic/shared/wp-fragment-types.json
-
-# From /example/minisearch/.prettierignore
-/examples/minisearch/.cache
-/examples/minisearch/public
-
-# From /example/wordpress-minisearch/.prettierignore
-/examples/wordpress-minisearch/.cache
-/examples/wordpress-minisearch/public
-/examples/wordpress-minisearch/shared/wp-fragment-types.json
