@@ -1,11 +1,6 @@
 {
   "name": "root",
   "private": true,
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ]
-  },
   "scripts": {
     "lint": "eslint '**/*.{js,jsx}'",
     "format": "run-s format:*",
