@@ -32,10 +32,10 @@ function extractAllStrings(obj) {
 
 function defaultContentNodeFields(source) {
   // source = current(source);
-  let contentType = source.contentType || source.contentType.node.name;
+  let contentType = source.contentType?.node?.name;
   let dates =
     contentType !== "page"
-      ? source.archiveDatesGmt || (source.dateGmt && [source.dateGmt])
+      ? source.archiveDatesGmt || (source.dateGmt && [source.dateGmt]) || []
       : [];
   let date = getMostRelevantDate(dates);
   return {
