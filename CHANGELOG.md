@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.12](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.11...v1.4.0-next.12) (2023-04-27)
+
+
+### Bug Fixes
+
+* Avoid search indexing errors when fields are missing ([adfd434](https://github.com/whitespace-se/gatsby-packages/commit/adfd43480a7f8c96c5b66430942863c1f6c27fcf))
+
+
+
 ## [1.4.0-next.11](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.10...v1.4.0-next.11) (2023-04-24)
 
 
