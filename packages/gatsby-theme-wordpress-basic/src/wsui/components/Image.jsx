@@ -61,7 +61,7 @@ export default function Image({
 
   return (
     <WrapperComponent
-      css={css({ "--image-max-width": maxWidth && `${maxWidth}px` })}
+      css={css({ "max-width": maxWidth && `${maxWidth}px` })}
       // className={clsx(styles.component, className)}
       ref={ref}
       {...restProps}
