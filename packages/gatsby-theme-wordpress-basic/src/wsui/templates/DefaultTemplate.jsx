@@ -14,8 +14,8 @@ import {
   Seo,
 } from "../components";
 
-export default function DefaultPageTemplate(props) {
-  props = useThemeProps({ props, name: "DefaultPageTemplate" });
+export default function DefaultTemplate(props) {
+  props = useThemeProps({ props, name: "DefaultTemplate" });
   const { title } = usePageContext();
   return (
     <article css={css``}>
