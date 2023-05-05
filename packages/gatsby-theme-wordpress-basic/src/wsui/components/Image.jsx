@@ -36,7 +36,6 @@ export default function Image({
   base64,
   caption,
   captionProps: { className: captionClassName, ...captionRestProps } = {},
-  className,
   credit,
   creditProps: { className: creditClassName, ...creditRestProps } = {},
   estimatedWidth = 320,
@@ -58,11 +57,11 @@ export default function Image({
   if (WrapperComponent == null) {
     WrapperComponent = caption ? "figure" : "div";
   }
-
   return (
     <WrapperComponent
-      css={css({ "max-width": maxWidth && `${maxWidth}px` })}
-      // className={clsx(styles.component, className)}
+      css={css`
+        max-width: ${maxWidth && `${maxWidth}px`};
+      `}
       ref={ref}
       {...restProps}
     >
