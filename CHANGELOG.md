@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.13](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.12...v1.4.0-next.13) (2023-05-05)
+
+
+### Bug Fixes
+
+* Template file and component names ([07b229d](https://github.com/whitespace-se/gatsby-packages/commit/07b229d82ad9d1c588c93891ed75de23e3b27b6e))
+
+
+
 ## [1.4.0-next.12](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.11...v1.4.0-next.12) (2023-04-27)
 
 
