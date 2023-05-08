@@ -15,6 +15,7 @@
   "dependencies": {
     "@jfrk/react-heading-levels": "^1.0.0",
     "@whitespace/gatsby-hooks": "^0.5.0",
+    "algoliasearch": "^4.17.0",
     "clsx": "^1.2.1",
     "formik": "^2.2.9",
     "gatsby-plugin-algolia": "^1.0.2",

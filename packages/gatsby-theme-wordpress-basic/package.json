@@ -15,9 +15,6 @@
   },
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
-    "@emotion/css": "^11.5.0",
-    "@emotion/react": "^11.5.0",
-    "@emotion/styled": "^11.3.0",
     "@jfrk/react-heading-levels": "^1.0.0",
     "@jfrk/react-id": "^1.0.0",
     "@vitejs/plugin-react": "^3.1.0",
@@ -82,11 +79,18 @@
     "yup": "^0.32.11"
   },
   "peerDependencies": {
+    "@emotion/css": "^11.5.0",
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.5.0",
+    "@wsui/base": "^0.3.8",
     "gatsby": "^3.14.3",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },
   "devDependencies": {
+    "@emotion/css": "^11.5.0",
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.5.0",
     "@storybook/addon-actions": "^7.0.0-rc.4",
     "@storybook/addon-essentials": "^7.0.0-rc.4",
     "@storybook/addon-interactions": "^7.0.0-rc.4",
@@ -95,6 +99,7 @@
     "@storybook/react-vite": "^7.0.0-rc.4",
     "@storybook/testing-library": "^0.0.14-next.1",
     "@whitespace/storybook-addon-html": "^5.1.1",
+    "@wsui/base": "^0.3.8",
     "gatsby": "^3.14.3",
     "prettier": "^2.4.1",
     "react": "^17.0.0",
