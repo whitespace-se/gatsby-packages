@@ -1,9 +1,11 @@
 import { mergeWith } from "lodash/fp";
 import React, { useContext } from "react";
 
-const mergeAndConcat = mergeWith((a, b) =>
-  Array.isArray(a) ? a.concat(b) : b,
-);
+const mergeAndConcat = mergeWith((a, b) => {
+  if (Array.isArray(a)) {
+    return a.concat(b);
+  }
+});
 
 import htmlProcessorExtensionContext from "../contexts/htmlProcessorExtensionContext";
 
