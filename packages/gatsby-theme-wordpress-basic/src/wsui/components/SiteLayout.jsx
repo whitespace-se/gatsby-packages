@@ -1,4 +1,5 @@
-import { css } from "@emotion/react";
+import { css, useTheme } from "@emotion/react";
+import { useThemeProps } from "@wsui/base";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -13,7 +14,10 @@ SiteLayout.propTypes = {
   styles: PropTypes.objectOf(PropTypes.string),
 };
 
-export default function SiteLayout({ children }) {
+export default function SiteLayout(props) {
+  props = useThemeProps({ props, name: "SiteLayout" });
+  const theme = useTheme();
+  let { children, footerMargin = 16 } = props;
   return (
     <div
       css={css`
@@ -24,7 +28,11 @@ export default function SiteLayout({ children }) {
     >
       <Header />
       <main id="main">{children}</main>
-      <Footer />
+      <Footer
+        css={css`
+          margin-top: ${theme.getLength(footerMargin)};
+        `}
+      />
     </div>
   );
 }
