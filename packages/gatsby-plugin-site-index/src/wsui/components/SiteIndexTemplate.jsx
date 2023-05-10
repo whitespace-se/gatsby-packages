@@ -1,8 +1,14 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react";
-import { H, Section } from "@jfrk/react-heading-levels";
 import { usePageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks";
-import { PageGrid, PageGridItem, useThemeProps, Stack } from "@wsui/base";
+import {
+  H,
+  Section,
+  PageGrid,
+  PageGridItem,
+  useThemeProps,
+  Stack,
+} from "@wsui/base";
 import { graphql } from "gatsby";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";

@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { css, jsx, useTheme } from "@emotion/react";
-import { H } from "@jfrk/react-heading-levels";
+import { jsx, useTheme } from "@emotion/react";
+import { H } from "@wsui/base";
 
 import { usePageContext } from "../../hooks/page-context";
 import usePageContent from "../../hooks/usePageContent";

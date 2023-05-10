@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react";
-import { Section } from "@jfrk/react-heading-levels";
-import { PageGrid, PageGridItem, useThemeProps } from "@wsui/base";
+import { Section, PageGrid, PageGridItem, useThemeProps } from "@wsui/base";
 
 import { usePageContext } from "../../hooks/page-context";
 import {
@@ -15,33 +14,30 @@ import {
 } from "../components";
 
 export default function DefaultTemplate(props) {
+  // eslint-disable-next-line no-unused-vars
   props = useThemeProps({ props, name: "DefaultTemplate" });
   const { title } = usePageContext();
   return (
-    <article css={css``}>
+    <article>
       <Seo title={title} />
 
       {/* Featured image */}
       {/* <PageFeaturedImage /> */}
 
-      <PageGrid
-        css={css`
-          padding-block: 2rem;
-        `}
-      >
+      <PageGrid>
         <PageGridItem colspan={7}>
-          <PageHeading css={css``} marginAfter />
+          <PageHeading marginAfter />
           <Section>
             {/* <PageChildNavigation /> */}
-            <PagePreamble css={css``} marginAfter />
-            <PageContent />
+            <PagePreamble marginAfter />
+            <PageContent marginAfter />
           </Section>
         </PageGridItem>
       </PageGrid>
       <Section>
         {/* <footer className={styles.footer}>
           <PageMeta />
-          <PageGrid css={css``}>
+          <PageGrid>
             <PageGridItem>
               <PageSiblingNavigation />
             </PageGridItem>

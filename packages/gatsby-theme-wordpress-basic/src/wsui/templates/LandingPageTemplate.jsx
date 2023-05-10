@@ -1,27 +1,22 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react";
-import { Section } from "@jfrk/react-heading-levels";
-import { PageGrid, PageGridItem, useThemeProps } from "@wsui/base";
+import { Section, PageGrid, PageGridItem, useThemeProps } from "@wsui/base";
 
 import { usePageContext } from "../../hooks/page-context";
 import { PageContent, PageHeading, PagePreamble, Seo } from "../components";
 
 export default function LandingPageTemplate(props) {
+  // eslint-disable-next-line no-unused-vars
   props = useThemeProps({ props, name: "LandingPageTemplate" });
   const { title } = usePageContext();
   return (
-    <article css={css``}>
+    <article>
       <Seo title={title} />
-      <PageGrid
-        css={css`
-          text-align: center;
-          padding-block: 2rem;
-        `}
-      >
+      <PageGrid>
         <PageGridItem>
-          <PageHeading css={css``} marginAfter />
+          <PageHeading marginAfter />
           <Section>
-            <PagePreamble css={css``} marginAfter />
+            <PagePreamble marginAfter />
             <PageContent />
           </Section>
         </PageGridItem>
