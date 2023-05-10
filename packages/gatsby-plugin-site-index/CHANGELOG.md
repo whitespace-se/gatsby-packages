@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.16](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.15...v1.4.0-next.16) (2023-05-10)
+
+
+### Bug Fixes
+
+* Layout issues and heading levels ([8d86a62](https://github.com/whitespace-se/gatsby-packages/commit/8d86a624d2f2ddb78ddf2322b081c71ebef5f40e))
+
+
+
 ## [1.4.0-next.15](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.14...v1.4.0-next.15) (2023-05-09)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-site-index

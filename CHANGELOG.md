@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.16](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.15...v1.4.0-next.16) (2023-05-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* Remove css reset
+
+### Features
+
+* Add `headerMargin` prop to SiteLayout ([a58ea63](https://github.com/whitespace-se/gatsby-packages/commit/a58ea637226cf12c58c3b419d4957c3c47ebb571))
+* Add footer margin ([c6907d3](https://github.com/whitespace-se/gatsby-packages/commit/c6907d396b216cd8c31b1154570fe9453a05ff97))
+* Merge stringifierComponents in HtmlProcessorExtensionProvider ([#34](https://github.com/whitespace-se/gatsby-packages/issues/34)) ([3b900ad](https://github.com/whitespace-se/gatsby-packages/commit/3b900adcc1f46ff5aff671398d3b11aabf6716be))
+* Remove css reset ([6e0f382](https://github.com/whitespace-se/gatsby-packages/commit/6e0f382156ce56e87a343aeeedad2c21ed529cc9))
+
+
+### Bug Fixes
+
+* Layout issues and heading levels ([8d86a62](https://github.com/whitespace-se/gatsby-packages/commit/8d86a624d2f2ddb78ddf2322b081c71ebef5f40e))
+
+
+
 ## [1.4.0-next.15](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.14...v1.4.0-next.15) (2023-05-09)
 
 **Note:** Version bump only for package root
