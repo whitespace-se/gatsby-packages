@@ -17,7 +17,7 @@ SiteLayout.propTypes = {
 export default function SiteLayout(props) {
   props = useThemeProps({ props, name: "SiteLayout" });
   const theme = useTheme();
-  let { children, footerMargin = 16 } = props;
+  let { children, footerMargin = 16, headerMargin = [4, 8] } = props;
   return (
     <div
       css={css`
@@ -26,7 +26,11 @@ export default function SiteLayout(props) {
         min-height: 100vh;
       `}
     >
-      <Header />
+      <Header
+        css={css`
+          margin-bottom: ${theme.getLength(headerMargin)};
+        `}
+      />
       <main id="main">{children}</main>
       <Footer
         css={css`
