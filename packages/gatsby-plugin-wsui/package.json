@@ -14,14 +14,20 @@
     "storybook": "NODE_ENV=production start-storybook -p 6006",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
+  "dependencies": {
+    "gatsby-plugin-compile-es6-packages": "^2.1.1",
+    "tailwindcss": "^3.2.7"
+  },
   "peerDependencies": {
     "@wsui/base": "*",
     "gatsby": "^3.14.3",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },
-  "dependencies": {
-    "gatsby-plugin-compile-es6-packages": "^2.1.1",
-    "tailwindcss": "^3.2.7"
+  "devDependencies": {
+    "@wsui/base": "*",
+    "gatsby": "^3.14.3",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
   }
 }
