@@ -6,7 +6,7 @@ import rehypeParse from "rehype-dom-parse";
 import { pluginOptionsContext } from "./src/contexts";
 import { HTMLProcessorProvider } from "./src/hooks";
 
-import "./src/index.css";
+// import "./src/index.css";
 
 const RootElementWrapper = require(GATSBY_ROOT_ELEMENT_WRAPPER_PATH).default;
 
