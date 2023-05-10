@@ -4,7 +4,7 @@ import usePageContent from "../../hooks/usePageContent";
 
 import TextContent from "./TextContent.jsx";
 
-export default function PagePreamble({ ...restProps }) {
+export default function PageContent({ ...restProps }) {
   const { content } = usePageContent();
 
   if (!content) {

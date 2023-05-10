@@ -1,7 +1,8 @@
-import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
-import { usePageContext } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/page-context";
-import useMustacheData from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/useMustacheData";
 import Mustache from "mustache";
+
+import { useHTMLProcessor } from "./html-processor";
+import { usePageContext } from "./page-context";
+import useMustacheData from "./useMustacheData";
 
 export default function usePageContent(options) {
   let pageContext = usePageContext();
