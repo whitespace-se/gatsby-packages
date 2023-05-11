@@ -1,5 +1,6 @@
 import { Link } from "@wsui/base";
 import React, { useContext } from "react";
+import { useTheme, css } from "@emotion/react";
 
 import HtmlProcessorExtensionProvider from "../../components/HtmlProcessorExtensionProvider";
 import htmlStringifierContext from "../../contexts/htmlStringifierContext";
@@ -101,7 +102,9 @@ export default function RootElementWrapper({ children }) {
           height: imgHeight,
           ...restProps
         }) {
+          const theme = useTheme();
           const { contentMedia } = useContext(htmlStringifierContext);
+
           let attachment = contentMedia.find(
             (attachment) => attachment.databaseId === Number(attachmentId),
           );
@@ -121,6 +124,23 @@ export default function RootElementWrapper({ children }) {
               alt={alt}
               maxWidth={imgWidth}
               {...restProps}
+              css={css`
+                margin-bottom: ${theme.getLength(8)};
+                &.alignright {
+                  width: 100%;
+                  float: right;
+                  margin-left: ${theme.getLength(8)};
+                }
+                &.alignleft {
+                  width: 100%;
+                  float: left;
+                  margin-right: ${theme.getLength(8)};
+                }
+                &.aligncenter {
+                  width: 100%;
+                  margin-inline: auto;
+                }
+              `}
             />
           );
         },
