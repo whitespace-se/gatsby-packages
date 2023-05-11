@@ -16,10 +16,6 @@ export default function RootElementWrapper({ children }) {
             visit(tree, { tagName: "img" }, (node) => {
               let attachmentId;
               if (node.properties && node.properties.className) {
-                console.log(
-                  "node.properties.className",
-                  node.properties.className,
-                );
                 node.properties.className.some((className) => {
                   let matches = className.match(/^wp-image-(\d+)$/);
                   if (matches) {
