@@ -12,6 +12,7 @@ Image.propTypes = {
   alt: PropTypes.string,
   aspectRatio: PropTypes.number,
   base64: PropTypes.string,
+  borderRadius: PropTypes.number,
   caption: PropTypes.node,
   captionProps: PropTypes.shape({ className: PropTypes.string }),
   className: PropTypes.string,
@@ -37,6 +38,7 @@ export default function Image({
   alt,
   aspectRatio,
   base64,
+  borderRadius,
   caption,
   captionProps: { className: captionClassName, ...captionRestProps } = {},
   className,
@@ -78,6 +80,7 @@ export default function Image({
       <Link
         to={linkTo}
         className={clsx(styles.link, linkClassName)}
+        css={borderRadius && css`border-radius: ${borderRadius}px; overflow: hidden;`}
         {...linkRestProps}
       >
         <Img
