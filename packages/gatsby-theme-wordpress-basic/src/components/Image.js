@@ -80,7 +80,13 @@ export default function Image({
       <Link
         to={linkTo}
         className={clsx(styles.link, linkClassName)}
-        css={borderRadius && css`border-radius: ${borderRadius}px; overflow: hidden;`}
+        css={
+          borderRadius &&
+          css`
+            border-radius: ${borderRadius}px;
+            overflow: hidden;
+          `
+        }
         {...linkRestProps}
       >
         <Img
