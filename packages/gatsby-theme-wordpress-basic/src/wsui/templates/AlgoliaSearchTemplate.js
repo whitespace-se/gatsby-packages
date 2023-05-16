@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/react";
 import { H, Section } from "@jfrk/react-heading-levels";
-import { PageGrid, PageGridItem } from "@whitespace/components";
+import { PageGrid, PageGridItem } from "@wsui/base";
 import PropTypes from "prop-types";
 // import { useTranslation } from "react-i18next";
 
