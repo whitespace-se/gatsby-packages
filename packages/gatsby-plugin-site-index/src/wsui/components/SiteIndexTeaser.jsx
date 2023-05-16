@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/react";
-import { Teaser, TeaserContent, TeaserTitle } from "@whitespace/components";
+import { Teaser, TeaserContent, TeaserTitle } from "@wsui/base";
 
 export default function SiteIndexTeaser({ page, ...restProps }) {
   return (
