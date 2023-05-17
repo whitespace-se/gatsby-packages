@@ -1,5 +1,7 @@
-export function getTopLevelPages(allPages) {
-  return allPages.filter((page) => page.parentId == null && !page.isFrontPage);
+export function getTopLevelPages(allPages, includeFrontPage = false) {
+  return allPages.filter(
+    (page) => page.parentId == null && (includeFrontPage || !page.isFrontPage),
+  );
 }
 
 export function getFrontPage(allPages) {
@@ -70,7 +72,7 @@ export function getTreeStructure(
 ) {
   return (
     parentId == null
-      ? getTopLevelPages(allPages)
+      ? getTopLevelPages(allPages, true)
       : getChildren(allPages, parentId)
   )
     .filter((page) => !!page.showInMenu && !page.isRestricted)
