@@ -73,7 +73,7 @@ export function getTreeStructure(
       ? getTopLevelPages(allPages)
       : getChildren(allPages, parentId)
   )
-    .filter((page) => page.showInMenu !== false)
+    .filter((page) => !!page.showInMenu && !page.isRestricted)
     .map((page) =>
       transform(
         page,
