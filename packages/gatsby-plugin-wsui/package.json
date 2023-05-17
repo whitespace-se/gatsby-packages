@@ -1,6 +1,6 @@
 {
   "name": "@whitespace/gatsby-plugin-wsui",
-  "version": "1.4.0-next.16",
+  "version": "1.4.0-next.17",
   "main": "index.js",
   "author": "Whitespace Dev <code@whitespace.se>",
   "description": "Provides integration with WSUI",

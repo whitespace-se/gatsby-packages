@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.17](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.16...v1.4.0-next.17) (2023-05-17)
+
+
+### Bug Fixes
+
+* Replace deps to whitespace/components with wsui/base for wsui part of repo ([ef17710](https://github.com/whitespace-se/gatsby-packages/commit/ef17710a7c46a3737e9b5197d02762203bb23ffe))
+
+
+
 ## [1.4.0-next.16](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.15...v1.4.0-next.16) (2023-05-10)
 
 

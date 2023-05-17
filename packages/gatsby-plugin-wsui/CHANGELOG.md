@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.17](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.16...v1.4.0-next.17) (2023-05-17)
+
+
+### Features
+
+* Set background color context ([bbe4c8d](https://github.com/whitespace-se/gatsby-packages/commit/bbe4c8d67b2d938437aa3f65e7a652623cf14721))
+
+
+
 ## [1.4.0-next.16](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.15...v1.4.0-next.16) (2023-05-10)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-wsui
