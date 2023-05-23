@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.18](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.17...v1.4.0-next.18) (2023-05-23)
+
+
+### Features
+
+* Add borderRadius prop to image component ([dc61ab7](https://github.com/whitespace-se/gatsby-packages/commit/dc61ab72cbe7fb816fa22fc3421559d27f8f6768))
+* Allow overriding site layout and header components ([9c3e02d](https://github.com/whitespace-se/gatsby-packages/commit/9c3e02de18209f42bee9a2985a0f4f9c144c9b26))
+
+
+### Bug Fixes
+
+* Add more search form styling options with defaults ([8ab5d0f](https://github.com/whitespace-se/gatsby-packages/commit/8ab5d0fa8e902ee21a709d567883e5a92107e180))
+* caption in featured image ([e5da9c9](https://github.com/whitespace-se/gatsby-packages/commit/e5da9c98d5e8c70476bb9fa0f0bbdb2d99b3c86f))
+* display featured image if  postSingleShowFeaturedImage field is true ([4a042a7](https://github.com/whitespace-se/gatsby-packages/commit/4a042a73c533534db1d5886e2253352622556f13))
+* Use `hideLabel` prop instead ([be47737](https://github.com/whitespace-se/gatsby-packages/commit/be47737e2c763a93a57daed929dc05c17322d905))
+
+
+
 ## [1.4.0-next.17](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.16...v1.4.0-next.17) (2023-05-17)
 
 
