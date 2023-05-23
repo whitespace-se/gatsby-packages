@@ -1,12 +1,12 @@
 import { css, useTheme } from "@emotion/react";
-import { useThemeProps } from "@wsui/base";
+import { handleComponentsProp, useThemeProps } from "@wsui/base";
 import PropTypes from "prop-types";
 import React from "react";
 
 // import { usePageContext } from "../hooks";
 
-import Footer from "./Footer.jsx";
-import Header from "./Header.jsx";
+import DefaultFooter from "./Footer.jsx";
+import DefaultHeader from "./Header.jsx";
 
 SiteLayout.propTypes = {
   children: PropTypes.node,
@@ -17,7 +17,16 @@ SiteLayout.propTypes = {
 export default function SiteLayout(props) {
   props = useThemeProps({ props, name: "SiteLayout" });
   const theme = useTheme();
-  let { children, footerMargin = 16, headerMargin = [4, 8] } = props;
+  let {
+    children,
+    footerMargin = 16,
+    headerMargin = [4, 8],
+    components,
+  } = props;
+  let { Header, Footer } = handleComponentsProp(components, {
+    Header: DefaultHeader,
+    Footer: DefaultFooter,
+  });
   return (
     <div
       css={css`

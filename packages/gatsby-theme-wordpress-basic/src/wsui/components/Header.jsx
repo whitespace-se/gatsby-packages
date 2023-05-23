@@ -1,28 +1,42 @@
 /** @jsx jsx */
 import { css, jsx, useTheme } from "@emotion/react";
+import styled from "@emotion/styled";
 import {
   Clickable,
   Icon,
   PageGrid,
   PageGridItem,
+  handleComponentsProp,
   useThemeProps,
 } from "@wsui/base";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import HeaderHamburgerMenu from "./HeaderHamburgerMenu.jsx";
-import HeaderLogo from "./HeaderLogo.jsx";
+import DefaultHamburgerMenu from "./HeaderHamburgerMenu.jsx";
+import DefaultLogo from "./HeaderLogo.jsx";
+
+const DefaultHamburgerMenuToggle = styled(Clickable)``;
 
 // import HeaderFlyOutMenu from "./HeaderFlyOutMenu";
 // import HeaderLogo from "./HeaderLogo";
 // import HeaderMainMenu from "./HeaderMainMenu";
 
-export default function Header(inProps) {
-  const { color = "primary.800", ...restProps } = useThemeProps({
-    props: inProps,
+export default function Header(props) {
+  const theme = useTheme();
+  props = useThemeProps({
+    props,
     name: "Header",
   });
-  const theme = useTheme();
+  let { color = "primary.800", components, ...restProps } = props;
+  let { HamburgerMenu, HamburgerMenuToggle, Logo } = handleComponentsProp(
+    components,
+    {
+      HamburgerMenu: DefaultHamburgerMenu,
+      HamburgerMenuToggle: DefaultHamburgerMenuToggle,
+      Logo: DefaultLogo,
+    },
+  );
+
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
   useEffect(() => {
     document.body.style.overflow = hamburgerOpen ? "hidden" : "";
@@ -49,13 +63,13 @@ export default function Header(inProps) {
             {/* TODO: Implement header content with WSUI components */}
             {/* <SkipTo />
             <HeaderMainMenu aria-label={t("mainMenu")} /> */}
-            <HeaderLogo
+            <Logo
               link="/"
               css={css`
                 grid-area: logo;
               `}
             />
-            <Clickable
+            <HamburgerMenuToggle
               onClick={() => {
                 setHamburgerOpen(true);
               }}
@@ -64,16 +78,15 @@ export default function Header(inProps) {
               aria-controls={"header-hamburger-menu"}
               css={css`
                 grid-area: flyout;
-                ${theme.styleUtils.buttonReset}
                 cursor: pointer;
               `}
             >
               <Icon name="menu" size="2rem" />
-            </Clickable>
+            </HamburgerMenuToggle>
           </div>
         </PageGridItem>
       </PageGrid>
-      <HeaderHamburgerMenu
+      <HamburgerMenu
         open={hamburgerOpen}
         onClose={() => setHamburgerOpen(false)}
         id={"header-hamburger-menu"}
