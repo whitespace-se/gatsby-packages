@@ -1,5 +1,6 @@
 import { useLocation } from "@gatsbyjs/reach-router";
-import { Breadcrumbs, withComponentDefaults } from "@whitespace/components";
+import { withComponentDefaults } from "@whitespace/components";
+import { Breadcrumbs } from "@wsui/base";
 import { useStaticQuery, graphql } from "gatsby";
 import { startCase, camelCase } from "lodash";
 import PropTypes from "prop-types";
@@ -57,5 +58,6 @@ function PageBreadcrumbs({ transformItems = (items) => items, ...restProps }) {
   }
   items = transformItems(items, { location, page });
   items = items.filter(Boolean);
-  return <Breadcrumbs hideDescription={true} items={items} {...restProps} />;
+
+  return <Breadcrumbs items={items} {...restProps} />;
 }
