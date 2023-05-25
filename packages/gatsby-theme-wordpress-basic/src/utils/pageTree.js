@@ -68,11 +68,12 @@ export function getTreeStructure(
       ...page,
       [childrenProp]: children,
     }),
+    includeFrontPage = false,
   } = {},
 ) {
   return (
     parentId == null
-      ? getTopLevelPages(allPages, true)
+      ? getTopLevelPages(allPages, includeFrontPage)
       : getChildren(allPages, parentId)
   )
     .filter((page) => !!page.showInMenu && !page.isRestricted)
