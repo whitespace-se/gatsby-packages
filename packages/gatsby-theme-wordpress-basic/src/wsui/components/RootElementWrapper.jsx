@@ -119,6 +119,7 @@ export default function RootElementWrapper({ children }) {
               srcSet={srcSet}
               width={width}
               height={height}
+              borderRadius={theme.getLength(4)}
               base64={base64}
               aspectRatio={imgWidth / imgHeight || aspectRatio}
               alt={alt}
