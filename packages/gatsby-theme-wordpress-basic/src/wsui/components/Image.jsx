@@ -60,6 +60,7 @@ export default function Image({
   return (
     <WrapperComponent
       css={css`
+        margin: 0;
         max-width: ${maxWidth && `${maxWidth}px`};
       `}
       ref={ref}
