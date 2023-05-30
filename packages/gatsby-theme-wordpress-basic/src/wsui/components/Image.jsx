@@ -49,6 +49,7 @@ export default function Image({
   srcSetWebp,
   srcWebp,
   width,
+  borderRadius,
   WrapperComponent = null,
   ...restProps
 }) {
@@ -71,6 +72,9 @@ export default function Image({
         {...linkRestProps}
       >
         <Img
+          css={css`
+            border-radius: ${borderRadius};
+          `}
           fluid={{
             src,
             srcSet,
