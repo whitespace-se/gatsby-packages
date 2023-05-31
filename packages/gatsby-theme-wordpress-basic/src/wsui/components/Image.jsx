@@ -1,6 +1,5 @@
 import { css } from "@emotion/react";
-import { Link, useComponentWidth } from "@wsui/base";
-import clsx from "clsx";
+import { Link, TypographyBlock, useComponentWidth } from "@wsui/base";
 import Img from "gatsby-image";
 import PropTypes from "prop-types";
 import React from "react";
@@ -35,13 +34,13 @@ export default function Image({
   aspectRatio,
   base64,
   caption,
-  captionProps: { className: captionClassName, ...captionRestProps } = {},
+  captionProps = {},
   credit,
-  creditProps: { className: creditClassName, ...creditRestProps } = {},
+  creditProps = {},
   estimatedWidth = 320,
   height,
-  imgProps: { className: imgClassName, ...imgRestProps } = {},
-  linkProps: { className: linkClassName, ...linkRestProps } = {},
+  imgProps = {},
+  linkProps = {},
   linkTo,
   maxWidth,
   src,
@@ -67,11 +66,7 @@ export default function Image({
       ref={ref}
       {...restProps}
     >
-      <Link
-        to={linkTo}
-        // className={clsx(styles.link, linkClassName)}
-        {...linkRestProps}
-      >
+      <Link to={linkTo} {...linkProps}>
         <Img
           css={css`
             border-radius: ${borderRadius};
@@ -89,24 +84,25 @@ export default function Image({
             alt,
           }}
           alt={alt}
-          // className={clsx(styles.img, imgClassName)}
-          {...imgRestProps}
+          {...imgProps}
         />
       </Link>
       {!!(caption || credit) && (
         <figcaption
-          // className={clsx(styles.caption, captionClassName)}
-          {...captionRestProps}
+          css={css`
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0.25rem 1rem;
+          `}
+          {...captionProps}
         >
           {caption}
           {!!credit && (
             // TODO: Translate
-            <p
-              // className={(styles.credit, creditClassName)}
-              {...creditRestProps}
-            >
-              {"Fotograf: " + credit}
-            </p>
+            <TypographyBlock>
+              <p {...creditProps}>{"Fotograf: " + credit}</p>
+            </TypographyBlock>
           )}
         </figcaption>
       )}
