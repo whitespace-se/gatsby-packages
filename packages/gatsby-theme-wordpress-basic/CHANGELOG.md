@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.19](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.18...v1.4.0-next.19) (2023-05-30)
+
+
+### Bug Fixes
+
+* Remove default `<figure>` margin ([c481b0d](https://github.com/whitespace-se/gatsby-packages/commit/c481b0dca776f45b677f656d04ca1d23e4bc84b2))
+
+
+
 ## [1.4.0-next.18](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.17...v1.4.0-next.18) (2023-05-23)
 
 
