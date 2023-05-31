@@ -1,18 +1,11 @@
 import { css, useTheme } from "@emotion/react";
 import { handleComponentsProp, useThemeProps } from "@wsui/base";
-import PropTypes from "prop-types";
 import React from "react";
 
 // import { usePageContext } from "../hooks";
 
 import DefaultFooter from "./Footer.jsx";
 import DefaultHeader from "./Header.jsx";
-
-SiteLayout.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  styles: PropTypes.objectOf(PropTypes.string),
-};
 
 export default function SiteLayout(props) {
   props = useThemeProps({ props, name: "SiteLayout" });
