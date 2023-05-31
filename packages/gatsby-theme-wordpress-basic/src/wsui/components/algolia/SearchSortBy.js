@@ -8,7 +8,7 @@ import { kebabCase } from "lodash-es";
 import PropTypes from "prop-types";
 import { useSortBy, useInstantSearch } from "react-instantsearch-hooks-web";
 
-import ToggleButtonGroup from "../ToggleButtonGroup";
+import ToggleButtonGroup from "../../../components/ToggleButtonGroup";
 
 const Label = styled.div`
   ${(props) =>
