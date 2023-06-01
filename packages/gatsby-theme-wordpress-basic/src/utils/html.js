@@ -56,6 +56,7 @@ export default function createHTMLProcessor({
     });
 
     let components = {
+      fragment: React.Fragment,
       ...additionalComponents,
     };
 
@@ -135,33 +136,44 @@ export default function createHTMLProcessor({
 
       let preambleTree = null,
         contentTree = tree,
-        headingTree = null;
+        headingTree = null,
+        headingContentTree = null;
 
       if (options.extractHeading) {
         if (tree?.children?.[0]?.tagName === "h1") {
           headingTree = tree.children.shift();
+          console.log(headingTree);
+          headingContentTree = {
+            type: "element",
+            tagName: "fragment",
+            children: headingTree.children,
+          };
         }
       }
 
-      visitParents(
-        tree,
-        { type: "comment", value: "more" },
-        (node, ancestors) => {
-          [preambleTree, contentTree] = splitTree()([...ancestors, node]);
-          return visitParents.EXIT;
-        },
-      );
+      if (!options.leavePreamble) {
+        visitParents(
+          tree,
+          { type: "comment", value: "more" },
+          (node, ancestors) => {
+            [preambleTree, contentTree] = splitTree()([...ancestors, node]);
+            return visitParents.EXIT;
+          },
+        );
+      }
 
-      [preambleTree, contentTree, headingTree] = [
+      [preambleTree, contentTree, headingTree, headingContentTree] = [
         preambleTree,
         contentTree,
         headingTree,
+        headingContentTree,
       ].map(processContentTree(options));
 
       return {
         preamble: preambleTree,
         content: contentTree,
         heading: headingTree,
+        headingContent: headingContentTree,
       };
     },
     (content, options) => `${content}::${hashSum(options)}`,
