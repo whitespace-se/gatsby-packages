@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.20](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.19...v1.4.0-next.20) (2023-06-01)
+
+
+### Features
+
+* Allow skipping preamble extraction and extract heading content ([b6d5722](https://github.com/whitespace-se/gatsby-packages/commit/b6d572238a960a1e0d44922e5e79c8feca47090b))
+
+
+### Bug Fixes
+
+* Image caption and credit alignment ([c4ea338](https://github.com/whitespace-se/gatsby-packages/commit/c4ea338cfc9ac40be835db94ca420f2c7d6a73e3))
+
+
+
 ## [1.4.0-next.19](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.18...v1.4.0-next.19) (2023-05-30)
 
 
