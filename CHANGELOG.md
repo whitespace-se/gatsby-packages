@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.21](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.20...v1.4.0-next.21) (2023-06-02)
+
+
+### Bug Fixes
+
+* Transform wp URLs ([ab39d25](https://github.com/whitespace-se/gatsby-packages/commit/ab39d2533dc2b016b9c3727fbab679119afd5f6d))
+
+
+
 ## [1.4.0-next.20](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.19...v1.4.0-next.20) (2023-06-01)
 
 
