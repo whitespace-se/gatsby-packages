@@ -142,7 +142,6 @@ export default function createHTMLProcessor({
       if (options.extractHeading) {
         if (tree?.children?.[0]?.tagName === "h1") {
           headingTree = tree.children.shift();
-          console.log(headingTree);
           headingContentTree = {
             type: "element",
             tagName: "fragment",
