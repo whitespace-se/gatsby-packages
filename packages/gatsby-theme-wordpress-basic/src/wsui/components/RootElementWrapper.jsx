@@ -1,6 +1,6 @@
-import { Link } from "@wsui/base";
-import React, { useContext } from "react";
 import { useTheme, css } from "@emotion/react";
+import { Link, UrlTransformerProvider } from "@wsui/base";
+import React, { useContext } from "react";
 
 import HtmlProcessorExtensionProvider from "../../components/HtmlProcessorExtensionProvider";
 import htmlStringifierContext from "../../contexts/htmlStringifierContext";
@@ -147,7 +147,26 @@ export default function RootElementWrapper({ children }) {
         },
       }}
     >
-      {children}
+      <UrlTransformerProvider
+        transformUrl={(url) => {
+          url = url?.replace(/^http:/, "https:");
+          url =
+            process.env.GATSBY_WORDPRESS_UPLOADS_URL &&
+            url?.startsWith(
+              process.env.GATSBY_WORDPRESS_URL + "/wp-content/uploads/",
+            )
+              ? url.replace(
+                  process.env.GATSBY_WORDPRESS_URL + "/wp-content/uploads",
+                  process.env.GATSBY_WORDPRESS_UPLOADS_URL,
+                )
+              : url?.startsWith(process.env.GATSBY_WORDPRESS_URL + "/wp-")
+              ? url
+              : url?.replace(process.env.GATSBY_WORDPRESS_URL, "");
+          return url;
+        }}
+      >
+        {children}
+      </UrlTransformerProvider>
     </HtmlProcessorExtensionProvider>
   );
 }
