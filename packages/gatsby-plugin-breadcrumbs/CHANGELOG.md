@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.22](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.21...v1.4.0-next.22) (2023-06-05)
+
+
+### Bug Fixes
+
+* Use WSUI Breadcrumbs correctly ([b161aed](https://github.com/whitespace-se/gatsby-packages/commit/b161aed92059263f7ba801de3a3ebe54eba3fef6))
+
+
+
 ## [1.4.0-next.21](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.20...v1.4.0-next.21) (2023-06-02)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-breadcrumbs
