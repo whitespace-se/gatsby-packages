@@ -71,7 +71,7 @@ export default function createHTMLProcessor({
   function isElementWithClassName(className) {
     return (node) =>
       node.type === "element" &&
-      !!node.properties?.className.includes(className);
+      !!node.properties?.className?.includes?.(className);
   }
 
   function isHeadingElement() {
