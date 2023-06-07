@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import hashSum from "hash-sum";
 import { toString } from "hast-util-to-string";
 import memoize from "lodash/memoize";
@@ -70,9 +71,11 @@ export default function createHTMLProcessor({
   function isElementWithClassName(className) {
     return (node) =>
       node.type === "element" &&
-      node.properties &&
-      node.properties.className &&
-      node.properties.className.includes(className);
+      !!node.properties?.className?.className.includes(className);
+  }
+
+  function isHeadingElement() {
+    return (node) => node.type === "element" && !!node.tagName.match(/^h\d$/);
   }
 
   const processContentTree =
@@ -102,7 +105,7 @@ export default function createHTMLProcessor({
       }
 
       treeTransforms.forEach((transformer) =>
-        transformer(tree, { ...options, visit }),
+        transformer(tree, { ...options, visit, isHeadingElement, clsx }),
       );
 
       const stringifier = createStringifier(options);
@@ -137,10 +140,12 @@ export default function createHTMLProcessor({
       let preambleTree = null,
         contentTree = tree,
         headingTree = null,
-        headingContentTree = null;
+        headingContentTree = null,
+        headingLevel = null;
 
       if (options.extractHeading) {
-        if (tree?.children?.[0]?.tagName === "h1") {
+        let headingLevel = tree?.children?.[0]?.tagName.match(/^h(\d)$/)?.[1];
+        if (headingLevel) {
           headingTree = tree.children.shift();
           headingContentTree = {
             type: "element",
@@ -173,6 +178,7 @@ export default function createHTMLProcessor({
         content: contentTree,
         heading: headingTree,
         headingContent: headingContentTree,
+        headingLevel,
       };
     },
     (content, options) => `${content}::${hashSum(options)}`,
