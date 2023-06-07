@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.23](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.22...v1.4.0-next.23) (2023-06-07)
+
+
+### Features
+
+* Add `semanticHeadings` option to html processor ([e7d7e90](https://github.com/whitespace-se/gatsby-packages/commit/e7d7e909793a96ba077e37f8724584042b22b59b))
+
+
+
 ## [1.4.0-next.22](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.21...v1.4.0-next.22) (2023-06-05)
 
 
