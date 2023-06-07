@@ -144,7 +144,9 @@ export default function createHTMLProcessor({
         headingLevel = null;
 
       if (options.extractHeading) {
-        let headingLevel = tree?.children?.[0]?.tagName.match(/^h(\d)$/)?.[1];
+        let headingLevel = (tree?.children?.[0]?.tagName || "").match(
+          /^h(\d)$/,
+        )?.[1];
         if (headingLevel) {
           headingTree = tree.children.shift();
           headingContentTree = {
