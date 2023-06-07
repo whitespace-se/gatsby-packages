@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.24](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.23...v1.4.0-next.24) (2023-06-07)
+
+
+### Bug Fixes
+
+* Error in html processor ([e18ee4b](https://github.com/whitespace-se/gatsby-packages/commit/e18ee4b89a050821c4edb6a2400079422b016eef))
+
+
+
 ## [1.4.0-next.23](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.22...v1.4.0-next.23) (2023-06-07)
 
 
