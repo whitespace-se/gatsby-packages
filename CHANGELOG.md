@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.26](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.25...v1.4.0-next.26) (2023-06-08)
+
+
+### Bug Fixes
+
+* Error in html processor ([d0a286d](https://github.com/whitespace-se/gatsby-packages/commit/d0a286d6d2ff850a136501c4769400de77038ccd))
+* Remove emotion/css ([c068131](https://github.com/whitespace-se/gatsby-packages/commit/c0681312868c8e24abad7c4c8756c98dded84963))
+
+
+
 ## [1.4.0-next.25](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.24...v1.4.0-next.25) (2023-06-07)
 
 
