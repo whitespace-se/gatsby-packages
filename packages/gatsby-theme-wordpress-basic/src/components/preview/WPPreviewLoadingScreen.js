@@ -1,4 +1,4 @@
-import { css } from "@emotion/css";
+import { css } from "@emotion/react";
 import PropTypes from "prop-types";
 import React from "react";
 import PulseLoader from "react-spinners/PulseLoader";
