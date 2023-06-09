@@ -27,7 +27,12 @@ export default function Header(props) {
     props,
     name: "Header",
   });
-  let { color = "primary.800", components, ...restProps } = props;
+  let {
+    color = "primary.800",
+    components,
+    disableHamburgerMenu = false,
+    ...restProps
+  } = props;
   let { HamburgerMenu, HamburgerMenuToggle, Logo } = handleComponentsProp(
     components,
     {
@@ -69,28 +74,32 @@ export default function Header(props) {
                 grid-area: logo;
               `}
             />
-            <HamburgerMenuToggle
-              onClick={() => {
-                setHamburgerOpen(true);
-              }}
-              aria-label={t("menu")}
-              aria-expanded={String(hamburgerOpen)}
-              aria-controls={"header-hamburger-menu"}
-              css={css`
-                grid-area: flyout;
-                cursor: pointer;
-              `}
-            >
-              <Icon name="menu" size="2rem" />
-            </HamburgerMenuToggle>
+            {!disableHamburgerMenu && (
+              <HamburgerMenuToggle
+                onClick={() => {
+                  setHamburgerOpen(true);
+                }}
+                aria-label={t("menu")}
+                aria-expanded={String(hamburgerOpen)}
+                aria-controls={"header-hamburger-menu"}
+                css={css`
+                  grid-area: flyout;
+                  cursor: pointer;
+                `}
+              >
+                <Icon name="menu" size="2rem" />
+              </HamburgerMenuToggle>
+            )}
           </div>
         </PageGridItem>
       </PageGrid>
-      <HamburgerMenu
-        open={hamburgerOpen}
-        onClose={() => setHamburgerOpen(false)}
-        id={"header-hamburger-menu"}
-      />
+      {!disableHamburgerMenu && (
+        <HamburgerMenu
+          open={hamburgerOpen}
+          onClose={() => setHamburgerOpen(false)}
+          id={"header-hamburger-menu"}
+        />
+      )}
     </header>
   );
 }
