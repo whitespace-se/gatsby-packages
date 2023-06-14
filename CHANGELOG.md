@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.30](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.29...v1.4.0-next.30) (2023-06-14)
+
+
+### Features
+
+* Add header main menu ([fa283e7](https://github.com/whitespace-se/gatsby-packages/commit/fa283e7d0588f4f7811b3e8196f0a610a51a09bb))
+* Use site title as default logo ([663eabc](https://github.com/whitespace-se/gatsby-packages/commit/663eabc0fcb5b19f869ffe3f156b16f638859df6))
+
+
+
 ## [1.4.0-next.29](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.28...v1.4.0-next.29) (2023-06-14)
 
 
