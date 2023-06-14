@@ -30,7 +30,7 @@ export default function HeaderMainMenu(props) {
   let { Link = DefaultLink } = handleComponentsProp(components, {
     Link: DefaultLink,
   });
-  let { items } = useMenu(menu);
+  let items = useMenu(menu)?.items;
 
   if (!items?.length) return null;
 
