@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.29](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.28...v1.4.0-next.29) (2023-06-14)
+
+
+### Bug Fixes
+
+* Preview was not working for WSUI ([e6d8d78](https://github.com/whitespace-se/gatsby-packages/commit/e6d8d78b07ea6421d9cc4ecb46b3361e2a1371e4))
+
+
+
 ## [1.4.0-next.28](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.27...v1.4.0-next.28) (2023-06-09)
 
 **Note:** Version bump only for package root
