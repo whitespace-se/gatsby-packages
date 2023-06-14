@@ -14,6 +14,7 @@ import { useTranslation } from "react-i18next";
 
 import DefaultHamburgerMenu from "./HeaderHamburgerMenu.jsx";
 import DefaultLogo from "./HeaderLogo.jsx";
+import DefaultMainMenu from "./HeaderMainMenu.jsx";
 
 const DefaultHamburgerMenuToggle = styled(Clickable)``;
 
@@ -22,31 +23,34 @@ const DefaultHamburgerMenuToggle = styled(Clickable)``;
 // import HeaderMainMenu from "./HeaderMainMenu";
 
 export default function Header(props) {
+  const { t } = useTranslation();
   const theme = useTheme();
+
   props = useThemeProps({
     props,
     name: "Header",
   });
+
   let {
     color = "primary.800",
     components,
     disableHamburgerMenu = false,
     ...restProps
   } = props;
-  let { HamburgerMenu, HamburgerMenuToggle, Logo } = handleComponentsProp(
-    components,
-    {
+
+  let { HamburgerMenu, HamburgerMenuToggle, Logo, MainMenu } =
+    handleComponentsProp(components, {
       HamburgerMenu: DefaultHamburgerMenu,
       HamburgerMenuToggle: DefaultHamburgerMenuToggle,
       Logo: DefaultLogo,
-    },
-  );
+      MainMenu: DefaultMainMenu,
+    });
 
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
   useEffect(() => {
     document.body.style.overflow = hamburgerOpen ? "hidden" : "";
   }, [hamburgerOpen]);
-  const { t } = useTranslation();
+
   return (
     <header {...restProps}>
       <PageGrid
@@ -59,19 +63,33 @@ export default function Header(props) {
           <div
             css={css`
               display: grid;
-              grid-template-columns: max-content 1fr max-content;
+              grid-template-columns: max-content minmax(0, 1fr) max-content;
               grid-template-areas: "logo main-menu flyout";
               padding-block: 1rem;
-              gap: 2rem;
+              gap: ${theme.getLength([4, 8])};
+              align-items: center;
             `}
           >
             {/* TODO: Implement header content with WSUI components */}
             {/* <SkipTo />
-            <HeaderMainMenu aria-label={t("mainMenu")} /> */}
+             */}
             <Logo
               link="/"
               css={css`
                 grid-area: logo;
+              `}
+            />
+            <MainMenu
+              aria-label={t("mainMenu")}
+              css={css`
+                align-self: stretch;
+                display: grid;
+                align-content: center;
+                grid-template-columns: minmax(0, 1fr);
+                &:has(.wsui-inline-list.wsui-is-content-visible) {
+                  border-left: 2px solid ${theme.getColor("border")};
+                  padding-left: ${theme.getLength([4, 8])};
+                }
               `}
             />
             {!disableHamburgerMenu && (
