@@ -24,6 +24,7 @@ if (
 
 let layoutComponentPath;
 let rootElementWrapperPath;
+let wpPreviewPagePath;
 
 exports.onPreInit = (_, { wsui }) => {
   layoutComponentPath = wsui
@@ -32,6 +33,9 @@ exports.onPreInit = (_, { wsui }) => {
   rootElementWrapperPath = wsui
     ? `@whitespace/gatsby-theme-wordpress-basic/src/wsui/components/RootElementWrapper.jsx`
     : `@whitespace/gatsby-theme-wordpress-basic/src/components/RootElementWrapper.js`;
+  wpPreviewPagePath = wsui
+    ? `@whitespace/gatsby-theme-wordpress-basic/src/wsui/components/WpPreviewPage.jsx`
+    : `@whitespace/gatsby-theme-wordpress-basic/src/components/WpPreviewPage.js`;
 };
 
 exports.onCreateWebpackConfig = ({ actions, plugins }) => {
@@ -42,6 +46,7 @@ exports.onCreateWebpackConfig = ({ actions, plugins }) => {
         GATSBY_ROOT_ELEMENT_WRAPPER_PATH: JSON.stringify(
           rootElementWrapperPath,
         ),
+        GATSBY_WP_PREVIEW_PAGE_PATH: JSON.stringify(wpPreviewPagePath),
       }),
     ],
   });
