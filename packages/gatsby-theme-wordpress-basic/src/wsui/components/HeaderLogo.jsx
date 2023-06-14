@@ -1,12 +1,22 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react";
 import { Clickable, Typography } from "@wsui/base";
+import { graphql, useStaticQuery } from "gatsby";
 
 export default function HeaderLogo({ link, ...restProps }) {
   link = typeof link === "string" ? { href: link } : link;
+  let title = useStaticQuery(graphql`
+    query HeaderLogoQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)?.site?.siteMetadata?.title;
   return (
     <div {...restProps}>
-      <Typography as="div" variant="h1">
+      <Typography as="div" variant="h2">
         <Clickable
           {...link}
           css={css`
@@ -14,7 +24,7 @@ export default function HeaderLogo({ link, ...restProps }) {
             text-decoration: inherit;
           `}
         >
-          Municipio
+          {title}
         </Clickable>
       </Typography>
     </div>
