@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.31](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.30...v1.4.0-next.31) (2023-06-19)
+
+
+### Bug Fixes
+
+* Error on missing header menu ([a880b7a](https://github.com/whitespace-se/gatsby-packages/commit/a880b7a684e4a23dce83fb03502083f4e5c72ad5))
+
+
+
 ## [1.4.0-next.30](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.29...v1.4.0-next.30) (2023-06-14)
 
 
