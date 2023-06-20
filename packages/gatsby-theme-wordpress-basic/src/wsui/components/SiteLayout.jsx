@@ -1,5 +1,5 @@
 import { css, useTheme } from "@emotion/react";
-import { handleComponentsProp, useThemeProps } from "@wsui/base";
+import { Section, handleComponentsProp, useThemeProps } from "@wsui/base";
 import React from "react";
 
 // import { usePageContext } from "../hooks";
@@ -34,11 +34,13 @@ export default function SiteLayout(props) {
         `}
       />
       <main id="main">{children}</main>
-      <Footer
-        css={css`
-          margin-top: ${theme.getLength(footerMargin)};
-        `}
-      />
+      <Section>
+        <Footer
+          css={css`
+            margin-top: ${theme.getLength(footerMargin)};
+          `}
+        />
+      </Section>
     </div>
   );
 }

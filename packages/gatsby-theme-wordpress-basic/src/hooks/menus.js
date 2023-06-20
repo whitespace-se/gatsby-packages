@@ -1,4 +1,5 @@
 import { useStaticQuery, graphql } from "gatsby";
+import snakeCase from "lodash/fp/snakeCase";
 
 import { getPage } from "../utils/pageTree";
 
@@ -39,6 +40,7 @@ export default function useMenus({ transform = defaultTransform }) {
 }
 
 export function useMenu(location, { ...options } = {}) {
+  location = snakeCase(location).toUpperCase();
   let menus = useMenus({ ...options });
   return menus.find((menu) => (menu.locations || []).includes(location));
 }
