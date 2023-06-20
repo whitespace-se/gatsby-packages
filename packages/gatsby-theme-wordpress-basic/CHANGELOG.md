@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.32](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.31...v1.4.0-next.32) (2023-06-20)
+
+
+### Features
+
+* Add footer content ([ce09621](https://github.com/whitespace-se/gatsby-packages/commit/ce09621a59a374e245ae7ac19027be7e2a10bebf))
+
+
+
 ## [1.4.0-next.31](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.30...v1.4.0-next.31) (2023-06-19)
 
 

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.32](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.31...v1.4.0-next.32) (2023-06-20)
+
+**Note:** Version bump only for package @whitespace/gatsby-plugin-search
+
+
+
+
+
 ## [1.4.0-next.31](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.30...v1.4.0-next.31) (2023-06-19)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-search
