@@ -57,6 +57,7 @@ export default function Header(props) {
         css={css`
           background: ${theme.getColor(color)};
           color: ${theme.getColor([color, "text"])};
+          box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
         `}
       >
         <PageGridItem colspan={12}>
@@ -86,6 +87,11 @@ export default function Header(props) {
                 display: grid;
                 align-content: center;
                 grid-template-columns: minmax(0, 1fr);
+                @supports not
+                  selector(:has(.wsui-inline-list.wsui-is-content-visible)) {
+                  border-left: 2px solid ${theme.getColor("border")};
+                  padding-left: ${theme.getLength([4, 8])};
+                }
                 &:has(.wsui-inline-list.wsui-is-content-visible) {
                   border-left: 2px solid ${theme.getColor("border")};
                   padding-left: ${theme.getLength([4, 8])};
