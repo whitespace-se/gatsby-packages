@@ -20,7 +20,7 @@ import SiteIndexTeaser from "./SiteIndexTeaser.jsx";
 
 export default function SiteIndexTemplate({ props }) {
   props = useThemeProps({ props, name: "SiteIndexTemplate" });
-  let { data } = props;
+  let { data, defaultColspan = 7 } = props;
   let { initial, initials, language } = usePageContext();
   const { t } = useTranslation();
   const collator = useMemo(() => new Intl.Collator(language), [language]);
@@ -46,7 +46,7 @@ export default function SiteIndexTemplate({ props }) {
           padding-block: 2rem;
         `}
       >
-        <PageGridItem colspan={7}>
+        <PageGridItem colspan={defaultColspan}>
           <H>{t(["siteIndex.pageTitle", "Content A to Z"])}</H>
           <Section>
             <SiteIndexNav
