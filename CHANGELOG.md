@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.33](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.32...v1.4.0-next.33) (2023-06-21)
+
+
+### Bug Fixes
+
+* Header menu border for Firefox ([5dc4d58](https://github.com/whitespace-se/gatsby-packages/commit/5dc4d584352c27cd60cd3f6fdeac194bf5055432))
+* Update default header margin ([a36a320](https://github.com/whitespace-se/gatsby-packages/commit/a36a32018e5153bdedd620076440be4de18ba24d))
+
+
+
 ## [1.4.0-next.32](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.31...v1.4.0-next.32) (2023-06-20)
 
 
