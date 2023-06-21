@@ -13,7 +13,7 @@ export default function SiteLayout(props) {
   let {
     children,
     footerMargin = 16,
-    headerMargin = [4, 8],
+    headerMargin = [8, 16],
     components,
   } = props;
   let { Header, Footer } = handleComponentsProp(components, {
