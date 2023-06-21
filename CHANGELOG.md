@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.34](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.33...v1.4.0-next.34) (2023-06-21)
+
+
+### Features
+
+* Allow overriding border radius and margin of WP images ([1ca9778](https://github.com/whitespace-se/gatsby-packages/commit/1ca9778511b9478a43511a76fd96682758e09723))
+
+
+### Bug Fixes
+
+* Footer layout ([b92d80f](https://github.com/whitespace-se/gatsby-packages/commit/b92d80f52978563a347f29b0c62a19bf3f74ea8a))
+
+
+
 ## [1.4.0-next.33](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.32...v1.4.0-next.33) (2023-06-21)
 
 
