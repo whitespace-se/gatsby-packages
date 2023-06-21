@@ -1,11 +1,10 @@
-import { useTheme, css } from "@emotion/react";
 import { H, Link, UrlTransformerProvider } from "@wsui/base";
-import React, { useContext } from "react";
+import React from "react";
 
 import HtmlProcessorExtensionProvider from "../../components/HtmlProcessorExtensionProvider";
-import htmlStringifierContext from "../../contexts/htmlStringifierContext";
 
-import Image from "./Image.jsx";
+import WpCaption from "./WpCaption.jsx";
+import WpImage from "./WpImage.jsx";
 
 export default function RootElementWrapper({ children }) {
   return (
@@ -66,101 +65,8 @@ export default function RootElementWrapper({ children }) {
       stringifierComponents={{
         a: Link,
         heading: H,
-        "wp-caption": function WPCaption({
-          attachment: attachmentId,
-          width: imgWidth,
-          children,
-          ...restProps
-        }) {
-          const { contentMedia, processContent } = useContext(
-            htmlStringifierContext,
-          );
-          let attachment = contentMedia.find(
-            (attachment) => attachment.databaseId === Number(attachmentId),
-          );
-          if (!attachment) {
-            return null;
-          }
-          let {
-            src,
-            srcSet,
-            width,
-            height,
-            base64,
-            aspectRatio,
-            alt,
-            caption,
-            credit,
-          } = attachment;
-          return (
-            <Image
-              src={src}
-              srcSet={srcSet}
-              width={width}
-              height={height}
-              base64={base64}
-              aspectRatio={aspectRatio}
-              alt={alt}
-              maxWidth={imgWidth}
-              caption={
-                React.Children.count(children) === 0
-                  ? processContent(caption)
-                  : children
-              }
-              credit={credit}
-              {...restProps}
-            />
-          );
-        },
-        "wp-image": function WPImage({
-          attachment: attachmentId,
-          width: imgWidth,
-          height: imgHeight,
-          ...restProps
-        }) {
-          const theme = useTheme();
-          const { contentMedia } = useContext(htmlStringifierContext);
-
-          let attachment = contentMedia.find(
-            (attachment) => attachment.databaseId === Number(attachmentId),
-          );
-          if (!attachment) {
-            return null;
-          }
-          let { src, srcSet, width, height, base64, aspectRatio, alt } =
-            attachment;
-          return (
-            <Image
-              src={src}
-              srcSet={srcSet}
-              width={width}
-              height={height}
-              borderRadius={theme.getLength(2.5)}
-              base64={base64}
-              aspectRatio={imgWidth / imgHeight || aspectRatio}
-              alt={alt}
-              maxWidth={imgWidth}
-              {...restProps}
-              css={css`
-                margin-bottom: ${theme.getLength(8)};
-                &.alignright {
-                  width: 100%;
-                  float: right;
-                  margin-left: ${theme.getLength(8)};
-                }
-                &.alignleft {
-                  width: 100%;
-                  float: left;
-                  margin-right: ${theme.getLength(8)};
-                }
-                &.aligncenter {
-                  width: 100%;
-                  margin-inline: auto;
-                }
-              `}
-            />
-          );
-        },
+        "wp-caption": WpCaption,
+        "wp-image": WpImage,
       }}
     >
       <UrlTransformerProvider
