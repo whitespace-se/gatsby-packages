@@ -1,6 +1,6 @@
 {
   "name": "@whitespace/gatsby-plugin-page-wrapper",
-  "version": "1.4.0-next.34",
+  "version": "1.4.0-next.35",
   "main": "index.js",
   "author": "Whitespace Dev <code@whitespace.se>",
   "license": "AGPL",
