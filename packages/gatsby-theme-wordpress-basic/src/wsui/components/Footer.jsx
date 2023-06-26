@@ -15,7 +15,7 @@ import { useMenu } from "../../hooks/menus";
 import useFooterBlocks from "../../hooks/useFooterBlocks";
 
 import FooterBlock from "./FooterBlock.jsx";
-import FooterLogo from "./FooterLogo.jsx";
+import DefaultLogo from "./FooterLogo.jsx";
 
 const DefaultLink = styled(Clickable)`
   text-decoration: inherit;
@@ -41,8 +41,9 @@ export default function Footer(inProps) {
     props: inProps,
     name: "Footer",
   });
-  let { LegalMenuLink = DefaultLink } = handleComponentsProp(components, {
-    Link: DefaultLink,
+  let { LegalMenuLink, Logo } = handleComponentsProp(components, {
+    LegalMenuLink: DefaultLink,
+    Logo: DefaultLogo,
   });
   const columns = useFooterBlocks();
 
@@ -109,7 +110,7 @@ export default function Footer(inProps) {
                   );
                 })}
             </InlineList>
-            <FooterLogo
+            <Logo
               css={css`
                 max-width: 100%;
                 flex-shrink: 1;
