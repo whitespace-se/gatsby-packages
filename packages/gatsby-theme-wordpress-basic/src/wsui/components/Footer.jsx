@@ -21,6 +21,7 @@ const DefaultLink = styled(Clickable)`
   text-decoration: inherit;
   color: inherit;
   font-weight: 600;
+  font-size: ${({ theme }) => theme.getLength([3.25, 3.75])};
   &.wsui-is-interactive:hover,
   &:focus-visible {
     text-decoration: underline;
