@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.36](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.35...v1.4.0-next.36) (2023-06-26)
+
+
+### Features
+
+* Allow overriding footer logo component ([846762c](https://github.com/whitespace-se/gatsby-packages/commit/846762c6e436bb9c3f022f7ddad2a8173166ec0d))
+
+
+### Bug Fixes
+
+* Footer link font size ([ecd1078](https://github.com/whitespace-se/gatsby-packages/commit/ecd10786de8c967e245836d61a7267d27063e4b6))
+* Typography in footer menu block ([44aa93c](https://github.com/whitespace-se/gatsby-packages/commit/44aa93c64c3ed5a8c7873d0bbf54f8cfda2d8a19))
+
+
+
 ## [1.4.0-next.35](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.34...v1.4.0-next.35) (2023-06-22)
 
 **Note:** Version bump only for package @whitespace/gatsby-theme-wordpress-basic
