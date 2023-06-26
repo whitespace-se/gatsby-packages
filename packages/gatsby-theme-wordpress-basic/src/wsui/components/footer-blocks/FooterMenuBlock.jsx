@@ -6,6 +6,7 @@ import {
   Heading,
   useThemeProps,
   handleComponentsProp,
+  Typography,
 } from "@wsui/base";
 
 import { useMenu } from "../../../hooks/menus.js";
@@ -13,7 +14,6 @@ import { useMenu } from "../../../hooks/menus.js";
 const DefaultLink = styled(Clickable)`
   text-decoration: underline;
   color: inherit;
-  font-weight: 600;
   &.wsui-is-interactive:hover,
   &:focus-visible {
     text-decoration: none;
@@ -38,7 +38,7 @@ export default function FooterMenuBlock(props) {
   }
 
   return (
-    <nav>
+    <Typography variant="body" as="nav">
       {!!title && (
         <Heading variant="h3" marginAfter>
           {title}
@@ -69,6 +69,6 @@ export default function FooterMenuBlock(props) {
           );
         })}
       </ul>
-    </nav>
+    </Typography>
   );
 }
