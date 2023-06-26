@@ -1,7 +1,7 @@
-import { css } from "@emotion/react";
+/** @jsx jsx */
+import { jsx, css, useTheme } from "@emotion/react";
 import { Link, TypographyBlock, useComponentWidth } from "@wsui/base";
 import Img from "gatsby-image";
-import React from "react";
 
 export default function Image({
   alt,
@@ -26,6 +26,7 @@ export default function Image({
   WrapperComponent = null,
   ...restProps
 }) {
+  const theme = useTheme();
   let [componentWidth, ref] = useComponentWidth(estimatedWidth);
 
   if (WrapperComponent == null) {
@@ -43,7 +44,7 @@ export default function Image({
       <Link to={linkTo} {...linkProps}>
         <Img
           css={css`
-            border-radius: ${borderRadius};
+            border-radius: ${theme.getLength(borderRadius)};
           `}
           fluid={{
             src,

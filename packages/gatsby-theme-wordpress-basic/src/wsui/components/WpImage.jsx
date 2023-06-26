@@ -33,7 +33,7 @@ export default function WpImage(props) {
       srcSet={srcSet}
       width={width}
       height={height}
-      borderRadius={theme.getLength(borderRadius)}
+      borderRadius={borderRadius}
       base64={base64}
       aspectRatio={imgWidth / imgHeight || aspectRatio}
       alt={alt}

@@ -7,7 +7,7 @@ import htmlStringifierContext from "../../contexts/htmlStringifierContext";
 
 import Image from "./Image.jsx";
 
-export default function WPCaption(props) {
+export default function WpCaption(props) {
   // eslint-disable-next-line no-unused-vars
   const theme = useTheme();
   props = useThemeProps({ props, name: "WpCaption" });
@@ -43,7 +43,7 @@ export default function WPCaption(props) {
       srcSet={srcSet}
       width={width}
       height={height}
-      borderRadius={theme.getLength(borderRadius)}
+      borderRadius={borderRadius}
       base64={base64}
       aspectRatio={aspectRatio}
       alt={alt}
