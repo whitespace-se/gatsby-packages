@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.37](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.36...v1.4.0-next.37) (2023-06-28)
+
+
+### Features
+
+* Add `bannerMargin` and `bannerBorderColor` props to Footer ([a4ee7ce](https://github.com/whitespace-se/gatsby-packages/commit/a4ee7ce108baefc825b2ae4be9871335d061ed6b))
+
+
+
 ## [1.4.0-next.36](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.35...v1.4.0-next.36) (2023-06-26)
 
 
