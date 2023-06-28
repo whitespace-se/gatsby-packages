@@ -63,6 +63,7 @@ export default function Footer(inProps) {
       <PageGrid
         spacing={spacing}
         rowGap={blocksMargin}
+        gap={gap}
         css={css`
           padding-block: ${theme.getLength(blocksMargin)};
         `}
@@ -82,7 +83,7 @@ export default function Footer(inProps) {
           background: ${theme.getColor(color)};
           color: ${theme.getColor([color, "text"])};
         `}
-        // spacing={spacing}
+        spacing={spacing}
         // rowGap={blocksMargin}
       >
         <PageGridItem colspan={12}>
