@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.38](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.37...v1.4.0-next.38) (2023-06-28)
+
+
+### Bug Fixes
+
+* Footer blocks padding ([6d0ccae](https://github.com/whitespace-se/gatsby-packages/commit/6d0ccae680642abf223095666484f74458be7ff2))
+
+
+
 ## [1.4.0-next.37](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.36...v1.4.0-next.37) (2023-06-28)
 
 
