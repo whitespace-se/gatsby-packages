@@ -35,6 +35,8 @@ export default function Footer(inProps) {
     spacing,
     gap = [7.5, 15],
     blocksMargin = [12, 12],
+    bannerMargin = 4,
+    bannerBorderColor = "white",
     components,
     legalMenu = "LEGAL",
     ...restProps
@@ -86,13 +88,13 @@ export default function Footer(inProps) {
         <PageGridItem colspan={12}>
           <div
             css={css`
-              padding-block: ${theme.getLength(4)};
+              padding-block: ${theme.getLength(bannerMargin)};
               display: flex;
               justify-content: space-between;
               flex-wrap: wrap;
               gap: ${theme.getLength(gap)};
               align-items: center;
-              border-top: 1px solid ${theme.getColor("white")};
+              border-top: 1px solid ${theme.getColor(bannerBorderColor)};
             `}
           >
             <InlineList
