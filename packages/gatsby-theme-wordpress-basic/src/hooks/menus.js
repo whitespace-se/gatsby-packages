@@ -6,7 +6,7 @@ import { getPage } from "../utils/pageTree";
 import usePages from "./usePages";
 
 function defaultTransform(data, { pages }) {
-  return data.wp.menus.nodes.map((menu) => ({
+  return (data.wp?.menus?.nodes || []).map((menu) => ({
     ...menu,
     items: menu.menuItems.nodes.map((menuItem) => {
       let { connectedObject, label, description, url, target, ...rest } =
