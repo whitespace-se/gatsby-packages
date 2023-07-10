@@ -21,6 +21,7 @@ module.exports = ({
   postCss = {},
   i18next = {},
   siteIndex = {},
+  breadcrumbs = {},
   disableSearchPlugin,
   sitemap = {},
   manifest = {},
@@ -123,7 +124,10 @@ module.exports = ({
       },
 
       // Breadcrumbs
-      `@whitespace/gatsby-plugin-breadcrumbs`,
+      {
+        resolve: `@whitespace/gatsby-plugin-breadcrumbs`,
+        options: { ...breadcrumbs },
+      },
 
       // Manifest
       {
