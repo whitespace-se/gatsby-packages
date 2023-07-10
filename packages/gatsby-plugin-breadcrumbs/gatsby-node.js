@@ -1,21 +1,16 @@
 const { findLastIndex } = require("lodash");
 
-exports.createSchemaCustomization = ({ actions }) => {
-  // const { createTypes } = actions;
-  // const typeDefs = `
-  //   type SitePage {
-  //     parentPage: SitePage
-  //     ancestorPages: [SitePage]!
-  //   }
-  // `;
-  // createTypes(typeDefs);
-};
+const defaultIsTopLevelPage = (page) => page?.context?.isFrontPage;
 
-exports.createResolvers = ({ createResolvers }) => {
+exports.createResolvers = (
+  { createResolvers },
+  { isTopLevelPage = defaultIsTopLevelPage },
+) => {
   createResolvers({
     SitePage: {
       parentPage: {
         type: "SitePage",
+        // eslint-disable-next-line no-unused-vars
         resolve: (source, args, context, info) => {
           let parentPath = source.path
             .split("/")
@@ -32,7 +27,11 @@ exports.createResolvers = ({ createResolvers }) => {
       },
       ancestorPages: {
         type: "[SitePage]!",
+        // eslint-disable-next-line no-unused-vars
         resolve: async (source, args, context, info) => {
+          if (!!source && isTopLevelPage(source, defaultIsTopLevelPage)) {
+            return [];
+          }
           let pathParts = source.path.split("/").filter(Boolean);
           let ancestorPages = await Promise.all(
             pathParts.map((part, index) => {
@@ -51,7 +50,8 @@ exports.createResolvers = ({ createResolvers }) => {
           // Fix for localized front pages
           let frontPageIndex = findLastIndex(
             ancestorPages,
-            (page) => page && page.context && page.context.isFrontPage,
+            // defaultIsTopLevelPage,
+            (page) => !!page && isTopLevelPage(page, defaultIsTopLevelPage),
           );
 
           return ancestorPages.slice(frontPageIndex > 0 ? frontPageIndex : 0);
