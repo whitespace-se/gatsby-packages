@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.41](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.40...v1.4.0-next.41) (2023-07-10)
+
+
+### Features
+
+* Add `isTopLevelPage` option to breadcrumbs plugin ([cd2a54c](https://github.com/whitespace-se/gatsby-packages/commit/cd2a54c75c8aa92996acabb9fbc12eacfe089b76))
+
+
+
 ## [1.4.0-next.40](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.39...v1.4.0-next.40) (2023-07-06)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-breadcrumbs

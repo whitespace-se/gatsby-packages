@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.41](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.40...v1.4.0-next.41) (2023-07-10)
+
+
+### Features
+
+* Add `isTopLevelPage` option to breadcrumbs plugin ([cd2a54c](https://github.com/whitespace-se/gatsby-packages/commit/cd2a54c75c8aa92996acabb9fbc12eacfe089b76))
+* Add PageFeaturedImage component ([aebd84d](https://github.com/whitespace-se/gatsby-packages/commit/aebd84de8931ee8d20ed5184c35571ad880e4dba))
+* Allow passing breadcrumbs plugin options ([dc1dbc1](https://github.com/whitespace-se/gatsby-packages/commit/dc1dbc119dbdc82d2aecfeb0f10f4f52213b0e97))
+* Improve PageBreadcrumbs component ([c39938a](https://github.com/whitespace-se/gatsby-packages/commit/c39938a754a908f44b4ebd6e1ca619f8f0753ef7))
+
+
+
 ## [1.4.0-next.40](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.39...v1.4.0-next.40) (2023-07-06)
 
 **Note:** Version bump only for package root
