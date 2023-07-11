@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.42](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.41...v1.4.0-next.42) (2023-07-11)
+
+
+### Bug Fixes
+
+* Remove default site layout margins ([e88104c](https://github.com/whitespace-se/gatsby-packages/commit/e88104ca4fb224c1f466a55594e1b7754bf0d922))
+
+
+
 ## [1.4.0-next.41](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.40...v1.4.0-next.41) (2023-07-10)
 
 
