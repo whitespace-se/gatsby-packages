@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.43](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.42...v1.4.0-next.43) (2023-07-12)
+
+**Note:** Version bump only for package root
+
+
+
+
+
 ## [1.4.0-next.42](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.41...v1.4.0-next.42) (2023-07-11)
 
 
