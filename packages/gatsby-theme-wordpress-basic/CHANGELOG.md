@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.44](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.43...v1.4.0-next.44) (2023-07-12)
+
+
+### Features
+
+* Add `hideCaption` prop to Image component ([d393ab8](https://github.com/whitespace-se/gatsby-packages/commit/d393ab8d8e4ec643cc40351d42175dea6c46e95f))
+
+
+
 ## [1.4.0-next.43](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.42...v1.4.0-next.43) (2023-07-12)
 
 **Note:** Version bump only for package @whitespace/gatsby-theme-wordpress-basic
