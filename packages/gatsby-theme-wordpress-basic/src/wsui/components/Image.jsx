@@ -24,13 +24,14 @@ export default function Image({
   width,
   borderRadius,
   WrapperComponent = null,
+  hideCaption = false,
   ...restProps
 }) {
   const theme = useTheme();
   let [componentWidth, ref] = useComponentWidth(estimatedWidth);
 
   if (WrapperComponent == null) {
-    WrapperComponent = caption ? "figure" : "div";
+    WrapperComponent = (caption || credit) && !hideCaption ? "figure" : "div";
   }
   return (
     <WrapperComponent
@@ -62,7 +63,7 @@ export default function Image({
           {...imgProps}
         />
       </Link>
-      {!!(caption || credit) && (
+      {!!(caption || credit) && !hideCaption && (
         <figcaption
           css={css`
             display: flex;
