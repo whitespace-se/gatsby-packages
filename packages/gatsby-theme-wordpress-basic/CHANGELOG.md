@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0-next.45](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.44...v1.4.0-next.45) (2023-07-17)
+
+
+### Features
+
+* Handle `imgProps.style` in Image component ([db14132](https://github.com/whitespace-se/gatsby-packages/commit/db14132517dfa4f2e17932702d912889f4ad5336))
+
+
+
 ## [1.4.0-next.44](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.43...v1.4.0-next.44) (2023-07-12)
 
 
