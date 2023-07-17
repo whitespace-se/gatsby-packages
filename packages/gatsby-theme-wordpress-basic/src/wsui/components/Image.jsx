@@ -1,6 +1,11 @@
 /** @jsx jsx */
 import { jsx, css, useTheme } from "@emotion/react";
-import { Link, TypographyBlock, useComponentWidth } from "@wsui/base";
+import {
+  Link,
+  TypographyBlock,
+  parseStyle,
+  useComponentWidth,
+} from "@wsui/base";
 import Img from "gatsby-image";
 
 export default function Image({
@@ -13,7 +18,7 @@ export default function Image({
   creditProps = {},
   estimatedWidth = 320,
   height,
-  imgProps = {},
+  imgProps: { style: imgStyle, ...imgRestProps } = {},
   linkProps = {},
   linkTo,
   maxWidth,
@@ -46,6 +51,7 @@ export default function Image({
         <Img
           css={css`
             border-radius: ${theme.getLength(borderRadius)};
+            ${parseStyle(imgStyle, theme)}
           `}
           fluid={{
             src,
@@ -60,7 +66,7 @@ export default function Image({
             alt,
           }}
           alt={alt}
-          {...imgProps}
+          {...imgRestProps}
         />
       </Link>
       {!!(caption || credit) && !hideCaption && (
