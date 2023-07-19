@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.45...v1.4.0) (2023-07-19)
+
+
+### Bug Fixes
+
+* Update issues for sites without WSUI ([6a4d2c5](https://github.com/whitespace-se/gatsby-packages/commit/6a4d2c559223aee5ba33c8e0324189227b007c4c))
+
+
+
 ## [1.4.0-next.45](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.44...v1.4.0-next.45) (2023-07-17)
 
 
