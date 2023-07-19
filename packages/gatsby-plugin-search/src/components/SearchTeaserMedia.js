@@ -1,9 +1,10 @@
-import { Image } from "@whitespace/gatsby-theme-wordpress-basic/src/components";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import React from "react";
 
 import { useComponentContext } from "../contexts/componentContext";
+
+import Image from "./Image";
 
 SearchTeaserMedia.propTypes = {
   className: PropTypes.string,

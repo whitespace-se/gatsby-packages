@@ -10,10 +10,11 @@ import {
   stringifyFormattedDateRange,
   stringifyNumericDateRange,
 } from "@whitespace/gatsby-plugin-search/src/utils";
-import ClientOnly from "@whitespace/gatsby-theme-wordpress-basic/src/components/ClientOnly";
 import PropTypes from "prop-types";
 import { useContext, useMemo } from "react";
 import { InstantSearch } from "react-instantsearch-hooks-web";
+
+import ClientOnly from "../ClientOnly";
 
 SearchProvider.propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),

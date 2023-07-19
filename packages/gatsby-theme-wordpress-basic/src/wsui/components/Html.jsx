@@ -1,6 +1,7 @@
-import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
-import useMustacheData from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/useMustacheData";
 import Mustache from "mustache";
+
+import { useHTMLProcessor } from "../../hooks/html-processor";
+import useMustacheData from "../../hooks/useMustacheData";
 
 export default function Html({ children: input, ...restProps }) {
   let data = useMustacheData();

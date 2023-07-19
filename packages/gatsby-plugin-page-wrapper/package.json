@@ -5,10 +5,14 @@
   "author": "Whitespace Dev <code@whitespace.se>",
   "license": "AGPL",
   "devDependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
     "gatsby": "^3.14.3",
     "react": "^17.0.0"
   },
   "peerDependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
     "gatsby": "^3.14.3",
     "react": "^17.0.0"
   },

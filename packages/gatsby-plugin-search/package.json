@@ -17,17 +17,22 @@
     "@whitespace/gatsby-hooks": "^0.5.0",
     "algoliasearch": "^4.17.0",
     "clsx": "^1.2.1",
+    "date-fns": "^2.25.0",
     "formik": "^2.2.9",
+    "gatsby-image": "^3.11.0",
     "gatsby-plugin-algolia": "^1.0.2",
     "html-entities": "^2.3.3",
     "immer": "^9.0.6",
     "lodash-es": "^4.17.21",
     "minisearch": "^3.1.0",
+    "prop-types": "^15.8.1",
     "react-instantsearch-hooks-web": "^6.33.0",
     "react-select": "^5.1.0",
     "yup": "^0.32.11"
   },
   "peerDependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
     "@whitespace/components": "^0.13.24",
     "gatsby": "^3.14.3",
     "react": "^17.0.0",
@@ -35,6 +40,8 @@
     "react-i18next": "^11.12.0"
   },
   "devDependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
     "@whitespace/components": "^0.13.24",
     "eslint-plugin-jest": "^25.2.2",
     "gatsby": "^3.14.3",

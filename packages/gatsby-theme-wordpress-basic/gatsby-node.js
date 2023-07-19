@@ -17,6 +17,7 @@ if (
   new Intl.DateTimeFormat("es", { month: "long" }).format(new Date(9e8)) !==
   "enero"
 ) {
+  // eslint-disable-next-line no-console
   console.warn(
     `ICU data is not loaded. NODE_ICU_DATA="${process.env.NODE_ICU_DATA}"`,
   );
@@ -28,14 +29,14 @@ let wpPreviewPagePath;
 
 exports.onPreInit = (_, { wsui }) => {
   layoutComponentPath = wsui
-    ? `@whitespace/gatsby-theme-wordpress-basic/src/wsui/components/SiteLayout.jsx`
-    : `@whitespace/gatsby-theme-wordpress-basic/src/components/SiteLayout.js`;
+    ? require.resolve(`./src/wsui/components/SiteLayout.jsx`)
+    : require.resolve(`./src/components/SiteLayout.js`);
   rootElementWrapperPath = wsui
-    ? `@whitespace/gatsby-theme-wordpress-basic/src/wsui/components/RootElementWrapper.jsx`
-    : `@whitespace/gatsby-theme-wordpress-basic/src/components/RootElementWrapper.js`;
+    ? require.resolve(`./src/wsui/components/RootElementWrapper.jsx`)
+    : require.resolve(`./src/components/RootElementWrapper.js`);
   wpPreviewPagePath = wsui
-    ? `@whitespace/gatsby-theme-wordpress-basic/src/wsui/components/WpPreviewPage.jsx`
-    : `@whitespace/gatsby-theme-wordpress-basic/src/components/WpPreviewPage.js`;
+    ? require.resolve(`./src/wsui/components/WpPreviewPage.jsx`)
+    : require.resolve(`./src/components/WpPreviewPage.js`);
 };
 
 exports.onCreateWebpackConfig = ({ actions, plugins }) => {
@@ -123,46 +124,44 @@ exports.createPages = async function createPages(params, pluginOptions) {
 
     contentTypes = getIncludedContentTypes(params, pluginOptions, contentTypes);
 
-    await Promise.all(
-      contentTypes.map(async (contentType) => {
-        const query = gql`
-          query WPPaginatedNodesForPagesQuery(
-            $first: Int
-            $after: String
-            $nameIn: [String]
-            $contentTypes: [WP_ContentTypeEnum]
-          ) {
-            wp {
-              contentNodes(
-                first: $first
-                after: $after
-                where: {
-                  nameIn: $nameIn
-                  parent: null
-                  contentTypes: $contentTypes
-                }
-              ) {
-                pageInfo {
-                  hasNextPage
-                  endCursor
-                }
-                nodes {
-                  archiveDates
-                  modifiedGmt # Required for sitemap
-                  ...WP_ContentNodeForPage
-                }
+    for (let contentType of contentTypes) {
+      const query = gql`
+        query WPPaginatedNodesForPagesQuery(
+          $first: Int
+          $after: String
+          $nameIn: [String]
+          $contentTypes: [WP_ContentTypeEnum]
+        ) {
+          wp {
+            contentNodes(
+              first: $first
+              after: $after
+              where: {
+                nameIn: $nameIn
+                parent: null
+                contentTypes: $contentTypes
+              }
+            ) {
+              pageInfo {
+                hasNextPage
+                endCursor
+              }
+              nodes {
+                archiveDates
+                modifiedGmt # Required for sitemap
+                ...WP_ContentNodeForPage
               }
             }
           }
-        `;
+        }
+      `;
 
-        await createPagesForContentNodes({
-          contentType,
-          query,
-          nodesPerFetch,
-        })({ ...params, gql }, pluginOptions);
-      }),
-    );
+      await createPagesForContentNodes({
+        contentType,
+        query,
+        nodesPerFetch,
+      })({ ...params, gql }, pluginOptions);
+    }
   }
 
   if (Array.isArray(searchPagePaths)) {

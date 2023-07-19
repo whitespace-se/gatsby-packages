@@ -1,7 +1,7 @@
-import { useHTMLProcessor } from "@whitespace/gatsby-theme-wordpress-basic/src/hooks/html-processor";
 import Mustache from "mustache";
 import PropTypes from "prop-types";
 
+import { useHTMLProcessor } from "../hooks/html-processor";
 import useMustacheData from "../hooks/useMustacheData";
 
 PageContent.propTypes = {
