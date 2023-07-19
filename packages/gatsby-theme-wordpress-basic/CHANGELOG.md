@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.4.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0...v1.4.1) (2023-07-19)
+
+
+### Bug Fixes
+
+* Avoid build errors caused by missing fields in page context ([b349ada](https://github.com/whitespace-se/gatsby-packages/commit/b349adaaae03cfca852bc41b4382aa7d83467e97))
+
+
+
 ## [1.4.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0-next.45...v1.4.0) (2023-07-19)
 
 
