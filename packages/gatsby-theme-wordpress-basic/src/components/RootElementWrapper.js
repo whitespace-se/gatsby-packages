@@ -82,7 +82,7 @@ export default function RootElementWrapper({ children }) {
                 const { contentMedia, processContent } = useContext(
                   htmlStringifierContext,
                 );
-                let attachment = contentMedia.find(
+                let attachment = contentMedia?.find(
                   (attachment) =>
                     attachment.databaseId === Number(attachmentId),
                 );
@@ -127,7 +127,7 @@ export default function RootElementWrapper({ children }) {
                 ...restProps
               }) {
                 const { contentMedia } = useContext(htmlStringifierContext);
-                let attachment = contentMedia.find(
+                let attachment = contentMedia?.find(
                   (attachment) =>
                     attachment.databaseId === Number(attachmentId),
                 );

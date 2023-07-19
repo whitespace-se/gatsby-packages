@@ -17,13 +17,10 @@ export default function ArticleFeaturedImage({
   className,
   ...restProps
 }) {
-  let {
-    contentNode: {
-      featuredImage,
-      displaySettings: { postSingleShowFeaturedImage },
-    },
-    // isPreview,
-  } = usePageContext();
+  let pageContext = usePageContext();
+  let featuredImage = pageContext?.contentNode?.featuredImage;
+  let postSingleShowFeaturedImage =
+    pageContext?.displaySettings?.postSingleShowFeaturedImage ?? true;
 
   featuredImage = !!(
     featuredImage &&

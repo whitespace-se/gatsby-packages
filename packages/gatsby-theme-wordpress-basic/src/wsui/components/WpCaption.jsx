@@ -20,7 +20,7 @@ export default function WpCaption(props) {
     ...restProps
   } = props;
   const { contentMedia, processContent } = useContext(htmlStringifierContext);
-  let attachment = contentMedia.find(
+  let attachment = contentMedia?.find(
     (attachment) => attachment.databaseId === Number(attachmentId),
   );
   if (!attachment) {

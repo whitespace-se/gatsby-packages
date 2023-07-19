@@ -20,7 +20,7 @@ export default function WpImage(props) {
   } = props;
   const { contentMedia } = useContext(htmlStringifierContext);
 
-  let attachment = contentMedia.find(
+  let attachment = contentMedia?.find(
     (attachment) => attachment.databaseId === Number(attachmentId),
   );
   if (!attachment) {
