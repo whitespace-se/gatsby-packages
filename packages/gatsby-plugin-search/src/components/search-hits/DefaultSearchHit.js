@@ -3,6 +3,7 @@ import { useContentType } from "@whitespace/gatsby-theme-wordpress-basic/src/hoo
 import { memoize } from "lodash-es";
 import PropTypes from "prop-types";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 import DeprecatedSearchHit from "../SearchHit";
 import SearchTeaser from "../SearchTeaser";
@@ -34,6 +35,7 @@ export default function DefaultSearchHit({
   hit,
   ...restProps
 }) {
+  const { t } = useTranslation();
   const contentType = useContentType(hit.contentType);
 
   if (DeprecatedSearchHit) {
@@ -52,15 +54,20 @@ export default function DefaultSearchHit({
     // taxonomies,
   } = hit;
 
+  let contentTypeName = t(
+    [`contentTypes.${contentType.name}.name`, contentType.labels?.singularName],
+    {
+      count: 1,
+    },
+  );
+
   return (
     <SearchTeaser as="li" {...restProps}>
       <SearchTeaserContent>
         <SearchTeaserTitle link={{ url }}>{label}</SearchTeaserTitle>
         {text && <SearchTeaserExcerpt>{text}</SearchTeaserExcerpt>}
         <SearchTeaserMeta>
-          {contentType?.labels?.name && (
-            <span>{contentType.labels.singularName}</span>
-          )}
+          {!!contentTypeName && <span>{contentTypeName}</span>}
           {date && <Time date={date} format={dateFormat} />}
         </SearchTeaserMeta>
       </SearchTeaserContent>
