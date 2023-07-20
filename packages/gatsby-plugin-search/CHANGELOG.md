@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.4.2](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.1...v1.4.2) (2023-07-20)
+
+
+### Bug Fixes
+
+* Use translations for content types in search results ([26ef53c](https://github.com/whitespace-se/gatsby-packages/commit/26ef53c999ace75259ccf366d5107c0c99973f7c))
+
+
+
 ### [1.4.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.0...v1.4.1) (2023-07-19)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-search
