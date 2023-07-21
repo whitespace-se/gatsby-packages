@@ -16,6 +16,7 @@ import {
 export default function DefaultTemplate(props) {
   // eslint-disable-next-line no-unused-vars
   props = useThemeProps({ props, name: "DefaultTemplate" });
+  props = useThemeProps({ props, name: "Template" });
   let { defaultColspan = 7 } = props;
   const { title } = usePageContext();
   return (

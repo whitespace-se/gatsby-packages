@@ -12,6 +12,9 @@ const SearchTemplate = require.resolve("./src/templates/SearchTemplate");
 const AlgoliaSearchTemplate = require.resolve(
   "./src/templates/AlgoliaSearchTemplate",
 );
+const WsuiAlgoliaSearchTemplate = require.resolve(
+  "./src/wsui/templates/AlgoliaSearchTemplate.jsx",
+);
 
 if (
   new Intl.DateTimeFormat("es", { month: "long" }).format(new Date(9e8)) !==
@@ -81,6 +84,7 @@ exports.createPages = async function createPages(params, pluginOptions) {
   const { graphql, reporter, actions } = params;
   const { createPage } = actions;
   let {
+    wsui,
     wp: { url, nodesPerFetch } = {},
     search: { paths: searchPagePaths = [], algolia: algoliaOptions } = {},
   } = pluginOptions;
@@ -173,7 +177,11 @@ exports.createPages = async function createPages(params, pluginOptions) {
   Object.entries(searchPagePaths).forEach(([path, page]) => {
     createPage({
       path,
-      component: algoliaOptions ? AlgoliaSearchTemplate : SearchTemplate,
+      component: algoliaOptions
+        ? wsui
+          ? WsuiAlgoliaSearchTemplate
+          : AlgoliaSearchTemplate
+        : SearchTemplate,
       ...page,
       context: {
         title: "Search",

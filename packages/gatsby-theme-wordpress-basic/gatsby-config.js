@@ -102,6 +102,7 @@ module.exports = ({
             {
               resolve: `@whitespace/gatsby-plugin-search`,
               options: {
+                wsui,
                 fragmentsDir,
                 ...search,
               },
