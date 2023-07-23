@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.2...v1.5.0-next.0) (2023-07-23)
+
+
+### Features
+
+* Continue porting search integration to WSUI ([f8dcae8](https://github.com/whitespace-se/gatsby-packages/commit/f8dcae89909a45d0c58ecb326f931e2d2a2e8eab))
+* Start porting search integration to WSUI ([8d52af7](https://github.com/whitespace-se/gatsby-packages/commit/8d52af7cfc9e17e5883f2b749218c42aff27a443))
+
+
+
 ### [1.4.2](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.1...v1.4.2) (2023-07-20)
 
 
