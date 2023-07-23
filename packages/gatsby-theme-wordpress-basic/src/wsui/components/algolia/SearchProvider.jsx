@@ -84,7 +84,10 @@ export default function SearchProvider({
         const helpers = {};
         const {
           query,
-          // menu, range, page, sortBy
+          // menu,
+          // range,
+          page,
+          // sortBy,
         } = uiState[indexName];
         const routeState = {
           query,
@@ -93,7 +96,7 @@ export default function SearchProvider({
           //   parseNumericDateRange(range?.["dates.numeric"]),
           // ),
           // sort: sortBy && sortBy.substring(indexName.length + 1),
-          // page,
+          page,
         };
         return stateToRoute(uiState, routeState, helpers);
       },
@@ -101,7 +104,10 @@ export default function SearchProvider({
         const helpers = {};
         const {
           query,
-          // contentType, date, page, sort
+          // contentType,
+          // date,
+          page,
+          // sort,
         } = routeState;
         const uiState = {
           [indexName]: {
@@ -115,7 +121,7 @@ export default function SearchProvider({
             //   ),
             // },
             // sortBy: sort && `${indexName}_${sort}`,
-            // page,
+            page,
           },
         };
         return routeToState(routeState, uiState, helpers);

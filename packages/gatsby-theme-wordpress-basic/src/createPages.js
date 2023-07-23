@@ -23,6 +23,9 @@ const MonthArchivePageTemplate = require.resolve(
   "./templates/MonthArchiveTemplate",
 );
 const ContentTypeTemplate = require.resolve("./templates/ContentTypeTemplate");
+const WsuiContentTypeTemplate = require.resolve(
+  "./wsui/templates/ContentTypeTemplate.jsx",
+);
 
 const SingleTemplate = require.resolve("./templates/SingleTemplate");
 
@@ -170,7 +173,7 @@ ${JSON.stringify({ ...commonVariables, ...variables }, null, 2)}`,
       if (algoliaOptions) {
         let path = getMainArchivePagePathFromPageContext(archivePageContext);
         let title = getMainArchivePageTitleFromPageContext(archivePageContext);
-        let component = ContentTypeTemplate;
+        let component = wsui ? WsuiContentTypeTemplate : ContentTypeTemplate;
 
         createPage({
           path,

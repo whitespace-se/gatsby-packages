@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx, useTheme } from "@emotion/react";
 import { searchPluginConfigContext } from "@whitespace/gatsby-plugin-search/src/contexts";
-import { SearchBox, Hits } from "@wsui/algolia";
+import { SearchBox, Hits, Pagination } from "@wsui/algolia";
 import { H, Section, useThemeProps } from "@wsui/base";
 import { useContext, useMemo } from "react";
 // import { Fragment } from "react";
@@ -18,8 +18,6 @@ import SearchProvider from "./SearchProvider.jsx";
 // import SearchRangeInput from "./SearchRangeInput";
 // import SearchSortBy from "./SearchSortBy";
 // import SearchSummary from "./SearchSummary";
-
-SiteSearch.propTypes = {};
 
 export default function SiteSearch(props) {
   props = useThemeProps({ props, name: "SiteSearch" });
@@ -143,7 +141,7 @@ export default function SiteSearch(props) {
               <Hits />
             </Section>
           </div>
-          {/* <SearchPagination /> */}
+          <Pagination />
         </div>
       )}
     </SearchProvider>

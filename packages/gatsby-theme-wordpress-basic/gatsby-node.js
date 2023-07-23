@@ -12,8 +12,8 @@ const SearchTemplate = require.resolve("./src/templates/SearchTemplate");
 const AlgoliaSearchTemplate = require.resolve(
   "./src/templates/AlgoliaSearchTemplate",
 );
-const WsuiAlgoliaSearchTemplate = require.resolve(
-  "./src/wsui/templates/AlgoliaSearchTemplate.jsx",
+const WsuiSearchTemplate = require.resolve(
+  "./src/wsui/templates/SearchTemplate.jsx",
 );
 
 if (
@@ -179,7 +179,7 @@ exports.createPages = async function createPages(params, pluginOptions) {
       path,
       component: algoliaOptions
         ? wsui
-          ? WsuiAlgoliaSearchTemplate
+          ? WsuiSearchTemplate
           : AlgoliaSearchTemplate
         : SearchTemplate,
       ...page,
