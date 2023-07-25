@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.0...v1.5.0-next.1) (2023-07-25)
+
+
+### Bug Fixes
+
+* File search results had no link ([2dc4ee5](https://github.com/whitespace-se/gatsby-packages/commit/2dc4ee55eb8d15284bc12547d06a5d97ad176963))
+* Lint errors ([54c66a7](https://github.com/whitespace-se/gatsby-packages/commit/54c66a70421e5a065ec9dda05e5714332e334a79))
+* Search hit teaser content width ([1ab61a1](https://github.com/whitespace-se/gatsby-packages/commit/1ab61a1e299b5b0e599ec1c24b9f1e54bb3954db))
+
+
+
 ## [1.5.0-next.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.2...v1.5.0-next.0) (2023-07-23)
 
 
