@@ -26,6 +26,7 @@
     "lodash-es": "^4.17.21",
     "minisearch": "^3.1.0",
     "prop-types": "^15.8.1",
+    "react-instantsearch-hooks": "^6.33.0",
     "react-instantsearch-hooks-web": "^6.33.0",
     "react-select": "^5.1.0",
     "yup": "^0.32.11"

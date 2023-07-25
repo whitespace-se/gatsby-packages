@@ -7,7 +7,7 @@ import { useContext, useMemo } from "react";
 // import { Fragment } from "react";
 // import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
-import { Configure } from "react-instantsearch-hooks-web";
+import { Configure } from "react-instantsearch-hooks";
 
 // import SearchDebug from "./SearchDebug";
 // import SearchHit from "./SearchHit";
