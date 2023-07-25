@@ -12,7 +12,12 @@ import { useTranslation } from "react-i18next";
 export default function DefaultHit(props) {
   props = useThemeProps({ props, name: "AlgoliaDefaultHit" });
   props = useThemeProps({ props, name: "AlgoliaHit" });
-  let { hit, ...restProps } = props;
+  let {
+    hit,
+    horizontalContentMaxWidth = "100%",
+    hideImage,
+    ...restProps
+  } = props;
 
   const { t } = useTranslation();
 
@@ -26,10 +31,11 @@ export default function DefaultHit(props) {
     <TeaserCard
       link={{ url }}
       title={title}
-      image={image || {}}
+      image={hideImage ? undefined : image || {}}
       mirrored
       mediaColspan={3}
       as="li"
+      horizontalContentMaxWidth={horizontalContentMaxWidth}
       {...restProps}
     >
       <CardContent>
