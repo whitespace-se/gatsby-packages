@@ -38,16 +38,13 @@ export default createTheme({
             ...hit,
             // date: hit.dates && getMostRelevantDate(hit.dates),
             contentTypeName,
-            // contentTypeLabel: t(`contentTypes.${hit.contentType?.name}.name`, {
-            //   count: 1,
-            // }),
             title: <Highlight attribute={"title"} hit={hit} />,
             text: isFile ? (
               <Highlight attribute={"file.attachment.content"} hit={hit} />
             ) : (
               <Highlight attribute={"textContent"} hit={hit} />
             ),
-            url: hit.path,
+            url: isFile ? hit.file?.url : hit.path,
           };
         },
         componentMapping: ({ hit }) => {
