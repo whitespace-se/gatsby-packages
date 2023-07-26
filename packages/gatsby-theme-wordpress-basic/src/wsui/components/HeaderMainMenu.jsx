@@ -1,11 +1,12 @@
 /** @jsx jsx */
-import { jsx, useTheme } from "@emotion/react";
+import { css, jsx, useTheme } from "@emotion/react";
 import styled from "@emotion/styled";
 import {
   InlineList,
   Clickable,
   useThemeProps,
   handleComponentsProp,
+  parseStyle,
 } from "@wsui/base";
 
 import { useMenu } from "../../hooks/menus.js";
@@ -26,17 +27,23 @@ export default function HeaderMainMenu(props) {
   // eslint-disable-next-line no-unused-vars
   const theme = useTheme();
   props = useThemeProps({ props, name: "HeaderMainMenu" });
-  let { menu = "HEADER_TABS_MENU", components, ...restProps } = props;
-  let { Link = DefaultLink } = handleComponentsProp(components, {
+  let { menu = "HEADER_TABS_MENU", components, style, ...restProps } = props;
+  let { Link, List } = handleComponentsProp(components, {
     Link: DefaultLink,
+    List: InlineList,
   });
   let items = useMenu(menu)?.items;
 
   if (!items?.length) return null;
 
   return (
-    <HeaderMainMenuRoot {...restProps}>
-      <InlineList overflow="hidden" spacing={[4, 8]}>
+    <HeaderMainMenuRoot
+      css={css`
+        ${parseStyle(style, theme)};
+      `}
+      {...restProps}
+    >
+      <List overflow="hidden" spacing={[4, 8]}>
         {items.map(({ url, label, target }, index) => {
           return (
             <Link url={url} target={target} key={index}>
@@ -44,7 +51,7 @@ export default function HeaderMainMenu(props) {
             </Link>
           );
         })}
-      </InlineList>
+      </List>
     </HeaderMainMenuRoot>
   );
 }
