@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.2](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.1...v1.5.0-next.2) (2023-07-26)
+
+
+### Features
+
+* Add more customization options for HeaderMainMenu component ([56a7f6a](https://github.com/whitespace-se/gatsby-packages/commit/56a7f6adfb49d24e3165085d44f5e59b30bafacc))
+
+
+
 ## [1.5.0-next.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.0...v1.5.0-next.1) (2023-07-25)
 
 
