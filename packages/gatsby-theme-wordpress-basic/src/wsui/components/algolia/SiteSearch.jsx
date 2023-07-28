@@ -1,8 +1,14 @@
 /** @jsx jsx */
 import { css, jsx, useTheme } from "@emotion/react";
 import { searchPluginConfigContext } from "@whitespace/gatsby-plugin-search/src/contexts";
-import { SearchBox, Hits, Pagination } from "@wsui/algolia";
-import { H, Section, useThemeProps } from "@wsui/base";
+import {
+  SearchBox,
+  Hits,
+  Pagination as DefaultPagination,
+  MenuButtonGroup,
+} from "@wsui/algolia";
+import { H, Section, useThemeProps, handleComponentsProp } from "@wsui/base";
+import { camelCase } from "lodash/fp.js";
 import { useContext, useMemo } from "react";
 // import { Fragment } from "react";
 // import PropTypes from "prop-types";
@@ -21,7 +27,10 @@ import SearchProvider from "./SearchProvider.jsx";
 
 export default function SiteSearch(props) {
   props = useThemeProps({ props, name: "SiteSearch" });
-  let { ...restProps } = props;
+  let { components, ...restProps } = props;
+  let { Pagination } = handleComponentsProp(components, {
+    Pagination: DefaultPagination,
+  });
   const theme = useTheme();
   // const {
   //   indexUiState,
@@ -52,7 +61,9 @@ export default function SiteSearch(props) {
                 ]
               ).reduce(
                 (obj, value) => (
-                  (obj[value] = t(`search.facetLabels.contentType.${value}`)),
+                  (obj[value] = t(
+                    `search.facetLabels.contentType.${camelCase(value)}`,
+                  )),
                   obj
                 ),
                 {
@@ -83,8 +94,8 @@ export default function SiteSearch(props) {
         >
           <Configure filters={`language:${i18n.language}`} />
           <SearchBox searchAsYouType={false} />
-          {/* {!!facets.contentType && (
-            <SearchMenuButtonGroup
+          {!!facets.contentType && (
+            <MenuButtonGroup
               label={t("search.facets.contentType.label")}
               hideLabel
               {...facets.contentType}
@@ -94,7 +105,7 @@ export default function SiteSearch(props) {
               // showMoreLimit={number}
               // sortBy={string[] | function}
             />
-          )} */}
+          )}
           <div
             css={css`
               display: grid;

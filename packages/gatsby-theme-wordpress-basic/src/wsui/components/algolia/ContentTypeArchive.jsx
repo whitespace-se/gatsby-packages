@@ -1,8 +1,12 @@
 /** @jsx jsx */
 import { css, jsx, useTheme } from "@emotion/react";
 import { searchPluginConfigContext } from "@whitespace/gatsby-plugin-search/src/contexts";
-import { SearchBox, Hits, Pagination } from "@wsui/algolia";
-import { H, Section, useThemeProps } from "@wsui/base";
+import {
+  SearchBox,
+  Hits,
+  Pagination as DefaultPagination,
+} from "@wsui/algolia";
+import { H, Section, handleComponentsProp, useThemeProps } from "@wsui/base";
 import { useContext, useMemo } from "react";
 // import { Fragment } from "react";
 // import PropTypes from "prop-types";
@@ -21,7 +25,10 @@ import SearchProvider from "./SearchProvider.jsx";
 
 export default function ContentTypeArchive(props) {
   props = useThemeProps({ props, name: "ContentTypeArchive" });
-  let { contentType, ...restProps } = props;
+  let { contentType, components, ...restProps } = props;
+  let { Pagination } = handleComponentsProp(components, {
+    Pagination: DefaultPagination,
+  });
   const theme = useTheme();
   // const {
   //   indexUiState,
