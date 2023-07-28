@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.3](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.2...v1.5.0-next.3) (2023-07-28)
+
+
+### Features
+
+* Add content type facets to site search ([279c732](https://github.com/whitespace-se/gatsby-packages/commit/279c7323a3b3c65377591bb6a440662288d7e3ea))
+
+
+
 ## [1.5.0-next.2](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.1...v1.5.0-next.2) (2023-07-26)
 
 
