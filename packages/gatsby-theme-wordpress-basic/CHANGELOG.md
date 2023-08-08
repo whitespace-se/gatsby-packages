@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.4](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.3...v1.5.0-next.4) (2023-08-08)
+
+
+### Features
+
+* Add "colors" page ([e811ddd](https://github.com/whitespace-se/gatsby-packages/commit/e811ddd1f967441ea8175bb35e8594732c2a57fc))
+
+
+
 ## [1.5.0-next.3](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.2...v1.5.0-next.3) (2023-07-28)
 
 

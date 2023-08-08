@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.4](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.3...v1.5.0-next.4) (2023-08-08)
+
+**Note:** Version bump only for package @whitespace/gatsby-plugin-wsui
+
+
+
+
+
 ## [1.5.0-next.3](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.2...v1.5.0-next.3) (2023-07-28)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-wsui
