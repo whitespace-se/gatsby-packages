@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.6](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.5...v1.5.0-next.6) (2023-08-09)
+
+
+### Bug Fixes
+
+* Wrong background color context ([0566ce1](https://github.com/whitespace-se/gatsby-packages/commit/0566ce176b69de89b956ef77602cbf0807739a72))
+
+
+
 ## [1.5.0-next.5](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.4...v1.5.0-next.5) (2023-08-09)
 
 **Note:** Version bump only for package root
