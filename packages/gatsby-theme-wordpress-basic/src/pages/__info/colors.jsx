@@ -8,6 +8,7 @@ import {
   useThemeProps,
   PageSection,
   Heading,
+  Stack,
 } from "@wsui/base";
 import chroma from "chroma-js";
 import { omit } from "lodash/fp";
@@ -18,8 +19,13 @@ function getLightness(color) {
   return Math.round(1000 - color.get("oklch.l") * 1000);
 }
 
+const SwatchList = styled.div`
+  display: flex;
+  gap: 0.5rem;
+`;
+
 const Swatch = styled.div`
-  width: 4rem;
+  width: 5rem;
   height: 3rem;
   text-align: center;
   display: flex;
@@ -43,47 +49,55 @@ export default function ColorsInfoPage(props) {
             <PageGridItem colspan={defaultColspan}>
               <Heading>Colors</Heading>
               <Section>
-                <table
+                <Stack
+                  spacing={[5, 10]}
                   css={css`
-                    margin-block: 2rem;
+                    margin-top: ${theme.getLength([5, 10])};
                   `}
                 >
-                  <tbody>
-                    {Object.keys(theme.colors).map((color) => (
-                      <tr key={color}>
-                        <th scope="row">{color}</th>
-                        {["main", "hover"].map((shade) => (
-                          <td key={shade}>
-                            <Swatch color={[color, shade]}>
+                  {Object.keys(theme.colors).map((color) => (
+                    <Stack key={color} spacing={[3, 6]}>
+                      <Heading scope="row">{color}</Heading>
+                      <SwatchList>
+                        {["main", "hover", "active", "active.hover"].map(
+                          (shade) => (
+                            <Stack key={shade}>
+                              <Swatch color={[color, shade]} />
                               <div>
-                                {shade}
+                                {shade}{" "}
+                                {`(≈${
+                                  Math.round(
+                                    getLightness(
+                                      theme.getColor([color, shade]),
+                                    ) / 5,
+                                  ) * 5
+                                })`}
                                 <br />
-                                <small>
-                                  {`(${getLightness(
-                                    theme.getColor([color, shade]),
-                                  )})`}
-                                </small>
+                                <code>{theme.getColor([color, shade])}</code>
                               </div>
-                            </Swatch>
-                          </td>
-                        ))}
+                            </Stack>
+                          ),
+                        )}
+                      </SwatchList>
+                      <SwatchList>
                         {[
                           20, 50, 100, 150, 200, 300, 400, 500, 600, 700, 800,
                         ].map((shade) => (
-                          <td key={shade}>
-                            <Swatch color={[color, shade]}>
-                              <div>
-                                {shade}
-                                {/* <br />
-                                  {getLightness(theme.getColor([color, shade]))} */}
-                              </div>
-                            </Swatch>
-                          </td>
+                          <Stack key={shade}>
+                            <Swatch color={[color, shade]} />
+                            <div>
+                              {shade}
+                              {/* <br />
+                                    {getLightness(theme.getColor([color, shade]))} */}
+                              <br />
+                              <code>{theme.getColor([color, shade])}</code>
+                            </div>
+                          </Stack>
                         ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                      </SwatchList>
+                    </Stack>
+                  ))}
+                </Stack>
               </Section>
             </PageGridItem>
           </PageGrid>

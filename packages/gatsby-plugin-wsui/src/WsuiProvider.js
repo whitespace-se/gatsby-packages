@@ -11,7 +11,7 @@ import theme from "./theme.jsx";
 export default function WsuiProvider({ children }) {
   return (
     <ThemeProvider theme={theme}>
-      <backgroundColorContext.Provider value={"#ffffff"}>
+      <backgroundColorContext.Provider value={theme.getColor("white")}>
         <GlobalStyles />
         <IconProvider getIconSrc={(name) => `/icons/${name}.svg`}>
           {children}
