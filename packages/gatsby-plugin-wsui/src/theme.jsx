@@ -12,5 +12,14 @@ export default createTheme({
         },
       },
     },
+    Alert: {
+      defaultProps: {
+        iconMapping: {
+          // info: "info",
+          // warning: "alert",
+          // error: "alert",
+        },
+      },
+    },
   },
 });

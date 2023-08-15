@@ -4,6 +4,7 @@ import React from "react";
 
 // import { usePageContext } from "../hooks";
 
+import AlertBanner from "./AlertBanner.jsx";
 import DefaultFooter from "./Footer.jsx";
 import DefaultHeader from "./Header.jsx";
 
@@ -23,6 +24,7 @@ export default function SiteLayout(props) {
         min-height: 100vh;
       `}
     >
+      <AlertBanner />
       <Header
         css={css`
           margin-bottom: ${theme.getLength(headerMargin)};
