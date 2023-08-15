@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.7](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.6...v1.5.0-next.7) (2023-08-15)
+
+
+### Features
+
+* Add alert banner ([86a67e4](https://github.com/whitespace-se/gatsby-packages/commit/86a67e41a546309c3df61f9d3c1863c9acce49cc))
+
+
+
 ## [1.5.0-next.6](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.5...v1.5.0-next.6) (2023-08-09)
 
 
