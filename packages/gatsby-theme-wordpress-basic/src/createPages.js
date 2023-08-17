@@ -87,6 +87,7 @@ module.exports =
           ) {
             archivePageContext = {
               contentType,
+              contentTypeName: contentType.name,
               isArchivePage: true,
             };
           }
