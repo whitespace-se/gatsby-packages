@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.8](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.7...v1.5.0-next.8) (2023-08-17)
+
+
+### Features
+
+* Add contentTypeName to context for content type pages ([3899245](https://github.com/whitespace-se/gatsby-packages/commit/3899245119fdc41f5320d42c852669eac281c2f5))
+
+
+
 ## [1.5.0-next.7](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.6...v1.5.0-next.7) (2023-08-15)
 
 
