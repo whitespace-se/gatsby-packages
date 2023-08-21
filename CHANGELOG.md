@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.3.2](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.1...v1.3.2) (2023-08-21)
+
+
+### Bug Fixes
+
+* postSingleShowFeaturedImage not handled ([ed983d4](https://github.com/whitespace-se/gatsby-packages/commit/ed983d41943e9405eefc191460bc336eab30b427))
+
+
+
 ### [1.3.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.3.0...v1.3.1) (2023-03-16)
 
 
