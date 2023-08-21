@@ -13,7 +13,7 @@ SearchHits.propTypes = {
 
 export default function SearchHits({ children, ...props }) {
   let { hits, results, sendEvent } = useHits(props);
-  const { hitComponent: Hit } = props;
+  const { hitComponent: Hit, emptyResultsMessage } = props;
   // const { t } = useTranslation();
 
   const transformHit = useCallback((hit) => {
@@ -39,6 +39,14 @@ export default function SearchHits({ children, ...props }) {
 
   if (typeof children === "function") {
     return children({ hits, results, sendEvent });
+  }
+
+  if (!results) {
+    return null;
+  }
+
+  if (!results.__isArtificial && !results.intercepted && !hits?.length) {
+    return emptyResultsMessage;
   }
 
   return (
