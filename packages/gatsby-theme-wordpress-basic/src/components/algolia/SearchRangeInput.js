@@ -43,7 +43,7 @@ const StyledField = styled(Field)`
   outline: 0 !important;
   transition: all 100ms;
   /* color: var(--select-field-control-color, #3d4148);
-  font-size: var(--select-field-font-size, 0.875rem);
+  font-size: var(--select-field-font-size, 1rem);
   font-weight: var(--select-field-font-weight, 400);
   padding: 0 0.25rem; */
   /* @media (max-width: 32rem) {
@@ -65,7 +65,7 @@ const StyledLabel = styled.label`
   transition: all 100ms;
   box-sizing: border-box;
   color: var(--select-field-control-color, #3d4148);
-  font-size: var(--select-field-font-size, 0.875rem);
+  font-size: var(--select-field-font-size, 1rem);
   font-weight: var(--select-field-font-weight, 400);
   padding: 0 0.5rem;
   pointer-events: none;
