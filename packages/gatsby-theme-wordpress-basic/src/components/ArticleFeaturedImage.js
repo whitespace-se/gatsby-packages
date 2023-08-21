@@ -17,12 +17,16 @@ export default function ArticleFeaturedImage({
   className,
   ...restProps
 }) {
-  let {
-    contentNode: { featuredImage },
-    // isPreview,
-  } = usePageContext();
+  let pageContext = usePageContext();
+  let featuredImage = pageContext?.contentNode?.featuredImage;
+  let postSingleShowFeaturedImage =
+    pageContext?.displaySettings?.postSingleShowFeaturedImage ?? true;
 
-  featuredImage = !!(featuredImage && featuredImage.node) && {
+  featuredImage = !!(
+    featuredImage &&
+    featuredImage.node &&
+    postSingleShowFeaturedImage
+  ) && {
     ...featuredImage.node,
     width: "1025",
     height: "288",
