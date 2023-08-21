@@ -32,7 +32,7 @@ export default function useSelectStyles() {
         ...provided,
         borderColor: "var(--select-field-control-border-color, #DFE1E4)",
         color: "var(--select-field-control-color, #3D4148)",
-        fontSize: "var(--select-field-font-size, 0.875rem)",
+        fontSize: "var(--select-field-font-size, 1rem)",
         fontWeight: "var(--select-field-font-weight, 400)",
       };
     },
