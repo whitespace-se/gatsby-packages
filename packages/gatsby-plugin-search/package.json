@@ -1,6 +1,6 @@
 {
   "name": "@whitespace/gatsby-plugin-search",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Adds search to your Gatsby site",
   "license": "AGPL",
   "files": [

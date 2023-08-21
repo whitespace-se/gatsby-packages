@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.4.3](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.2...v1.4.3) (2023-08-21)
+
+
+### Features
+
+* Add emptyResultsMessage to legacy SearchHits ([4da81e5](https://github.com/whitespace-se/gatsby-packages/commit/4da81e5536d28eceef473e60a7269017915ab279))
+
+
+
 ### [1.4.2](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.1...v1.4.2) (2023-07-20)
 
 **Note:** Version bump only for package @whitespace/gatsby-theme-wordpress-basic
