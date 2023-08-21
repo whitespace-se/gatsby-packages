@@ -41,6 +41,11 @@ export default function ColorsInfoPage(props) {
   props = useThemeProps({ props, name: "DefaultTemplate" });
   props = useThemeProps({ props, name: "Template" });
   let { defaultColspan = 12 } = omit(["spacing"], props);
+
+  if (!theme.getColor) {
+    return null;
+  }
+
   return (
     <article>
       <Fragment>
