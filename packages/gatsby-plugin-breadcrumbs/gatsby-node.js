@@ -60,3 +60,16 @@ exports.createResolvers = (
     },
   });
 };
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+
+  createTypes(`
+    type SitePageContext {
+      title: String
+      isArchivePage: Boolean
+      isSiteIndexPage: Boolean
+      label: String
+    }
+  `);
+};
