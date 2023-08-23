@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.10](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.9...v1.5.0-next.10) (2023-08-23)
+
+
+### Features
+
+* Add `getPlainTextExcerpt` to html processor ([8b749f5](https://github.com/whitespace-se/gatsby-packages/commit/8b749f5c57eed5440061d21222fc07a7729a3f86))
+* Handle excerpt and read more in alert banner ([5f83117](https://github.com/whitespace-se/gatsby-packages/commit/5f83117c7ac0ead0365f8a5a1cf7589c6afdb934))
+
+
+### Bug Fixes
+
+* Footer typography ([09b44f3](https://github.com/whitespace-se/gatsby-packages/commit/09b44f3e7585bd647bcb346620c3a792a7b27e6b))
+
+
+
 ## [1.5.0-next.9](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.8...v1.5.0-next.9) (2023-08-23)
 
 
