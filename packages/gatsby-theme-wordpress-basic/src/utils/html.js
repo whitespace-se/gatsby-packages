@@ -226,5 +226,31 @@ export default function createHTMLProcessor({
 
     return stringifier.stringify(tree);
   };
-  return { processContent, processPageContent, stripHTML };
+
+  const getPlainTextExcerpt = ({
+    excerpt,
+    content,
+    maxWords,
+    ellipsis = "…",
+  }) => {
+    excerpt ??= "";
+    content ??= "";
+    if (excerpt) {
+      return stripHTML(excerpt);
+    }
+    maxWords ??= 55;
+    let splitContent = content.split(/<!--\s*more\s*-->/);
+    if (splitContent.length === 2) {
+      return stripHTML(splitContent[0]);
+    } else {
+      content = stripHTML(content);
+      let words = content.split(/\s+/);
+      if (words.length > maxWords) {
+        return words.slice(0, maxWords).join(" ").trim() + (ellipsis || "");
+      }
+      return content;
+    }
+  };
+
+  return { processContent, processPageContent, stripHTML, getPlainTextExcerpt };
 }
