@@ -153,6 +153,7 @@ exports.createPages = async function createPages(params, pluginOptions) {
               nodes {
                 archiveDates
                 modifiedGmt # Required for sitemap
+                hasPageContent
                 contentType {
                   node {
                     name

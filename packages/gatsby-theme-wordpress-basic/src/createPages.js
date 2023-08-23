@@ -31,9 +31,13 @@ const SingleTemplate = require.resolve("./templates/SingleTemplate");
 
 const WsuiTemplate = require.resolve("./wsui/templates/TemplateController.jsx");
 
-module.exports =
-  ({ contentType, query, nodesPerFetch }) =>
-  async (
+module.exports = ({ contentType, query, nodesPerFetch }) => {
+  let { skipPage = false } = contentType;
+  if (typeof skipPage !== "function") {
+    let skipPageValue = skipPage;
+    skipPage = () => skipPageValue;
+  }
+  return async (
     { actions, graphql, reporter },
     {
       i18next,
@@ -153,7 +157,7 @@ ${JSON.stringify({ ...commonVariables, ...variables }, null, 2)}`,
         contentNode.language ||
         getLanguageFromPathname(path, languages, defaultLanguage);
 
-      createPage({
+      let page = {
         path,
         component,
         context: {
@@ -162,12 +166,19 @@ ${JSON.stringify({ ...commonVariables, ...variables }, null, 2)}`,
           contentNode,
           contentType,
         },
-      });
-      pageCount++;
+      };
 
-      reporter.info(
-        `page created for ${contentType.labels.singularName}: ${path}`,
-      );
+      if (!skipPage(page)) {
+        createPage(page);
+        pageCount++;
+        reporter.info(
+          `page created for ${contentType.labels.singularName}: ${path}`,
+        );
+      } else {
+        reporter.info(
+          `skipped page for ${contentType.labels.singularName}: ${path}`,
+        );
+      }
     });
 
     if (!disableDefaultArchivePages && archivePageContext) {
@@ -289,3 +300,4 @@ ${JSON.stringify({ ...commonVariables, ...variables }, null, 2)}`,
 
     reporter.info(`# -----> PAGES TOTAL: ${pageCount}`);
   };
+};

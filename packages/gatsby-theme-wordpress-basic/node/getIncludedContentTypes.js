@@ -17,7 +17,7 @@ module.exports = function getIncludedContentTypes(
         name,
         ...(contentTypes &&
           contentTypes.find((contentType) => contentType.name === name)),
-        ...overrides[name],
+        ...overrides,
       };
       if (contentType.enum == null) {
         let inferredEnum = snakeCase(contentType.name).toUpperCase();
