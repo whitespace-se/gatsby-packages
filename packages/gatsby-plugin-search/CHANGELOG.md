@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.9](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.8...v1.5.0-next.9) (2023-08-23)
+
+
+### Bug Fixes
+
+* Select fields were zoomed in on focus because of too small font ([2b4d114](https://github.com/whitespace-se/gatsby-packages/commit/2b4d1145a76c960b015d1c3faf0f6104dba9faef))
+
+
+
 ## [1.5.0-next.8](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.7...v1.5.0-next.8) (2023-08-17)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-search

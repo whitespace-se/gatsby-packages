@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.9](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.8...v1.5.0-next.9) (2023-08-23)
+
+
+### Features
+
+* Add ability to skip page creation in config ([271dd70](https://github.com/whitespace-se/gatsby-packages/commit/271dd7004d85e264b1fdab2787751d933522e59c))
+
+
+### Bug Fixes
+
+* Avoid graphql error ([93f101c](https://github.com/whitespace-se/gatsby-packages/commit/93f101c41167164edc209cb4fa5c940320502934))
+* Avoid graphql error ([582ab61](https://github.com/whitespace-se/gatsby-packages/commit/582ab613fbe27a8903136c5cd678d018d7fc0ee6))
+* Color info page crashed legacy sites ([79ac037](https://github.com/whitespace-se/gatsby-packages/commit/79ac037ba77d445faa914d864c21373b8f7c24bc))
+* Select fields were zoomed in on focus because of too small font ([2b4d114](https://github.com/whitespace-se/gatsby-packages/commit/2b4d1145a76c960b015d1c3faf0f6104dba9faef))
+
+
+
 ## [1.5.0-next.8](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.7...v1.5.0-next.8) (2023-08-17)
 
 
