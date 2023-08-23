@@ -18,10 +18,10 @@ function defaultBlockTypeMapping({ blockType }) {
   return footerBlocks[componentName] || footerBlocks.FooterFallbackBlock;
 }
 
-export default function FooterBlock(props) {
+export default function FooterBlockController(props) {
   // eslint-disable-next-line no-unused-vars
   const theme = useTheme();
-  props = useThemeProps({ props, name: "FooterBlock" });
+  props = useThemeProps({ props, name: "FooterBlockController" });
   let { block, blockTypeMapping = {}, ...restProps } = props;
 
   const Component =

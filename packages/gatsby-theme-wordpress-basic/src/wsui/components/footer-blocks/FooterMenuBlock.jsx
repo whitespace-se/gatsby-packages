@@ -24,7 +24,15 @@ export default function FooterMenuBlock(props) {
   // eslint-disable-next-line no-unused-vars
   const theme = useTheme();
   props = useThemeProps({ props, name: "FooterMenuBlock" });
-  let { block, columnWidth = 40, gap = 8, components } = props;
+  props = useThemeProps({ props, name: "FooterBlock" });
+  let {
+    block,
+    columnWidth = 40,
+    gap = 8,
+    headingVariant = "h3",
+    typographyVariant = "description",
+    components,
+  } = props;
   let { Link = DefaultLink } = handleComponentsProp(components, {
     Link: DefaultLink,
   });
@@ -38,9 +46,9 @@ export default function FooterMenuBlock(props) {
   }
 
   return (
-    <Typography variant="body" as="nav">
+    <Typography variant={typographyVariant} as="nav">
       {!!title && (
-        <Heading variant="h3" marginAfter>
+        <Heading variant={headingVariant} marginAfter>
           {title}
         </Heading>
       )}

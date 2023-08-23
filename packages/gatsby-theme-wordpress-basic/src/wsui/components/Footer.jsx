@@ -14,7 +14,7 @@ import {
 import { useMenu } from "../../hooks/menus";
 import useFooterBlocks from "../../hooks/useFooterBlocks";
 
-import FooterBlock from "./FooterBlock.jsx";
+import FooterBlockController from "./FooterBlockController.jsx";
 import DefaultLogo from "./FooterLogo.jsx";
 
 const DefaultLink = styled(Clickable)`
@@ -72,7 +72,7 @@ export default function Footer(inProps) {
           <PageGridItem key={columnIndex} colspan={[colspan, 12]}>
             <Stack justifyContent="start" direction="column">
               {blocks.map((block, blockIndex) => (
-                <FooterBlock key={blockIndex} block={block} />
+                <FooterBlockController key={blockIndex} block={block} />
               ))}
             </Stack>
           </PageGridItem>

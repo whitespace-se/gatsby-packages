@@ -8,14 +8,19 @@ export default function FooterTextBlock(props) {
   // eslint-disable-next-line no-unused-vars
   const theme = useTheme();
   props = useThemeProps({ props, name: "FooterTextBlock" });
-  let { block } = props;
+  props = useThemeProps({ props, name: "FooterBlock" });
+  let {
+    block,
+    headingVariant = "h3",
+    elementMapping = { p: "description" },
+  } = props;
   let { title, content } = block;
   return (
     <div>
-      <Heading variant="h3" marginAfter>
+      <Heading variant={headingVariant} marginAfter>
         {title}
       </Heading>
-      <TypographyBlock>
+      <TypographyBlock elementMapping={elementMapping}>
         <Html>{content}</Html>
       </TypographyBlock>
     </div>
