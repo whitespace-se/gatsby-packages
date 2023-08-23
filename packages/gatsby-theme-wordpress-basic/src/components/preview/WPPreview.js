@@ -12,6 +12,12 @@ const PREVIEW_QUERY = gql`
   query PreviewQuery($id: ID!) {
     wp {
       contentNode(id: $id, asPreview: true) {
+        contentType {
+          node {
+            name
+            graphqlSingleName
+          }
+        }
         ...WP_ContentNodeForPage
       }
     }

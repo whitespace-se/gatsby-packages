@@ -44,7 +44,8 @@ export default function ContentTypeArchive(props) {
   const { t, i18n } = useTranslation();
   const searchPluginConfig = useContext(searchPluginConfigContext);
   const archiveConfig = useMemo(() => {
-    let archiveConfig = searchPluginConfig?.archives?.[contentType.name] || {};
+    let archiveConfig =
+      searchPluginConfig?.archives?.[contentType.graphqlSingleName] || {};
     return {
       searchBox: false,
       sortBy: archiveConfig.searchBox ? "relevance" : "publish_date",
@@ -68,7 +69,9 @@ export default function ContentTypeArchive(props) {
           {...restProps}
         >
           <Configure filters={`language:${i18n.language}`} />
-          <Configure filters={`contentType.name:${contentType.name}`} />
+          <Configure
+            filters={`contentType.name:${contentType.graphqlSingleName}`}
+          />
           {archiveConfig.sortBy !== "relevance" && (
             <Configure sortBy={`${indexName}_${archiveConfig.sortBy}`} />
           )}
