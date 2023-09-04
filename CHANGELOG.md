@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.11](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.10...v1.5.0-next.11) (2023-09-04)
+
+
+### Features
+
+* Add `background` and `spacingStart` props to PageBreadcrumbs ([db5a35d](https://github.com/whitespace-se/gatsby-packages/commit/db5a35d0caf27826f7213d6ff7749622d7b9fb36))
+
+
+### Bug Fixes
+
+* Layout issue in site layout ([8da8e54](https://github.com/whitespace-se/gatsby-packages/commit/8da8e54fcab6d81aee45e076fb786e4741e01b59))
+
+
+
 ## [1.5.0-next.10](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.9...v1.5.0-next.10) (2023-08-23)
 
 

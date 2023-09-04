@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.11](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.10...v1.5.0-next.11) (2023-09-04)
+
+**Note:** Version bump only for package @whitespace/gatsby-plugin-page-wrapper
+
+
+
+
+
 ## [1.5.0-next.10](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.9...v1.5.0-next.10) (2023-08-23)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-page-wrapper
