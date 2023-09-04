@@ -24,12 +24,14 @@ export default function SiteLayout(props) {
         min-height: 100vh;
       `}
     >
-      <AlertBanner />
-      <Header
-        css={css`
-          margin-bottom: ${theme.getLength(headerMargin)};
-        `}
-      />
+      <div>
+        <AlertBanner />
+        <Header
+          css={css`
+            margin-bottom: ${theme.getLength(headerMargin)};
+          `}
+        />
+      </div>
       <main id="main">{children}</main>
       <Section>
         <Footer
