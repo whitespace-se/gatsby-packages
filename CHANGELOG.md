@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.12](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.11...v1.5.0-next.12) (2023-09-05)
+
+
+### Bug Fixes
+
+* Error with headingLevel in html processor ([0c91c77](https://github.com/whitespace-se/gatsby-packages/commit/0c91c77ecc9ab71983f0dbe9f8ec3bf0c9a2e8aa))
+
+
+
 ## [1.5.0-next.11](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.10...v1.5.0-next.11) (2023-09-04)
 
 
