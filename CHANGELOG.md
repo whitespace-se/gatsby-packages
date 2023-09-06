@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.14](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.13...v1.5.0-next.14) (2023-09-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* Update wsui
+
+### Features
+
+* Update wsui ([b6861b0](https://github.com/whitespace-se/gatsby-packages/commit/b6861b0aecade0a4c700038be82ad5c46cd26695))
+
+
+
 ## [1.5.0-next.13](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.12...v1.5.0-next.13) (2023-09-05)
 
 **Note:** Version bump only for package root
