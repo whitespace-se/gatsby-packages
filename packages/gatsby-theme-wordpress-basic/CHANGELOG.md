@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.15](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.14...v1.5.0-next.15) (2023-09-13)
+
+
+### Features
+
+* Implement page featured image ([ee00077](https://github.com/whitespace-se/gatsby-packages/commit/ee00077cb90c5512df601660bc48573b5bdd73d8))
+
+
+
 ## [1.5.0-next.14](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.13...v1.5.0-next.14) (2023-09-06)
 
 
