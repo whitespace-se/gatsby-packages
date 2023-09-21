@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.16](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.15...v1.5.0-next.16) (2023-09-21)
+
+
+### Features
+
+* Change default color for read more button in alert banner ([df80940](https://github.com/whitespace-se/gatsby-packages/commit/df80940548478e9e90d64ab11ffc83f8f1894ba6))
+
+
+
 ## [1.5.0-next.15](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.14...v1.5.0-next.15) (2023-09-13)
 
 
