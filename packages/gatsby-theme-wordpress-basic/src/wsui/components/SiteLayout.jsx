@@ -1,6 +1,8 @@
 import { css, useTheme } from "@emotion/react";
 import { Section, handleComponentsProp, useThemeProps } from "@wsui/base";
 import React from "react";
+import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
 
 // import { usePageContext } from "../hooks";
 
@@ -9,13 +11,15 @@ import DefaultFooter from "./Footer.jsx";
 import DefaultHeader from "./Header.jsx";
 
 export default function SiteLayout(props) {
-  props = useThemeProps({ props, name: "SiteLayout" });
   const theme = useTheme();
+  props = useThemeProps({ props, name: "SiteLayout" });
   let { children, footerMargin = 0, headerMargin = 0, components } = props;
   let { Header, Footer } = handleComponentsProp(components, {
     Header: DefaultHeader,
     Footer: DefaultFooter,
   });
+  const { i18n } = useTranslation();
+
   return (
     <div
       css={css`
@@ -24,6 +28,7 @@ export default function SiteLayout(props) {
         min-height: 100vh;
       `}
     >
+      <Helmet htmlAttributes={{ lang: i18n.language }} />
       <div>
         <AlertBanner />
         <Header
