@@ -18,21 +18,23 @@ import { useHTMLProcessor } from "../../hooks/html-processor.js";
 
 function DefaultReadMore({
   ownerState: {
-    alertOwnerState: { color },
+    alertOwnerState: { color: alertColor },
   },
   children,
+  color = "-300",
   ...restProps
 }) {
   return (
     <Fragment>
       {" "}
       <Button
-        color={[color, "+100"]}
+        color={[alertColor, color]}
         style={{
-          paddingBlock: 2,
+          paddingBlock: 1.5,
           paddingInline: 3,
           marginBlock: -2,
           marginInlineStart: 2,
+          borderRadius: 1,
         }}
         variant={null}
         {...restProps}
@@ -48,7 +50,7 @@ export default function AlertBanner(props) {
   const { t } = useTranslation();
   let {
     components,
-    readMoreText = t(["alertBanner.readMore", "readMore", "Read more…"]),
+    readMoreText = t(["alertBanner.readMore", "readMore", "Read more"]),
     ...restProps
   } = props;
   let { ReadMore } = handleComponentsProp(components, {
