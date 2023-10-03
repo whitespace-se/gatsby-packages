@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.17](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.16...v1.5.0-next.17) (2023-10-03)
+
+
+### Features
+
+* Add page footer section ([8334c1f](https://github.com/whitespace-se/gatsby-packages/commit/8334c1f78270930f0d020134b5f1fa8468d5b093))
+
+
+### Bug Fixes
+
+* Add lang attribute to html element ([f7299db](https://github.com/whitespace-se/gatsby-packages/commit/f7299db6b0560f2ed6670e94ce1faf7b417264c0))
+* Improve printability ([08bc813](https://github.com/whitespace-se/gatsby-packages/commit/08bc8135b935582729decb2a3b06404787ac81b9))
+
+
+
 ## [1.5.0-next.16](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.15...v1.5.0-next.16) (2023-09-21)
 
 
