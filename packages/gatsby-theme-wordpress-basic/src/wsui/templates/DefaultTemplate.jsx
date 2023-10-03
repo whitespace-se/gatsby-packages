@@ -1,6 +1,12 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react";
-import { Section, PageGrid, PageGridItem, useThemeProps } from "@wsui/base";
+import {
+  Section,
+  PageGrid,
+  PageGridItem,
+  useThemeProps,
+  handleComponentsProp,
+} from "@wsui/base";
 
 import { usePageContext } from "../../hooks/page-context";
 import {
@@ -10,6 +16,7 @@ import {
   PageHeading,
   PagePreamble,
   // PageSiblingNavigation,
+  PageFooter as DefaultPageFooter,
   Seo,
 } from "../components";
 
@@ -17,7 +24,11 @@ export default function DefaultTemplate(props) {
   // eslint-disable-next-line no-unused-vars
   props = useThemeProps({ props, name: "DefaultTemplate" });
   props = useThemeProps({ props, name: "Template" });
-  let { defaultColspan = 7 } = props;
+  let { defaultColspan = 7, components } = props;
+  components = handleComponentsProp(components, {
+    PageFooter: DefaultPageFooter,
+  });
+  let { PageFooter } = components;
   const { title } = usePageContext();
   return (
     <article>
@@ -37,14 +48,7 @@ export default function DefaultTemplate(props) {
         </PageGridItem>
       </PageGrid>
       <Section>
-        {/* <footer className={styles.footer}>
-          <PageMeta />
-          <PageGrid>
-            <PageGridItem>
-              <PageSiblingNavigation />
-            </PageGridItem>
-          </PageGrid>
-        </footer> */}
+        <PageFooter />
       </Section>
     </article>
   );

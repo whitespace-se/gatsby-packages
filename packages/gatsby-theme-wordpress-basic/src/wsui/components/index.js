@@ -5,6 +5,7 @@ export { default as Image } from "./Image.jsx";
 export { default as PageBreadcrumbs } from "./PageBreadcrumbs.jsx";
 export { default as PageContent } from "./PageContent.jsx";
 export { default as PageFeaturedImage } from "./PageFeaturedImage.jsx";
+export { default as PageFooter } from "./PageFooter.jsx";
 export { default as PageHeading } from "./PageHeading.jsx";
 export { default as PagePreamble } from "./PagePreamble.jsx";
 export { default as Seo } from "./Seo.jsx";
