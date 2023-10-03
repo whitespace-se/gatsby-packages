@@ -10,6 +10,7 @@ import {
   handleComponentsProp,
   useThemeProps,
 } from "@wsui/base";
+import clsx from "clsx";
 
 import { useMenu } from "../../hooks/menus";
 import useFooterBlocks from "../../hooks/useFooterBlocks";
@@ -39,6 +40,7 @@ export default function Footer(inProps) {
     bannerBorderColor = "white",
     components,
     legalMenu = "LEGAL",
+    className,
     ...restProps
   } = useThemeProps({
     props: inProps,
@@ -58,6 +60,7 @@ export default function Footer(inProps) {
         background: ${theme.getColor(color)};
         color: ${theme.getColor([color, "text"])};
       `}
+      className={clsx("wsui-screen-only", className)}
       {...restProps}
     >
       <PageGrid

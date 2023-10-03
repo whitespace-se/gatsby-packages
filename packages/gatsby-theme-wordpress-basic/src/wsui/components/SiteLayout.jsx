@@ -1,5 +1,6 @@
 import { css, useTheme } from "@emotion/react";
 import { Section, handleComponentsProp, useThemeProps } from "@wsui/base";
+import clsx from "clsx";
 import React from "react";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
@@ -30,7 +31,7 @@ export default function SiteLayout(props) {
     >
       <Helmet htmlAttributes={{ lang: i18n.language }} />
       <div>
-        <AlertBanner />
+        <AlertBanner className={clsx("wsui-screen-only")} />
         <Header
           css={css`
             margin-bottom: ${theme.getLength(headerMargin)};

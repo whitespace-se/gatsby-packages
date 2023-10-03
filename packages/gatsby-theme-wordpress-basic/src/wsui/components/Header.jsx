@@ -9,6 +9,7 @@ import {
   handleComponentsProp,
   useThemeProps,
 } from "@wsui/base";
+import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -82,6 +83,7 @@ export default function Header(props) {
             />
             <MainMenu
               aria-label={t("mainMenu")}
+              className={clsx("wsui-screen-only")}
               css={css`
                 align-self: stretch;
                 display: grid;
@@ -106,6 +108,7 @@ export default function Header(props) {
                 aria-label={t("menu")}
                 aria-expanded={String(hamburgerOpen)}
                 aria-controls={"header-hamburger-menu"}
+                className={clsx("wsui-screen-only")}
                 css={css`
                   grid-area: flyout;
                   cursor: pointer;
