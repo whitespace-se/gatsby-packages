@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.18](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.17...v1.5.0-next.18) (2023-10-04)
+
+
+### Features
+
+* Allow custom links in alert banner ([f85c72d](https://github.com/whitespace-se/gatsby-packages/commit/f85c72dfdf7f0f78f424267e265c9fd196596b39))
+
+
+
 ## [1.5.0-next.17](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.16...v1.5.0-next.17) (2023-10-03)
 
 
