@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "@emotion/react";
+import { css, jsx } from "@emotion/react";
 import {
   Alert,
   MaybeFragment,
@@ -11,7 +11,7 @@ import {
   handleComponentsProp,
 } from "@wsui/base";
 import { graphql, useStaticQuery } from "gatsby";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { useHTMLProcessor } from "../../hooks/html-processor.js";
@@ -25,23 +25,19 @@ function DefaultReadMore({
   ...restProps
 }) {
   return (
-    <Fragment>
-      {" "}
-      <Button
-        color={[alertColor, color]}
-        style={{
-          paddingBlock: 1.5,
-          paddingInline: 3,
-          marginBlock: -2,
-          marginInlineStart: 2,
-          borderRadius: 1,
-        }}
-        variant={null}
-        {...restProps}
-      >
-        {children}
-      </Button>
-    </Fragment>
+    <Button
+      color={[alertColor, color]}
+      style={{
+        paddingBlock: 1.5,
+        paddingInline: 3,
+        marginBlock: -2,
+        borderRadius: 1,
+      }}
+      variant={null}
+      {...restProps}
+    >
+      {children}
+    </Button>
   );
 }
 
@@ -93,50 +89,79 @@ export default function AlertBanner(props) {
     <MaybeFragment>
       {alerts
         .filter(({ id }) => !checkForDismissedBanner(id))
-        .map(({ id, excerpt, content, hasPageContent, uri }) => {
-          let plainTextExcerpt = getPlainTextExcerpt({ excerpt, content });
-          if (!plainTextExcerpt) return null;
-          return (
-            <Alert
-              key={id}
-              onClose={
-                !!id &&
-                (() => {
-                  dismissAlertBanner(id);
-                })
-              }
-              borderRadius={0}
-              components={{
-                Inner: ({ children, ...restProps }) => (
-                  <PageGrid {...restProps}>
-                    <PageGridItem colspan={12}>{children}</PageGridItem>
-                  </PageGrid>
-                ),
-              }}
-              style={{
-                paddingInline: 0,
-              }}
-              {...restProps}
-            >
-              {(alertOwnerState) => (
-                <Typography>
-                  {plainTextExcerpt}
-                  {!!(hasPageContent && uri) && (
-                    <ReadMore
-                      ownerState={{
-                        ...ownerState,
-                        alertOwnerState,
-                      }}
-                      uri={uri}
+        .map(
+          ({
+            id,
+            excerpt,
+            content,
+            hasPageContent,
+            uri,
+            alertSettings: { readMorePage },
+          }) => {
+            let plainTextExcerpt = getPlainTextExcerpt({ excerpt, content });
+            let readMoreProps = { title: readMoreText };
+            if (readMorePage) {
+              ({ url: uri, ...readMoreProps } = readMorePage);
+              hasPageContent = true;
+            }
+            if (!plainTextExcerpt) return null;
+            return (
+              <Alert
+                key={id}
+                onClose={
+                  !!id &&
+                  (() => {
+                    dismissAlertBanner(id);
+                  })
+                }
+                borderRadius={0}
+                components={{
+                  Inner: ({ children, ...restProps }) => (
+                    <PageGrid {...restProps}>
+                      <PageGridItem colspan={12}>{children}</PageGridItem>
+                    </PageGrid>
+                  ),
+                }}
+                style={{
+                  paddingInline: 0,
+                }}
+                {...restProps}
+              >
+                {(alertOwnerState) => (
+                  <div
+                    css={css`
+                      display: flex;
+                      align-items: center;
+                      gap: 1rem;
+                      flex-wrap: wrap;
+                      justify-content: start;
+                    `}
+                  >
+                    <div
+                      css={css`
+                        flex-grow: 1;
+                        flex-basis: 20ch;
+                        max-width: max-content;
+                      `}
                     >
-                      {readMoreText}
-                    </ReadMore>
-                  )}
-                </Typography>
-              )}
-            </Alert>
-          );
-        })}
+                      <Typography>{plainTextExcerpt}</Typography>
+                    </div>
+                    {!!(hasPageContent && uri) && (
+                      <ReadMore
+                        ownerState={{
+                          ...ownerState,
+                          alertOwnerState,
+                        }}
+                        uri={uri}
+                        {...readMoreProps}
+                      />
+                    )}
+                  </div>
+                )}
+              </Alert>
+            );
+          },
+        )}
     </MaybeFragment>
   );
 }
