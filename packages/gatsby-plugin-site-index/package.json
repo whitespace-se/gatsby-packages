@@ -1,6 +1,6 @@
 {
   "name": "@whitespace/gatsby-plugin-site-index",
-  "version": "1.5.0-next.19",
+  "version": "1.5.0-next.20",
   "description": "Generates a site index",
   "author": "Whitespace Dev <code@whitespace.se>",
   "license": "AGPL",

@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.20](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.19...v1.5.0-next.20) (2023-10-09)
+
+
+### Bug Fixes
+
+* Add missing page SEO metadata ([c8b6a17](https://github.com/whitespace-se/gatsby-packages/commit/c8b6a172acdf07c7e44796004ad26f882cf232a2))
+
+
+
 ## [1.5.0-next.19](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.18...v1.5.0-next.19) (2023-10-09)
 
 
