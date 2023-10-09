@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.19](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.18...v1.5.0-next.19) (2023-10-09)
+
+
+### Features
+
+* Add PageBottom to page template ([b0340e3](https://github.com/whitespace-se/gatsby-packages/commit/b0340e37cface560c00f7cdfaa5d38372e221376))
+* Remove "enable js" message on search page ([ed35b95](https://github.com/whitespace-se/gatsby-packages/commit/ed35b954435578fea42fb0b1f2842f9eb72791d3))
+
+
+
 ## [1.5.0-next.18](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.17...v1.5.0-next.18) (2023-10-04)
 
 
