@@ -17,6 +17,7 @@ import {
   PagePreamble,
   // PageSiblingNavigation,
   PageFooter as DefaultPageFooter,
+  PageBottom as DefaultPageBottom,
   Seo,
 } from "../components";
 
@@ -27,8 +28,9 @@ export default function DefaultTemplate(props) {
   let { defaultColspan = 7, components } = props;
   components = handleComponentsProp(components, {
     PageFooter: DefaultPageFooter,
+    PageBottom: DefaultPageBottom,
   });
-  let { PageFooter } = components;
+  let { PageFooter, PageBottom } = components;
   const { title } = usePageContext();
   return (
     <article>
@@ -49,6 +51,7 @@ export default function DefaultTemplate(props) {
       </PageGrid>
       <Section>
         <PageFooter />
+        <PageBottom />
       </Section>
     </article>
   );

@@ -2,6 +2,7 @@ export { default as Footer } from "./Footer.jsx";
 export { default as Header } from "./Header.jsx";
 export { default as Html } from "./Html.jsx";
 export { default as Image } from "./Image.jsx";
+export { default as PageBottom } from "./PageBottom.jsx";
 export { default as PageBreadcrumbs } from "./PageBreadcrumbs.jsx";
 export { default as PageContent } from "./PageContent.jsx";
 export { default as PageFeaturedImage } from "./PageFeaturedImage.jsx";
