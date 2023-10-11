@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.21](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.20...v1.5.0-next.21) (2023-10-11)
+
+**Note:** Version bump only for package @whitespace/gatsby-plugin-breadcrumbs
+
+
+
+
+
 ## [1.5.0-next.20](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.19...v1.5.0-next.20) (2023-10-09)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-breadcrumbs
