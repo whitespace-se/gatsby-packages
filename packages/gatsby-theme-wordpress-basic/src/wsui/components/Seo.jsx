@@ -17,7 +17,7 @@ export default function Seo(props) {
       meta,
       title,
     });
-    const { i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   return (
     <Helmet
