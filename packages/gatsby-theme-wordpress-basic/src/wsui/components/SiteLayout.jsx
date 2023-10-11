@@ -19,7 +19,6 @@ export default function SiteLayout(props) {
     Header: DefaultHeader,
     Footer: DefaultFooter,
   });
-  const { i18n } = useTranslation();
 
   return (
     <div
@@ -29,7 +28,6 @@ export default function SiteLayout(props) {
         min-height: 100vh;
       `}
     >
-      <Helmet htmlAttributes={{ lang: i18n.language }} />
       <div>
         <AlertBanner className={clsx("wsui-screen-only")} />
         <Header

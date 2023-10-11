@@ -7,7 +7,7 @@ import { useOpenGraphContent, useSiteMetadata } from "../../hooks";
 
 export default function Seo(props) {
   props = useThemeProps({ props, name: "Seo" });
-  let { description, isFrontPage = false, lang, meta = [], title = "" } = props;
+  let { description, isFrontPage = false, meta = [], title = "" } = props;
   const { title: siteTitle, author } = useSiteMetadata();
 
   const { metaTitle, metaDescription, metaImage, metaUrl } =
@@ -17,11 +17,12 @@ export default function Seo(props) {
       meta,
       title,
     });
+    const { i18n } = useTranslation();
 
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: i18n.language,
       }}
       title={title}
       titleTemplate={isFrontPage ? siteTitle : `%s – ${siteTitle}`}
