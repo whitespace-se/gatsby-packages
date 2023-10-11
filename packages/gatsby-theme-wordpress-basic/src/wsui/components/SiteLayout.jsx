@@ -2,8 +2,6 @@ import { css, useTheme } from "@emotion/react";
 import { Section, handleComponentsProp, useThemeProps } from "@wsui/base";
 import clsx from "clsx";
 import React from "react";
-import { Helmet } from "react-helmet";
-import { useTranslation } from "react-i18next";
 
 // import { usePageContext } from "../hooks";
 
@@ -19,7 +17,6 @@ export default function SiteLayout(props) {
     Header: DefaultHeader,
     Footer: DefaultFooter,
   });
-  const { i18n } = useTranslation();
 
   return (
     <div
@@ -29,7 +26,6 @@ export default function SiteLayout(props) {
         min-height: 100vh;
       `}
     >
-      <Helmet htmlAttributes={{ lang: i18n.language }} />
       <div>
         <AlertBanner className={clsx("wsui-screen-only")} />
         <Header
