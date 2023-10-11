@@ -2,8 +2,6 @@ import { css, useTheme } from "@emotion/react";
 import { Section, handleComponentsProp, useThemeProps } from "@wsui/base";
 import clsx from "clsx";
 import React from "react";
-import { Helmet } from "react-helmet";
-import { useTranslation } from "react-i18next";
 
 // import { usePageContext } from "../hooks";
 

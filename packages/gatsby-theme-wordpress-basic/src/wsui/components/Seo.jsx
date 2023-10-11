@@ -2,6 +2,7 @@
 import { jsx } from "@emotion/react";
 import { useThemeProps } from "@wsui/base";
 import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
 
 import { useOpenGraphContent, useSiteMetadata } from "../../hooks";
 
