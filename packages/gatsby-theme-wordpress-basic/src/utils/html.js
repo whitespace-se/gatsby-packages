@@ -163,6 +163,7 @@ export default function createHTMLProcessor({
           { type: "comment", value: "more" },
           (node, ancestors) => {
             [preambleTree, contentTree] = splitTree()([...ancestors, node]);
+            contentTree.children.shift();
             return visitParents.EXIT;
           },
         );
