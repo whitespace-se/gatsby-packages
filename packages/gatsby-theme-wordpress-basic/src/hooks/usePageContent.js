@@ -10,10 +10,13 @@ export default function usePageContent(options) {
   let data = useMustacheData();
   let htmlString = Mustache.render(String(input || ""), data);
   let { processPageContent } = useHTMLProcessor();
-  let { heading, preamble, content } = processPageContent(htmlString, {
-    extractHeading: true,
-    ...rest,
-    ...options,
-  });
-  return { heading, preamble, content };
+  let { heading, headingContent, preamble, content } = processPageContent(
+    htmlString,
+    {
+      extractHeading: true,
+      ...rest,
+      ...options,
+    },
+  );
+  return { heading, headingContent, preamble, content };
 }
