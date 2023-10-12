@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.23](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.22...v1.5.0-next.23) (2023-10-12)
+
+
+### Features
+
+* Return `headingContent` from `usePageContent` ([fd0793e](https://github.com/whitespace-se/gatsby-packages/commit/fd0793e62e4a0fb9cfb173b300d79c929b55912e))
+
+
+### Bug Fixes
+
+* Remove empty p element from contentTree in html processor ([c4f798d](https://github.com/whitespace-se/gatsby-packages/commit/c4f798d287c86fcb5d19acc2c8340a92270269e2))
+
+
+
 ## [1.5.0-next.22](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.21...v1.5.0-next.22) (2023-10-12)
 
 
