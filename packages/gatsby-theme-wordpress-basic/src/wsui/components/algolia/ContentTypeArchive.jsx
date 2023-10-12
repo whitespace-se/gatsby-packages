@@ -75,6 +75,9 @@ export default function ContentTypeArchive(props) {
           {archiveConfig.sortBy !== "relevance" && (
             <Configure sortBy={`${indexName}_${archiveConfig.sortBy}`} />
           )}
+          {(archiveConfig.filters || []).map((filter, index) => (
+            <Configure key={index} filters={filter} />
+          ))}
           {!!archiveConfig.searchBox && <SearchBox searchAsYouType={false} />}
           <div
             css={css`
