@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.24](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.23...v1.5.0-next.24) (2023-10-12)
+
+
+### Features
+
+* Allow setting configure filters in archive page config ([2725b3f](https://github.com/whitespace-se/gatsby-packages/commit/2725b3fdbb8eb5b1e694e83c0d7e5d88108f9f9a))
+
+
+
 ## [1.5.0-next.23](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.22...v1.5.0-next.23) (2023-10-12)
 
 
