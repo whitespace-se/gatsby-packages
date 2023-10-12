@@ -14,7 +14,6 @@ export default function Seo(props) {
   const { metaTitle, metaDescription, metaImage, metaUrl } =
     useOpenGraphContent(useSiteMetadata(), {
       description,
-      lang,
       meta,
       title,
     });
