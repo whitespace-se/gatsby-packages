@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.22](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.21...v1.5.0-next.22) (2023-10-12)
+
+
+### Features
+
+* fixing crash by removing reference to lang ([6299230](https://github.com/whitespace-se/gatsby-packages/commit/629923019b013e9b7ab5d7d19d4ed115904f9220))
+
+
+
 ## [1.5.0-next.21](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.20...v1.5.0-next.21) (2023-10-11)
 
 **Note:** Version bump only for package root
