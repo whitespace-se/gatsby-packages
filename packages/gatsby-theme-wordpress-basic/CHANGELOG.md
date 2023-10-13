@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.25](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.24...v1.5.0-next.25) (2023-10-13)
+
+
+### Features
+
+* Add cookie dialog ([c015fad](https://github.com/whitespace-se/gatsby-packages/commit/c015fad5518f4e3e4c41c929386ebeb326a72eba))
+
+
+
 ## [1.5.0-next.24](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.23...v1.5.0-next.24) (2023-10-12)
 
 
