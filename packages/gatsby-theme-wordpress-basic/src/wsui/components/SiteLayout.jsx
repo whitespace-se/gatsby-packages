@@ -1,5 +1,7 @@
 import { css, useTheme } from "@emotion/react";
-import { Section, handleComponentsProp, useThemeProps } from "@wsui/base";
+import useCookieConsentSettings from "@whitespace/gatsby-plugin-cookie-consent/src/hooks/useCookieConsentSettings";
+import CookieDialog from "@whitespace/gatsby-plugin-cookie-consent/src/wsui/components/CookieDialog.jsx";
+import { Link, Section, handleComponentsProp, useThemeProps } from "@wsui/base";
 import clsx from "clsx";
 import React from "react";
 
@@ -8,6 +10,7 @@ import React from "react";
 import AlertBanner from "./AlertBanner.jsx";
 import DefaultFooter from "./Footer.jsx";
 import DefaultHeader from "./Header.jsx";
+import Html from "./Html.jsx";
 
 export default function SiteLayout(props) {
   const theme = useTheme();
@@ -17,6 +20,7 @@ export default function SiteLayout(props) {
     Header: DefaultHeader,
     Footer: DefaultFooter,
   });
+  const { position, active, strings } = useCookieConsentSettings();
 
   return (
     <div
@@ -40,6 +44,27 @@ export default function SiteLayout(props) {
           css={css`
             margin-top: ${theme.getLength(footerMargin)};
           `}
+        />
+        <CookieDialog
+          position={position}
+          active={active}
+          title={strings.title}
+          description={
+            strings.description && (
+              <p>
+                <Html>{strings.description}</Html>{" "}
+                {strings.moreLinkUrl && (
+                  <Link to={strings.moreLinkUrl}>{strings.moreLinkText}</Link>
+                )}
+              </p>
+            )
+          }
+          confirmButtonProps={{
+            title: strings.approveButton,
+          }}
+          denyButtonProps={{
+            title: strings.declineButton,
+          }}
         />
       </Section>
     </div>

@@ -22,6 +22,7 @@ module.exports = ({
   i18next = {},
   siteIndex = {},
   breadcrumbs = {},
+  cookieConsent = {},
   disableSearchPlugin,
   sitemap = {},
   manifest = {},
@@ -128,6 +129,12 @@ module.exports = ({
       {
         resolve: `@whitespace/gatsby-plugin-breadcrumbs`,
         options: { ...breadcrumbs },
+      },
+
+      // Cookie consent
+      {
+        resolve: "@whitespace/gatsby-plugin-cookie-consent",
+        options: { head: true, ...cookieConsent },
       },
 
       // Manifest
