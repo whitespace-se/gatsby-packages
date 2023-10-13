@@ -11,6 +11,7 @@ import theme from "../theme";
 
 import HtmlProcessorExtensionProvider from "./HtmlProcessorExtensionProvider";
 import Image from "./Image";
+import { css } from "@emotion/react";
 
 export default function RootElementWrapper({ children }) {
   return (
@@ -110,6 +111,7 @@ export default function RootElementWrapper({ children }) {
                     aspectRatio={aspectRatio}
                     alt={alt}
                     maxWidth={imgWidth}
+                    css={css`width: 100%`}
                     caption={
                       React.Children.count(children) === 0
                         ? processContent(caption)
@@ -146,6 +148,7 @@ export default function RootElementWrapper({ children }) {
                     aspectRatio={imgWidth / imgHeight || aspectRatio}
                     alt={alt}
                     maxWidth={imgWidth}
+                    css={css`width: 100%`}
                     {...restProps}
                   />
                 );
