@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.26](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.25...v1.5.0-next.26) (2023-10-16)
+
+
+### Features
+
+* Improve customizability for search components ([ab30920](https://github.com/whitespace-se/gatsby-packages/commit/ab30920d2f69a1b6b9e51813ba61c40f5358fd88))
+
+
+
 ## [1.5.0-next.25](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.24...v1.5.0-next.25) (2023-10-13)
 
 
