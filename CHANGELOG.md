@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.4.5](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.4...v1.4.5) (2023-10-16)
+
+
+### Bug Fixes
+
+* A11y issues with search components ([e9af9bf](https://github.com/whitespace-se/gatsby-packages/commit/e9af9bfa5981b57c501b37d2f05765f5120c6763))
+
+
+
 ### [1.4.4](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.3...v1.4.4) (2023-08-21)
 
 
