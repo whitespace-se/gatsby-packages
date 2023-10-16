@@ -34,7 +34,7 @@ SearchProvider.propTypes = {
 
 export default function SearchProvider({
   children,
-  fallback = <div>Enable Javascript to use the search</div>,
+  fallback = null,
   routing,
   skipSearchIf = (params) => !params.query && !params.facetFilters?.length,
   transformParams = (params) => params,

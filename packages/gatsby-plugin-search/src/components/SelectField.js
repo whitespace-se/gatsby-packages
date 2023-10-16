@@ -1,5 +1,6 @@
+/** @jsx jsx */
+import { jsx, css } from "@emotion/react";
 import PropTypes from "prop-types";
-import React from "react";
 import ReactSelect from "react-select";
 
 import { useSelectStyles } from "../hooks";
@@ -42,6 +43,11 @@ export default function SelectField({
   return (
     <ReactSelect
       {...props}
+      css={css`
+        input:focus {
+          box-shadow: none;
+        }
+      `}
       options={normalizedOptions}
       styles={useSelectStyles()}
       isMulti={isMulti}

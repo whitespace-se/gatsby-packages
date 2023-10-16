@@ -113,7 +113,16 @@ export default function SearchMenuButtonGroup(props) {
       }}
     >
       {({ submitForm }) => (
-        <Form>
+        <Form
+          // Submit when pressing enter
+          onKeyDown={(event) => {
+            if (event.key === "Enter") {
+              event.preventDefault();
+              event.stopPropagation();
+              submitForm();
+            }
+          }}
+        >
           <Label
             visuallyHidden={hideLabel}
             id={generateID(`search-menu-${kebabCase(name)}-label`)}
