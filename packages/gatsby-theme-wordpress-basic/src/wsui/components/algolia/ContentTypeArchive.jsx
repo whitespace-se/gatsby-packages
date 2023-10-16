@@ -105,7 +105,10 @@ export default function ContentTypeArchive(props) {
               {t("wsui.algolia.searchResultsHeading")}
             </H>
             <Section>
-              <Hits />
+              <Hits
+                searchPageType="archive"
+                contentType={contentType.graphqlSingleName}
+              />
             </Section>
           </div>
           <Pagination />

@@ -20,7 +20,7 @@
     "@jeanfredrik/yett": "^2.0.0",
     "@whitespace/components": "^0.13.24",
     "@whitespace/gatsby-hooks": "^0.5.0",
-    "@wsui/base": "^0.10.19",
+    "@wsui/base": "^0.10.21",
     "clsx": "^1.1.1",
     "date-fns": "^2.25.0",
     "immer": "^9.0.6",
@@ -30,7 +30,7 @@
   "peerDependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
-    "@wsui/base": "^0.10.19",
+    "@wsui/base": "^0.10.21",
     "gatsby": "^3.14.3",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",

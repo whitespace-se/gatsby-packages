@@ -83,7 +83,7 @@ export default function SiteSearch(props) {
 
   return (
     <SearchProvider routing={true}>
-      {({ indexName }) => (
+      {() => (
         <div
           css={css`
             display: grid;
@@ -149,7 +149,7 @@ export default function SiteSearch(props) {
               {t("wsui.algolia.searchResultsHeading")}
             </H>
             <Section>
-              <Hits />
+              <Hits searchPageType="search" />
             </Section>
           </div>
           <Pagination />

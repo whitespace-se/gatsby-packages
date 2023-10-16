@@ -16,6 +16,8 @@ export default function DefaultHit(props) {
     hit,
     horizontalContentMaxWidth = "100%",
     hideImage,
+    // eslint-disable-next-line no-unused-vars
+    hitsOwnerState,
     ...restProps
   } = props;
 
@@ -23,9 +25,11 @@ export default function DefaultHit(props) {
 
   const { title, url, text, contentTypeName, image } = hit;
 
-  let contentTypeLabel = t(`contentTypes.${contentTypeName}.name`, {
-    count: 1,
-  });
+  let contentTypeLabel = hitsOwnerState?.contentType
+    ? null
+    : t(`contentTypes.${contentTypeName}.name`, {
+        count: 1,
+      });
 
   return (
     <TeaserCard
@@ -43,7 +47,9 @@ export default function DefaultHit(props) {
         <Excerpt variant="description" lines={2}>
           {text}
         </Excerpt>
-        <Typography variant="meta">{contentTypeLabel}</Typography>
+        {!!contentTypeLabel && (
+          <Typography variant="meta">{contentTypeLabel}</Typography>
+        )}
       </CardContent>
     </TeaserCard>
   );
