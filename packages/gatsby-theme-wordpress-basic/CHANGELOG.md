@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.27](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.26...v1.5.0-next.27) (2023-10-18)
+
+
+### Features
+
+* Allow using `{{today_numeric}}` in search filters ([a5b60f1](https://github.com/whitespace-se/gatsby-packages/commit/a5b60f1215e2a86dfcd8ad2389add7263c6ab0f2))
+
+
+
 ## [1.5.0-next.26](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.25...v1.5.0-next.26) (2023-10-16)
 
 
