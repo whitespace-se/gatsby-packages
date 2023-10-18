@@ -7,6 +7,7 @@ import {
   Pagination as DefaultPagination,
 } from "@wsui/algolia";
 import { H, Section, handleComponentsProp, useThemeProps } from "@wsui/base";
+import startOfToday from "date-fns/startOfToday";
 import { useContext, useMemo } from "react";
 // import { Fragment } from "react";
 // import PropTypes from "prop-types";
@@ -76,7 +77,13 @@ export default function ContentTypeArchive(props) {
             <Configure sortBy={`${indexName}_${archiveConfig.sortBy}`} />
           )}
           {(archiveConfig.filters || []).map((filter, index) => (
-            <Configure key={index} filters={filter} />
+            <Configure
+              key={index}
+              filters={filter.replace(
+                "{{today_numeric}}",
+                startOfToday().valueOf(),
+              )}
+            />
           ))}
           {!!archiveConfig.searchBox && <SearchBox searchAsYouType={false} />}
           <div
