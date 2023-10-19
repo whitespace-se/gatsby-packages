@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.28](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.27...v1.5.0-next.28) (2023-10-19)
+
+
+### Features
+
+* Make CookieDialog customizable via theme ([f635477](https://github.com/whitespace-se/gatsby-packages/commit/f635477a20ed110cda44a7cf1205cb894148223e))
+
+
+
 ## [1.5.0-next.27](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.26...v1.5.0-next.27) (2023-10-18)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-cookie-consent
