@@ -1,16 +1,14 @@
 import { css } from "@emotion/react";
 import { useHasMounted } from "@whitespace/gatsby-hooks";
-import { ConfirmDialog } from "@wsui/base";
+import { ConfirmDialog, useThemeProps } from "@wsui/base";
 import differenceInMonths from "date-fns/differenceInMonths";
 import React, { useEffect } from "react";
 
 import { useStore } from "../../hooks/store";
 
-export default function CookieDialog({
-  active = true,
-  position,
-  ...restProps
-}) {
+export default function CookieDialog(props) {
+  props = useThemeProps({ props, name: "CookieDialog" });
+  let { active = true, position, color = "white", ...restProps } = props;
   let [store, setStore] = useStore();
 
   const hasMounted = useHasMounted();
@@ -43,7 +41,7 @@ export default function CookieDialog({
         margin: 1rem;
         z-index: 1;
       `}
-      color="white"
+      color={color}
       keepPadding
       shadow
       onConfirm={() => {
