@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.29](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.28...v1.5.0-next.29) (2023-10-25)
+
+
+### Features
+
+* Add `ensureHeadingIds` option to html processor ([0ba62b5](https://github.com/whitespace-se/gatsby-packages/commit/0ba62b57384e48db77af7e6ef56bb415534eef22))
+* Add IDs to page content headings ([4fdb828](https://github.com/whitespace-se/gatsby-packages/commit/4fdb828bd1a15a2f74192d3c1292755eb1dc57a5))
+
+
+
 ## [1.5.0-next.28](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.27...v1.5.0-next.28) (2023-10-19)
 
 
