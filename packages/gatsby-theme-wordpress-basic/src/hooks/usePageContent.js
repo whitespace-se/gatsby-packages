@@ -14,6 +14,7 @@ export default function usePageContent(options) {
     htmlString,
     {
       extractHeading: true,
+      ensureHeadingIds: true,
       ...rest,
       ...options,
     },
