@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.31](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.30...v1.5.0-next.31) (2023-10-25)
+
+
+### Bug Fixes
+
+* Remove underline in footer menu block links ([a67f554](https://github.com/whitespace-se/gatsby-packages/commit/a67f5541669881f692cef13f4275f6aa08f128d7))
+
+
+
 ## [1.5.0-next.30](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.29...v1.5.0-next.30) (2023-10-25)
 
 **Note:** Version bump only for package @whitespace/gatsby-theme-wordpress-basic
