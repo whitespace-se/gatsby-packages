@@ -12,11 +12,11 @@ import {
 import { useMenu } from "../../../hooks/menus.js";
 
 const DefaultLink = styled(Clickable)`
-  text-decoration: underline;
+  text-decoration: none;
   color: inherit;
   &.wsui-is-interactive:hover,
   &:focus-visible {
-    text-decoration: none;
+    text-decoration: underline;
   }
 `;
 
