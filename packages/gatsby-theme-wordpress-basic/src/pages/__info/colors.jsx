@@ -9,6 +9,7 @@ import {
   PageSection,
   Heading,
   Stack,
+  Icon,
 } from "@wsui/base";
 import chroma from "chroma-js";
 import { omit } from "lodash/fp";
@@ -25,7 +26,7 @@ const SwatchList = styled.div`
 `;
 
 const Swatch = styled.div`
-  width: 5rem;
+  width: ${(props) => (props.wide ? "8rem" : "5rem")};
   height: 3rem;
   text-align: center;
   display: flex;
@@ -34,7 +35,8 @@ const Swatch = styled.div`
   border-radius: 0.25rem;
   border: 1px solid #0002;
   background-color: ${(props) => props.theme.getColor(props.color)};
-  color: ${(props) => props.theme.getColor([props.color, "text"])};
+  color: ${(props) =>
+    props.theme.getColor(props.textColor || [props.color, "text"])};
 `;
 export default function ColorsInfoPage(props) {
   const theme = useTheme();
@@ -62,7 +64,7 @@ export default function ColorsInfoPage(props) {
                 >
                   {Object.keys(theme.colors).map((color) => (
                     <Stack key={color} spacing={[3, 6]}>
-                      <Heading scope="row">{color}</Heading>
+                      <Heading>{color}</Heading>
                       <SwatchList>
                         {["main", "hover", "active", "active.hover"].map(
                           (shade) => (
@@ -103,6 +105,102 @@ export default function ColorsInfoPage(props) {
                     </Stack>
                   ))}
                 </Stack>
+                <Heading
+                  css={css`
+                    margin-top: ${theme.getLength([10, 20])};
+                  `}
+                >
+                  Contrasts
+                </Heading>
+                <Section>
+                  <Stack
+                    spacing={[5, 10]}
+                    css={css`
+                      margin-top: ${theme.getLength([5, 10])};
+                    `}
+                  >
+                    {Object.keys(theme.colors).map((bgColor) => (
+                      <Stack key={bgColor} spacing={[3, 6]} alignItems="start">
+                        <Heading>{bgColor}</Heading>
+                        <table
+                          css={css`
+                            border-spacing: 1rem;
+                          `}
+                        >
+                          <tr>
+                            <th>Text color</th>
+                            <th>Contrast</th>
+                            <th>Small text</th>
+                            <th>Large text</th>
+                          </tr>
+                          {Object.keys(theme.colors).map((fgColor) => {
+                            let contrast = chroma.contrast(
+                              theme.getColor(bgColor),
+                              theme.getColor(fgColor),
+                            );
+                            return (
+                              <tr key={fgColor}>
+                                <td>
+                                  <Swatch
+                                    color={[bgColor]}
+                                    textColor={fgColor}
+                                    wide
+                                  >
+                                    {fgColor}
+                                  </Swatch>
+                                </td>
+                                <td>
+                                  {contrast.toLocaleString("sv", {
+                                    maximumFractionDigits: 2,
+                                  })}
+                                  :1
+                                </td>
+                                <td>
+                                  {contrast >= 4.5 ? (
+                                    <span
+                                      css={css`
+                                        color: green;
+                                      `}
+                                    >
+                                      <Icon name="checkbox" /> Pass
+                                    </span>
+                                  ) : (
+                                    <span
+                                      css={css`
+                                        color: red;
+                                      `}
+                                    >
+                                      <Icon name="close" /> Fail
+                                    </span>
+                                  )}
+                                </td>
+                                <td>
+                                  {contrast >= 3 ? (
+                                    <span
+                                      css={css`
+                                        color: green;
+                                      `}
+                                    >
+                                      <Icon name="checkbox" /> Pass
+                                    </span>
+                                  ) : (
+                                    <span
+                                      css={css`
+                                        color: red;
+                                      `}
+                                    >
+                                      <Icon name="close" /> Fail
+                                    </span>
+                                  )}
+                                </td>
+                              </tr>
+                            );
+                          })}
+                        </table>
+                      </Stack>
+                    ))}
+                  </Stack>
+                </Section>
               </Section>
             </PageGridItem>
           </PageGrid>
