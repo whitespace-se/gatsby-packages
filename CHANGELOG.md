@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.32](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.31...v1.5.0-next.32) (2023-10-26)
+
+
+### Features
+
+* Add contrast info to colors info page ([6a52dc9](https://github.com/whitespace-se/gatsby-packages/commit/6a52dc980bd345348c262924754cb2bfde62b2f2))
+
+
+
 ## [1.5.0-next.31](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.30...v1.5.0-next.31) (2023-10-25)
 
 
