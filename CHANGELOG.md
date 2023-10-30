@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.33](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.32...v1.5.0-next.33) (2023-10-30)
+
+
+### Features
+
+* Add publish date to default hit ([c52951d](https://github.com/whitespace-se/gatsby-packages/commit/c52951d68a26206bed1528cf3e8f46274eb877c5))
+
+
+
 ## [1.5.0-next.32](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.31...v1.5.0-next.32) (2023-10-26)
 
 
