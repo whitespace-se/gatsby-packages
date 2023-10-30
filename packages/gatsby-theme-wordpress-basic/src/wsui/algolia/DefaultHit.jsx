@@ -5,6 +5,8 @@ import {
   useThemeProps,
   Excerpt,
   Typography,
+  CardMeta,
+  Time,
 } from "@wsui/base";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -18,12 +20,20 @@ export default function DefaultHit(props) {
     hideImage,
     // eslint-disable-next-line no-unused-vars
     hitsOwnerState,
+    titleProps = {},
+    dateFormat = {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    },
+    metaProps = {},
+    showPublishDate = false,
     ...restProps
   } = props;
 
   const { t } = useTranslation();
 
-  const { title, url, text, contentTypeName, image } = hit;
+  const { title, url, text, contentTypeName, publishDate, image } = hit;
 
   let contentTypeLabel = hitsOwnerState?.contentType
     ? null
@@ -43,7 +53,12 @@ export default function DefaultHit(props) {
       {...restProps}
     >
       <CardContent>
-        <CardTitle />
+        <CardTitle {...titleProps} />
+        {!!(showPublishDate && publishDate) && (
+          <CardMeta {...metaProps}>
+            <Time date={publishDate} format={dateFormat} />
+          </CardMeta>
+        )}
         <Excerpt variant="description" lines={2}>
           {text}
         </Excerpt>
