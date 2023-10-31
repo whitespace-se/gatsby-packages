@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0-next.34](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.33...v1.5.0-next.34) (2023-10-31)
+
+
+### Features
+
+* Add publish and modified dates to page heading ([5feb070](https://github.com/whitespace-se/gatsby-packages/commit/5feb07061dc7ffee7e59a7698ac50b256c90f02d))
+
+
+
 ## [1.5.0-next.33](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.32...v1.5.0-next.33) (2023-10-30)
 
 
