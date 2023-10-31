@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "@emotion/react";
+import { css, jsx, useTheme } from "@emotion/react";
 import {
   Section,
   PageGrid,
@@ -8,8 +8,6 @@ import {
   PageSection,
   Heading,
 } from "@wsui/base";
-// import { useTranslation } from "react-i18next";
-import { Fragment } from "react";
 
 import { usePageContext } from "../../hooks/page-context";
 import SiteSearch from "../components/algolia/SiteSearch.jsx";
@@ -17,12 +15,17 @@ import Seo from "../components/Seo.jsx";
 
 export default function SearchTemplate(props) {
   // eslint-disable-next-line no-unused-vars
+  const theme = useTheme();
   props = useThemeProps({ props, name: "SearchTemplate" });
   props = useThemeProps({ props, name: "Template" });
-  let { defaultColspan = 7 } = props;
+  let { defaultColspan = 7, footerMargin = null } = props;
   const { title } = usePageContext();
   return (
-    <Fragment>
+    <div
+      css={css`
+        padding-bottom: ${footerMargin && theme.getLength(footerMargin)};
+      `}
+    >
       <Seo title={title} />
       <PageSection background="transparent">
         <PageGrid>
@@ -34,6 +37,6 @@ export default function SearchTemplate(props) {
           </PageGridItem>
         </PageGrid>
       </PageSection>
-    </Fragment>
+    </div>
   );
 }
