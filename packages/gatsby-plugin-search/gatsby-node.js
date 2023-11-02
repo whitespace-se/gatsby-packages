@@ -59,7 +59,7 @@ function defaultContentNodeFields(source) {
       source.contentArea &&
         source.contentArea.modules.map(({ module }) => [
           // Module title if not hidden
-          module && module.hideTitle && module.title,
+          module && !module.hideTitle && module.title,
           // Module content (in text modules etc)
           htmlToText(module && module.content),
           // Manual input in Posts module
