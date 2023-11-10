@@ -1,6 +1,6 @@
 {
   "name": "@whitespace/gatsby-plugin-i18next",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "main": "index.js",
   "author": "Whitespace Dev <code@whitespace.se>",
   "license": "AGPL",
