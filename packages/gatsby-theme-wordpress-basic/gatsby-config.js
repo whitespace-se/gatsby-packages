@@ -24,6 +24,7 @@ module.exports = ({
   breadcrumbs = {},
   cookieConsent = {},
   disableSearchPlugin,
+  disableCookieConsent,
   sitemap = {},
   manifest = {},
   robotsTxt: { disallowAll: robotsTxtDisallowAll, ...robotsTxt } = {},
@@ -132,10 +133,14 @@ module.exports = ({
       },
 
       // Cookie consent
-      {
-        resolve: "@whitespace/gatsby-plugin-cookie-consent",
-        options: { head: true, ...cookieConsent },
-      },
+      ...(disableCookieConsent
+        ? []
+        : [
+            {
+              resolve: "@whitespace/gatsby-plugin-cookie-consent",
+              options: { head: true, ...cookieConsent },
+            },
+          ]),
 
       // Manifest
       {
