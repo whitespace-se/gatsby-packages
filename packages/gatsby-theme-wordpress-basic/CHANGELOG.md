@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.0-next.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0...v1.6.0-next.0) (2023-11-24)
+
+
+### Features
+
+* Adding option to disable cookie consent plugin ([00a1bb6](https://github.com/whitespace-se/gatsby-packages/commit/00a1bb6ea06b223fd91e0aad143b115714aeec99))
+
+
+### Bug Fixes
+
+* A11y issues in header ([2e0590f](https://github.com/whitespace-se/gatsby-packages/commit/2e0590f249add3f1553e5f84b342e42c3ec41e08))
+
+
+
 ## [1.5.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.5.0-next.35...v1.5.0) (2023-11-09)
 
 **Note:** Version bump only for package @whitespace/gatsby-theme-wordpress-basic
