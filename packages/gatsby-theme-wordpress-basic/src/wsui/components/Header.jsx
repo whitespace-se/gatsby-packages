@@ -82,7 +82,6 @@ export default function Header(props) {
               `}
             />
             <MainMenu
-              aria-label={t("mainMenu")}
               className={clsx("wsui-screen-only")}
               css={css`
                 align-self: stretch;
