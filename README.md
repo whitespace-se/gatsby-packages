@@ -42,3 +42,13 @@ If you want to make a pull request, fork the repo and create a branch based on
 `main` but the name must start with `feature/`. Commit messages must follow
 [Conventional Commits](https://www.conventionalcommits.org/). Publishing is done
 via [Lerna](https://lerna.js.org/).
+
+## Publishing new versions
+
+1. Install Lerna globally: `npm install --global lerna`
+2. Make sure you have the latest version of the `main` branch or if you are
+   making a patch release for an older minor version, use that branch, e.g.
+   `1.4.x`.
+3. Run `lerna publish --force`. The `--force` ensures that all packages are
+   released with the new version number even if they haven’t changed.
+4. Make sure the version numbers are correct before you continue
