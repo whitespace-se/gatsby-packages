@@ -34,8 +34,9 @@ export const wrapRootElement = (
   let {
     appId,
     searchKey,
-    algoliasearchOptions: { hosts },
+    algoliasearchOptions = {},
   } = algoliaOptions || {};
+  const { hosts } = algoliasearchOptions;
   return (
     <AlgoliaContextWrapper
       appId={appId}
