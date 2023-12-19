@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.4.7](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.6...v1.4.7) (2023-12-19)
+
+
+### Bug Fixes
+
+* handle missing algolia ([#48](https://github.com/whitespace-se/gatsby-packages/issues/48)) ([7e24f08](https://github.com/whitespace-se/gatsby-packages/commit/7e24f08e1efa0711b0b0b55e63084ca765c44065))
+
+
+
 ### [1.4.6](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.5...v1.4.6) (2023-11-10)
 
 
