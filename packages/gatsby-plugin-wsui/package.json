@@ -20,6 +20,7 @@
   },
   "peerDependencies": {
     "@wsui/base": "*",
+    "esbuild": "^0.18.20",
     "gatsby": "^3.14.3",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"

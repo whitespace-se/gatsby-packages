@@ -10,6 +10,7 @@
     "react": "^17.0.0"
   },
   "peerDependencies": {
+    "esbuild": "^0.18.20",
     "gatsby": "^3.14.3",
     "i18next": "^21.3.2",
     "react": "^17.0.0",
