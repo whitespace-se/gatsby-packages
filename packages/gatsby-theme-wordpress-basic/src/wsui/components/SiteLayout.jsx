@@ -11,6 +11,7 @@ import AlertBanner from "./AlertBanner.jsx";
 import DefaultFooter from "./Footer.jsx";
 import DefaultHeader from "./Header.jsx";
 import Html from "./Html.jsx";
+import AdminBar from "./AdminBar.jsx";
 
 export default function SiteLayout(props) {
   const theme = useTheme();
@@ -26,10 +27,19 @@ export default function SiteLayout(props) {
     <div
       css={css`
         display: grid;
-        grid-template-rows: max-content 1fr max-content;
+        grid-template-rows: max-content max-content 1fr max-content;
         min-height: 100vh;
       `}
     >
+      <AdminBar
+        css={css`
+          position: sticky;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 2;
+        `}
+      />
       <div>
         <AlertBanner className={clsx("wsui-screen-only")} />
         <Header

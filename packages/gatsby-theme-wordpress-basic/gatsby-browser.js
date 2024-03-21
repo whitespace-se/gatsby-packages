@@ -10,9 +10,14 @@ import { HTMLProcessorProvider } from "./src/hooks";
 
 const RootElementWrapper = require(GATSBY_ROOT_ELEMENT_WRAPPER_PATH).default;
 
-export function wrapRootElement({ element }, { enableSEO }) {
+export function wrapRootElement(
+  { element },
+  { enableSEO, adminIframeUrl, dashboardUrl, editPostUrl },
+) {
   return (
-    <pluginOptionsContext.Provider value={{ enableSEO }}>
+    <pluginOptionsContext.Provider
+      value={{ enableSEO, adminIframeUrl, dashboardUrl, editPostUrl }}
+    >
       <RootElementWrapper>
         <HTMLProcessorProvider rehypeParse={rehypeParse}>
           {element}
