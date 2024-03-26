@@ -47,6 +47,9 @@ export default function AdminProvider({
   useEffect(() => {
     const iframe = document.createElement("iframe");
     iframeRef.current = iframe;
+    iframe.style =
+      "position:absolute;pointer-events:none;width:0;height:0;border:none;clip:rect(0,0,0,0);";
+    iframe.tabIndex = -1;
     document.body.appendChild(iframe);
     iframe.addEventListener("load", iframeLoadHandler);
     iframe.src = iframeUrl;
