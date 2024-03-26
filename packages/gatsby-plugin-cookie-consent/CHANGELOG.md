@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.7.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.7.0...v1.7.1) (2024-03-26)
+
+
+### Bug Fixes
+
+* There was no way of resetting the cookie consent ([147ac1f](https://github.com/whitespace-se/gatsby-packages/commit/147ac1fb3aa938028c4b4bf3c78a77f175f17558))
+
+
+
 ## [1.7.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.6.0...v1.7.0) (2024-03-21)
 
 **Note:** Version bump only for package @whitespace/gatsby-plugin-cookie-consent
