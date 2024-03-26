@@ -62,7 +62,7 @@ export default function FooterMenuBlock(props) {
           column-fill: balance;
         `}
       >
-        {items.map(({ url, label, target }, index) => {
+        {items.map(({ url, label, target, cssClasses }, index) => {
           return (
             <li
               key={index}
@@ -70,7 +70,7 @@ export default function FooterMenuBlock(props) {
                 margin-block-end: ${theme.getLength(2)};
               `}
             >
-              <Link url={url} target={target}>
+              <Link url={url} target={target} className={cssClasses}>
                 {label}
               </Link>
             </li>
