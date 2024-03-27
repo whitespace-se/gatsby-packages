@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.7.2](https://github.com/whitespace-se/gatsby-packages/compare/v1.7.1...v1.7.2) (2024-03-27)
+
+
+### Bug Fixes
+
+* Links were not clickable ([dcecc14](https://github.com/whitespace-se/gatsby-packages/commit/dcecc14ce87a6cd3b8b2e08b4dc3de3e9b4d69ff))
+
+
+
 ### [1.7.1](https://github.com/whitespace-se/gatsby-packages/compare/v1.7.0...v1.7.1) (2024-03-26)
 
 
