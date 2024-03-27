@@ -33,8 +33,8 @@ export function StoreProvider({
   useEffect(() => {
     if (resetSelector) {
       let handleClick = (event) => {
-        event.preventDefault();
         if (event.target.matches(resetSelector)) {
+          event.preventDefault();
           setState(null);
         }
       };
