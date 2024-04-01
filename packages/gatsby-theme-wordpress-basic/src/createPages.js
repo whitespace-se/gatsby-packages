@@ -31,6 +31,10 @@ const SingleTemplate = require.resolve("./templates/SingleTemplate");
 
 const WsuiTemplate = require.resolve("./wsui/templates/TemplateController.jsx");
 
+const WpRestrictedPage = require.resolve(
+  "./wsui/components/WpRestrictedPage.jsx",
+);
+
 module.exports = ({ contentType, query, nodesPerFetch }) => {
   let { skipPage = false } = contentType;
   if (typeof skipPage !== "function") {
@@ -152,7 +156,11 @@ ${JSON.stringify({ ...commonVariables, ...variables }, null, 2)}`,
 
     allContentNodes.map((contentNode) => {
       let path = contentNode.uri;
-      let component = wsui ? WsuiTemplate : SingleTemplate;
+      let component = wsui
+        ? contentNode.isRestricted
+          ? WpRestrictedPage
+          : WsuiTemplate
+        : SingleTemplate;
       let language =
         contentNode.language ||
         getLanguageFromPathname(path, languages, defaultLanguage);

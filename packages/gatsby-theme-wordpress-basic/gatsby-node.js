@@ -40,6 +40,9 @@ exports.onPreInit = (_, { wsui }) => {
   wpPreviewPagePath = wsui
     ? require.resolve(`./src/wsui/components/WpPreviewPage.jsx`)
     : require.resolve(`./src/components/WpPreviewPage.js`);
+  wpRestrictedPagePath = wsui
+    ? require.resolve(`./src/wsui/components/WpRestrictedPage.jsx`)
+    : null;
 };
 
 exports.onCreateWebpackConfig = ({ actions, plugins }) => {
@@ -154,6 +157,7 @@ exports.createPages = async function createPages(params, pluginOptions) {
                 archiveDates
                 modifiedGmt # Required for sitemap
                 hasPageContent
+                isRestricted
                 contentType {
                   node {
                     name
