@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.8.0](https://github.com/whitespace-se/gatsby-packages/compare/v1.7.2...v1.8.0) (2024-04-01)
+
+
+### Features
+
+* Allow showing restricted pages by entering password ([34e35b6](https://github.com/whitespace-se/gatsby-packages/commit/34e35b6d96804e55eb239c7e9ecacc36658c22dc))
+
+
+
 ### [1.7.2](https://github.com/whitespace-se/gatsby-packages/compare/v1.7.1...v1.7.2) (2024-03-27)
 
 
