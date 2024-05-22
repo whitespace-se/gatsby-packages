@@ -47,9 +47,14 @@ function defaultContentNodeFields(source) {
     date,
     year: date && formatDate(parseDate(date), "yyyy"),
     month: date && formatDate(parseDate(date), "yyyy-MM"),
-    years: dates && dates.map((date) => formatDate(parseDate(date), "yyyy")),
+    years:
+      dates &&
+      dates.filter(Boolean).map((date) => formatDate(parseDate(date), "yyyy")),
     months:
-      dates && dates.map((date) => formatDate(parseDate(date), "yyyy-MM")),
+      dates &&
+      dates
+        .filter(Boolean)
+        .map((date) => formatDate(parseDate(date), "yyyy-MM")),
     publishDate: source.dateGmt,
     image: source.featuredImage && source.featuredImage.node,
     textContent: [
