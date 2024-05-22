@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [1.4.8](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.7...v1.4.8) (2024-05-22)
+
+
+### Bug Fixes
+
+* Avoid error on invalid dates on search indexing ([5cf9e55](https://github.com/whitespace-se/gatsby-packages/commit/5cf9e5568ebac3fa47b1c131f7e54bc2f6c9a6e4))
+
+
+
 ### [1.4.7](https://github.com/whitespace-se/gatsby-packages/compare/v1.4.6...v1.4.7) (2023-12-19)
 
 
